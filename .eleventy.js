@@ -1,4 +1,5 @@
 const markdownIt = require('markdown-it')
+const { DateTime } = require('luxon')
 
 const md = new markdownIt({
   html: true,
@@ -7,9 +8,14 @@ const md = new markdownIt({
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/sass/')
   eleventyConfig.addPassthroughCopy('./src/assets')
+  eleventyConfig.addPassthroughCopy('./src/_original')
 
   eleventyConfig.addFilter('markdown', (content) => {
     return md.render(content)
+  })
+
+  eleventyConfig.addFilter('json', (content) => {
+    return JSON.stringify(content)
   })
 
   eleventyConfig.addFilter('accessPointsJson', (points) => {
@@ -22,6 +28,18 @@ module.exports = function (eleventyConfig) {
       }))
     )
   })
+
+  eleventyConfig.on('afterBuild', () => {
+    console.log(eleventyConfig.collections)
+  })
+
+  eleventyConfig.addShortcode(
+    'buildDate',
+    () =>
+      `${DateTime.now().toLocaleString(DateTime.DATE_FULL)} at ${DateTime.now()
+        .toLocaleString(DateTime.TIME_SIMPLE)
+        .toLowerCase()}`
+  )
 
   return {
     dir: {

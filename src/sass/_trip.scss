@@ -1,0 +1,17 @@
+.trip-columns {
+  display: flex;
+  flex-wrap: wrap;
+  .main,
+  .sidebar {
+    width: 100%;
+    @media (min-width: 1100px) {
+      width: 50%;
+      box-sizing: border-box;
+    }
+  }
+  .main {
+    @media (min-width: 1100px) {
+      padding-right: 2rem;
+    }
+  }
+}

@@ -13,7 +13,7 @@ layout: layouts/default.njk
 <h1>{{ title }}</h1>
 {{ content | safe}}
 
-
+{% include 'flow.njk' %}
 
 <h2>Directions</h2>
 
@@ -27,3 +27,15 @@ layout: layouts/default.njk
 </p>
 
 {{ directions | markdown | safe }}
+
+<div class="map short">
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  window._accessPointPath = {{ directionsPath | json | safe }}
+  window._accessPointLat = {{ lat }}
+  window._accessPointLon = {{ lon }}
+</script>
+<script src="/assets/js/access-point.js"></script>
