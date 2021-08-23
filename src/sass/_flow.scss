@@ -1,0 +1,20 @@
+p.flow {
+  padding: 1rem;
+  background: #bde2e8;
+  border: 1px solid #adbeff;
+  &.good {
+    background: #cafdcb;
+    border-color: #4fe399;
+  }
+
+  &.above {
+    background: #ebc1bb;
+    border-color: #eb8894;
+  }
+
+  small {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}

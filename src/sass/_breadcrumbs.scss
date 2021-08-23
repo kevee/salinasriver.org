@@ -1,0 +1,31 @@
+nav.breadcrumbs {
+  ol {
+    opacity: 0.7;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin-right: 1rem;
+      &::after {
+        content: ' / ';
+        margin-left: 0.5rem;
+      }
+      &:last-child {
+        margin-right: 0;
+        &::after {
+          content: '';
+        }
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        &[aria-current] {
+          color: grey;
+        }
+      }
+    }
+  }
+}

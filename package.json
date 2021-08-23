@@ -1,0 +1,32 @@
+{
+  "name": "salinasriver-11ty",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "fs-extra": "^10.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build:guages": "node ./_tools/guages.js && ",
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:eleventy": "npx @11ty/eleventy",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:guages build:sass build:eleventy"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.3.2",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.8",
+    "markdown-it": "^12.2.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.38.0"
+  }
+}

@@ -1,0 +1,29 @@
+---
+layout: layouts/default.njk
+---
+
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/access-points">Access points</a></li>
+    <li><a href="#" aria-current="page">{{ title }}</a></li>
+  </ol>
+</nav>
+
+<h1>{{ title }}</h1>
+{{ content | safe}}
+
+
+
+<h2>Directions</h2>
+
+<p>
+  <a
+    href="https://www.google.com/maps/dir/{{ lat }},{{ lon }}"
+    target="_blank"
+    rel="noreferrer"
+    >Driving directions</a
+  >
+</p>
+
+{{ directions | markdown | safe }}

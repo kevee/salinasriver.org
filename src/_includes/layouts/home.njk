@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+<main class="homepage">
+  <div class="column-container">
+    <div class="columns">
+      <div class="main">{{ content | safe}}</div>
+      <div class="sidebar">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    By <a href="https://kevee.net">Kevin Miller</a>. All content is offered
+    under
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/">
+      Creative Commons BY-NC 4.0</a
+    >.
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}
+</script>
+<script src="/assets/js/home.js"></script>

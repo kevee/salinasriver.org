@@ -1,0 +1,5 @@
+_site/
+public/
+node_modules/
+package-lock.json
+src/_data/guages.json
