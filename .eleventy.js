@@ -29,6 +29,18 @@ module.exports = function (eleventyConfig) {
     )
   })
 
+  eleventyConfig.addFilter('tripsJson', (trips) => {
+    return JSON.stringify(
+      trips.map((trip) => ({
+        title: trip.data.title,
+        lat: trip.data.lat,
+        lon: trip.data.lon,
+        length: trip.data.length,
+        url: `/trips/${trip.fileSlug}`,
+      }))
+    )
+  })
+
   eleventyConfig.on('afterBuild', () => {
     console.log(eleventyConfig.collections)
   })

@@ -1,9 +1,9 @@
 ---
 title: Bradley Tubing
-tags: trip
+tags: trips
 layout: layouts/trip.njk
-startLat: 35.864363579649996
-startLon: -120.80894607551416
+lat: 35.858475
+lon: -120.783075
 flowLow: 40
 flowHigh: 600
 length: 3.5 miles

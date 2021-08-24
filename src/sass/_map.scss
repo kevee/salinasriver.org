@@ -32,6 +32,9 @@
       background: #f50022;
       opacity: 0.8;
       margin-right: 0.5rem;
+      &.trip {
+        background: #44fad5;
+      }
     }
   }
   .leaflet-popup-content-wrapper {

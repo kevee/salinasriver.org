@@ -17,6 +17,8 @@ layout: layouts/default.njk
 
 {{ content | safe}}
 
+{{ safety | markdown | safe }}
+
 {% include 'flow.njk' %}
 
 
@@ -33,18 +35,23 @@ layout: layouts/default.njk
 
 
 {%- for part in parts -%}
-  <h4 id="{{ part.id }}">{{part.title}}</h4>
-  {{part.description | markdown | safe }}
-  {% if part.driving %}
-    <p>
-  <a
-    href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
-    target="_blank"
-    rel="noreferrer"
-    >Driving directions</a
-  >
-</p>
-  {% endif %}
+  <div class="trip-part">
+    <h4 id="{{ part.id }}">{{part.title}}</h4>
+    {% if part.mile %}
+    <p><strong>Mile:</strong> {{part.mile}}
+    {% endif %}
+    {{part.description | markdown | safe }}
+    {% if part.driving %}
+      <p>
+        <a
+          href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
+          target="_blank"
+          rel="noreferrer"
+          >Driving directions</a
+        >
+      </p>
+    {% endif %}
+  </div>
 {%- endfor -%}
   
 

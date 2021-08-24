@@ -28,5 +28,18 @@
           `<h3><a href="${point.url}">${point.title}</a></h3><p>Access point</p>`
         )
       })
+
+      window._trips.forEach((trip) => {
+        const circle = L.circle([trip.lat, trip.lon], {
+          radius: 1500,
+          fillColor: '#44FAD5',
+          fillOpacity: 0.7,
+          stroke: false,
+        }).addTo(map)
+
+        circle.bindPopup(
+          `<h3><a href="${trip.url}">${trip.title}</a></h3><p>Trip, ${trip.length}</p>`
+        )
+      })
     })
 })()

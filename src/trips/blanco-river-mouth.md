@@ -1,9 +1,9 @@
 ---
 title: Blanco Rd to River Mouth
-tags: trip
+tags: trips
 layout: layouts/trip.njk
-startLat: 36.6783378
-startLon: -121.7437747
+lat: 36.714710
+lon: -121.761627
 flowLow: 40
 flowHigh: 600
 length: 5.6 miles
@@ -18,17 +18,28 @@ setUp: >
 parts:
   - title: Put-in
     id: put-in
+    mile: 0
     description: >
-      Park on the road and walk down the path towards the river.
-    lat: 35.843875707206934
-    lon: -120.75292017260654
+      Park on the road by [Blanco bridge](/access-points/blanco).
+    lat: 36.6783378
+    lon: -121.7437747
     driving: true
+  - title: Rubber dam
+    id: dam
+    mile: 3.5
+    description: >
+      The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam.
+    lat: 36.709093
+    lon: -121.750769
+    caution: true
+    driving: false
   - title: Take-out
     id: take-out
+    mile: 5.6
     description: >
-      Exit the river right under the bridge and follow the foot-path to the right.
-    lat: 35.863988230401546
-    lon: -120.80965395355224
+      Exit the river on the left after passing under the highway 1 overpass and a field on your left. You will be exiting at the [Salinas River Wildlife Refuge](/access-point/srnwr).
+    lat: 36.735825
+    lon: -121.791014
     driving: true
 route:
   {
