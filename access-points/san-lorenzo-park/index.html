@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/">Salinas River</a></li>
+        <li><a href="/access-points">Access points</a></li>
+        <li><a href="/trips">Trips</a></li>
+        <li><a href="/safety">Safety</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <section>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/access-points">Access points</a></li>
+    <li><a href="#" aria-current="page">San Lorenzo Park</a></li>
+  </ol>
+</nav>
+
+<h1>San Lorenzo Park</h1>
+<p>San Lorenzo Park</p>
+
+
+<aside class="below flow">
+  <strong>Flow rate: </strong>0 
+  <abbr title="Cubic feet per second">cfs</abbr> —
+  
+   Below recommended flow rate
+  
+  <small class="flow-update">
+From the
+    <a
+      href="https://waterdata.usgs.gov/nwis/uv?site_no=11151700"
+      target="_blank"
+      rel="noreferrer"
+      >Soledad</a
+    >
+    guage. Best flows are between 40 and 500
+    CFS. Updated August 24, 2021 at 7:34 am.
+  </small>
+</aside>
+
+<h2>Directions</h2>
+
+<p>
+  <a
+    href="https://www.google.com/maps/dir/36.2035571783819,-121.14255604362488"
+    target="_blank"
+    rel="noreferrer"
+    >Driving directions</a
+  >
+</p>
+
+<p>Park in front</p>
+
+
+<div class="map short">
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  window._accessPointPath = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[-121.14246904850006,36.20379551274967],[-121.14250659942627,36.203689460445105],[-121.14248514175414,36.2036353520711]]},"properties":{}}]}
+  window._accessPointLat = 36.2035571783819
+  window._accessPointLon = -121.14255604362488
+</script>
+<script src="/assets/js/access-point.js"></script></section>
+</div>
+<footer>
+  <div class="container">
+    By <a href="https://kevee.net">Kevin Miller</a>. All content is offered
+    under
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/">
+      Creative Commons BY-NC 4.0</a
+    >.
+  </div>
+</footer>
+
+  </body>
+</html>
