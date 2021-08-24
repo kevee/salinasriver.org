@@ -6,6 +6,8 @@ startLat: 35.864363579649996
 startLon: -120.80894607551416
 flowLow: 40
 flowHigh: 600
+length: 3.5 miles
+time: 3-5 hours
 guage: bradley
 gear: >
   You will need:

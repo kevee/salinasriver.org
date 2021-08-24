@@ -1,0 +1,19 @@
+.nav-list {
+  padding: 2rem;
+  background: $light-blue;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    li {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a,
+      a:visited {
+        color: black;
+      }
+    }
+  }
+}

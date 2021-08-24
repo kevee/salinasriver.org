@@ -13,12 +13,12 @@ eagles. Residents noodle on its banks for catfish, and cool off in
 its silty waters in the summer. Land owners, farmers, and oilmen
 have hidden it on purpose.
 
-<nav class="homepage-nav">
-  <ul>
-    <li><a href="/access-points">Access points</a></li>
-    <li><a href="/trips">Trips</a></li>
-    <li><a href="/safety">Safety</a></li>
-  </ul>
+<nav class="nav-list">
+  
+  - [Access points](/access-points)
+  - [Trips](/trips)
+  - [Safety](/safety)
+  
 </nav>
 
 <small>View the [original Salinas River Project website](/original).</small>
