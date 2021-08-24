@@ -2,11 +2,20 @@ const fetch = require('node-fetch')
 const fs = require('fs-extra')
 
 const guages = {
-  11152300: 'chualar',
-  11150500: 'bradley',
-  11151700: 'soledad',
-  11147500: 'paso',
-  11152500: 'spreckles',
+  11152300: {
+    name: 'chualar',
+    label: 'Chualar',
+  },
+  11150500: {
+    name: 'bradley',
+    label: 'Bradley Bridge',
+  },
+  11151700: {
+    name: 'soledad',
+    label: 'Soledad',
+  },
+  11147500: { name: 'paso', label: 'Paso Robles' },
+  11152500: { name: 'spreckles', label: 'Spreckles' },
 }
 
 const run = async () => {
@@ -19,13 +28,15 @@ const run = async () => {
   const waterLevels = {}
 
   results.value.timeSeries.forEach((item) => {
-    waterLevels[guages[parseInt(item.sourceInfo.siteCode[0].value, 10)]] = {
-      cfs: parseFloat(item.values[0].value[0].value, 10),
-      id: parseInt(item.sourceInfo.siteCode[0].value, 10),
-      name: item.sourceInfo.siteName,
-    }
+    waterLevels[guages[parseInt(item.sourceInfo.siteCode[0].value, 10)].name] =
+      {
+        cfs: parseFloat(item.values[0].value[0].value, 10),
+        id: parseInt(item.sourceInfo.siteCode[0].value, 10),
+        name: item.sourceInfo.siteName,
+        label: guages[parseInt(item.sourceInfo.siteCode[0].value, 10)].label,
+      }
   })
-  fs.writeJSONSync('./_data/guages.json', waterLevels)
+  fs.writeJSONSync('./src/_data/guages.json', waterLevels)
 }
 
 run()

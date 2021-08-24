@@ -16,8 +16,8 @@
   map.fitBounds(jsonLayer.getBounds())
 
   window._tripParts.forEach((part) => {
-    const circle = L.circle([part.lat, part.lon], {
-      radius: 100,
+    const circle = L.circleMarker([part.lat, part.lon], {
+      radius: 15,
       fillColor: '#F50022',
       fillOpacity: 0.7,
       stroke: false,

@@ -6,7 +6,7 @@
   {%- if guages[guage].cfs > flowHigh -%}above{%- endif -%}{%- if guages[guage].cfs < 0 -%}none{%-
   endif %} flow">
   <strong>Flow rate: </strong>{%- if guages[guage].cfs >= 0 -%}{{ guages[guage].cfs }}{%- else -%}0{%- endif %} 
-  <abbr title="Cubic feet per second">CFS</abbr> —
+  <abbr title="Cubic feet per second">cfs</abbr> —
   {% if
   guages[guage].cfs >= flowLow and
   guages[guage].cfs <= flowHigh %} Good flow rate{% endif %}
@@ -15,13 +15,13 @@
   {% if guages[guage].cfs > flowHigh %} Above recommended
   flow rate{% endif %}{% if guages[guage].cfs < 0%} No flow {%
   endif %}
-  <small>
+  <small class="flow-update">
 From the
     <a
       href="https://waterdata.usgs.gov/nwis/uv?site_no={{ guages[guage].id }}"
       target="_blank"
       rel="noreferrer"
-      >{{ guages[guage].name }}</a
+      >{{ guages[guage].label }}</a
     >
     guage. Best flows are between {{ flowLow }} and {{ flowHigh }}
     CFS. Updated {% buildDate %}.

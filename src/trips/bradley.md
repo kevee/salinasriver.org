@@ -9,15 +9,15 @@ flowHigh: 600
 length: 3.5 miles
 time: 3-5 hours
 guage: bradley
-gear: >
-  You will need:
-    - Tubes
-    - Wetsuits unless the weather is very warm
+gear:
+  - Tubes
+  - Wetsuits unless the weather is very warm
 setUp: >
   Spot a car at the [northern Bradley bridge](/access-points/bradley).
 parts:
   - title: Put-in
     id: put-in
+    mile: 0
     description: >
       Park on the road and walk down the path towards the river.
     lat: 35.843875707206934
@@ -25,6 +25,7 @@ parts:
     driving: true
   - title: Take-out
     id: take-out
+    mile: 3.5
     description: >
       Exit the river right under the bridge and follow the foot-path to the right.
     lat: 35.863988230401546

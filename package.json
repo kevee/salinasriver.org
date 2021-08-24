@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
-    "build:guages": "node ./_tools/guages.js && ",
+    "build:guages": "node ./src/_tools/guages.js ",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:sass": "sass  --no-source-map src/sass:public/css",

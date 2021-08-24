@@ -6,13 +6,27 @@ layout: layouts/base.njk
     <div class="columns">
       <div class="main">{{ content | safe}}</div>
       <div class="sidebar">
-      <div class="map">
+      <div class="map" aria-hidden="true">
         <div id="map"></div>
           <div class="key">
             <p><span class="spot"></span>Access point</p>
             <p><span class="spot trip"></span>Trip</p>
           <div>
         </div>
+      </div>
+      <div class="a11y-only">
+        <h2>Access Points</h2>
+        <ul>
+          {% for point in collections.accessPoint %}
+            <li><a href="/access-points/{{point.fileSlug}}">{{ point.data.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <h2>Trips</h2>
+        <ul>
+          {% for trip in collections.trips %}
+            <li><a href="/trips/{{trip.fileSlug}}">{{ trip.data.title }}</a></li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>

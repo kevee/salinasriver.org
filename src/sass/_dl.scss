@@ -1,0 +1,20 @@
+dl[role='list'] {
+  div {
+    border-bottom: 1px solid $border-grey;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  dt {
+    width: 30%;
+    font-weight: bold;
+  }
+  dd {
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    ul {
+      margin: 0;
+    }
+  }
+}

@@ -2,7 +2,10 @@
   fetch('/assets/js/river.json')
     .then((response) => response.json())
     .then((river) => {
-      var map = L.map('map').setView([36.5084398, -121.4912514], 10)
+      var map = L.map('map').setView(
+        [36.44525673494023, -121.3909406528181],
+        9.5
+      )
 
       L.tileLayer(
         'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
@@ -17,8 +20,8 @@
       }).addTo(map)
 
       window._accessPoints.forEach((point) => {
-        const circle = L.circle([point.lat, point.lon], {
-          radius: 1500,
+        const circle = L.circleMarker([point.lat, point.lon], {
+          radius: 15,
           fillColor: '#F50022',
           fillOpacity: 0.7,
           stroke: false,
@@ -30,8 +33,8 @@
       })
 
       window._trips.forEach((trip) => {
-        const circle = L.circle([trip.lat, trip.lon], {
-          radius: 1500,
+        const circle = L.circleMarker([trip.lat, trip.lon], {
+          radius: 15,
           fillColor: '#44FAD5',
           fillOpacity: 0.7,
           stroke: false,

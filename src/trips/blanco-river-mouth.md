@@ -4,15 +4,13 @@ tags: trips
 layout: layouts/trip.njk
 lat: 36.714710
 lon: -121.761627
-flowLow: 40
-flowHigh: 600
+flowLow: -999999
+flowHigh: 300
 length: 5.6 miles
 time: 4-6 hours
 guage: chualar
-gear: >
-  You will need:
-    - Kayaks, canoes, or SUPs
-    - Wetsuits unless the weather is very warm
+gear:
+  - Kayaks, canoes, or SUPs
 setUp: >
   Spot a car at [Salinas River Wildlife Refuge](/access-point/srnwr) if going south-to-north, or [Blanco bridge](/access-points/blanco) if traveling north-to-south.
 parts:

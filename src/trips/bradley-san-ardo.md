@@ -9,10 +9,9 @@ flowHigh: 600
 length: 13 miles
 time: 8-10 hours
 guage: bradley
-gear: >
-  You will need:
-    - Kayaks, canoes, or SUPs
-    - Water
+gear:
+  - Kayaks, canoes, or SUPs
+  - Water
 setUp: >
   Spot a car at [San Ardo](/access-points/san-ardo).
 safety: >

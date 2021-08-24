@@ -1,4 +1,10 @@
-.flow {
+.flow,
+.flow-inline {
+  &.flow-inline {
+    display: inline-block;
+    padding: 0.25rem;
+    margin-left: 1rem;
+  }
   padding: 1rem;
   background: #bde2e8;
   border: 1px solid #adbeff;
@@ -11,10 +17,10 @@
     background: #ebc1bb;
     border-color: #eb8894;
   }
+}
 
-  small {
-    display: block;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-  }
+small.flow-update {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }

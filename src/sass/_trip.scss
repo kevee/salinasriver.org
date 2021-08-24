@@ -16,8 +16,22 @@
   }
 }
 
+.trip-parts {
+  margin: 2rem 0;
+}
+
 .trip-part {
-  border: 1px solid grey;
-  padding: 1rem;
+  border-bottom: 1px solid $border-grey;
+  padding: 1rem 0;
   margin-bottom: 2rem;
+  &:last-child {
+    border-bottom: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  p.mile {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
 }

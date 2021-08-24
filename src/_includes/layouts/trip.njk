@@ -6,55 +6,107 @@ layout: layouts/default.njk
   <ol>
     <li><a href="/">Home</a></li>
     <li><a href="/trips">Trips</a></li>
-    <li><a href="#" aria-current="page">{{ title }}</a></li>
+    <li>
+      <a href="#" aria-current="page">{{ title }}</a>
+    </li>
   </ol>
 </nav>
 
 <h1>{{ title }}</h1>
 
-<p><strong>Length:</strong> {{ length }}</p>
-<p><strong>Time:</strong> {{ time }}</p>
+<dl role="list">
+  <div>
+    <dt>Length</dt>
+    <dd>{{ length }}</dd>
+  </div>
+  <div>
+    <dt>Time</dt>
+    <dd>{{ time }}</dd>
+  </div>
+  <div>
+    <dt>Best flow</dt>
+    <dd>
+      {{ flowLow }} to {{ flowHigh }}
+      <abbr title="Cubic-feet per second">cfs</abbr> at
+      <a
+        href="https://waterdata.usgs.gov/nwis/uv?site_no={{ guages[guage].id }}"
+        target="_blank"
+        rel="noreferrer"
+        >{{ guages[guage].label }}</a
+      >
+    </dd>
+  </div>
+  <div>
+    <dt>Current flow</dt>
+    <dd>
+      {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
+      endif %} <abbr title="Cubic-feet per second">cfs</abbr>
+      {% if guages[guage].cfs >= flowLow and guages[guage].cfs <= flowHigh %}
+      <span class="flow-inline good">Good flow</span>{% endif %} {% if
+      guages[guage].cfs < flowLow and guages[guage].cfs >= 0%}<span
+        class="flow-inline below"
+        >Below recommended flow</span
+      >{% endif %} {% if guages[guage].cfs > flowHigh %}<span
+        class="flow-inline above"
+        >Above recommended flow</span
+      >{% endif %}{% if guages[guage].cfs < 0 and flowLow > 0%}<span
+        class="flow-inline none"
+        >No flow</span
+      >{% endif %}
+      <small class="flow-update">Updated {% buildDate %}</small>
+    </dd>
+  </div>
+  {% if gear %}
+  <div>
+    <dt>Gear</dt>
+    <dd>
+      <ul>
+        {% for gearItem in gear %}
+        <li>{{ gearItem }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  </div>
+  {% endif %}
+</dl>
 
-{{ content | safe}}
+{{ content | safe }}
 
+{% if safety %}
 {{ safety | markdown | safe }}
+{% endif %}
 
-{% include 'flow.njk' %}
-
-
-<h3>Set-up &amp; gear</h3>
+<h3>Set-up</h3>
 
 {{ setUp | markdown | safe }}
-
-{{ gear | markdown | safe }}
 
 <div class="map">
   <div id="map"></div>
 </div>
 
-
-
-{%- for part in parts -%}
+<section class="trip-parts">
+  <h2>Description</h2>
+  {%- for part in parts -%}
   <div class="trip-part">
-    <h4 id="{{ part.id }}">{{part.title}}</h4>
-    {% if part.mile %}
-    <p><strong>Mile:</strong> {{part.mile}}
-    {% endif %}
-    {{part.description | markdown | safe }}
+    <h3 id="{{ part.id }}">{{ part.title }}</h3>
+
+    <p class="mile"><strong>Distance:</strong> {{ part.mile }} miles</p>
+
+    {{ part.description | markdown | safe }}
     {% if part.driving %}
-      <p>
-        <a
-          href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
-          target="_blank"
-          rel="noreferrer"
-          >Driving directions</a
-        >
-      </p>
+
+    <p>
+      <a
+        href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
+        target="_blank"
+        rel="noreferrer"
+        >Driving directions</a
+      >
+    </p>
     {% endif %}
   </div>
-{%- endfor -%}
-  
-
+  {%- endfor -%}
+</section>
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
