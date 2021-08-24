@@ -25,7 +25,9 @@ $light-blue: #bde2e8;
   .main {
     box-sizing: border-box;
     width: 100%;
+    margin: 0 1.5rem;
     @media (min-width: 1150px) {
+      margin: 0;
       width: 33.33333333333333%;
       padding-right: 2rem;
     }
@@ -35,6 +37,20 @@ $light-blue: #bde2e8;
     @media (min-width: 1150px) {
       width: 66.66666666666666%;
     }
+  }
+}
+
+.hidden-lg {
+  display: block;
+  @media (min-width: 1150px) {
+    display: none;
+  }
+}
+
+.hidden-sm {
+  display: none;
+  @media (min-width: 1150px) {
+    display: block;
   }
 }
 

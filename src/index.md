@@ -21,4 +21,4 @@ have hidden it on purpose.
   
 </nav>
 
-<small>View the [original Salinas River Project website](/original).</small>
+<small class="hidden-sm">View the [original Salinas River Project website](/original).</small>
