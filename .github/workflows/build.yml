@@ -1,0 +1,25 @@
+name: Build site
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '30 * * * *'
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
