@@ -10,6 +10,7 @@ length: 13 miles
 time: 8-10 hours
 guage: bradley
 tresspass: true
+damRelease: true
 gear:
   - Kayaks, canoes, or SUPs
   - Water

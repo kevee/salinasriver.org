@@ -10,6 +10,7 @@ length: 3.5 miles
 time: 3-5 hours
 guage: bradley
 tresspass: true
+damRelease: true
 gear:
   - Tubes
   - Wetsuits unless the weather is very warm

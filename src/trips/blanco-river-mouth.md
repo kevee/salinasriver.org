@@ -10,6 +10,7 @@ length: 5.6 miles
 time: 4-6 hours
 guage: chualar
 tresspass: false
+damRelease: false
 gear:
   - Kayaks, canoes, or SUPs
 setUp: >

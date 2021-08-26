@@ -11,24 +11,24 @@ layout: layouts/default.njk
 </nav>
 
 <h1>{{ title }}</h1>
-{{ content | safe}}
-
-{% if tresspass %}
-  <p><strong>Tresspass potential</strong> — parts of this area is on private land, be <a href="/info/safety#tresspass">tresspass aware</a>.</p>
-{% endif %}
-
-{% include 'flow.njk' %}
-
-<h2>Directions</h2>
-
-<p>
-  <a
+<dl role="list">
+  {% include 'overview.njk' %}
+  <div>
+    <dt>Driving directions</dt>
+    <dd><a
     href="https://www.google.com/maps/dir/{{ lat }},{{ lon }}"
     target="_blank"
     rel="noreferrer"
-    >Driving directions</a
-  >
-</p>
+    >View in Google maps</a
+  ></dd>
+  </div>
+</dl>
+
+{{ content | safe}}
+
+
+<h2>Directions</h2>
+
 
 {{ directions | markdown | safe }}
 

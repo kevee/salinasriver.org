@@ -23,45 +23,7 @@ layout: layouts/default.njk
     <dt>Time</dt>
     <dd>{{ time }}</dd>
   </div>
-  <div>
-    <dt>Best flow</dt>
-    <dd>
-      {{ flowLow }} to {{ flowHigh }}
-      <abbr title="Cubic-feet per second">cfs</abbr> at
-      <a
-        href="https://waterdata.usgs.gov/nwis/uv?site_no={{ guages[guage].id }}"
-        target="_blank"
-        rel="noreferrer"
-        >{{ guages[guage].label }}</a
-      >
-    </dd>
-  </div>
-  <div>
-    <dt>Current flow</dt>
-    <dd>
-      {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
-      endif %} <abbr title="Cubic-feet per second">cfs</abbr>
-      {% if guages[guage].cfs >= flowLow and guages[guage].cfs <= flowHigh %}
-      <span class="flow-inline good">Good flow</span>{% endif %} {% if
-      guages[guage].cfs < flowLow and guages[guage].cfs >= 0%}<span
-        class="flow-inline below"
-        >Below recommended flow</span
-      >{% endif %} {% if guages[guage].cfs > flowHigh %}<span
-        class="flow-inline above"
-        >Above recommended flow</span
-      >{% endif %}{% if guages[guage].cfs < 0 and flowLow > 0%}<span
-        class="flow-inline none"
-        >No flow</span
-      >{% endif %}
-      <small class="flow-update">Updated {% buildDate %}</small>
-    </dd>
-  </div>
-  {% if tresspass %}
-    <div>
-      <dt>Tresspass</dt>
-      <dd>Parts of this area is on private land, be <a href="/info/safety#tresspass">tresspass aware</a>.</dd>
-    </div>
-  {% endif %}
+  {% include 'overview.njk' %}
   {% if gear %}
   <div>
     <dt>Gear</dt>
