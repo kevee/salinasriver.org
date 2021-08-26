@@ -17,7 +17,7 @@ have hidden it on purpose.
   
   - [Access points](/access-points)
   - [Trips](/trips)
-  - [Safety](/safety)
+  - [Safety](/info/safety)
   
 </nav>
 

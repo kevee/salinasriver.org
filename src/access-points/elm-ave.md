@@ -8,6 +8,7 @@ directions: Park on the east side of the bridge, which dips into a side channel 
 flowLow: 200
 flowHigh: 600
 guage: bradley
+tresspass: false
 directionsPath:
   {
     'type': 'FeatureCollection',

@@ -8,6 +8,7 @@ directions: Park in front
 flowLow: 40
 flowHigh: 500
 guage: soledad
+tresspass: false
 directionsPath:
   {
     'type': 'FeatureCollection',

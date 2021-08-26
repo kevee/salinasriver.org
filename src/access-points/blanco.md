@@ -7,6 +7,7 @@ lon: -121.7437747
 directions: Park on the Salinas side of the bridge, on a large pull-out in front of some mail boxes. The trail is on the right as you face the bridge.
 flowLow: 0
 flowHigh: 300
+tresspass: false
 guage: chualar
 directionsPath:
   {

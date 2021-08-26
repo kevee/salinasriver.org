@@ -9,6 +9,7 @@ flowHigh: 300
 length: 5.6 miles
 time: 4-6 hours
 guage: chualar
+tresspass: false
 gear:
   - Kayaks, canoes, or SUPs
 setUp: >

@@ -15,6 +15,7 @@ directions: >
 flowLow: 0
 flowHigh: 400
 guage: chualar
+tresspass: false
 directionsPath:
   {
     'type': 'FeatureCollection',

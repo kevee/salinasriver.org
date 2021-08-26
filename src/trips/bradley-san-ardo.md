@@ -9,6 +9,7 @@ flowHigh: 600
 length: 13 miles
 time: 8-10 hours
 guage: bradley
+tresspass: true
 gear:
   - Kayaks, canoes, or SUPs
   - Water

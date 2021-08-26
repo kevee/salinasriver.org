@@ -19,6 +19,7 @@ river. These are listed south to north along the flow of the river.
 <nav class="nav-list">
 
 - [Big Sandy](big-sandy)
+- [Bradley south](bradley-south)
 - [Bradley bridge](bradley)
 - [San Ardo](san-ardo)
 - [San Lorenzo Park](san-lorenzo-park)

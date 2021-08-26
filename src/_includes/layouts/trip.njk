@@ -56,6 +56,12 @@ layout: layouts/default.njk
       <small class="flow-update">Updated {% buildDate %}</small>
     </dd>
   </div>
+  {% if tresspass %}
+    <div>
+      <dt>Tresspass</dt>
+      <dd>Parts of this area is on private land, be <a href="/info/safety#tresspass">tresspass aware</a>.</dd>
+    </div>
+  {% endif %}
   {% if gear %}
   <div>
     <dt>Gear</dt>

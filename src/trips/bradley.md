@@ -9,6 +9,7 @@ flowHigh: 600
 length: 3.5 miles
 time: 3-5 hours
 guage: bradley
+tresspass: true
 gear:
   - Tubes
   - Wetsuits unless the weather is very warm
@@ -19,7 +20,7 @@ parts:
     id: put-in
     mile: 0
     description: >
-      Park on the road and walk down the path towards the river.
+      Follow the directions for the [Bradley south](/access-points/bradley-south) access point.
     lat: 35.843875707206934
     lon: -120.75292017260654
     driving: true

@@ -7,6 +7,7 @@ lon: -120.717302
 directions: Park in the large parking lot. There's a trailhead from the lot that leads to the river channel
 flowLow: 40
 flowHigh: 200
+tresspass: false
 guage: paso
 directionsPath:
   {
