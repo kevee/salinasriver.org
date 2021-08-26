@@ -18,6 +18,9 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Add cname
+        run: yarn deploy:cname
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
