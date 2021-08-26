@@ -1,0 +1,39 @@
+<h1>jquery-scrollspy</h1>
+<p>A jQuery plugin for detecting enter/exit of elements in the viewport when the user scrolls.</p>
+<h2>New Features</h2>
+<p>Added a couple new features:</p>
+<ul>
+<li>May 2014 - optional window offset, allows for things like floating navs</li>
+<li>Feb 2014 - supports window resize</li>
+<li>Nov 2013 - throttles scrollspy events so that event handles only fire every 100 milliseconds</li>
+</ul>
+<h2>Usage</h2>
+<pre><code class="language-js">$('.tile').on('scrollSpy:enter', function() {
+	console.log('enter:', $(this).attr('id'));
+});
+
+$('.tile').on('scrollSpy:exit', function() {
+	console.log('exit:', $(this).attr('id'));
+});
+
+$('.tile').scrollSpy();
+
+// or you could do this:
+// $.scrollSpy($('.tile'));
+// or this
+// $('.tile').each(function(i, element) {
+// 		$.scrollSpy(element);
+// });
+
+</code></pre>
+<h1>Window Resize</h1>
+<p>Use the <code>scrollSpy:winSize</code> event for watching window resize.  This fires any time the window is resized by the user.</p>
+<pre><code>$.winSizeSpy().on('scrollSpy:winSize', funcy)
+</code></pre>
+<h1>Contributions</h1>
+<p>Please provide pull requests for additional features.  Test cases would be most weclome!</p>
+<p>Thank you contributors:</p>
+<ul>
+<li><a href="https://github.com/Mithgol">@Mithgol</a></li>
+<li><a href="https://github.com/eithanshavit">@eithanshavit</a></li>
+</ul>
