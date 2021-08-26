@@ -41,7 +41,7 @@ const run = async () => {
       }
   })
   console.log(
-    `Wrote ${guages.length} water guages. Highest guage is ${highest}`
+    `Wrote ${waterLevels.length} water guages. Highest guage is ${highest}`
   )
   fs.writeJSONSync('./src/_data/guages.json', waterLevels)
 }

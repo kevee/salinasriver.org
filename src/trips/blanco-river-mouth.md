@@ -28,7 +28,7 @@ parts:
     id: dam
     mile: 3.5
     description: >
-      The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam.
+      The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam. [Learn more about the rubber dam](/info/rubber-dam).
     lat: 36.709093
     lon: -121.750769
     caution: true
@@ -110,3 +110,5 @@ route:
 ---
 
 This trip can be run either north-to-south or south-to-north as the river backs up into a lagoon on this stretch.
+
+This trip requires a possible portage when the [rubber dam](/info/rubber-dam) is closed.
