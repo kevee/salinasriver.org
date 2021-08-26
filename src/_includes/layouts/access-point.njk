@@ -32,11 +32,6 @@ layout: layouts/default.njk
 
 {{ directions | markdown | safe }}
 
-{% if images %}
-  {% for img in images %}
-    {% image img.src, img.title, '600px' %}
-  {%endfor %}
-{% endif %}
 
 <div class="map short">
   <div id="map"></div>
