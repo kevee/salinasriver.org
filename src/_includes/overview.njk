@@ -1,7 +1,7 @@
 <div>
     <dt>Best flow</dt>
     <dd>
-      {{ flowLow }} to {{ flowHigh }}
+      {% if flowLow >= 0 %}{{ flowLow }}{% else %}0{% endif %} to {{ flowHigh }}
       <abbr title="Cubic-feet per second">cfs</abbr> at
       <a
         href="https://waterdata.usgs.gov/nwis/uv?site_no={{ guages[guage].id }}"
