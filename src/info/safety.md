@@ -15,4 +15,6 @@ entire trip.
 
 <a id="tresspass"></a>**Tresspass** — Use your best judgement to determine if
 you are tresspassing. Many established access areas are on private land
-which the owner has graciously opened for the public.
+which the owner has graciously opened for the public. All of the access points
+listed here are either public, or have clear, well-established trails that have
+been used for years.
