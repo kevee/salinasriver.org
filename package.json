@@ -15,7 +15,7 @@
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:guages build:sass build:eleventy",
     "deploy:gh-pages": "gh-pages -d public",
-    "deploy:cname": "echo \"next.salinasriver.org\" > ./public/CNAME",
+    "deploy:cname": "echo \"salinasriver.org\" > ./public/CNAME",
     "deploy": "npm-run-all build deploy:cname deploy:gh-pages"
   },
   "dependencies": {
