@@ -1,6 +1,10 @@
 ---
 title: Trips
 layout: layouts/default.njk
+addTrips: true
+scripts:
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/trips.js
 ---
 
 # Trips
@@ -17,3 +21,7 @@ river. These are listed south to north along the flow of the river.
 - [River Mouth Lagoon](lagoon)
 
 </nav>
+
+<div class="map" aria-hidden="true">
+  <div id="map"></div>
+</div>

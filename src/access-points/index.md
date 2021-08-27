@@ -1,6 +1,10 @@
 ---
 title: Access points
 layout: layouts/default.njk
+addAccessPoints: true
+scripts:
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/access-points.js
 ---
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
@@ -28,3 +32,7 @@ river. These are listed south to north along the flow of the river.
 - [Salinas River National Wildlife Refuge](srnwr)
 
 </nav>
+
+<div class="map" aria-hidden="true">
+  <div id="map"></div>
+</div>

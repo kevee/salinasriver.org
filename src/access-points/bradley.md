@@ -6,7 +6,7 @@ lat: 35.864363579649996
 lon: -120.80894607551416
 directions: Park on the north end of Bradley Road on the eastern end of the Bradley bridge. There is a trash can and clear trail along the right side of the bridge as you face west. Pass through an opening built into a fence and under the pylons of the bridge.
 flowLow: 40
-flowHigh: 
+flowHigh: 600
 tresspass: false
 guage: bradley
 directionsPath:

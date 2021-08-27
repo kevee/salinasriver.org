@@ -1,5 +1,8 @@
 ---
 layout: layouts/default.njk
+scripts: 
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/trip.js
 ---
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
@@ -76,9 +79,7 @@ layout: layouts/default.njk
   {%- endfor -%}
 </section>
 
-<script src="/assets/js/leaflet/leaflet.js"></script>
 <script>
   window._tripRoute = {{ route | json | safe }}
   window._tripParts = {{ parts | json | safe }}
 </script>
-<script src="/assets/js/trip.js"></script>

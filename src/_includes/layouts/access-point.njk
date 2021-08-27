@@ -1,5 +1,8 @@
 ---
 layout: layouts/default.njk
+scripts: 
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/access-point.js
 ---
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
@@ -37,10 +40,8 @@ layout: layouts/default.njk
   <div id="map"></div>
 </div>
 
-<script src="/assets/js/leaflet/leaflet.js"></script>
 <script>
   window._accessPointPath = {{ directionsPath | json | safe }}
   window._accessPointLat = {{ lat }}
   window._accessPointLon = {{ lon }}
 </script>
-<script src="/assets/js/access-point.js"></script>

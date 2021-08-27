@@ -1,5 +1,10 @@
 ---
 layout: layouts/base.njk
+scripts: 
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/home.js
+addAccessPoints: true
+addTrips: true
 ---
 <main class="homepage">
   <div class="column-container">
@@ -40,9 +45,3 @@ layout: layouts/base.njk
     >.
   </div>
 </footer>
-<script src="/assets/js/leaflet/leaflet.js"></script>
-<script>
-  window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}
-  window._trips = {{ collections.trips | tripsJson | safe}}
-</script>
-<script src="/assets/js/home.js"></script>
