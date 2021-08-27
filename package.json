@@ -24,6 +24,8 @@
     "cssnano": "^5.0.8",
     "fs-extra": "^10.0.0",
     "gh-pages": "^3.2.3",
+    "html-minifier": "^4.0.0",
+    "leaflet": "^1.7.1",
     "luxon": "^2.0.2",
     "markdown-it": "^12.2.0",
     "node-fetch": "^2.6.1",

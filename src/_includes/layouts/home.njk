@@ -40,7 +40,7 @@ layout: layouts/base.njk
     >.
   </div>
 </footer>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="/assets/js/leaflet/leaflet.js"></script>
 <script>
   window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}
   window._trips = {{ collections.trips | tripsJson | safe}}

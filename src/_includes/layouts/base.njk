@@ -4,11 +4,26 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>{{ page.title }}</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+    <link rel="dns-prefetch" href="https://server.arcgisonline.com"/>
+    <link rel="dns-prefetch" href="https://cartodb-basemaps-a.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://cartodb-basemaps-b.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://cartodb-basemaps-c.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+    {% if metaDescription %}
+      <meta name="description" content="{{metaDescription}}"/>
+    {% endif %}
+
+  {% if lat %}
+    <meta name="geo.position" content="{{lat}}; {{lon}}">
+    <meta name="geo.placename" content="{{title}}">
+    <meta name="geo.region" content="CA">
+    {% endif %}
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      href="/assets/js/leaflet/leaflet.css"
     />
   </head>
   <body>

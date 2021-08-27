@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it')
 const { DateTime } = require('luxon')
+const htmlmin = require('html-minifier')
 
 const md = new markdownIt({
   html: true,
@@ -9,6 +10,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/sass/')
   eleventyConfig.addPassthroughCopy('./src/assets')
   eleventyConfig.addPassthroughCopy('./src/_original')
+  eleventyConfig.addPassthroughCopy({
+    './node_modules/leaflet/dist': 'assets/js/leaflet',
+  })
+
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+    if (outputPath && outputPath.endsWith('.html')) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      })
+      return minified
+    }
+
+    return content
+  })
 
   eleventyConfig.addFilter('markdown', (content) => {
     return md.render(content)

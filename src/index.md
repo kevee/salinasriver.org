@@ -1,6 +1,7 @@
 ---
 title: Salinas River Recreation Guide
 layout: layouts/home.njk
+metaDescription: This is a guide for enjoying the Salinas River
 ---
 
 # The Salinas River

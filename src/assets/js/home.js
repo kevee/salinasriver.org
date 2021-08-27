@@ -19,19 +19,6 @@
         style: { stroke: false, fillOpacity: 0.9, fill: '#055AE3' },
       }).addTo(map)
 
-      window._accessPoints.forEach((point) => {
-        const circle = L.circleMarker([point.lat, point.lon], {
-          radius: 15,
-          fillColor: '#F50022',
-          fillOpacity: 0.7,
-          stroke: false,
-        }).addTo(map)
-
-        circle.bindPopup(
-          `<h3><a href="${point.url}">${point.title}</a></h3><p>Access point</p>`
-        )
-      })
-
       window._trips.forEach((trip) => {
         const circle = L.circleMarker([trip.lat, trip.lon], {
           radius: 15,
@@ -42,6 +29,19 @@
 
         circle.bindPopup(
           `<h3><a href="${trip.url}">${trip.title}</a></h3><p>Trip, ${trip.length}</p>`
+        )
+      })
+
+      window._accessPoints.forEach((point) => {
+        const circle = L.circleMarker([point.lat, point.lon], {
+          radius: 15,
+          fillColor: '#F50022',
+          fillOpacity: 0.7,
+          stroke: false,
+        }).addTo(map)
+
+        circle.bindPopup(
+          `<h3><a href="${point.url}">${point.title}</a></h3><p>Access point</p>`
         )
       })
     })
