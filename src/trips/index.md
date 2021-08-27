@@ -15,7 +15,7 @@ river. These are listed south to north along the flow of the river.
 
 <nav class="nav-list">
 
-- [Bradley tubing](bradley)
+- [Bradley to Bradley tubing](bradley-bradley)
 - [Bradley to San Ardo](bradley-san-ardo)
 - [Blanco to River Mouth](blanco-river-mouth)
 - [River Mouth Lagoon](lagoon)

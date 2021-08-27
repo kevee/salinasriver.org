@@ -1,5 +1,5 @@
 ---
-title: Bradley Tubing
+title: Bradley to Bradley
 tags: trips
 layout: layouts/trip.njk
 lat: 35.858475
@@ -160,4 +160,6 @@ route:
   }
 ---
 
-A lazy afternoon float in Bradley.
+A classic tubing run, Bradley to Bradley is the perfect activity for a hot summer day. The water in this section is cold, so wetsuits are helpful.
+
+Because of prevailing northern afternoon winds, it's best to get in the water on the early side.

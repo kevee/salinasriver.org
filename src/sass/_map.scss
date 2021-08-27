@@ -10,6 +10,11 @@
       height: 300px;
     }
   }
+  &.medium {
+    #map {
+      height: 60vh;
+    }
+  }
   .key {
     position: absolute;
     font-size: 0.9rem;

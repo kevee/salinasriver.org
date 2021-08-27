@@ -13,7 +13,6 @@ tresspass: true
 damRelease: true
 gear:
   - Kayaks, canoes, or SUPs
-  - Water
 setUp: >
   Spot a car at [San Ardo](/access-points/san-ardo).
 safety: >

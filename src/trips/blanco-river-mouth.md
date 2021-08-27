@@ -1,5 +1,5 @@
 ---
-title: Blanco Rd to River Mouth
+title: Blanco Road to River Mouth
 tags: trips
 layout: layouts/trip.njk
 lat: 36.714710
@@ -109,6 +109,8 @@ route:
   }
 ---
 
-This trip can be run either north-to-south or south-to-north as the river backs up into a lagoon on this stretch.
+One of the most consistently-runnable sections of the river in the summer when a large lagoon backs up to Blanco.
 
-This trip requires a possible portage when the [rubber dam](/info/rubber-dam) is closed.
+This trip can be run either north-to-south or south-to-north as the river backs up into a lagoon on this stretch. It's best to check out the river first at Blanco. If there is no flow, then going from the north-to-south is a better option because the prevailing winds will be at your back.
+
+There is a [rubber dam](/info/rubber-dam) five miles from the river mouth that could require a portage if it is up.
