@@ -63,20 +63,20 @@ scripts:
     <div>
       <h3 id="{{ part.id }}">{{ part.title }}</h3>
 
-      <p class="mile"><strong>Distance:</strong> {{ part.mile }} miles</p>
-
-      {{ part.description | markdown | safe }}
+      <p class="mile"><strong>Distance:</strong> {{ part.mile }} miles<br/>
       {% if part.driving %}
 
-      <p>
         <a
           href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
           target="_blank"
           rel="noreferrer"
           >Driving directions</a
         >
-      </p>
       {% endif %}
+      </p>
+
+      {{ part.description | markdown | safe }}
+      
       </div>
 
       <img src="/assets/images/static-maps/{{ page.fileSlug }}--{{ part.id }}.jpg" alt=""/>
