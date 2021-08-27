@@ -27,7 +27,8 @@ river. These are listed south to north along the flow of the river.
 - [Bradley bridge](bradley)
 - [San Ardo](san-ardo)
 - [San Lorenzo Park](san-lorenzo-park)
-- [Elm Avenue](elm-ave)
+- [Greenfield, Elm Avenue](elm-ave)
+- [Gonzales, River Road](gonzales)
 - [Blanco Bridge](blanco)
 - [Salinas River National Wildlife Refuge](srnwr)
 

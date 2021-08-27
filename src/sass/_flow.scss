@@ -6,16 +6,16 @@
     margin-left: 1rem;
   }
   padding: 1rem;
-  background: #bde2e8;
-  border: 1px solid #adbeff;
+  background: $light-blue;
+  border: 1px solid $light-blue-border;
   &.good {
-    background: #cafdcb;
-    border-color: #4fe399;
+    background: $good-light;
+    border-color: $good-dark;
   }
 
   &.above {
-    background: #ebc1bb;
-    border-color: #eb8894;
+    background: $danger-light;
+    border-color: $danger-dark;
   }
 }
 
