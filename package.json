@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build:guages": "node ./src/_tools/guages.js ",
+    "build:static-maps": "node ./src/_tools/static-maps.js ",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:sass": "sass  --no-source-map src/sass:public/css",
@@ -20,11 +21,15 @@
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.3.2",
+    "axios": "^0.21.1",
     "cross-env": "^7.0.3",
     "cssnano": "^5.0.8",
+    "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",
     "gh-pages": "^3.2.3",
+    "glob": "^7.1.7",
     "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
     "leaflet": "^1.7.1",
     "luxon": "^2.0.2",
     "markdown-it": "^12.2.0",

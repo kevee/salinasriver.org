@@ -60,22 +60,26 @@ scripts:
   <h2>Description</h2>
   {%- for part in parts -%}
   <div class="trip-part">
-    <h3 id="{{ part.id }}">{{ part.title }}</h3>
+    <div>
+      <h3 id="{{ part.id }}">{{ part.title }}</h3>
 
-    <p class="mile"><strong>Distance:</strong> {{ part.mile }} miles</p>
+      <p class="mile"><strong>Distance:</strong> {{ part.mile }} miles</p>
 
-    {{ part.description | markdown | safe }}
-    {% if part.driving %}
+      {{ part.description | markdown | safe }}
+      {% if part.driving %}
 
-    <p>
-      <a
-        href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
-        target="_blank"
-        rel="noreferrer"
-        >Driving directions</a
-      >
-    </p>
-    {% endif %}
+      <p>
+        <a
+          href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
+          target="_blank"
+          rel="noreferrer"
+          >Driving directions</a
+        >
+      </p>
+      {% endif %}
+      </div>
+
+      <img src="/assets/images/static-maps/{{ page.fileSlug }}--{{ part.id }}.jpg" alt=""/>
   </div>
   {%- endfor -%}
 </section>

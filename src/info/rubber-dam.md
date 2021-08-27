@@ -7,8 +7,10 @@ layout: layouts/default.njk
 
 **AKA "The Rubber Dam"**
 
-The rubber dam is located approximately 5 miles up river (south) of the Salinas river mouth. It was built to provide irrigation water and prevent saltwater intrusion. When the dam is raised during the dry months, it creates a pond up river.
+The rubber dam is located approximately 5 miles up river (south) of the Salinas river mouth. It was built to provide irrigation water and prevent saltwater intrusion. When the dam is raised during the dry months, it creates a pond up river. The planned operation of the dam is:
 
-The dam should be lowered November 1 through March 31, but these dates may vary. From April 1 to May 31, the gates are raised and water oftentimes flows over them, creating a waterfall. During the summer, water usually backs up behind the dam and stops flowing over the gates.
+- **November 1 to March 31** — Lowered (water is flowing freely)
+- **April 1 to May 31** — Raised. Water typically flows over the gates during this time.
+- **June 1 to October31** — Raised. The lagood is full, and no more water flows over the dam.
 
 The dam can be easily portaged on river right. It has a safety bouy up stream, and the water above it is usually either slack or moves slowly.
