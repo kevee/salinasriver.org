@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/sass/')
   eleventyConfig.addPassthroughCopy('./src/assets')
   eleventyConfig.addPassthroughCopy('./src/_original')
+  eleventyConfig.addPassthroughCopy('./src/manifest.json')
   eleventyConfig.addPassthroughCopy({
     './node_modules/leaflet/dist': 'assets/js/leaflet',
   })
