@@ -14,6 +14,7 @@ module.exports = function (eleventyConfig) {
     './_original': 'original',
   })
   eleventyConfig.addPassthroughCopy('./src/manifest.json')
+  eleventyConfig.addPassthroughCopy('./src/robots.txt')
   eleventyConfig.addPassthroughCopy({
     './node_modules/leaflet/dist': 'assets/js/leaflet',
   })
