@@ -4,7 +4,7 @@ tags: trips
 layout: layouts/trip.njk
 lat: 35.858475
 lon: -120.783075
-flowLow: 40
+flowLow: 90
 flowHigh: 600
 length: 3.5 miles
 time: 3-5 hours

@@ -25,7 +25,7 @@ been used for years.
 
 I grew up along the river, and been in the river hundreds of times. Residents of south Monterey county are often found wading, swimming, or fishing in the river.
 
-Unlike most other waterways of the United States, there is no legal right to free navigation of the Salinas. Many Spanish land grants included complete rights to the water and water beds bounded by their borders. Those rights have been retained as the grants were divided over the years. These rights have never been thoroughly tested.
+Unlike most other waterways of the United States, there is no legal right to free navigation of the Salinas. Many Spanish land grants included complete rights to the water and water beds bounded by their borders. Those rights have been retained as the grants were divided over the years. [American Whitewater's excellent Navigability Primer](https://www.americanwhitewater.org/content/Wiki/stewardship:navigability) is an excellent resource for these legal discussions.
 
 If you are at all squeamish about even possibly being caught tresspassing, then by all means enjoy the access points and trips on the site that do not include a tresspass warning.
 
@@ -34,3 +34,5 @@ If you are at all squeamish about even possibly being caught tresspassing, then 
 Several sections of the river are surrounded by ranch land. Cows can graze the
 banks and the main channel of the river. If your dog would chase a cow, make sure
 to keep it under your control.
+
+<h2 id="strainers">Strainers</h2>
