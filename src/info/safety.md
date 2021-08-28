@@ -6,7 +6,8 @@ layout: layouts/default.njk
 # Safety
 
 Enjoying the Salinas River at public access points is both safe and fun,
-but certain activities carry more risk than others.
+but certain activities carry more risk than others. Make sure to also be aware
+of your [rights and responsibilities involving tresspassing](/info/tresspass).
 
 <h2 id="water">Water</h2>
 

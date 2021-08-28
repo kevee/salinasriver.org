@@ -16,9 +16,9 @@ While there is confusion about whether you are allowed to actually float on the 
 
 > In the California court case of People v. Mack, the ruling stated, “The public has the right to navigate below the high water mark on rivers which are capable of being navigated by small recreational craft.” In other words, the definition of navigability in California rests on whether the river is capable of floating a canoe or kayak. American Whitewater strongly advocates this test of navigability.
 
-In addition, the river is listed as navigable in [state Harbors and Navigation Code](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HNC&sectionNum=105.), although People v. Mack states:
+In conclusion, People v. Mack states:
 
-> The Legislature's failure to include a water course within its listing of waterways did not and cannot cede such waterways into private ownership.
+> The streams of California are a vital recreational resource of the state. The modern determinations of the California courts, as well as those of several of the states, as to the test of navigability can well be restated as follows: members of the public have the right to navigate and to exercise the incidents of navigation in a lawful manner at any point below high water mark on waters of this state which are capable of being navigated by oar or motor propelled small creaft.
 
 The land surrounding the river is definitely private. Protect your access to the river by:
 
