@@ -9,7 +9,7 @@ metaDescription: A guide for enjoying the Salinas River
 ## A recreation guide
 
 **This is a guide for enjoying the Salinas River**. It
-flows for 170 miles south to north. It is home to beavers and bald
+flows for 170 miles south to north in Central California. It is home to beavers and bald
 eagles. Residents noodle on its banks for catfish, and cool off in
 its silty waters in the summer.
 
