@@ -9,9 +9,7 @@ scripts:
 
 # Trips
 
-Places to enter and exit the Salinas River safely. Most access points
-are either at bridges or in parks and open spaces that border the
-river.
+Suggested iteneraries for floating the Salinas. Because there is **no whitewater** on the river, you can use a variety of craft for these trips, but read descriptions carefully for other hazards like strainers, which require at least a little boating skill to navigate.
 
 <nav class="nav-list">
 
