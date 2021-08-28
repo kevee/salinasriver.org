@@ -1,3 +1,4 @@
+require('dotenv').config()
 const markdownIt = require('markdown-it')
 const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
@@ -17,18 +18,20 @@ module.exports = function (eleventyConfig) {
     './node_modules/leaflet/dist': 'assets/js/leaflet',
   })
 
-  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
-    if (outputPath && outputPath.endsWith('.html')) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      })
-      return minified
-    }
+  if (typeof process.env.SALINAS_RIVER_LOCAL === 'undefined') {
+    eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+      if (outputPath && outputPath.endsWith('.html')) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+        })
+        return minified
+      }
 
-    return content
-  })
+      return content
+    })
+  }
 
   eleventyConfig.addFilter('markdown', (content) => {
     return md.render(content)
