@@ -11,26 +11,39 @@
       >
     </dd>
   </div>
-  <div>
-    <dt>Current flow</dt>
+  {% if tags == 'accessPoint' %}
+    <div>
+    <dt>Water level</dt>
     <dd>
-      {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
-      endif %} <abbr title="Cubic-feet per second">cfs</abbr>
-      {% if guages[guage].cfs >= flowLow and guages[guage].cfs <= flowHigh %}
-      <span class="flow-inline good">Good flow</span>{% endif %} {% if
-      guages[guage].cfs < flowLow and guages[guage].cfs >= 0%}<span
-        class="flow-inline below"
-        >Below recommended flow</span
-      >{% endif %} {% if guages[guage].cfs > flowHigh %}<span
-        class="flow-inline above"
-        >Above recommended flow</span
-      >{% endif %}{% if guages[guage].cfs < 0 and flowLow > 0%}<span
-        class="flow-inline none"
-        >No flow</span
-      >{% endif %}
-      <small class="flow-update">Updated {% buildDate %}</small>
-    </dd>
-  </div>
+    {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
+        endif %} <abbr title="Cubic-feet per second">cfs</abbr> &amp;
+        {% if guages[guage].height < 0 %} 0 {% else %}{{ guages[guage].height }} {%
+        endif %} feet deep
+    <small class="flow-update">Updated {% buildDate %}</small></dd>
+    </div>
+  {% endif  %}
+  {% if tags == 'trips' %}
+    <div>
+      <dt>Current flow</dt>
+      <dd>
+        {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
+        endif %} <abbr title="Cubic-feet per second">cfs</abbr>
+        {% if guages[guage].cfs >= flowLow and guages[guage].cfs <= flowHigh %}
+        <span class="flow-inline good">Good flow</span>{% endif %} {% if
+        guages[guage].cfs < flowLow and guages[guage].cfs >= 0%}<span
+          class="flow-inline below"
+          >Below recommended flow</span
+        >{% endif %} {% if guages[guage].cfs > flowHigh %}<span
+          class="flow-inline above"
+          >Above recommended flow</span
+        >{% endif %}{% if guages[guage].cfs < 0 and flowLow > 0%}<span
+          class="flow-inline none"
+          >No flow</span
+        >{% endif %}
+        <small class="flow-update">Updated {% buildDate %}</small>
+      </dd>
+    </div>
+  {% endif %}
   {% if damRelease %}
     <div>
       <dt>Dam release</dt>
