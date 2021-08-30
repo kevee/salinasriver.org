@@ -29,6 +29,8 @@ river. These are listed south to north along the flow of the river.
 - [San Lorenzo Park](san-lorenzo-park)
 - [Greenfield, Elm Avenue](elm-ave)
 - [Gonzales, River Road](gonzales)
+- [Toro Creek](toro-creek)
+- [David Road Bridge](david-bridge)
 - [Blanco Bridge](blanco)
 - [Salinas River National Wildlife Refuge](srnwr)
 
