@@ -17,6 +17,11 @@ setUp: >
   Spot a car at [San Ardo](/access-points/san-ardo).
 safety: >
   There are several barbed-wire fences that cross the river. The flow is never very high, so it is easy to spot these and make your way to the river's edge. There are several narrow sections that at higher flows have moderate strainers. Stay close to the main flow in these areas.
+accessPoints:
+  - id: bradley
+    putIn: true
+  - id: san-ardo
+    takeOut: true
 parts:
   - title: Put-in
     id: put-in

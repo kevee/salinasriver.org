@@ -16,6 +16,11 @@ gear:
   - Wetsuits unless the weather is very warm
 setUp: >
   Spot a car at the [northern Bradley bridge](/access-points/bradley).
+accessPoints:
+  - id: bradley-south
+    putIn: true
+  - id: bradley
+    takeOut: true
 parts:
   - title: Put-in
     id: put-in

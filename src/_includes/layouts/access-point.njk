@@ -17,6 +17,20 @@ scripts:
 <dl role="list">
   {% include 'overview.njk' %}
   <div>
+    <dt>Related trips</dt>
+    <dd>
+    <ul class="inline-list">
+      {% for trip in collections.trips %}
+        {%for point in trip.data.accessPoints %}
+          {% if point.id == page.fileSlug %}
+            <li><a href="/trips/{{ trip.fileSlug }}">{{ trip.data.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ul>
+    </dd>
+  </div>
+  <div>
     <dt>Driving directions</dt>
     <dd><a
     href="https://www.google.com/maps/dir/{{ lat }},{{ lon }}"

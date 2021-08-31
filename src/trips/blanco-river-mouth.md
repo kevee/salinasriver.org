@@ -15,6 +15,11 @@ gear:
   - Kayaks, canoes, or SUPs
 setUp: >
   Spot a car at [Salinas River Wildlife Refuge](/access-point/srnwr) if going south-to-north, or [Blanco bridge](/access-points/blanco) if traveling north-to-south.
+accessPoints:
+  - id: blanco
+    putIn: true
+  - id: srnwr
+    takeOut: true
 parts:
   - title: Put-in
     id: put-in

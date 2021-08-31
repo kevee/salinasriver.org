@@ -15,6 +15,10 @@ gear:
   - Kayaks, canoes, or SUPs
 setUp: >
   Park at the [Salinas River Wildlife Refuge](/access-point/srnwr).
+accessPoints:
+  - id: srnwr
+    putIn: true
+    takeOut: true
 parts:
   - title: Put-in & take-out
     id: put-in

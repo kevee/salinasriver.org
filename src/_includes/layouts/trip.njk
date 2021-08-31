@@ -26,6 +26,26 @@ scripts:
     <dt>Time</dt>
     <dd>{{ time }}</dd>
   </div>
+  <div>
+    <dt>Access points</dt>
+    <dd>{%for point in accessPoints %}
+    <span class="trip-access-point">
+      {% if point.putIn and point.takeOut%}
+        Put-in and take-out:
+      {% else %}
+        {% if point.putIn %}Put-in:{%endif %}
+        {% if point.takeOut %}Take-out:{%endif%} 
+      {% endif %}
+      <a href="/access-points/{{ point.id }}">
+        {% for accessPoint in collections.accessPoint %}
+          {% if accessPoint.fileSlug == point.id %}
+            {{ accessPoint.data.title }}
+          {% endif %}
+        {% endfor %}</a> 
+    </span>
+    {% endfor %}
+    </dd>
+  </div>
   {% include 'overview.njk' %}
   {% if gear %}
   <div>
