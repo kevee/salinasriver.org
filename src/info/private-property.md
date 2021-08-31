@@ -1,9 +1,9 @@
 ---
-title: Tresspass
+title: Private property
 layout: layouts/default.njk
 ---
 
-# Tresspassing
+# Private property
 
 **Dislcaimer** this website should not be construed as, and it does not constitute, legal advice on any specific matter.
 

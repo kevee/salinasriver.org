@@ -2,6 +2,11 @@ header {
   background: $light-blue;
   font-family: 'Open Sans', sans-serif;
   padding: 1rem;
+  .container {
+    @media (max-width: 850px) {
+      margin: 0;
+    }
+  }
   ul {
     display: flex;
     flex-wrap: wrap;
