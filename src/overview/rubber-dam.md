@@ -3,6 +3,14 @@ title: Rubber dam
 layout: layouts/default.njk
 ---
 
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/overview">Overview</a></li>
+    <li><a href="#" aria-current="page">{{ title }}</a></li>
+  </ol>
+</nav>
+
 # The Salinas River diversion facility
 
 **AKA "The Rubber Dam"**

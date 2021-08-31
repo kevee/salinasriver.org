@@ -3,11 +3,19 @@ title: Safety
 layout: layouts/default.njk
 ---
 
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/overview">Overview</a></li>
+    <li><a href="#" aria-current="page">{{ title }}</a></li>
+  </ol>
+</nav>
+
 # Safety
 
 Enjoying the Salinas River at public access points is both safe and fun,
 but certain activities carry more risk than others. Make sure to also be aware
-of your [rights and responsibilities involving tresspassing](/info/tresspass).
+of your [rights and responsibilities involving tresspassing](/overview/tresspass).
 
 Whatever your activity, make sure to
 <a href="https://www.paddlewise.org/" target="_blank" rel="noreferr">follow paddle-wise principles</a>.

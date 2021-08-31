@@ -3,6 +3,13 @@ title: Overview
 layout: layouts/default.njk
 ---
 
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="#" aria-current="page">{{ title }}</a></li>
+  </ol>
+</nav>
+
 # Overview of the Salinas River
 
 ## [Safety](safety)

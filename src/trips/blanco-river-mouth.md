@@ -33,7 +33,7 @@ parts:
     id: dam
     mile: 3.5
     description: >
-      The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam. [Learn more about the rubber dam](/info/rubber-dam).
+      The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam. [Learn more about the rubber dam](/overview/rubber-dam).
     lat: 36.709093
     lon: -121.750769
     caution: true
@@ -118,6 +118,6 @@ One of the most consistently-runnable sections of the river in the summer when a
 
 This trip can be run either north-to-south or south-to-north as the river backs up into a lagoon on this stretch. It's best to check out the river first at Blanco. If there is no flow, then going from the north-to-south is a better option because the prevailing winds will be at your back.
 
-There is a [rubber dam](/info/rubber-dam) five miles from the river mouth that could require a portage if it is up.
+There is a [rubber dam](/overview/rubber-dam) five miles from the river mouth that could require a portage if it is up.
 
 When there is no flow, large expanses of duckweed can clog the waterway, making paddling extremely slow above the dam.

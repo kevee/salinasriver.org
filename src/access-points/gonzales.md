@@ -34,4 +34,4 @@ directionsPath:
   }
 ---
 
-This access point is usually the northernmost point of navigable water when the [Nacimiento dam release](/info/dam-release) is at its highest.
+This access point is usually the northernmost point of navigable water when the [Nacimiento dam release](/overview/dam-release) is at its highest.
