@@ -16,6 +16,15 @@ scripts:
 <h1>{{ title }}</h1>
 <dl role="list">
   {% include 'overview.njk' %}
+  {% set showTrips = false %}
+  {% for trip in collections.trips %}
+        {%for point in trip.data.accessPoints %}
+          {% if point.id == page.fileSlug %}
+            {% set showTrips = true %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+  {% if showTrips %}
   <div>
     <dt>Related trips</dt>
     <dd>
@@ -30,6 +39,7 @@ scripts:
       </ul>
     </dd>
   </div>
+  {% endif %}
   <div>
     <dt>Driving directions</dt>
     <dd><a
