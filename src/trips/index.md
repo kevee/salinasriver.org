@@ -15,7 +15,7 @@ Suggested iteneraries for floating the Salinas. Because there is **no whitewater
 
 - **Tubing**
   - [Bradley to Bradley](bradley-bradley)
-- **Boating**
+- **Paddling**
   - [Bradley to San Ardo](bradley-san-ardo)
   - [Blanco to River Mouth](blanco-river-mouth)
   - [River Mouth Lagoon](lagoon)

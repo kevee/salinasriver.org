@@ -12,6 +12,8 @@ layout: layouts/default.njk
 
 # Overview of the Salinas River
 
+The Salinas has been called an "upside down" river. It flows south-to-north between the counties of San Luis Obispo and Monterey. It is in many places completely dry on the surface, but water continues to run deep underground.
+
 ## [Safety](safety)
 
 Specific things to keep in mind when taking a trip down the Salinas.
