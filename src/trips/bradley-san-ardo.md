@@ -40,6 +40,15 @@ parts:
     lon: -120.867892
     caution: true
     driving: false
+  - title: San Ardo Oil fields
+    id: oil-field
+    mile: 8
+    description: >
+      The San Ardo oil fields are dangerous operating oil fields, do not try and exit the river here except in emergencies. The bridge over the river is not a good access point and is all on private land with no public easement.
+    lat: 35.960910
+    lon: -120.881843
+    caution: true
+    driving: false
   - title: Second Barbed-wire fence
     id: fence-b
     mile: 9.2
