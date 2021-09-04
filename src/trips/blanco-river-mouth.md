@@ -38,6 +38,14 @@ parts:
     lon: -121.750769
     caution: true
     driving: false
+  - title: Alternate take-out
+    id: take-out-alternative
+    mile: 5.6
+    description: >
+      Exit the river right as you pass under highway 1, after the abandoned railroad bridge, at the [Monte Road access point](/access-point/monte).
+    lat: 36.732174
+    lon: -121.782579
+    driving: true
   - title: Take-out
     id: take-out
     mile: 5.6
