@@ -54,8 +54,8 @@ parts:
     mile: 9.2
     description: >
       A barbed-wire fence crosses the river. Pass boats over the fence river right.
-    lat: 35.968445
-    lon: -120.888480
+    lat: 35.968675
+    lon: -120.888704
     caution: true
     driving: false
   - title: Take-out
