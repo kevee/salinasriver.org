@@ -168,3 +168,5 @@ route:
 A classic tubing run, Bradley to Bradley is the perfect activity for a hot summer day. The water in this section is cold, so wetsuits are helpful.
 
 Because of prevailing northern afternoon winds, it's best to get in the water on the early side.
+
+Note that this is land on Camp Roberts, and whenever there is active training in the area, your access to the river can be closed.

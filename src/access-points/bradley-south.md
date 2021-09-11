@@ -31,4 +31,4 @@ directionsPath:
 
 ---
 
-This is the typical put-in for the popular [Bradley tubing trip](/trips/bradley).
+This is the typical put-in for the popular [Bradley tubing trip](/trips/bradley). Note that this is land on Camp Roberts, and whenever there is active training in the area, your access to the river can be closed.
