@@ -4,7 +4,7 @@
       {% if flowLow >= 0 %}{{ flowLow }}{% else %}0{% endif %} to {{ flowHigh }}
       <abbr title="Cubic-feet per second">cfs</abbr> at
       <a
-        href="https://waterdata.usgs.gov/nwis/uv?site_no={{ guages[guage].id }}"
+        href="https://waterdata.usgs.gov/monitoring-location/{{ guages[guage].id }}"
         target="_blank"
         rel="noreferrer"
         >{{ guages[guage].label }}</a
