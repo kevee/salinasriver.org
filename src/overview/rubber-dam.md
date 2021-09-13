@@ -3,11 +3,7 @@ title: Rubber dam
 layout: layouts/default.njk
 scripts:
   - /assets/js/leaflet/leaflet.js
-  - /assets/js/sidebar-map.js
-sidebarMap:
-  lat: 36.709082
-  lon: -121.750659
-  zoom: 10
+  - /assets/js/content-map.js
 breadcrumbs:
   - name: Home
     link: /
@@ -26,3 +22,8 @@ The rubber dam is located approximately 5 miles up river (south) of the Salinas 
 - **June 1 to October 31** — Raised. The lagood is full, and no more water flows over the dam.
 
 The dam can be easily portaged on river right. It has a safety bouy up stream, and the water above it is usually either slack or moves slowly.
+
+<div class="map short bordered">
+  <div id="map" data-lat="36.709082" data-lon="-121.750659" data-zoom="10"></div>
+  <p class="note">Location of the diversion facility</p>
+</div>

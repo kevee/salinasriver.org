@@ -1,6 +1,9 @@
 ---
 title: Nacimiento dam release
 layout: layouts/default.njk
+scripts:
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/content-map.js
 breadcrumbs:
   - name: Home
     link: /
@@ -29,4 +32,9 @@ Most of the water-related activities on the southern Salinas depend on dam relea
 
 <small>From the [Monterey County Water Resources Agency](https://www.co.monterey.ca.us/home/showdocument?id=22193).</small>
 
-The water flows down Nacimiento River and [joins up with the Salinas](https://www.google.com/maps/place/Nacimiento+River/@35.8324644,-120.7757394,14z) just south of the town of Bradley. When the [river guage at Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) is over 400 cfs (it is currently {{guages.bradley.cfs}}), the water can sometimes reach beyond King City.
+The water flows down Nacimiento River and joins up with the Salinas just south of the town of Bradley. When the [river guage at Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) is over 400 cfs (it is currently {{guages.bradley.cfs}}), the water can sometimes reach beyond King City.
+
+<div class="map medium bordered">
+  <div id="map" data-lat="35.832921" data-lon="-120.756226" data-zoom="11"></div>
+  <p class="note">Where the Nacimiento joins up with the Salinas.</p>
+</div>

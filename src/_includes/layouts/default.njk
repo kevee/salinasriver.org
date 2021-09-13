@@ -25,6 +25,8 @@ layout: layouts/base.njk
       </ol>
     </nav>
   {% endif %}
-  <section>{{ content | safe }}</section>
+  <section>
+    {{ content | safe }}
+  </section>
 </div>
 {% include 'footer.njk' %}

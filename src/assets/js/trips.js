@@ -2,7 +2,7 @@
   fetch('/assets/js/river.json')
     .then((response) => response.json())
     .then((river) => {
-      var map = L.map('map').setView(
+      const map = L.map('map').setView(
         [36.44525673494023, -121.3909406528181],
         9.5
       )
