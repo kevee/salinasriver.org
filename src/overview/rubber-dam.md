@@ -1,15 +1,19 @@
 ---
 title: Rubber dam
 layout: layouts/default.njk
+scripts:
+  - /assets/js/leaflet/leaflet.js
+  - /assets/js/sidebar-map.js
+sidebarMap:
+  lat: 36.709082
+  lon: -121.750659
+  zoom: 10
+breadcrumbs:
+  - name: Home
+    link: /
+  - name: Overview
+    link: /overview
 ---
-
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/overview">Overview</a></li>
-    <li><a href="#" aria-current="page">{{ title }}</a></li>
-  </ol>
-</nav>
 
 # The Salinas River diversion facility
 

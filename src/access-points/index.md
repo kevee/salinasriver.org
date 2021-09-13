@@ -5,14 +5,11 @@ addAccessPoints: true
 scripts:
   - /assets/js/leaflet/leaflet.js
   - /assets/js/access-points.js
----
 
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="#" aria-current="page">Access points</a></li>
-  </ol>
-</nav>
+breadcrumbs:
+  - name: Home
+    link: /
+---
 
 # Access points
 

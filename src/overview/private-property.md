@@ -1,15 +1,12 @@
 ---
 title: Private property
 layout: layouts/default.njk
+breadcrumbs:
+  - name: Home
+    link: /
+  - name: Overview
+    link: /overview
 ---
-
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/overview">Overview</a></li>
-    <li><a href="#" aria-current="page">{{ title }}</a></li>
-  </ol>
-</nav>
 
 # Private property
 
@@ -24,7 +21,7 @@ While there is confusion about whether you are allowed to actually float on the 
 
 > In the California court case of People v. Mack, the ruling stated, “The public has the right to navigate below the high water mark on rivers which are capable of being navigated by small recreational craft.” In other words, the definition of navigability in California rests on whether the river is capable of floating a canoe or kayak. American Whitewater strongly advocates this test of navigability.
 
-In conclusion, People v. Mack states:
+_People v. Mack_ states:
 
 > The streams of California are a vital recreational resource of the state. The modern determinations of the California courts, as well as those of several of the states, as to the test of navigability can well be restated as follows: members of the public have the right to navigate and to exercise the incidents of navigation in a lawful manner at any point below high water mark on waters of this state which are capable of being navigated by oar or motor propelled small creaft.
 
@@ -33,4 +30,5 @@ The land surrounding the river is definitely private. Protect your access to the
 - Staying only on the shores of main river channels
 - Only use [defined access points](/access-points) to enter and exit the river
 - Never cross over a fence to enter/access the river. There are some fences which cross the river. These are used to define grazing areas for cattle. Pass below or above these safely without damaging the fence.
+- You may walk on private property to safetly portage an obstacle.
 - Leave no trace

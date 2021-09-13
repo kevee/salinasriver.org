@@ -1,15 +1,12 @@
 ---
 title: Safety
 layout: layouts/default.njk
+breadcrumbs:
+  - name: Home
+    link: /
+  - name: Overview
+    link: /overview
 ---
-
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/overview">Overview</a></li>
-    <li><a href="#" aria-current="page">{{ title }}</a></li>
-  </ol>
-</nav>
 
 # Safety
 

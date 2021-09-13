@@ -15,6 +15,16 @@ layout: layouts/base.njk
   </div>
 </header>
 <div class="container">
+  {% if breadcrumbs %}
+    <nav class="breadcrumbs" aria-label="breadcrumbs">
+      <ol>
+        {% for breadcrumb in breadcrumbs %}
+          <li><a href="{{breadcrumb.link}}">{{breadcrumb.name}}</a></li>
+        {% endfor %}
+        <li><a href="#" aria-current="page">{{ title }}</a></li>
+      </ol>
+    </nav>
+  {% endif %}
   <section>{{ content | safe }}</section>
 </div>
 {% include 'footer.njk' %}

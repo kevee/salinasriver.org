@@ -5,6 +5,10 @@ addTrips: true
 scripts:
   - /assets/js/leaflet/leaflet.js
   - /assets/js/trips.js
+
+breadcrumbs:
+  - name: Home
+    link: /
 ---
 
 # Trips
