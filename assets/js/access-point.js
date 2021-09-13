@@ -1,5 +1,5 @@
 ;(() => {
-  var map = L.map('map').setView(
+  const map = L.map('map').setView(
     [window._accessPointLat, window._accessPointLon],
     15
   )

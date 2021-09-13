@@ -1,5 +1,5 @@
 ;(() => {
-  var map = L.map('map').setView([36.5084398, -121.4912514], 10)
+  const map = L.map('map').setView([36.5084398, -121.4912514], 10)
 
   L.tileLayer(
     'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
