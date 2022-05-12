@@ -17,20 +17,20 @@ Most of the water-related activities on the southern Salinas depend on dam relea
 
 | Month     | Combined release (<abbr title="Cubic-feet per second">cfs</abbr>) |
 | --------- | ----------------------------------------------------------------- |
-| January   | 74                                                                |
-| February  | 70                                                                |
-| March     | 70                                                                |
-| April     | 536                                                               |
-| May       | 521                                                               |
-| June      | 594                                                               |
-| July      | 540                                                               |
+| January   | 77                                                                |
+| February  | 77                                                                |
+| March     | 76                                                                |
+| April     | 74                                                                |
+| May       | 70                                                                |
+| June      | 70                                                                |
+| July      | 70                                                                |
 | August    | 70                                                                |
 | September | 70                                                                |
 | October   | 70                                                                |
 | November  | 70                                                                |
 | December  | 70                                                                |
 
-<small>From the [Monterey County Water Resources Agency](https://www.co.monterey.ca.us/home/showdocument?id=22193).</small>
+<small>From the [Monterey County Water Resources Agency](https://www.co.monterey.ca.us/home/showpublisheddocument/22193/637868182584870000).</small>
 
 The water flows down Nacimiento River and joins up with the Salinas just south of the town of Bradley. When the [river guage at Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) is over 400 cfs (it is currently {{guages.bradley.cfs}}), the water can sometimes reach beyond King City.
 
