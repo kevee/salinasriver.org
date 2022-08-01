@@ -11,6 +11,7 @@ time: 8-10 hours
 guage: bradley
 tresspass: true
 damRelease: true
+alert: This trip point is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). Access may be cut off.
 gear:
   - Kayaks, canoes, or SUPs
 setUp: >

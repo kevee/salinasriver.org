@@ -10,6 +10,7 @@ length: 3.5 miles
 time: 3-5 hours
 guage: bradley
 tresspass: true
+alert: This trip point is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). Access may be cut off.
 damRelease: true
 gear:
   - Tubes

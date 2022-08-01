@@ -57,3 +57,12 @@ ul.inline-list {
     }
   }
 }
+
+.alert {
+  border: 1px solid $danger-dark;
+  background: $danger-light;
+  padding: 1rem;
+  a {
+    color: $danger-link;
+  }
+}

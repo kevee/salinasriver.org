@@ -7,47 +7,64 @@ scripts:
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/access-points">Access points</a></li>
-    <li><a href="#" aria-current="page">{{ title }}</a></li>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/access-points">Access points</a>
+    </li>
+    <li>
+      <a href="#" aria-current="page">{{ title }}</a>
+    </li>
   </ol>
 </nav>
 
 <h1>{{ title }}</h1>
+
+{% if alert %}
+  <div class="alert" role="alert">
+    {{ alert | markdown | safe}}
+  </div>
+{% endif %}
+
 <dl role="list">
   {% include 'overview.njk' %}
   {% set showTrips = false %}
   {% for trip in collections.trips %}
-        {%for point in trip.data.accessPoints %}
-          {% if point.id == page.fileSlug %}
-            {% set showTrips = true %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+    {%for point in trip.data.accessPoints %}
+      {% if point.id == page.fileSlug %}
+        {% set showTrips = true %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
   {% if showTrips %}
-  <div>
-    <dt>Related trips</dt>
-    <dd>
-    <ul class="inline-list">
-      {% for trip in collections.trips %}
-        {%for point in trip.data.accessPoints %}
-          {% if point.id == page.fileSlug %}
-            <li><a href="/trips/{{ trip.fileSlug }}">{{ trip.data.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-      </ul>
-    </dd>
-  </div>
+    <div>
+      <dt>Related trips</dt>
+      <dd>
+        <ul class="inline-list">
+          {% for trip in collections.trips %}
+            {%for point in trip.data.accessPoints %}
+              {% if point.id == page.fileSlug %}
+                <li>
+                  <a href="/trips/{{ trip.fileSlug }}">{{ trip.data.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </dd>
+    </div>
   {% endif %}
   <div>
     <dt>Driving directions</dt>
-    <dd><a
+    <dd>
+      <a
     href="https://www.google.com/maps/dir/{{ lat }},{{ lon }}"
     target="_blank"
     rel="noreferrer"
     >View in Google maps</a
-  ></dd>
+  >
+    </dd>
   </div>
 </dl>
 <div class="report-alert">
@@ -56,12 +73,9 @@ scripts:
 
 {{ content | safe}}
 
-
 <h2>Directions</h2>
 
-
 {{ directions | markdown | safe }}
-
 
 <div class="map short">
   <div id="map"></div>

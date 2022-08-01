@@ -7,8 +7,12 @@ scripts:
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/trips">Trips</a></li>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/trips">Trips</a>
+    </li>
     <li>
       <a href="#" aria-current="page">{{ title }}</a>
     </li>
@@ -16,6 +20,12 @@ scripts:
 </nav>
 
 <h1>{{ title }}</h1>
+
+{% if alert %}
+  <div class="alert" role="alert">
+    {{ alert | markdown | safe}}
+  </div>
+{% endif %}
 
 <dl role="list">
   <div>
@@ -28,86 +38,89 @@ scripts:
   </div>
   <div>
     <dt>Access points</dt>
-    <dd>{%for point in accessPoints %}
-    <span class="trip-access-point">
-      {% if point.putIn and point.takeOut%}
+    <dd>
+      {%for point in accessPoints %}
+        <span class="trip-access-point">
+          {% if point.putIn and point.takeOut%}
         Put-in and take-out:
       {% else %}
-        {% if point.putIn %}Put-in:{%endif %}
-        {% if point.takeOut %}Take-out:{%endif%} 
-      {% endif %}
-      <a href="/access-points/{{ point.id }}">
-        {% for accessPoint in collections.accessPoint %}
-          {% if accessPoint.fileSlug == point.id %}
-            {{ accessPoint.data.title }}
-          {% endif %}
-        {% endfor %}</a> 
-    </span>
-    {% endfor %}
-    </dd>
-  </div>
-  {% include 'overview.njk' %}
-  {% if gear %}
-  <div>
-    <dt>Gear</dt>
-    <dd>
-      <ul>
-        {% for gearItem in gear %}
-        <li>{{ gearItem }}</li>
+            {% if point.putIn %}Put-in:{%endif %}
+            {% if point.takeOut %}Take-out:{%endif%}
+            {% endif %}
+            <a href="/access-points/{{ point.id }}">
+              {% for accessPoint in collections.accessPoint %}
+                {% if accessPoint.fileSlug == point.id %}
+                  {{ accessPoint.data.title }}
+                {% endif %}
+              {% endfor %}
+            </a>
+          </span>
         {% endfor %}
-      </ul>
-    </dd>
-  </div>
-  {% endif %}
-</dl>
-<div class="report-alert">
+      </dd>
+    </div>
+    {% include 'overview.njk' %}
+    {% if gear %}
+      <div>
+        <dt>Gear</dt>
+        <dd>
+          <ul>
+            {% for gearItem in gear %}
+              <li>{{ gearItem }}</li>
+            {% endfor %}
+          </ul>
+        </dd>
+      </div>
+    {% endif %}
+  </dl>
+  <div class="report-alert">
   Help protect your river rights. &nbsp;<a href="/report">Let us know if you have gone on this trip.</a>
-</div>
+  </div>
 
-{{ content | safe }}
+  {{ content | safe }}
 
-{% if safety %}
-{{ safety | markdown | safe }}
-{% endif %}
+  {% if safety %}
+    {{ safety | markdown | safe }}
+  {% endif %}
 
+  <div class="map medium">
+    <div id="map"></div>
+  </div>
 
-<div class="map medium">
-  <div id="map"></div>
-</div>
+  <h3>Set-up</h3>
 
-<h3>Set-up</h3>
+  {{ setUp | markdown | safe }}
 
-{{ setUp | markdown | safe }}
+  <section class="trip-parts">
+    <h2>Description</h2>
+    {%- for part in parts -%}
+      <div class="trip-part">
+        <div>
+          <h3 id="{{ part.id }}">{{ part.title }}</h3>
 
-<section class="trip-parts">
-  <h2>Description</h2>
-  {%- for part in parts -%}
-  <div class="trip-part">
-    <div>
-      <h3 id="{{ part.id }}">{{ part.title }}</h3>
+          <p class="mile">
+            <strong>Distance:</strong>
+            {{ part.mile }} miles<br/>
+            {% if part.driving %}
 
-      <p class="mile"><strong>Distance:</strong> {{ part.mile }} miles<br/>
-      {% if part.driving %}
-
-        <a
+              <a
           href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
           target="_blank"
           rel="noreferrer"
           >Driving directions</a
         >
-      {% endif %}
-      </p>
+            {% endif %}
+          </p>
 
-      {{ part.description | markdown | safe }}
-      
+          {{ part.description | markdown | safe }}
+
+        </div>
+
+        <img src="/assets/images/static-maps/{{ page.fileSlug }}--{{ part.id }}.jpg" alt=""/>
       </div>
+    {%- endfor -%}
+  </section>
 
-      <img src="/assets/images/static-maps/{{ page.fileSlug }}--{{ part.id }}.jpg" alt=""/>
-  </div>
-  {%- endfor -%}
-</section>
-
-<script>
-  window._tripRoute = {{ route | json | safe }}
-  window._tripParts = {{ parts | json | safe }}
-</script>
+  <script>
+    window._tripRoute = {{ route | json | safe }}
+    window._tripParts = {{ parts | json | safe }}
+  </script>
