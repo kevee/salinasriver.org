@@ -20,7 +20,6 @@ When [conditions are right](/overview), you can float down long sections of the 
   - [Access points](/access-points)
   - [Trips](/trips)
   - [Overview](/overview)
-  - [Newsletter](/newsletter)
   
 </nav>
 

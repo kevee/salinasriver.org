@@ -1,4 +1,4 @@
-const fetch = require('node-fetch')
+const axios = require('axios')
 const fs = require('fs-extra')
 
 const guages = {
@@ -19,11 +19,12 @@ const guages = {
 }
 
 const run = async () => {
-  const results = await fetch(
-    `https://waterservices.usgs.gov/nwis/iv/?sites=${Object.keys(guages).join(
-      ','
-    )}&parameterCd=00060,00065&format=json`
-  ).then((response) => response.json())
+  const fetchResult = await axios({
+    url: `https://waterservices.usgs.gov/nwis/iv/?sites=${Object.keys(
+      guages
+    ).join(',')}&parameterCd=00060,00065&format=json`,
+  })
+  const results = fetchResult.data
 
   const waterLevels = {}
   let highest = 0
@@ -60,7 +61,9 @@ const run = async () => {
     }
   })
   console.log(
-    `Wrote ${waterLevels.length} water guages. Highest guage is ${highest}`
+    `Wrote ${
+      Object.keys(waterLevels).length
+    } water guages. Highest guage is ${highest}`
   )
   fs.writeJSONSync('./src/_data/guages.json', waterLevels)
 }
