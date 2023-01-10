@@ -6,22 +6,39 @@ layout: layouts/base.njk
   <div class="container">
     <nav aria-label="Main navigation">
       <ul>
-        <li><a href="/">The Salinas River</a></li>
-        <li><a href="/access-points">Access points</a></li>
-        <li><a href="/trips">Trips</a></li>
-        <li><a href="/overview">Overview</a></li>
+        <li>
+          <a href="/">The Salinas River</a>
+        </li>
+        <li>
+          <a href="/access-points">Access points</a>
+        </li>
+        <li>
+          <a href="/trips">Trips</a>
+        </li>
+        <li>
+          <a href="/overview">Overview</a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
+{% if warning.message %}
+  <div class="warning">
+    <div class="container">{{ warning.message | markdown | safe}}</div>
+  </div>
+{% endif %}
 <div class="container">
   {% if breadcrumbs %}
     <nav class="breadcrumbs" aria-label="breadcrumbs">
       <ol>
         {% for breadcrumb in breadcrumbs %}
-          <li><a href="{{breadcrumb.link}}">{{breadcrumb.name}}</a></li>
+          <li>
+            <a href="{{breadcrumb.link}}">{{breadcrumb.name}}</a>
+          </li>
         {% endfor %}
-        <li><a href="#" aria-current="page">{{ title }}</a></li>
+        <li>
+          <a href="#" aria-current="page">{{ title }}</a>
+        </li>
       </ol>
     </nav>
   {% endif %}
