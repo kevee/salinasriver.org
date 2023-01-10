@@ -1,9 +1,9 @@
 /* @preserve
- * Leaflet 1.9.3, a JS library for interactive maps. https://leafletjs.com
+ * Leaflet 1.8.0, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2022 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
-var version = "1.9.3";
+var version = "1.8.0";
 
 /*
  * @namespace Util
@@ -392,7 +392,6 @@ Class.addInitHook = function (fn) { // (Function) || (String, args...)
 };
 
 function checkDeprecatedMixinEvents(includes) {
-	/* global L: true */
 	if (typeof L === 'undefined' || !L || !L.Mixin) { return; }
 
 	includes = isArray(includes) ? includes : [includes];
@@ -500,30 +499,35 @@ var Events = {
 	},
 
 	// attach listener (without syntactic sugar now)
-	_on: function (type, fn, context, _once) {
+	_on: function (type, fn, context) {
 		if (typeof fn !== 'function') {
 			console.warn('wrong listener type: ' + typeof fn);
 			return;
 		}
+		this._events = this._events || {};
 
-		// check if fn already there
-		if (this._listens(type, fn, context) !== false) {
-			return;
+		/* get/init listeners for type */
+		var typeListeners = this._events[type];
+		if (!typeListeners) {
+			typeListeners = [];
+			this._events[type] = typeListeners;
 		}
 
 		if (context === this) {
 			// Less memory footprint.
 			context = undefined;
 		}
+		var newListener = {fn: fn, ctx: context},
+		    listeners = typeListeners;
 
-		var newListener = {fn: fn, ctx: context};
-		if (_once) {
-			newListener.once = true;
+		// check if fn already there
+		for (var i = 0, len = listeners.length; i < len; i++) {
+			if (listeners[i].fn === fn && listeners[i].ctx === context) {
+				return;
+			}
 		}
 
-		this._events = this._events || {};
-		this._events[type] = this._events[type] || [];
-		this._events[type].push(newListener);
+		listeners.push(newListener);
 	},
 
 	_off: function (type, fn, context) {
@@ -531,11 +535,10 @@ var Events = {
 		    i,
 		    len;
 
-		if (!this._events) {
-			return;
-		}
+		if (!this._events) { return; }
 
 		listeners = this._events[type];
+
 		if (!listeners) {
 			return;
 		}
@@ -553,24 +556,32 @@ var Events = {
 			return;
 		}
 
+		if (context === this) {
+			context = undefined;
+		}
+
 		if (typeof fn !== 'function') {
 			console.warn('wrong listener type: ' + typeof fn);
 			return;
 		}
-
 		// find fn and remove it
-		var index = this._listens(type, fn, context);
-		if (index !== false) {
-			var listener = listeners[index];
-			if (this._firingCount) {
-				// set the removed listener to noop so that's not called if remove happens in fire
-				listener.fn = falseFn;
+		for (i = 0, len = listeners.length; i < len; i++) {
+			var l = listeners[i];
+			if (l.ctx !== context) { continue; }
+			if (l.fn === fn) {
+				if (this._firingCount) {
+					// set the removed listener to noop so that's not called if remove happens in fire
+					l.fn = falseFn;
 
-				/* copy array in case events are being fired */
-				this._events[type] = listeners = listeners.slice();
+					/* copy array in case events are being fired */
+					this._events[type] = listeners = listeners.slice();
+				}
+				listeners.splice(i, 1);
+
+				return;
 			}
-			listeners.splice(index, 1);
 		}
+		console.warn('listener not found');
 	},
 
 	// @method fire(type: String, data?: Object, propagate?: Boolean): this
@@ -588,16 +599,12 @@ var Events = {
 
 		if (this._events) {
 			var listeners = this._events[type];
+
 			if (listeners) {
 				this._firingCount = (this._firingCount + 1) || 1;
 				for (var i = 0, len = listeners.length; i < len; i++) {
 					var l = listeners[i];
-					// off overwrites l.fn, so we need to copy fn to a var
-					var fn = l.fn;
-					if (l.once) {
-						this.off(type, fn, l.ctx);
-					}
-					fn.call(l.ctx || this, event);
+					l.fn.call(l.ctx || this, event);
 				}
 
 				this._firingCount--;
@@ -613,85 +620,45 @@ var Events = {
 	},
 
 	// @method listens(type: String, propagate?: Boolean): Boolean
-	// @method listens(type: String, fn: Function, context?: Object, propagate?: Boolean): Boolean
 	// Returns `true` if a particular event type has any listeners attached to it.
 	// The verification can optionally be propagated, it will return `true` if parents have the listener attached to it.
-	listens: function (type, fn, context, propagate) {
+	listens: function (type, propagate) {
 		if (typeof type !== 'string') {
 			console.warn('"string" type argument expected');
 		}
-
-		// we don't overwrite the input `fn` value, because we need to use it for propagation
-		var _fn = fn;
-		if (typeof fn !== 'function') {
-			propagate = !!fn;
-			_fn = undefined;
-			context = undefined;
-		}
-
 		var listeners = this._events && this._events[type];
-		if (listeners && listeners.length) {
-			if (this._listens(type, _fn, context) !== false) {
-				return true;
-			}
-		}
+		if (listeners && listeners.length) { return true; }
 
 		if (propagate) {
 			// also check parents for listeners if event propagates
 			for (var id in this._eventParents) {
-				if (this._eventParents[id].listens(type, fn, context, propagate)) { return true; }
+				if (this._eventParents[id].listens(type, propagate)) { return true; }
 			}
 		}
 		return false;
-	},
-
-	// returns the index (number) or false
-	_listens: function (type, fn, context) {
-		if (!this._events) {
-			return false;
-		}
-
-		var listeners = this._events[type] || [];
-		if (!fn) {
-			return !!listeners.length;
-		}
-
-		if (context === this) {
-			// Less memory footprint.
-			context = undefined;
-		}
-
-		for (var i = 0, len = listeners.length; i < len; i++) {
-			if (listeners[i].fn === fn && listeners[i].ctx === context) {
-				return i;
-			}
-		}
-		return false;
-
 	},
 
 	// @method once(…): this
 	// Behaves as [`on(…)`](#evented-on), except the listener will only get fired once and then removed.
 	once: function (types, fn, context) {
 
-		// types can be a map of types/handlers
 		if (typeof types === 'object') {
 			for (var type in types) {
-				// we don't process space-separated events here for performance;
-				// it's a hot path since Layer uses the on(obj) syntax
-				this._on(type, types[type], fn, true);
+				this.once(type, types[type], fn);
 			}
-
-		} else {
-			// types can be a string of space-separated words
-			types = splitWords(types);
-
-			for (var i = 0, len = types.length; i < len; i++) {
-				this._on(types[i], fn, context, true);
-			}
+			return this;
 		}
 
-		return this;
+		var handler = bind(function () {
+			this
+			    .off(types, fn, context)
+			    .off(types, handler, context);
+		}, this);
+
+		// add a listener that's executed once and removed after that
+		return this
+		    .on(types, fn, context)
+		    .on(types, handler, context);
 	},
 
 	// @method addEventParent(obj: Evented): this
@@ -1007,36 +974,21 @@ function Bounds(a, b) {
 Bounds.prototype = {
 	// @method extend(point: Point): this
 	// Extends the bounds to contain the given point.
-
-	// @alternative
-	// @method extend(otherBounds: Bounds): this
-	// Extend the bounds to contain the given bounds
-	extend: function (obj) {
-		var min2, max2;
-		if (!obj) { return this; }
-
-		if (obj instanceof Point || typeof obj[0] === 'number' || 'x' in obj) {
-			min2 = max2 = toPoint(obj);
-		} else {
-			obj = toBounds(obj);
-			min2 = obj.min;
-			max2 = obj.max;
-
-			if (!min2 || !max2) { return this; }
-		}
+	extend: function (point) { // (Point)
+		point = toPoint(point);
 
 		// @property min: Point
 		// The top left corner of the rectangle.
 		// @property max: Point
 		// The bottom right corner of the rectangle.
 		if (!this.min && !this.max) {
-			this.min = min2.clone();
-			this.max = max2.clone();
+			this.min = point.clone();
+			this.max = point.clone();
 		} else {
-			this.min.x = Math.min(min2.x, this.min.x);
-			this.max.x = Math.max(max2.x, this.max.x);
-			this.min.y = Math.min(min2.y, this.min.y);
-			this.max.y = Math.max(max2.y, this.max.y);
+			this.min.x = Math.min(point.x, this.min.x);
+			this.max.x = Math.max(point.x, this.max.x);
+			this.min.y = Math.min(point.y, this.min.y);
+			this.max.y = Math.max(point.y, this.max.y);
 		}
 		return this;
 	},
@@ -1044,7 +996,7 @@ Bounds.prototype = {
 	// @method getCenter(round?: Boolean): Point
 	// Returns the center point of the bounds.
 	getCenter: function (round) {
-		return toPoint(
+		return new Point(
 		        (this.min.x + this.max.x) / 2,
 		        (this.min.y + this.max.y) / 2, round);
 	},
@@ -1052,13 +1004,13 @@ Bounds.prototype = {
 	// @method getBottomLeft(): Point
 	// Returns the bottom-left point of the bounds.
 	getBottomLeft: function () {
-		return toPoint(this.min.x, this.max.y);
+		return new Point(this.min.x, this.max.y);
 	},
 
 	// @method getTopRight(): Point
 	// Returns the top-right point of the bounds.
 	getTopRight: function () { // -> Point
-		return toPoint(this.max.x, this.min.y);
+		return new Point(this.max.x, this.min.y);
 	},
 
 	// @method getTopLeft(): Point
@@ -1138,40 +1090,9 @@ Bounds.prototype = {
 		return xOverlaps && yOverlaps;
 	},
 
-	// @method isValid(): Boolean
-	// Returns `true` if the bounds are properly initialized.
 	isValid: function () {
 		return !!(this.min && this.max);
-	},
-
-
-	// @method pad(bufferRatio: Number): Bounds
-	// Returns bounds created by extending or retracting the current bounds by a given ratio in each direction.
-	// For example, a ratio of 0.5 extends the bounds by 50% in each direction.
-	// Negative values will retract the bounds.
-	pad: function (bufferRatio) {
-		var min = this.min,
-		max = this.max,
-		heightBuffer = Math.abs(min.x - max.x) * bufferRatio,
-		widthBuffer = Math.abs(min.y - max.y) * bufferRatio;
-
-
-		return toBounds(
-			toPoint(min.x - heightBuffer, min.y - widthBuffer),
-			toPoint(max.x + heightBuffer, max.y + widthBuffer));
-	},
-
-
-	// @method equals(otherBounds: Bounds): Boolean
-	// Returns `true` if the rectangle is equivalent to the given bounds.
-	equals: function (bounds) {
-		if (!bounds) { return false; }
-
-		bounds = toBounds(bounds);
-
-		return this.min.equals(bounds.getTopLeft()) &&
-			this.max.equals(bounds.getBottomRight());
-	},
+	}
 };
 
 
@@ -2079,13 +2000,6 @@ var vml = !svg$1 && (function () {
 	}
 }());
 
-
-// @property mac: Boolean; `true` when the browser is running in a Mac platform
-var mac = navigator.platform.indexOf('Mac') === 0;
-
-// @property mac: Boolean; `true` when the browser is running in a Linux platform
-var linux = navigator.platform.indexOf('Linux') === 0;
-
 function userAgentContains(str) {
 	return navigator.userAgent.toLowerCase().indexOf(str) >= 0;
 }
@@ -2124,9 +2038,7 @@ var Browser = {
 	canvas: canvas$1,
 	svg: svg$1,
 	vml: vml,
-	inlineSvg: inlineSvg,
-	mac: mac,
-	linux: linux
+	inlineSvg: inlineSvg
 };
 
 /*
@@ -2161,7 +2073,7 @@ function addPointerListener(obj, type, handler) {
 	}
 	if (!handle[type]) {
 		console.warn('wrong event specified:', type);
-		return falseFn;
+		return L.Util.falseFn;
 	}
 	handler = handle[type].bind(this, handler);
 	obj.addEventListener(pEvent[type], handler, false);
@@ -2266,25 +2178,6 @@ function addDoubleTapListener(obj, handler) {
 		if (e.pointerType === 'mouse' ||
 			(e.sourceCapabilities && !e.sourceCapabilities.firesTouchEvents)) {
 
-			return;
-		}
-
-		// When clicking on an <input>, the browser generates a click on its
-		// <label> (and vice versa) triggering two clicks in quick succession.
-		// This ignores clicks on elements which are a label with a 'for'
-		// attribute (or children of such a label), but not children of
-		// a <input>.
-		var path = getPropagationPath(e);
-		if (path.some(function (el) {
-			return el instanceof HTMLLabelElement && el.attributes.for;
-		}) &&
-			!path.some(function (el) {
-				return (
-					el instanceof HTMLInputElement ||
-					el instanceof HTMLSelectElement
-				);
-			})
-		) {
 			return;
 		}
 
@@ -2909,26 +2802,6 @@ function stop(e) {
 	return this;
 }
 
-// @function getPropagationPath(ev: DOMEvent): Array
-// Compatibility polyfill for [`Event.composedPath()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath).
-// Returns an array containing the `HTMLElement`s that the given DOM event
-// should propagate to (if not stopped).
-function getPropagationPath(ev) {
-	if (ev.composedPath) {
-		return ev.composedPath();
-	}
-
-	var path = [];
-	var el = ev.target;
-
-	while (el) {
-		path.push(el);
-		el = el.parentNode;
-	}
-	return path;
-}
-
-
 // @function getMousePosition(ev: DOMEvent, container?: HTMLElement): Point
 // Gets normalized mouse position from a DOM event relative to the
 // `container` (border excluded) or to the whole page if not specified.
@@ -2948,15 +2821,12 @@ function getMousePosition(e, container) {
 	);
 }
 
-
-//  except , Safari and
-// We need double the scroll pixels (see #7403 and #4538) for all Browsers
-// except OSX (Mac) -> 3x, Chrome running on Linux 1x
-
+// Chrome on Win scrolls double the pixels as in other platforms (see #4538),
+// and Firefox scrolls device pixels, not CSS pixels
 var wheelPxFactor =
-	(Browser.linux && Browser.chrome) ? window.devicePixelRatio :
-	Browser.mac ? window.devicePixelRatio * 3 :
-	window.devicePixelRatio > 0 ? 2 * window.devicePixelRatio : 1;
+	(Browser.win && Browser.chrome) ? 2 * window.devicePixelRatio :
+	Browser.gecko ? window.devicePixelRatio : 1;
+
 // @function getWheelDelta(ev: DOMEvent): Number
 // Gets normalized wheel delta from a wheel DOM event, in vertical
 // pixels scrolled (negative if scrolling down).
@@ -3000,7 +2870,6 @@ var DomEvent = {
   disableClickPropagation: disableClickPropagation,
   preventDefault: preventDefault,
   stop: stop,
-  getPropagationPath: getPropagationPath,
   getMousePosition: getMousePosition,
   getWheelDelta: getWheelDelta,
   isExternalTarget: isExternalTarget,
@@ -3016,21 +2885,8 @@ var DomEvent = {
  *
  * @example
  * ```js
- * var myPositionMarker = L.marker([48.864716, 2.294694]).addTo(map);
- *
- * myPositionMarker.on("click", function() {
- * 	var pos = map.latLngToLayerPoint(myPositionMarker.getLatLng());
- * 	pos.y -= 25;
- * 	var fx = new L.PosAnimation();
- *
- * 	fx.once('end',function() {
- * 		pos.y += 25;
- * 		fx.run(myPositionMarker._icon, pos, 0.8);
- * 	});
- *
- * 	fx.run(myPositionMarker._icon, pos, 0.3);
- * });
- *
+ * var fx = new L.PosAnimation();
+ * fx.run(el, [300, 500], 0.5);
  * ```
  *
  * @constructor L.PosAnimation()
@@ -3310,7 +3166,7 @@ var Map = Evented.extend({
 		}
 
 		// animation didn't start, just reset the map view
-		this._resetView(center, zoom, options.pan && options.pan.noMoveStart);
+		this._resetView(center, zoom);
 
 		return this;
 	},
@@ -3553,13 +3409,11 @@ var Map = Evented.extend({
 	setMaxBounds: function (bounds) {
 		bounds = toLatLngBounds(bounds);
 
-		if (this.listens('moveend', this._panInsideMaxBounds)) {
-			this.off('moveend', this._panInsideMaxBounds);
-		}
-
 		if (!bounds.isValid()) {
 			this.options.maxBounds = null;
-			return this;
+			return this.off('moveend', this._panInsideMaxBounds);
+		} else if (this.options.maxBounds) {
+			this.off('moveend', this._panInsideMaxBounds);
 		}
 
 		this.options.maxBounds = bounds;
@@ -3929,7 +3783,7 @@ var Map = Evented.extend({
 		this._checkIfLoaded();
 
 		if (this._lastCenter && !this._moved()) {
-			return this._lastCenter.clone();
+			return this._lastCenter;
 		}
 		return this.layerPointToLatLng(this._getCenterLayerPoint());
 	},
@@ -4219,7 +4073,7 @@ var Map = Evented.extend({
 
 		var position = getStyle(container, 'position');
 
-		if (position !== 'absolute' && position !== 'relative' && position !== 'fixed' && position !== 'sticky') {
+		if (position !== 'absolute' && position !== 'relative' && position !== 'fixed') {
 			container.style.position = 'relative';
 		}
 
@@ -4278,7 +4132,7 @@ var Map = Evented.extend({
 	// private methods that modify map state
 
 	// @section Map state change events
-	_resetView: function (center, zoom, noMoveStart) {
+	_resetView: function (center, zoom) {
 		setPosition(this._mapPane, new Point(0, 0));
 
 		var loading = !this._loaded;
@@ -4289,7 +4143,7 @@ var Map = Evented.extend({
 
 		var zoomChanged = this._zoom !== zoom;
 		this
-			._moveStart(zoomChanged, noMoveStart)
+			._moveStart(zoomChanged, false)
 			._move(center, zoom)
 			._moveEnd(zoomChanged);
 
@@ -4486,7 +4340,7 @@ var Map = Evented.extend({
 	},
 
 	_isClickDisabled: function (el) {
-		while (el && el !== this._container) {
+		while (el !== this._container) {
 			if (el['_leaflet_disable_click']) { return true; }
 			el = el.parentNode;
 		}
@@ -4650,7 +4504,7 @@ var Map = Evented.extend({
 		// If offset is less than a pixel, ignore.
 		// This prevents unstable projections from getting into
 		// an infinite loop of tiny offsets.
-		if (Math.abs(offset.x) <= 1 && Math.abs(offset.y) <= 1) {
+		if (offset.round().equals([0, 0])) {
 			return center;
 		}
 
@@ -5209,7 +5063,13 @@ var Layers = Control.extend({
 			this._map.on('click', this.collapse, this);
 
 			on(container, {
-				mouseenter: this._expandSafely,
+				mouseenter: function () {
+					on(section, 'click', preventDefault);
+					this.expand();
+					setTimeout(function () {
+						off(section, 'click', preventDefault);
+					});
+				},
 				mouseleave: this.collapse
 			}, this);
 		}
@@ -5219,18 +5079,8 @@ var Layers = Control.extend({
 		link.title = 'Layers';
 		link.setAttribute('role', 'button');
 
-		on(link, {
-			keydown: function (e) {
-				if (e.keyCode === 13) {
-					this._expandSafely();
-				}
-			},
-			// Certain screen readers intercept the key event and instead send a click event
-			click: function (e) {
-				preventDefault(e);
-				this._expandSafely();
-			}
-		}, this);
+		on(link, 'click', preventDefault); // prevent link function
+		on(link, 'focus', this.expand, this);
 
 		if (!collapsed) {
 			this.expand();
@@ -5435,15 +5285,6 @@ var Layers = Control.extend({
 			this.expand();
 		}
 		return this;
-	},
-
-	_expandSafely: function () {
-		var section = this._section;
-		on(section, 'click', preventDefault);
-		this.expand();
-		setTimeout(function () {
-			off(section, 'click', preventDefault);
-		});
 	}
 
 });
@@ -5725,7 +5566,7 @@ var scale = function (options) {
 	return new Scale(options);
 };
 
-var ukrainianFlag = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"/><path fill="#FFD500" d="M0 4h12v3H0z"/><path fill="#E0BC00" d="M0 7h12v1H0z"/></svg>';
+var ukrainianFlag = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path fill="#4C7BE1" d="M0 0h12v4H0z"/><path fill="#FFD500" d="M0 4h12v3H0z"/><path fill="#E0BC00" d="M0 7h12v1H0z"/></svg>';
 
 
 /*
@@ -5794,7 +5635,7 @@ var Attribution = Control.extend({
 	},
 
 	// @method addAttribution(text: String): this
-	// Adds an attribution text (e.g. `'&copy; OpenStreetMap contributors'`).
+	// Adds an attribution text (e.g. `'Vector data &copy; Mapbox'`).
 	addAttribution: function (text) {
 		if (!text) { return this; }
 
@@ -6386,55 +6227,6 @@ function _flat(latlngs) {
 	return isFlat(latlngs);
 }
 
-/* @function polylineCenter(latlngs: LatLng[], crs: CRS): LatLng
- * Returns the center ([centroid](http://en.wikipedia.org/wiki/Centroid)) of the passed LatLngs (first ring) from a polyline.
- */
-function polylineCenter(latlngs, crs) {
-	var i, halfDist, segDist, dist, p1, p2, ratio, center;
-
-	if (!latlngs || latlngs.length === 0) {
-		throw new Error('latlngs not passed');
-	}
-
-	if (!isFlat(latlngs)) {
-		console.warn('latlngs are not flat! Only the first ring will be used');
-		latlngs = latlngs[0];
-	}
-
-	var points = [];
-	for (var j in latlngs) {
-		points.push(crs.project(toLatLng(latlngs[j])));
-	}
-
-	var len = points.length;
-
-	for (i = 0, halfDist = 0; i < len - 1; i++) {
-		halfDist += points[i].distanceTo(points[i + 1]) / 2;
-	}
-
-	// The line is so small in the current view that all points are on the same pixel.
-	if (halfDist === 0) {
-		center = points[0];
-	} else {
-		for (i = 0, dist = 0; i < len - 1; i++) {
-			p1 = points[i];
-			p2 = points[i + 1];
-			segDist = p1.distanceTo(p2);
-			dist += segDist;
-
-			if (dist > halfDist) {
-				ratio = (dist - halfDist) / segDist;
-				center = [
-					p2.x - ratio * (p2.x - p1.x),
-					p2.y - ratio * (p2.y - p1.y)
-				];
-				break;
-			}
-		}
-	}
-	return crs.unproject(toPoint(center));
-}
-
 var LineUtil = {
   __proto__: null,
   simplify: simplify,
@@ -6445,8 +6237,7 @@ var LineUtil = {
   _getBitCode: _getBitCode,
   _sqClosestPointOnSegment: _sqClosestPointOnSegment,
   isFlat: isFlat,
-  _flat: _flat,
-  polylineCenter: polylineCenter
+  _flat: _flat
 };
 
 /*
@@ -6503,53 +6294,9 @@ function clipPolygon(points, bounds, round) {
 	return points;
 }
 
-/* @function polygonCenter(latlngs: LatLng[] crs: CRS): LatLng
- * Returns the center ([centroid](http://en.wikipedia.org/wiki/Centroid)) of the passed LatLngs (first ring) from a polygon.
- */
-function polygonCenter(latlngs, crs) {
-	var i, j, p1, p2, f, area, x, y, center;
-
-	if (!latlngs || latlngs.length === 0) {
-		throw new Error('latlngs not passed');
-	}
-
-	if (!isFlat(latlngs)) {
-		console.warn('latlngs are not flat! Only the first ring will be used');
-		latlngs = latlngs[0];
-	}
-
-	var points = [];
-	for (var k in latlngs) {
-		points.push(crs.project(toLatLng(latlngs[k])));
-	}
-
-	var len = points.length;
-	area = x = y = 0;
-
-	// polygon centroid algorithm;
-	for (i = 0, j = len - 1; i < len; j = i++) {
-		p1 = points[i];
-		p2 = points[j];
-
-		f = p1.y * p2.x - p2.y * p1.x;
-		x += (p1.x + p2.x) * f;
-		y += (p1.y + p2.y) * f;
-		area += f * 3;
-	}
-
-	if (area === 0) {
-		// Polygon is so small that all points are on same pixel.
-		center = points[0];
-	} else {
-		center = [x / area, y / area];
-	}
-	return crs.unproject(toPoint(center));
-}
-
 var PolyUtil = {
   __proto__: null,
-  clipPolygon: clipPolygon,
-  polygonCenter: polygonCenter
+  clipPolygon: clipPolygon
 };
 
 /*
@@ -8508,7 +8255,38 @@ var Polyline = Path.extend({
 		if (!this._map) {
 			throw new Error('Must add layer to map before using getCenter()');
 		}
-		return polylineCenter(this._defaultShape(), this._map.options.crs);
+
+		var i, halfDist, segDist, dist, p1, p2, ratio,
+		    points = this._rings[0],
+		    len = points.length;
+
+		if (!len) { return null; }
+
+		// polyline centroid algorithm; only uses the first ring if there are multiple
+
+		for (i = 0, halfDist = 0; i < len - 1; i++) {
+			halfDist += points[i].distanceTo(points[i + 1]) / 2;
+		}
+
+		// The line is so small in the current view that all points are on the same pixel.
+		if (halfDist === 0) {
+			return this._map.layerPointToLatLng(points[0]);
+		}
+
+		for (i = 0, dist = 0; i < len - 1; i++) {
+			p1 = points[i];
+			p2 = points[i + 1];
+			segDist = p1.distanceTo(p2);
+			dist += segDist;
+
+			if (dist > halfDist) {
+				ratio = (dist - halfDist) / segDist;
+				return this._map.layerPointToLatLng([
+					p2.x - ratio * (p2.x - p1.x),
+					p2.y - ratio * (p2.y - p1.y)
+				]);
+			}
+		}
 	},
 
 	// @method getBounds(): LatLngBounds
@@ -8750,14 +8528,39 @@ var Polygon = Polyline.extend({
 		return !this._latlngs.length || !this._latlngs[0].length;
 	},
 
-	// @method getCenter(): LatLng
-	// Returns the center ([centroid](http://en.wikipedia.org/wiki/Centroid)) of the Polygon.
 	getCenter: function () {
 		// throws error when not yet added to map as this center calculation requires projected coordinates
 		if (!this._map) {
 			throw new Error('Must add layer to map before using getCenter()');
 		}
-		return polygonCenter(this._defaultShape(), this._map.options.crs);
+
+		var i, j, p1, p2, f, area, x, y, center,
+		    points = this._rings[0],
+		    len = points.length;
+
+		if (!len) { return null; }
+
+		// polygon centroid algorithm; only uses the first ring if there are multiple
+
+		area = x = y = 0;
+
+		for (i = 0, j = len - 1; i < len; j = i++) {
+			p1 = points[i];
+			p2 = points[j];
+
+			f = p1.y * p2.x - p2.y * p1.x;
+			x += (p1.x + p2.x) * f;
+			y += (p1.y + p2.y) * f;
+			area += f * 3;
+		}
+
+		if (area === 0) {
+			// Polygon is so small that all points are on same pixel.
+			center = points[0];
+		} else {
+			center = [x / area, y / area];
+		}
+		return this._map.layerPointToLatLng(center);
 	},
 
 	_convertLatLngs: function (latlngs) {
@@ -9042,24 +8845,14 @@ function geometryToLayer(geojson, options) {
 
 	case 'GeometryCollection':
 		for (i = 0, len = geometry.geometries.length; i < len; i++) {
-			var geoLayer = geometryToLayer({
+			var layer = geometryToLayer({
 				geometry: geometry.geometries[i],
 				type: 'Feature',
 				properties: geojson.properties
 			}, options);
 
-			if (geoLayer) {
-				layers.push(geoLayer);
-			}
-		}
-		return new FeatureGroup(layers);
-
-	case 'FeatureCollection':
-		for (i = 0, len = geometry.features.length; i < len; i++) {
-			var featureLayer = geometryToLayer(geometry.features[i], options);
-
-			if (featureLayer) {
-				layers.push(featureLayer);
+			if (layer) {
+				layers.push(layer);
 			}
 		}
 		return new FeatureGroup(layers);
@@ -9118,14 +8911,13 @@ function latLngsToCoords(latlngs, levelsDeep, closed, precision) {
 	var coords = [];
 
 	for (var i = 0, len = latlngs.length; i < len; i++) {
-		// Check for flat arrays required to ensure unbalanced arrays are correctly converted in recursion
 		coords.push(levelsDeep ?
-			latLngsToCoords(latlngs[i], isFlat(latlngs[i]) ? 0 : levelsDeep - 1, closed, precision) :
+			latLngsToCoords(latlngs[i], levelsDeep - 1, closed, precision) :
 			latLngToCoords(latlngs[i], precision));
 	}
 
 	if (!levelsDeep && closed) {
-		coords.push(coords[0].slice());
+		coords.push(coords[0]);
 	}
 
 	return coords;
@@ -9729,25 +9521,13 @@ var DivOverlay = Layer.extend({
 
 		// @option pane: String = undefined
 		// `Map pane` where the overlay will be added.
-		pane: undefined,
-
-		// @option content: String|HTMLElement|Function = ''
-		// Sets the HTML content of the overlay while initializing. If a function is passed the source layer will be
-		// passed to the function. The function should return a `String` or `HTMLElement` to be used in the overlay.
-		content: ''
+		pane: undefined
 	},
 
 	initialize: function (options, source) {
-		if (options && (options instanceof LatLng || isArray(options))) {
-			this._latlng = toLatLng(options);
-			setOptions(this, source);
-		} else {
-			setOptions(this, options);
-			this._source = source;
-		}
-		if (this.options.content) {
-			this._content = this.options.content;
-		}
+		setOptions(this, options);
+
+		this._source = source;
 	},
 
 	// @method openOn(map: Map): this
@@ -10059,18 +9839,12 @@ Layer.include({
  * marker.bindPopup(popupContent).openPopup();
  * ```
  * Path overlays like polylines also have a `bindPopup` method.
- *
- * A popup can be also standalone:
+ * Here's a more complicated way to open a popup on a map:
  *
  * ```js
  * var popup = L.popup()
  * 	.setLatLng(latlng)
  * 	.setContent('<p>Hello world!<br />This is a nice popup.</p>')
- * 	.openOn(map);
- * ```
- * or
- * ```js
- * var popup = L.popup(latlng, {content: '<p>Hello world!<br />This is a nice popup.</p>')
  * 	.openOn(map);
  * ```
  */
@@ -10101,8 +9875,6 @@ var Popup = DivOverlay.extend({
 		// @option maxHeight: Number = null
 		// If set, creates a scrollable container of the given height
 		// inside a popup if its content exceeds it.
-		// The scrollable container can be styled using the
-		// `leaflet-popup-scrolled` CSS class selector.
 		maxHeight: null,
 
 		// @option autoPan: Boolean = true
@@ -10248,10 +10020,7 @@ var Popup = DivOverlay.extend({
 			closeButton.href = '#close';
 			closeButton.innerHTML = '<span aria-hidden="true">&#215;</span>';
 
-			on(closeButton, 'click', function (ev) {
-				preventDefault(ev);
-				this.close();
-			}, this);
+			on(closeButton, 'click', this.close, this);
 		}
 	},
 
@@ -10291,16 +10060,9 @@ var Popup = DivOverlay.extend({
 		setPosition(this._container, pos.add(anchor));
 	},
 
-	_adjustPan: function () {
+	_adjustPan: function (e) {
 		if (!this.options.autoPan) { return; }
 		if (this._map._panAnim) { this._map._panAnim.stop(); }
-
-		// We can endlessly recurse if keepInView is set and the view resets.
-		// Let's guard against that by exiting early if we're responding to our own autopan.
-		if (this._autopanning) {
-			this._autopanning = false;
-			return;
-		}
 
 		var map = this._map,
 		    marginBottom = parseInt(getStyle(this._container, 'marginBottom'), 10) || 0,
@@ -10336,14 +10098,9 @@ var Popup = DivOverlay.extend({
 		// @event autopanstart: Event
 		// Fired when the map starts autopanning when opening a popup.
 		if (dx || dy) {
-			// Track that we're autopanning, as this function will be re-ran on moveend
-			if (this.options.keepInView) {
-				this._autopanning = true;
-			}
-
 			map
 			    .fire('autopanstart')
-			    .panBy([dx, dy]);
+			    .panBy([dx, dy], {animate: e && e.type === 'moveend'});
 		}
 	},
 
@@ -10357,9 +10114,6 @@ var Popup = DivOverlay.extend({
 // @namespace Popup
 // @factory L.popup(options?: Popup options, source?: Layer)
 // Instantiates a `Popup` object given an optional `options` object that describes its appearance and location and an optional `source` object that is used to tag the popup with a reference to the Layer to which it refers.
-// @alternative
-// @factory L.popup(latlng: LatLng, options?: Popup options)
-// Instantiates a `Popup` object given `latlng` where the popup will open and an optional `options` object that describes its appearance and location.
 var popup = function (options, source) {
 	return new Popup(options, source);
 };
@@ -10457,14 +10211,9 @@ Layer.include({
 	// @method openPopup(latlng?: LatLng): this
 	// Opens the bound popup at the specified `latlng` or at the default popup anchor if no `latlng` is passed.
 	openPopup: function (latlng) {
-		if (this._popup) {
-			if (!(this instanceof FeatureGroup)) {
-				this._popup._source = this;
-			}
-			if (this._popup._prepareOpen(latlng || this._latlng)) {
-				// open the popup on the map
-				this._popup.openOn(this._map);
-			}
+		if (this._popup && this._popup._prepareOpen(latlng)) {
+			// open the popup on the map
+			this._popup.openOn(this._map);
 		}
 		return this;
 	},
@@ -10548,28 +10297,10 @@ Layer.include({
  * Used to display small texts on top of map layers.
  *
  * @example
- * If you want to just bind a tooltip to marker:
  *
  * ```js
  * marker.bindTooltip("my tooltip text").openTooltip();
  * ```
- * Path overlays like polylines also have a `bindTooltip` method.
- *
- * A tooltip can be also standalone:
- *
- * ```js
- * var tooltip = L.tooltip()
- * 	.setLatLng(latlng)
- * 	.setContent('Hello world!<br />This is a nice tooltip.')
- * 	.addTo(map);
- * ```
- * or
- * ```js
- * var tooltip = L.tooltip(latlng, {content: 'Hello world!<br />This is a nice tooltip.'})
- * 	.addTo(map);
- * ```
- *
- *
  * Note about tooltip offset. Leaflet takes two options in consideration
  * for computing tooltip offsetting:
  * - the `offset` Tooltip option: it defaults to [0, 0], and it's specific to one tooltip.
@@ -10670,9 +10401,6 @@ var Tooltip = DivOverlay.extend({
 		    className = prefix + ' ' + (this.options.className || '') + ' leaflet-zoom-' + (this._zoomAnimated ? 'animated' : 'hide');
 
 		this._contentNode = this._container = create$1('div', className);
-
-		this._container.setAttribute('role', 'tooltip');
-		this._container.setAttribute('id', 'leaflet-tooltip-' + stamp(this));
 	},
 
 	_updateLayout: function () {},
@@ -10753,10 +10481,7 @@ var Tooltip = DivOverlay.extend({
 
 // @namespace Tooltip
 // @factory L.tooltip(options?: Tooltip options, source?: Layer)
-// Instantiates a `Tooltip` object given an optional `options` object that describes its appearance and location and an optional `source` object that is used to tag the tooltip with a reference to the Layer to which it refers.
-// @alternative
-// @factory L.tooltip(latlng: LatLng, options?: Tooltip options)
-// Instantiates a `Tooltip` object given `latlng` where the tooltip will open and an optional `options` object that describes its appearance and location.
+// Instantiates a Tooltip object given an optional `options` object that describes its appearance and location and an optional `source` object that is used to tag the tooltip with a reference to the Layer to which it refers.
 var tooltip = function (options, source) {
 	return new Tooltip(options, source);
 };
@@ -10844,11 +10569,6 @@ Layer.include({
 			events.mouseover = this._openTooltip;
 			events.mouseout = this.closeTooltip;
 			events.click = this._openTooltip;
-			if (this._map) {
-				this._addFocusListeners();
-			} else {
-				events.add = this._addFocusListeners;
-			}
 		} else {
 			events.add = this._openTooltip;
 		}
@@ -10862,20 +10582,9 @@ Layer.include({
 	// @method openTooltip(latlng?: LatLng): this
 	// Opens the bound tooltip at the specified `latlng` or at the default tooltip anchor if no `latlng` is passed.
 	openTooltip: function (latlng) {
-		if (this._tooltip) {
-			if (!(this instanceof FeatureGroup)) {
-				this._tooltip._source = this;
-			}
-			if (this._tooltip._prepareOpen(latlng)) {
-				// open the tooltip on the map
-				this._tooltip.openOn(this._map);
-
-				if (this.getElement) {
-					this._setAriaDescribedByOnLayer(this);
-				} else if (this.eachLayer) {
-					this.eachLayer(this._setAriaDescribedByOnLayer, this);
-				}
-			}
+		if (this._tooltip && this._tooltip._prepareOpen(latlng)) {
+			// open the tooltip on the map
+			this._tooltip.openOn(this._map);
 		}
 		return this;
 	},
@@ -10917,33 +10626,6 @@ Layer.include({
 	getTooltip: function () {
 		return this._tooltip;
 	},
-
-	_addFocusListeners: function () {
-		if (this.getElement) {
-			this._addFocusListenersOnLayer(this);
-		} else if (this.eachLayer) {
-			this.eachLayer(this._addFocusListenersOnLayer, this);
-		}
-	},
-
-	_addFocusListenersOnLayer: function (layer) {
-		var el = layer.getElement();
-		if (el) {
-			on(el, 'focus', function () {
-				this._tooltip._source = layer;
-				this.openTooltip();
-			}, this);
-			on(el, 'blur', this.closeTooltip, this);
-		}
-	},
-
-	_setAriaDescribedByOnLayer: function (layer) {
-		var el = layer.getElement();
-		if (el) {
-			el.setAttribute('aria-describedby', this._tooltip._container.id);
-		}
-	},
-
 
 	_openTooltip: function (e) {
 		if (!this._tooltip || !this._map || (this._map.dragging && this._map.dragging.moving())) {
@@ -11963,7 +11645,7 @@ function gridLayer(options) {
  * @example
  *
  * ```js
- * L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+ * L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
  * ```
  *
  * @section URL template
@@ -12050,19 +11732,13 @@ var TileLayer = GridLayer.extend({
 
 			if (!options.zoomReverse) {
 				options.zoomOffset++;
-				options.maxZoom = Math.max(options.minZoom, options.maxZoom - 1);
+				options.maxZoom--;
 			} else {
 				options.zoomOffset--;
-				options.minZoom = Math.min(options.maxZoom, options.minZoom + 1);
+				options.minZoom++;
 			}
 
 			options.minZoom = Math.max(0, options.minZoom);
-		} else if (!options.zoomReverse) {
-			// make sure maxZoom is gte minZoom
-			options.maxZoom = Math.max(options.minZoom, options.maxZoom);
-		} else {
-			// make sure minZoom is lte maxZoom
-			options.minZoom = Math.min(options.maxZoom, options.minZoom);
 		}
 
 		if (typeof options.subdomains === 'string') {
@@ -12109,11 +11785,17 @@ var TileLayer = GridLayer.extend({
 			tile.referrerPolicy = this.options.referrerPolicy;
 		}
 
-		// The alt attribute is set to the empty string,
-		// allowing screen readers to ignore the decorative image tiles.
-		// https://www.w3.org/WAI/tutorials/images/decorative/
-		// https://www.w3.org/TR/html-aria/#el-img-empty-alt
+		/*
+		 Alt tag is set to empty string to keep screen readers from reading URL and for compliance reasons
+		 https://www.w3.org/TR/WCAG20-TECHS/H67
+		*/
 		tile.alt = '';
+
+		/*
+		 Set role="presentation" to force screen readers to ignore this
+		 https://www.w3.org/TR/wai-aria/roles#textalternativecomputation
+		*/
+		tile.setAttribute('role', 'presentation');
 
 		tile.src = this.getTileUrl(coords);
 
@@ -14006,15 +13688,10 @@ var Keyboard = Handler.extend({
 					offset = toPoint(offset).multiplyBy(3);
 				}
 
-				if (map.options.maxBounds) {
-					offset = map._limitOffset(toPoint(offset), map.options.maxBounds);
-				}
+				map.panBy(offset);
 
-				if (map.options.worldCopyJump) {
-					var newLatLng = map.wrapLatLng(map.unproject(map.project(map.getCenter()).add(offset)));
-					map.panTo(newLatLng);
-				} else {
-					map.panBy(offset);
+				if (map.options.maxBounds) {
+					map.panInsideBounds(map.options.maxBounds);
 				}
 			}
 		} else if (key in this._zoomKeys) {
@@ -14312,7 +13989,7 @@ var TouchZoom = Handler.extend({
 
 		cancelAnimFrame(this._animRequest);
 
-		var moveFn = bind(map._move, map, this._center, this._zoom, {pinch: true, round: false}, undefined);
+		var moveFn = bind(map._move, map, this._center, this._zoom, {pinch: true, round: false});
 		this._animRequest = requestAnimFrame(moveFn, this, true);
 
 		preventDefault(e);
