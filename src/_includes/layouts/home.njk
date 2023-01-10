@@ -7,33 +7,43 @@ addAccessPoints: true
 addTrips: true
 ---
 <main class="homepage">
+  {% if warning.message %}
+    <div class="warning">
+      <div class="container">{{ warning.message | markdown | safe}}</div>
+    </div>
+  {% endif %}
   <div class="column-container">
     <div class="columns">
       <div class="main">{{ content | safe}}</div>
       <div class="sidebar">
-      <div class="map" aria-hidden="true">
-        <div id="map"></div>
+        <div class="map" aria-hidden="true">
+          <div id="map"></div>
           <div class="key">
-            <p><span class="spot"></span>Access point</p>
-            <p><span class="spot trip"></span>Trip</p>
-          <div>
+            <p>
+              <span class="spot"></span>Access point</p>
+            <p>
+              <span class="spot trip"></span>Trip</p>
+            <div></div>
+          </div>
+          <div class="a11y-only">
+            <h2>Access Points</h2>
+            <ul>
+              {% for point in collections.accessPoint %}
+                <li>
+                  <a href="/access-points/{{point.fileSlug}}">{{ point.data.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+            <h2>Trips</h2>
+            <ul>
+              {% for trip in collections.trips %}
+                <li>
+                  <a href="/trips/{{trip.fileSlug}}">{{ trip.data.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="a11y-only">
-        <h2>Access Points</h2>
-        <ul>
-          {% for point in collections.accessPoint %}
-            <li><a href="/access-points/{{point.fileSlug}}">{{ point.data.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <h2>Trips</h2>
-        <ul>
-          {% for trip in collections.trips %}
-            <li><a href="/trips/{{trip.fileSlug}}">{{ trip.data.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</main>
-{% include 'footer.njk' %}
+    </main>
+    {% include 'footer.njk' %}

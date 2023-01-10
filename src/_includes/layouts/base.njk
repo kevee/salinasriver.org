@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}"/>
     <link rel="dns-prefetch" href="https://server.arcgisonline.com"/>
     <link rel="dns-prefetch" href="https://cartodb-basemaps-a.global.ssl.fastly.net"/>
     <link rel="dns-prefetch" href="https://cartodb-basemaps-b.global.ssl.fastly.net"/>
@@ -16,24 +16,28 @@
       <meta name="description" content="{{metaDescription}}"/>
     {% endif %}
 
-  {% if lat %}
-    <meta name="geo.position" content="{{lat}}; {{lon}}">
-    <meta name="geo.placename" content="{{title}}">
-    <meta name="geo.region" content="CA">
+    {% if lat %}
+      <meta name="geo.position" content="{{lat}}; {{lon}}">
+      <meta name="geo.placename" content="{{title}}">
+      <meta name="geo.region" content="CA">
     {% endif %}
     <link
       rel="stylesheet"
       href="/assets/js/leaflet/leaflet.css"
-    />
+/>
   </head>
   <body>
     {{ content | safe }}
     {% if addAccessPoints %}
-      <script>window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}</script>
+      <script>
+        window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}
+      </script>
     {% endif %}
 
     {% if addTrips %}
-      <script>window._trips = {{ collections.trips | tripsJson | safe}}</script>
+      <script>
+        window._trips = {{ collections.trips | tripsJson | safe}}
+      </script>
     {% endif %}
     {% if scripts %}
       {% for script in scripts %}
@@ -42,12 +46,14 @@
     {% endif %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y0B7DBYW3"></script>
     <script>
-    {% raw %}
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      {% raw %}
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-      gtag('config', 'G-5Y0B7DBYW3');
+        gtag('config', 'G-5Y0B7DBYW3');
       {% endraw %}
     </script>
   </body>
