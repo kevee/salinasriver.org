@@ -13,6 +13,8 @@ breadcrumbs:
 
 # Nacimiento dam release
 
+**Note:** The 2023 schedule has not been released yet. This page will update once the document is made public.
+
 Most of the water-related activities on the southern Salinas depend on dam release from Lake Nacimiento. Without the dam, the Salinas would only flow at all during the wet season between December and May. While you can get [real-time flow information from the USGS](https://waterdata.usgs.gov/nwis/uv?site_no=11150500), if you are planning a trip in the future you should consider the dam release sechedule.
 
 | Month     | Combined release (<abbr title="Cubic-feet per second">cfs</abbr>) |
