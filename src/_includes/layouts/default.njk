@@ -22,11 +22,8 @@ layout: layouts/base.njk
     </nav>
   </div>
 </header>
-{% if warning.message %}
-  <div class="warning">
-    <div class="container">{{ warning.message | markdown | safe}}</div>
-  </div>
-{% endif %}
+
+{% include 'flood-warning.njk' %}
 <div class="container">
   {% if breadcrumbs %}
     <nav class="breadcrumbs" aria-label="breadcrumbs">

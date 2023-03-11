@@ -7,11 +7,7 @@ addAccessPoints: true
 addTrips: true
 ---
 <main class="homepage">
-  {% if warning.message %}
-    <div class="warning">
-      <div class="container">{{ warning.message | markdown | safe}}</div>
-    </div>
-  {% endif %}
+  {% include 'flood-warning.njk' %}
   <div class="column-container">
     <div class="columns">
       <div class="main">{{ content | safe}}</div>
