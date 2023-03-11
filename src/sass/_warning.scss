@@ -1,7 +1,10 @@
 .warning {
   background: $danger-light;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   a {
     color: $danger-link;
+  }
+  .more-info {
+    font-size: 0.9rem;
   }
 }
