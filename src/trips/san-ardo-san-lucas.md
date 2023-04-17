@@ -44,7 +44,7 @@ parts:
     mile: 13
     id: take-out
     description: >
-      Exit the river on the right under the iconic green metal bridge at San Lucas. Exit river right.
+      Take out at [San Lucas](/access-points/san-lucas). Exit river right under the iconic green metal bridge. Exit river right.
     lat: 36.11696786016621
     lon: -121.02800601958458
     driving: true
