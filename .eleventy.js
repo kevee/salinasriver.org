@@ -2,7 +2,7 @@ require('dotenv').config()
 const markdownIt = require('markdown-it')
 const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
-const fs = require('fs')
+const faviconPlugin = require('eleventy-favicon')
 
 const md = new markdownIt({
   html: true,
@@ -10,6 +10,7 @@ const md = new markdownIt({
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget('./src/sass/')
+  eleventyConfig.addPlugin(faviconPlugin, { destination: './public' })
   eleventyConfig.addPassthroughCopy('./src/assets')
   eleventyConfig.addPassthroughCopy({
     './_original': 'original',
