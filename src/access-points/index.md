@@ -23,6 +23,7 @@ river. These are listed south to north along the flow of the river.
 - [Bradley south](bradley-south)
 - [Bradley bridge](bradley)
 - [San Ardo](san-ardo)
+- [San Lucas](san-lucas)
 - [San Lorenzo Park](san-lorenzo-park)
 - [Greenfield, Elm Avenue](elm-ave)
 - [Gonzales, River Road](gonzales)

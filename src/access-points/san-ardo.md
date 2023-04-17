@@ -27,3 +27,5 @@ directionsPath:
 ---
 
 Locals like to hang out on the beach of Rancho Rico Creek and wade up the river to swim in deep pools.
+
+**Note**: As of the 2023 floods, the parking area is further up the road. While this is still a great put-in, it will take a while to carry any boats or heavy gear to the river from this put-in.
