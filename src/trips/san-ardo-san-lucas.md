@@ -138,4 +138,3 @@ route:
   }
 ---
 
-A classic Salinas River float through some of the most beautiful stretches of river.
