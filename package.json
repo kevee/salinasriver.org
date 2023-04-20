@@ -8,8 +8,7 @@
     "build:guages": "node ./src/_tools/guages.js ",
     "build:static-maps": "node ./src/_tools/static-maps.js ",
     "build:eleventy": "npx @11ty/eleventy",
-    "postbuild": "postcss public/assets/style/*.css -u autoprefixer cssnano -r --no-map",
-    "build": "npm-run-all build:guages build:sass build:eleventy",
+    "build": "npm-run-all build:guages build:eleventy",
     "deploy:gh-pages": "gh-pages -d public",
     "deploy:cname": "echo \"salinasriver.org\" > ./public/CNAME",
     "deploy": "npm-run-all build deploy:cname deploy:gh-pages"
