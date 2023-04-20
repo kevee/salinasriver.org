@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ locale }}" dir="{{ dir }}">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -47,17 +47,5 @@
         <script src="{{script}}"></script>
       {% endfor %}
     {% endif %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y0B7DBYW3"></script>
-    <script>
-      {% raw %}
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5Y0B7DBYW3');
-      {% endraw %}
-    </script>
   </body>
 </html>
