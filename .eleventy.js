@@ -5,6 +5,7 @@ const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
 const faviconPlugin = require('eleventy-favicon')
 const eleventySass = require('eleventy-sass')
+const i18n = require('eleventy-plugin-i18n')
 const translations = require('./src/_data/i18n')
 
 const md = new markdownIt({
@@ -14,6 +15,9 @@ const md = new markdownIt({
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: 'en',
+  })
+  eleventyConfig.addPlugin(i18n, {
+    translations,
   })
 
   eleventyConfig.addPlugin(eleventySass)
