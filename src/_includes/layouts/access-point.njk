@@ -8,10 +8,10 @@ scripts:
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ol>
     <li>
-      <a href="/">Home</a>
+      <a href="{{ "/" | locale_url }}">{{ 'home' | i18n }}</a>
     </li>
     <li>
-      <a href="/access-points">Access points</a>
+      <a href="{{ "/access-points" | locale_url }}">{{ 'accessPoints' | i18n }}</a>
     </li>
     <li>
       <a href="#" aria-current="page">{{ title }}</a>
@@ -39,14 +39,14 @@ scripts:
   {% endfor %}
   {% if showTrips %}
     <div>
-      <dt>Related trips</dt>
+      <dt>{{ 'relatedTrips' | i18n }}</dt>
       <dd>
         <ul class="inline-list">
           {% for trip in collections.trips %}
             {%for point in trip.data.accessPoints %}
               {% if point.id == page.fileSlug %}
                 <li>
-                  <a href="/trips/{{ trip.fileSlug }}">{{ trip.data.title }}</a>
+                  <a href="{{ "/trips/{{ trip.fileSlug }}" | locale_url }}">{{ trip.data.title }}</a>
                 </li>
               {% endif %}
             {% endfor %}
@@ -56,7 +56,7 @@ scripts:
     </div>
   {% endif %}
   <div>
-    <dt>Driving directions</dt>
+    <dt>{{ 'drivingDirections' | i18n }}</dt>
     <dd>
       <a
     href="https://www.google.com/maps/dir/{{ lat }},{{ lon }}"
@@ -68,12 +68,12 @@ scripts:
   </div>
 </dl>
 <div class="report-alert">
-  Help protect your river rights. &nbsp;<a href="/report">Let us know if you use this access point.</a>
+  {{ 'protectRights.preamble' | i18n }}&nbsp;<a href="{{ "/report" | locale_url }}">{{ 'protectRights.linkAccessPoint' | i18n }}</a>
 </div>
 
 {{ content | safe}}
 
-<h2>Directions</h2>
+<h2>{{ 'directions' | i18n }}</h2>
 
 {{ directions | markdown | safe }}
 

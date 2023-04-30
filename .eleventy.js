@@ -18,6 +18,9 @@ module.exports = (eleventyConfig) => {
   })
   eleventyConfig.addPlugin(i18n, {
     translations,
+    fallbackLocales: {
+      '*': 'en',
+    },
   })
 
   eleventyConfig.addPlugin(eleventySass)

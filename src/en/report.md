@@ -1,7 +1,6 @@
 ---
 title: Let us know how you use the river
 layout: layouts/default.njk
-permalink: /report
 ---
 
 # Let us know how you use the river

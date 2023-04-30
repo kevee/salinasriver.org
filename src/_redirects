@@ -1,6 +1,0 @@
-
-# Redirect for end-user’s browser preference override
-/*  /es/:splat  302   Language=es
-
-# Default
-/*  /en/:splat  302

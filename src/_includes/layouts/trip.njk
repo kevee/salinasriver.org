@@ -8,10 +8,10 @@ scripts:
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ol>
     <li>
-      <a href="/">Home</a>
+      <a href="{{ '/' | locale_url }}">{{ 'home' | i18n }}</a>
     </li>
     <li>
-      <a href="/trips">Trips</a>
+      <a href="{{ '/trips' | locale_url }}">{{ 'trips' | i18n }}</a>
     </li>
     <li>
       <a href="#" aria-current="page">{{ title }}</a>
@@ -29,25 +29,25 @@ scripts:
 
 <dl role="list">
   <div>
-    <dt>Length</dt>
+    <dt>{{'length' | i18n}}</dt>
     <dd>{{ length }}</dd>
   </div>
   <div>
-    <dt>Time</dt>
+    <dt>{{ 'time' | i18n }}</dt>
     <dd>{{ time }}</dd>
   </div>
   <div>
-    <dt>Access points</dt>
+    <dt>{{ 'accessPoints' | i18n }}</dt>
     <dd>
       {%for point in accessPoints %}
         <span class="trip-access-point">
           {% if point.putIn and point.takeOut%}
-        Put-in and take-out:
-      {% else %}
-            {% if point.putIn %}Put-in:{%endif %}
-            {% if point.takeOut %}Take-out:{%endif%}
+            {{ 'putInTakeOut' | i18n}}
+          {% else %}
+            {% if point.putIn %}{{ 'putIn' | i18n }}:{%endif %}
+            {% if point.takeOut %}{{ 'takeOut' | i18n }}:{%endif%}
             {% endif %}
-            <a href="/access-points/{{ point.id }}">
+            <a href="{{ "/access-points/{{ point.id }}" | locale_url }}">
               {% for accessPoint in collections.accessPoint %}
                 {% if accessPoint.fileSlug == point.id %}
                   {{ accessPoint.data.title }}
@@ -61,7 +61,7 @@ scripts:
     {% include 'overview.njk' %}
     {% if gear %}
       <div>
-        <dt>Gear</dt>
+        <dt>{{ 'gear' | i18n }}</dt>
         <dd>
           <ul>
             {% for gearItem in gear %}
@@ -73,7 +73,7 @@ scripts:
     {% endif %}
   </dl>
   <div class="report-alert">
-  Help protect your river rights. &nbsp;<a href="/report">Let us know if you have gone on this trip.</a>
+    {{ 'protectRights.preamble' | i18n }} &nbsp;<a href="{{ "/report" | locale_url }}">{{ 'protectRights.linkTrip' | i18n }}</a>
   </div>
 
   {{ content | safe }}
@@ -86,27 +86,28 @@ scripts:
     <div id="map"></div>
   </div>
 
-  <h3>Set-up</h3>
+  <h3>{{ 'setUp' | i18n }}</h3>
 
   {{ setUp | markdown | safe }}
 
   <section class="trip-parts">
-    <h2>Description</h2>
+    <h2>{{ 'description' | i18n }}</h2>
     {%- for part in parts -%}
       <div class="trip-part">
         <div>
           <h3 id="{{ part.id }}">{{ part.title }}</h3>
 
           <p class="mile">
-            <strong>Distance:</strong>
-            {{ part.mile }} miles<br/>
+            <strong>{{ 'distance' | i18n }}:</strong>
+            {{ part.mile }}
+            {{'miles' | i18n}}<br/>
             {% if part.driving %}
 
               <a
-          href="https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}"
+          href="{{ "https://www.google.com/maps/dir/{{ part.lat }},{{ part.lon }}" | locale_url }}"
           target="_blank"
           rel="noreferrer"
-          >Driving directions</a
+          >{{ 'drivingDirections' | i18n}}</a
         >
             {% endif %}
           </p>

@@ -4,7 +4,7 @@ layout: layouts/home.njk
 metaDescription: A guide for enjoying the Salinas River
 ---
 
-# The Salinas River
+# El Río Salinas
 
 ## A recreation guide
 
