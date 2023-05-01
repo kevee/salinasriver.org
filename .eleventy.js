@@ -61,6 +61,13 @@ module.exports = (eleventyConfig) => {
     return JSON.stringify(content)
   })
 
+  eleventyConfig.addFilter('switchUrlLanguage', (url) => {
+    if (url.includes('/en/')) {
+      return url.replace('/en/', '/es/')
+    }
+    return url.replace('/es/', '/en/')
+  })
+
   eleventyConfig.addFilter('accessPointsJson', (points) => {
     return JSON.stringify(
       points.map((point) => ({
