@@ -8,7 +8,7 @@ directions: Park on the north end of Bradley Road on the eastern end of the Brad
 flowLow: 40
 flowHigh: 600
 tresspass: false
-alert: This access point is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). Access may be cut off.
+alert: This access point is affected by the [Bradley Bridge Scour Repair project](/es/overview/bradley-bridge-repair/). Access may be cut off.
 guage: bradley
 directionsPath:
   {

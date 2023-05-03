@@ -6,6 +6,7 @@ const htmlmin = require('html-minifier')
 const faviconPlugin = require('eleventy-favicon')
 const eleventySass = require('eleventy-sass')
 const i18n = require('eleventy-plugin-i18n')
+const mdReplaceLink = require('markdown-it-replace-link')
 const translations = require('./src/_data/i18n')
 
 const md = new markdownIt({
@@ -37,6 +38,17 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     './node_modules/leaflet/dist': 'assets/js/leaflet',
   })
+
+  eleventyConfig.amendLibrary('md', (mdLib) =>
+    mdLib.use(mdReplaceLink, {
+      replaceLink: (link, env) => {
+        if (link.startsWith('/')) {
+          return `/${env.page.lang}${link}`
+        }
+        return link
+      },
+    })
+  )
 
   if (typeof process.env.SALINAS_RIVER_LOCAL === 'undefined') {
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
