@@ -21,7 +21,7 @@ Specific things to keep in mind when taking a trip down the Salinas.
 
 ## [Dam release schedule](dam-release)
 
-Much of the water between the Nacimiento river junction and the rest of the middle section depends on dam release from the Nacimiento reservoir.
+Much of the water between the Nacimiento river junction and the rest of the middle section depends on dam release from the Nacimiento and San Anonio reservoirs.
 
 ## [Rubber dam](rubber-dam)
 
