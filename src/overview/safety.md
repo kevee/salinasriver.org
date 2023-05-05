@@ -17,7 +17,11 @@ of your [rights and responsibilities involving tresspassing](/overview/tresspass
 Whatever your activity, make sure to
 <a href="https://www.paddlewise.org/" target="_blank" rel="noreferr">follow paddle-wise principles</a>.
 
-<h2 id="water">Water</h2>
+<h2 id="breach">River mouth breach</h2>
+
+During flood events and high water, the county will sometimes breach the Salinas River mouth, allowing the river to flow to the ocean. Taking the river all the way to the ocean is **extremely dangerous**, ending with large standing waves and a strong current. Do not attempt to take the river to the ocean.
+
+<h2 id="water">Water quality</h2>
 
 The Salinas can contain agricultural runoff that
 is difficult to completely filter with a standard backpacking filter.
