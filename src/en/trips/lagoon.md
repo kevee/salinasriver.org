@@ -5,7 +5,7 @@ layout: layouts/trip.njk
 lat: 36.735825
 lon: -121.791014
 flowLow: -999999
-flowHigh: 300
+flowHigh: 100
 length: variable
 time: variable
 guage: chualar
@@ -57,4 +57,6 @@ route:
 
 Most of the year except for the wettest months between December and March, the Salinas River doesn't flow to the ocean. Instead, it forms a large lagoon that is part of the Salinas River Wildlife Refuge. The lagoon is about a mile long from the ocean to the beginning of the refuge boundary. You can also continue up river to make a longer loop.
 
-During the fall and winter the refuge is open for duck hunting, making floating on the lagoon less fun. If the river mouth is open to the ocean, the lagoon can be dangerous to boaters.
+Note that if there is any significant flow, then the [river mouth could be breached](/overview/safety#breach) and you should not attempt going down river.
+
+During the fall and winter the refuge is open for duck hunting, making floating on the lagoon less fun.

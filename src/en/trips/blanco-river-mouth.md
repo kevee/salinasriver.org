@@ -5,7 +5,7 @@ layout: layouts/trip.njk
 lat: 36.714710
 lon: -121.761627
 flowLow: -999999
-flowHigh: 300
+flowHigh: 100
 length: 5.6 miles
 time: 4-6 hours
 guage: chualar
@@ -123,6 +123,8 @@ route:
 ---
 
 One of the most consistently-runnable sections of the river in the summer when a large lagoon backs up to Blanco.
+
+Note that if there is any significant flow, then the [river mouth could be breached](/overview/safety#breach) and you should not attempt going down river.
 
 This trip can be run either north-to-south or south-to-north as the river backs up into a lagoon on this stretch. It's best to check out the river first at Blanco. If there is no flow, then going from the north-to-south is a better option because the prevailing winds will be at your back.
 

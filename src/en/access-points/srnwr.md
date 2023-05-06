@@ -6,14 +6,14 @@ lat: 36.734761280309
 lon: -121.79390765913294
 directions: >
 
-  - Winter the road is muddy
+  - In winter the road is muddy and sometimes impassable
 
   - No dogs
 
   - Gate is narrow for kayaks/rafts
 
-flowLow: 0
-flowHigh: 400
+flowLow: -999999
+flowHigh: 100
 guage: chualar
 tresspass: false
 directionsPath:
@@ -48,4 +48,6 @@ directionsPath:
   }
 ---
 
-Salinas River National Wildlife Refuge
+Entrance via the Salinas River National Wildlife Refuge.
+
+Note that if there is any significant flow, then the [river mouth could be breached](/overview/safety#breach) and you should not attempt going down river.
