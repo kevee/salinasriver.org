@@ -29,7 +29,7 @@ module.exports = {
   },
   home: {
     en: 'Home',
-    es: '',
+    es: 'Inicio',
   },
   putInTakeOut: {
     en: 'Put-in and take-out',

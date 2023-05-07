@@ -5,7 +5,7 @@ tags: newsEs
 layout: layouts/default.njk
 
 breadcrumbs:
-  - name: Home
+  - name: Inicio
     link: /
   - name: Noticias
     link: /news

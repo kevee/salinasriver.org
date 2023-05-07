@@ -5,7 +5,7 @@ scripts:
   - /assets/js/leaflet/leaflet.js
   - /assets/js/content-map.js
 breadcrumbs:
-  - name: Home
+  - name: Inicio
     link: /
   - name: Overview
     link: /overview

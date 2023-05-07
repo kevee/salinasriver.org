@@ -7,7 +7,7 @@ scripts:
   - /assets/js/access-points.js
 
 breadcrumbs:
-  - name: Home
+  - name: Inicio
     link: /
 ---
 

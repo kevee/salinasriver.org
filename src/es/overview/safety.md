@@ -2,7 +2,7 @@
 title: Safety
 layout: layouts/default.njk
 breadcrumbs:
-  - name: Home
+  - name: Inicio
     link: /
   - name: Overview
     link: /overview

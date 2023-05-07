@@ -7,7 +7,7 @@ scripts:
   - /assets/js/trips.js
 
 breadcrumbs:
-  - name: Home
+  - name: Inicio
     link: /
 ---
 
