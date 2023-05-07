@@ -15,6 +15,12 @@ its silty waters in the summer.
 
 When [conditions are right](/overview), you can float down long sections of the Salinas. This guide outlines common [places to access the river](/access-points) and [suggested trips](/trips).
 
+<div class="news-callout">
+
+[Read the 2023 Outlook](/news/2023-outlook)
+
+</div>
+
 <nav class="nav-list">
   
   - [Access points](/access-points)

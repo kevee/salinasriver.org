@@ -13,6 +13,12 @@ recorre 170 millas de sur a norte en el centro de California. Alberga castores y
 
 Cuando [las circunstancias son propicias](/overview), es posible flotar en largos tramos del Salinas. Esta guía presenta [lugares comunes de acceso al río](/access-points) y [excursiones sugeridas](/trips).
 
+<div class="news-callout">
+
+[Lea las Perspectivas de 2023](/news/2023-outlook)
+
+</div>
+
 <nav class="nav-list">
   
   - [Lugares comunes de acceso al río](/access-points)
