@@ -42,6 +42,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.amendLibrary('md', (mdLib) =>
     mdLib.use(mdReplaceLink, {
       replaceLink: (link, env) => {
+        if (['/en', '/es'].includes(link)) {
+          return link
+        }
         if (link.startsWith('/')) {
           return `/${env.page.lang}${link}`
         }
