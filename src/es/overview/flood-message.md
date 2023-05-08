@@ -6,9 +6,7 @@ breadcrumbs:
     link: /
   - name: Overview
     link: /overview
-
 ---
-
 
 # Alerta automática de inundaciones
 
@@ -16,11 +14,10 @@ Este sitio web se actualiza varias veces al día con datos de los medidores de a
 
 Todos estos niveles de agua están unos metros por debajo de la etapa de "Acción" del medidor. Por ejemplo, el [nivel de agua amarillo en el manómetro de Spreckles](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sprc1).
 
-| Medidor                                                                            | Nivel del agua |
-[[[| -------------------------------------------------------------------------------- | ----------- |
-| [Paso Robles](https://water.weather.gov/ahps2/hydrograph.php?wfo=lox&gage=prbc1) | 15 feet     |
-| [Bradley](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=brdc1)     | 12 feet     |
-| [Soledad](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sddc1)     | 13 feet     |
-| [Chualar](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=chlc1)     | 9 feet      |
-| [Spreckles](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sprc1)   | 15 feet     |]]]
-
+| Medidor                                                                          | Nivel del agua |
+| -------------------------------------------------------------------------------- | -------------- |
+| [Paso Robles](https://water.weather.gov/ahps2/hydrograph.php?wfo=lox&gage=prbc1) | 15 pies        |
+| [Bradley](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=brdc1)     | 12 pies        |
+| [Soledad](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sddc1)     | 13 pies        |
+| [Chualar](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=chlc1)     | 9 pies         |
+| [Spreckles](https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sprc1)   | 15 pies        |
