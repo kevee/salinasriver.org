@@ -1,214 +1,210 @@
 module.exports = {
-  siteName: {
-    en: 'The Salinas River Recreation Guide',
-    es: 'La Guía de Recreación del Río Salinas',
+  "siteName": {
+    "en": "The Salinas River Recreation Guide",
+    "es": "La guía recreativa del río Salinas"
   },
-  theSalinasRiver: {
-    en: 'The Salinas River',
-    es: '',
+  "theSalinasRiver": {
+    "en": "The Salinas River",
+    "es": "El río Salinas"
   },
-  accessPoints: {
-    en: 'Access Points',
-    es: '',
+  "accessPoints": {
+    "en": "Access Points",
+    "es": "Puntos de acceso"
   },
-  accessPoint: {
-    en: 'Access point',
-    es: '',
+  "accessPoint": {
+    "en": "Access point",
+    "es": "Punto de acceso"
   },
-  trip: {
-    en: 'Trip',
-    es: '',
+  "trip": {
+    "en": "Trip",
+    "es": "Viaje"
   },
-  length: {
-    en: 'Length',
-    es: '',
+  "length": {
+    "en": "Length",
+    "es": "Longitud"
   },
-  time: {
-    en: 'Time',
-    es: '',
+  "time": {
+    "en": "Time",
+    "es": "Tiempo"
   },
-  home: {
-    en: 'Home',
-    es: 'Inicio',
+  "home": {
+    "en": "Home",
+    "es": "Inicio"
   },
-  putInTakeOut: {
-    en: 'Put-in and take-out',
-    es: '',
+  "putInTakeOut": {
+    "en": "Put-in and take-out",
+    "es": "Entrada y salida"
   },
-  putIn: {
-    en: 'Put-in',
-    es: '',
+  "putIn": {
+    "en": "Put-in",
+    "es": "Entrada"
   },
-  gear: {
-    en: 'Gear',
-    es: '',
+  "gear": {
+    "en": "Gear",
+    "es": "Equipo"
   },
-  takeOut: {
-    en: 'Take-out',
-    es: '',
+  "takeOut": {
+    "en": "Take-out",
+    "es": "Salida"
   },
-  trips: {
-    en: 'Trips',
-    es: '',
+  "trips": {
+    "en": "Trips",
+    "es": "Viajes"
   },
-  overview: {
-    en: 'Overview',
-    es: '',
+  "overview": {
+    "en": "Overview",
+    "es": "Resumen"
   },
-  drivingDirections: {
-    en: 'Driving directions',
-    es: '',
+  "drivingDirections": {
+    "en": "Driving directions",
+    "es": "Cómo llegar en auto"
   },
-  directions: {
-    en: 'Directions',
-    es: '',
+  "directions": {
+    "en": "Directions",
+    "es": "Indicaciones"
   },
-  description: {
-    en: 'Description',
-    es: '',
+  "description": {
+    "en": "Description",
+    "es": "Descripción"
   },
-  distance: {
-    en: 'Distance',
-    es: '',
+  "distance": {
+    "en": "Distance",
+    "es": "Distancia"
   },
-  miles: {
-    en: 'miles',
-    es: '',
+  "miles": {
+    "en": "miles",
+    "es": "millas"
   },
-  relatedTrips: {
-    en: 'Related trips',
-    es: '',
+  "relatedTrips": {
+    "en": "Related trips",
+    "es": "Viajes relacionados"
   },
-  setUp: {
-    en: 'Set-up',
-    es: '',
+  "setUp": {
+    "en": "Set-up",
+    "es": "Configuración"
   },
-  protectRights: {
-    preamble: {
-      en: 'Help protect your river rights.',
-      es: '',
+  "protectRights": {
+    "preamble": {
+      "en": "Help protect your river rights.",
+      "es": "Ayude a proteger sus derechos fluviales."
     },
-    linkAccessPoint: {
-      en: 'Let us know if you use this access point.',
-      es: '',
+    "linkAccessPoint": {
+      "en": "Let us know if you use this access point.",
+      "es": "Háganos saber si utiliza este punto de acceso."
     },
-    linkTrip: {
-      en: 'Let us know if you have gone on this trip.',
-      es: '',
-    },
+    "linkTrip": {
+      "en": "Let us know if you have gone on this trip.",
+      "es": "Háganos saber si ha realizado este viaje."
+    }
   },
-  floodWarning: {
-    preamble: {
-      en: 'The Salinas River is at or approaching flood stage in at least one guage. Please stay clear of rising waters and stay safe.',
-      es: '',
+  "floodWarning": {
+    "preamble": {
+      "en": "The Salinas River is at or approaching flood stage in at least one guage. Please stay clear of rising waters and stay safe.",
+      "es": "El río Salinas está en nivel de inundación o acercándose a él en al menos un medidor. Manténgase alejado de las aguas en aumento y manténgase a salvo."
     },
-    learnMore: {
-      en: 'Learn about this automated message',
-      es: '',
+    "learnMore": {
+      "en": "Learn about this automated message",
+      "es": "Conozca este mensaje automatizado"
     },
-    links: {
-      en: `Check <a href="https://www.co.monterey.ca.us/government/departments-a-h/administrative-office/office-of-emergency-services/incidents">Monterey County</a> and <a href="https://www.prepareslo.org/">SLO County</a> emergency info`,
-      es: '',
+    "links": {
+      "en": "Check <a href=\"https://www.co.monterey.ca.us/government/departments-a-h/administrative-office/office-of-emergency-services/incidents\">Monterey County</a> and <a href=\"https://www.prepareslo.org/\">SLO County</a> emergency info",
+      "es": "Consulte la <a href=\"https://www.co.monterey.ca.us/government/departments-a-h/administrative-office/office-of-emergency-services/incidents\">información de emergencia del condado de Monterey</a> y <a href=\"https://www.prepareslo.org/\">del condado de San Luis Obispo</a>"
+    }
+  },
+  "footer": {
+    "by": {
+      "en": "By <a href=\"https://kevee.net\">Kevin Miller</a>. All content is offered\n      under\n      <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\">\n        Creative Commons BY-NC 4.0</a\n      >.",
+      "es": "Redactado por <a href=\"https://kevee.net\">Kevin Miller</a>. Todo el contenido se ofrece      según      <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\">        Creative Commons BY-NC 4.0</a      >."
     },
-  },
-  footer: {
-    by: {
-      en: `By <a href="https://kevee.net">Kevin Miller</a>. All content is offered
-      under
-      <a href="https://creativecommons.org/licenses/by-nc/4.0/">
-        Creative Commons BY-NC 4.0</a
-      >.`,
-      es: '',
+    "legal": {
+      "en": "Legal disclaimer",
+      "es": "Aviso legal"
     },
-    legal: {
-      en: 'Legal disclaimer',
-      es: '',
+    "accessibility": {
+      "en": "Accessibility statement",
+      "es": "Declaración de accesibilidad"
     },
-    accessibility: {
-      en: 'Accessibility statement',
-      es: '',
+    "contact": {
+      "en": "Contact",
+      "es": "Contacto"
+    }
+  },
+  "bestFlow": {
+    "en": "Best flow",
+    "es": "Mejor caudal"
+  },
+  "cubicFeetSecond": {
+    "en": "Cubic-feet per second",
+    "es": "Pies cúbicos por segundo"
+  },
+  "cfs": {
+    "en": "cfs",
+    "es": "pcs"
+  },
+  "at": {
+    "en": "at",
+    "es": "en"
+  },
+  "waterLevel": {
+    "en": "Water level",
+    "es": "Nivel del agua"
+  },
+  "feetDeep": {
+    "en": "feet deep",
+    "es": "pies de profundidad"
+  },
+  "updated": {
+    "en": "Updated",
+    "es": "Actualizado"
+  },
+  "currentFlow": {
+    "en": "Current flow",
+    "es": "Caudal actual"
+  },
+  "flow": {
+    "good": {
+      "en": "Good flow",
+      "es": "Buen caudal"
     },
-    contact: {
-      en: 'Contact',
-      es: '',
+    "below": {
+      "en": "Below recommended flow",
+      "es": "Caudal inferior al recomendado"
     },
-  },
-  bestFlow: {
-    en: 'Best flow',
-    es: '',
-  },
-  cubicFeetSecond: {
-    en: 'Cubic-feet per second',
-    es: '',
-  },
-  cfs: {
-    en: 'cfs',
-    es: '',
-  },
-  at: {
-    en: 'at',
-    es: 'a',
-  },
-  waterLevel: {
-    en: 'Water level',
-    es: '',
-  },
-  feetDeep: {
-    en: 'feet deep',
-    es: '',
-  },
-  updated: {
-    en: 'Updated',
-    es: '',
-  },
-  currentFlow: {
-    en: 'Current flow',
-    es: '',
-  },
-  flow: {
-    good: {
-      en: 'Good flow',
-      es: '',
+    "above": {
+      "en": "Above recommended flow",
+      "es": "Caudal superir al recomendado"
     },
-    below: {
-      en: 'Below recommended flow',
-      es: '',
-    },
-    above: {
-      en: 'Above recommended flow',
-      es: '',
-    },
-    none: {
-      en: 'No flow',
-      es: '',
-    },
+    "none": {
+      "en": "No flow",
+      "es": "Sin caudal"
+    }
   },
-  damRelease: {
-    en: 'Dam release',
-    es: '',
+  "damRelease": {
+    "en": "Dam release",
+    "es": "Desembalse de la presa"
   },
-  damReleaseMessage: {
-    preamble: {
-      en: 'Water flows are dependent on',
-      es: '',
+  "damReleaseMessage": {
+    "preamble": {
+      "en": "Water flows are dependent on",
+      "es": "Los caudales de agua dependen de"
     },
-    link: {
-      en: 'scheduled dam releases',
-      es: '',
-    },
+    "link": {
+      "en": "scheduled dam releases",
+      "es": "desembalses programados de presas"
+    }
   },
-  privateProperty: {
-    en: 'Private property',
-    es: '',
+  "privateProperty": {
+    "en": "Private property",
+    "es": "Propiedad privada"
   },
-  privatePropertyMessage: {
-    premable: {
-      en: 'Parts of this area is near private land, be',
-      es: '',
+  "privatePropertyMessage": {
+    "premable": {
+      "en": "Parts of this area is near private land, be",
+      "es": "Parte de esta zona está cerca de terrenos privados, sea"
     },
-    link: {
-      en: 'aware of your rights and responsibilities',
-      es: '',
-    },
-  },
+    "link": {
+      "en": "aware of your rights and responsibilities",
+      "es": "consciente de sus derechos y responsabilidades"
+    }
+  }
 }

@@ -5,3 +5,4 @@ src/_data/guages.json
 src/_data/warning.json
 .env
 translate.txt
+translate_*.txt
