@@ -1,5 +1,5 @@
 ---
-title: Nacimiento dam release
+title: Desembalse de la presa de Nacimiento
 layout: layouts/default.njk
 scripts:
   - /assets/js/leaflet/leaflet.js
@@ -9,32 +9,35 @@ breadcrumbs:
     link: /
   - name: Overview
     link: /overview
+
 ---
 
-# Nacimiento dam release
 
-Most of the water-related activities on the southern Salinas depend on dam release from Lake Nacimiento. Without the dam, the Salinas would only flow at all during the wet season between December and May. While you can get [real-time flow information from the USGS](https://waterdata.usgs.gov/nwis/uv?site_no=11150500), if you are planning a trip in the future you should consider the dam release sechedule.
+# Desembalse de la presa de Nacimiento
 
-| Month     | Combined release (<abbr title="Cubic-feet per second">cfs</abbr>) |
+La mayoría de las actividades relacionadas con el agua en el sur del Salinas dependen de la descarga de la presa del lago Nacimiento. Sin la presa, el río Salinas sólo tendría caudal durante la estación húmeda, entre diciembre y mayo. Aunque puede obtener [información sobre el caudal en tiempo real del USGS](https://waterdata.usgs.gov/nwis/uv?site_no=11150500), si está planeando un viaje en el futuro debe tener en cuenta el calendario de desembalse de la presa.
+
+| Mes     | Liberación combinada (<abbr title="Pies cúbicos por segundo">cfs</abbr>) |
 | --------- | ----------------------------------------------------------------- |
-| January   | 806                                                               |
-| February  | 427                                                               |
-| March     | 3082                                                              |
-| April     | 257                                                               |
-| May       | 168                                                               |
-| June      | 375                                                               |
-| July      | 579                                                               |
-| August    | 660                                                               |
-| September | 610                                                               |
-| October   | 292                                                               |
-| November  | 70                                                                |
-| December  | 70                                                                |
+| Enero   | 806                                                               |
+| Febrero  | 427                                                               |
+| Marzo     | 3082                                                              |
+| Abril     | 257                                                               |
+| Mayo       | 168                                                               |
+| Junio      | 375                                                               |
+| Julio      | 579                                                               |
+| Agosto    | 660                                                               |
+| Septiembre | 610                                                               |
+| Octubre   | 292                                                               |
+| Noviembre  | 70                                                                |
+| Diciembre  | 70                                                                |
 
-<small>From the [Monterey County Water Resources Agency 2023 release schedule](https://www.co.monterey.ca.us/home/showpublisheddocument/121560/638174902801170000). CFS is defined as "Mean daily flow for the month."</small>
+<small>Del [calendario de desembalses para 2023 de la Agencia de Recursos Hídricos del Condado de Monterey](https://www.co.monterey.ca.us/home/showpublisheddocument/121560/638174902801170000). CFS se define como "caudal medio diario del mes".</small>
 
-The water flows down Nacimiento River and joins up with the Salinas just south of the town of Bradley. When the [river guage at Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) is over 400 cfs (it is currently {{guages.bradley.cfs}}), the water can sometimes reach beyond King City.
+El agua baja por el río Nacimiento y se une al Salinas justo al sur de la ciudad de Bradley. Cuando el [medidor fluvial en Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) supera los 400 pcs (actualmente es {{guages.bradley.cfs}}), el agua puede llegar a veces más allá de King City.
 
 <div class="map medium bordered">
   <div id="map" data-lat="35.832921" data-lon="-120.756226" data-zoom="11"></div>
-  <p class="note">Where the Nacimiento joins up with the Salinas.</p>
+  <p class="note"> Donde el Nacimiento se une con el Salinas.</p>
 </div>
+

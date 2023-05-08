@@ -1,34 +1,34 @@
 ---
-title: Private property
+title: Propiedad privada
 layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
   - name: Overview
     link: /overview
+
 ---
 
-# Private property
 
-**Dislcaimer** this website should not be construed as, and it does not constitute, legal advice on any specific matter.
+# Propiedad privada
 
-Many established access areas are on private land
-which the owner has graciously opened for the public. All of the access points
-listed here are either public, or have clear, well-established trails that have
-been used for years.
+**Descargo de responsabilidad** Este sitio web no debe interpretarse como, y no constituye, asesoramiento jurídico sobre ningún asunto específico.
 
-While there is confusion about whether you are allowed to actually float on the river, [American Whitewater's excellent Navigability Primer](https://www.americanwhitewater.org/content/Wiki/stewardship:navigability) says:
+Muchas zonas de acceso establecidas se encuentran en terrenos privados que el propietario ha abierto amablemente al público. Todos los puntos de acceso enumerados aquí son públicos o tienen senderos claros y bien establecidos que se han utilizado durante años.
 
-> In the California court case of People v. Mack, the ruling stated, “The public has the right to navigate below the high water mark on rivers which are capable of being navigated by small recreational craft.” In other words, the definition of navigability in California rests on whether the river is capable of floating a canoe or kayak. American Whitewater strongly advocates this test of navigability.
+Aunque existe confusión sobre si realmente está permitido flotar en el río, [la excelente Cartilla de Navegabilidad de American Whitewater](https://www.americanwhitewater.org/content/Wiki/stewardship:navigability) dice:
 
-_People v. Mack_ states:
+> En el caso judicial de California del Pueblo contra Mack, la sentencia afirmaba: "El público tiene derecho a navegar por debajo de la marca de pleamar en los ríos que sean navegables para pequeñas embarcaciones de recreo". En otras palabras, la definición de navegabilidad en California se basa en si el río es capaz de hacer flotar una canoa o un kayak. American Whitewater defiende firmemente esta prueba de navegabilidad.
 
-> The streams of California are a vital recreational resource of the state. The modern determinations of the California courts, as well as those of several of the states, as to the test of navigability can well be restated as follows: members of the public have the right to navigate and to exercise the incidents of navigation in a lawful manner at any point below high water mark on waters of this state which are capable of being navigated by oar or motor propelled small creaft.
+_ El caso del Pueblo contra Mack _ dice:
 
-The land surrounding the river is definitely private. Protect your access to the river by:
+> Los arroyos de California son un recurso recreativo vital del estado. Las determinaciones modernas de los tribunales de California, así como las de varios de los estados, en cuanto a la prueba de navegabilidad bien pueden replantearse de la siguiente manera: los miembros del público tienen derecho a navegar y a ejercer los incidentes de la navegación de manera legal en cualquier punto por debajo de la marca superior del agua en las aguas de este estado que sean susceptibles de ser navegadas con remo o con una pequeña balsa propulsada por motor.
 
-- Staying only on the shores of main river channels
-- Only use [defined access points](/access-points) to enter and exit the river
-- Never cross over a fence to enter/access the river. There are some fences which cross the river. These are used to define grazing areas for cattle. Pass below or above these safely without damaging the fence.
-- You may walk on private property to safetly portage an obstacle.
-- Leave no trace
+Los terrenos que rodean el río son definitivamente privados. Proteja su acceso al río:
+
+- Permaneciendo únicamente en las orillas de los principales canales fluviales
+- Utilizando únicamente [puntos de acceso definidos](/access-points) para entrar y salir del río
+- No cruzando nunca una valla para entrar/acceder al río. Hay algunas vallas que cruzan el río. Estas se utilizan para delimitar zonas de pastoreo para el ganado. Pase por debajo o por encima de ellas con seguridad sin dañar la valla.
+- Puede caminar sobre una propiedad privada para salvar un obstáculo con seguridad.
+- No deje rastro.
+

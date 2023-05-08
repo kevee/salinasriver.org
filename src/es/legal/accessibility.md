@@ -1,33 +1,36 @@
 ---
-title: Accessibility Statement
+title: Declaración de accesibilidad
 layout: layouts/default.njk
+
 ---
 
-# Accessibility Statement
 
-The Salinas River Recreation Guide authors are committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone, and applying the relevant accessibility standards.
+# Declaración de accesibilidad
 
-## Conformance status
+Los autores de la Guía recreativa del río Salinas se comprometen a garantizar la accesibilidad digital a las personas con discapacidad. Mejoramos continuamente la experiencia del usuario para todos y aplicamos las normas de accesibilidad pertinentes.
 
-The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. This website is fully conformant with WCAG 2.1 level AA. Fully conformant means that the content fully conforms to the accessibility standard without any exceptions.
+## Estado de conformidad
 
-## Technical specifications
+Las Pautas de Accesibilidad al Contenido en la Web (WCAG) definen los requisitos que deben cumplir los diseñadores y desarrolladores para mejorar la accesibilidad de las personas con discapacidad. Define tres niveles de conformidad: nivel A, nivel AA y nivel AAA. Este sitio web es plenamente conforme con el nivel AA de las WCAG 2.1. Plenamente conforme significa que el contenido se ajusta plenamente a la norma de accesibilidad sin ninguna excepción.
 
-Accessibility of the website relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:
+## Especificaciones técnicas
+
+La accesibilidad del sitio web depende de las siguientes tecnologías para funcionar con la combinación concreta de navegador web y cualquier tecnología de asistencia o complemento instalado en su computadora:
 
 - HTML
 - WAI-ARIA
 - CSS
 - JavaScript
 
-These technologies are relied upon for conformance with the accessibility standards used.
+Estas tecnologías se basan en la conformidad con las normas de accesibilidad utilizadas.
 
-## Limitations and alternatives
+## Limitaciones y alternativas
 
-Despite our best efforts to ensure accessibility of the website, there may be some limitations. Below is a description of known limitations, and potential solutions. Please contact us if you observe an issue not listed below.
+A pesar de nuestros esfuerzos por garantizar la accesibilidad del sitio web, pueden existir algunas limitaciones. A continuación se describen las limitaciones conocidas y las posibles soluciones. Póngase en contacto con nosotros si observa algún problema que no figure en la siguiente lista.
 
-- Maps are replaced by tables of data for screen-reader users
+- Los mapas se sustituyen por tablas de datos para los usuarios de lectores de pantalla
 
-We welcome your feedback on the accessibility of this website. If you encounter accessibility barriers, please contact us at accessibility@salinasriver.org.
+Agradecemos sus comentarios sobre la accesibilidad de este sitio web. Si encuentra barreras de accesibilidad, póngase en contacto con nosotros en accessibility@salinasriver.org.
 
-We try to respond to feedback within 5 business days, and to propose a solution within 10 business days.
+Intentamos responder a sus comentarios en un plazo de cinco días hábiles y proponer una solución en un plazo de diez días hábiles.
+

@@ -1,24 +1,27 @@
 ---
-title: Legal
+title: Aviso legal
 layout: layouts/default.njk
+
 ---
 
-# Legal Disclaimer
 
-If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at hello@salinasriver.org.
+# Aviso legal
 
-## Disclaimers for Salinas River Recreation Guide
+Si necesita más información o tiene alguna pregunta sobre el descargo de responsabilidad de nuestro sitio, no dude en ponerse en contacto con nosotros por correo electrónico en hello@salinasriver.org.
 
-All the information on this website - https://salinasriver.org - is published in good faith and for general information purpose only. Salinas River Recreation Guide does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (Salinas River Recreation Guide), is strictly at your own risk. Salinas River Recreation Guide will not be liable for any losses and/or damages in connection with the use of our website.
+## Descargo de responsabilidad de la Guía recreativa del río Salinas
 
-From our website, you can visit other websites by following hyperlinks to such external sites. While we strive to provide only quality links to useful and ethical websites, we have no control over the content and nature of these sites. These links to other websites do not imply a recommendation for all the content found on these sites. Site owners and content may change without notice and may occur before we have the opportunity to remove a link which may have gone 'bad'.
+Toda la información de este sitio web, https://salinasriver.org, se publica de buena fe y únicamente con fines de información general. La Guía recreativa del río Salinas no garantiza la integridad, confiabilidad y exactitud de esta información. Cualquier medida que tome sobre la base de la información que encuentre en este sitio web (Guía recreativa del río Salinas), es estrictamente bajo su propio riesgo. La Guía recreativa del río Salinas no será responsable de ninguna pérdida o daño en relación con el uso de nuestro sitio web.
 
-Please be also aware that when you leave our website, other sites may have different privacy policies and terms which are beyond our control. Please be sure to check the Privacy Policies of these sites as well as their "Terms of Service" before engaging in any business or uploading any information.
+Desde nuestro sitio web, puede visitar otros sitios web siguiendo los hipervínculos a dichos sitios externos. Aunque nos esforzamos por ofrecer únicamente enlaces de calidad a sitios web útiles y éticos, no tenemos ningún control sobre el contenido y la naturaleza de dichos sitios. Estos enlaces a otros sitios web no implican una recomendación de todos los contenidos que se encuentran en ellos. Los propietarios de los sitios y su contenido pueden cambiar sin previo aviso y puede ocurrir antes que tengamos la oportunidad de eliminar un enlace que pueda haber salido "mal".
 
-## Consent
+Tenga también en cuenta que cuando abandone nuestro sitio web, otros sitios pueden tener políticas de privacidad y condiciones diferentes que escapan a nuestro control. Asegúrese de comprobar las políticas de privacidad de estos sitios, así como sus "Condiciones de servicio", antes de participar en cualquier negocio o cargar cualquier información.
 
-By using our website, you hereby consent to our disclaimer and agree to its terms.
+## Consentimiento
 
-## Update
+Al utilizar nuestro sitio web, acepta nuestro descargo de responsabilidad y está de acuerdo con sus términos.
 
-Should we update, amend or make any changes to this document, those changes will be prominently posted here.
+## Actualización
+
+En caso que actualicemos, modifiquemos o hagamos algún cambio en este documento, dichos cambios se publicarán de forma destacada aquí.
+

@@ -1,17 +1,20 @@
 ---
-title: Bradley Bridge Repair
+title: Reparación del puente Bradley
 layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
   - name: Overview
     link: /overview
+
 ---
 
-# Bradley Bridge repair
 
-As of June 2022, work has begun on the [Bradley Bridge Scour Repair project](https://ceqanet.opr.ca.gov/2019129031/2). Several pilings of the bridge in the middle of the main river channel were being undercut and their foundations eroded. During construction, the river will be diverted around the project.
+# Reparación del puente Bradley
 
-During construction, you may have no access to the river. We expect the project to be wrapped up by Fall 2022.
+A partir de junio de 2022, han comenzado las obras del [proyecto de reparación de la socavación del puente Bradley](https://ceqanet.opr.ca.gov/2019129031/2). Varios pilotes del puente en medio del canal principal del río estaban siendo socavados y sus cimientos erosionados. Durante las obras, el río se desviará alrededor del proyecto.
 
-The [access path](/access-points/bradley/) to the bridge will not be affected after construction, according to the project plans.
+Durante las obras, es posible que no tenga acceso al río. Esperamos que el proyecto concluya en otoño de 2022.
+
+El [camino de acceso](/puntos-de-acceso/bradley/) al puente no se verá afectado tras la construcción, según los planes del proyecto.
+

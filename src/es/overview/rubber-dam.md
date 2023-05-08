@@ -1,5 +1,5 @@
 ---
-title: Rubber dam
+title: Dique de goma
 layout: layouts/default.njk
 scripts:
   - /assets/js/leaflet/leaflet.js
@@ -9,23 +9,26 @@ breadcrumbs:
     link: /
   - name: Overview
     link: /overview
+
 ---
 
-# The Salinas River diversion facility
 
-**AKA "The Rubber Dam"**
+# La instalación de desvío del río Salinas
 
-The rubber dam is located approximately 5 miles up river (south) of the Salinas river mouth. It was built to provide irrigation water and prevent saltwater intrusion. When the dam is raised during the dry months, it creates a pond up river. The planned operation of the dam is:
+**También conocida como “el dique de goma”**
 
-- **November 1 to March 31** — Lowered (water is flowing freely)
-- **April 1 to May 31** — Raised. Water typically flows over the gates during this time.
-- **June 1 to October 31** — Raised. The lagood is full, and no more water flows over the dam.
+El dique de goma está situado aproximadamente a 5 millas río arriba (al sur) de la desembocadura del río Salinas. Se construyó para suministrar agua de riego y evitar la intrusión de agua salada. Cuando la presa se eleva durante los meses secos, crea un estanque río arriba. El funcionamiento previsto de la presa es:
 
-The dam can be easily portaged on river left. It has a safety bouy up stream, and the water above it is usually either slack or moves slowly as long as the river is not breached.
+- **Del 1 de noviembre al 31 de marzo**: bajada (el agua fluye libremente)
+- **Del 1 de abril al 31 de mayo**: elevada. El agua suele fluir por encima de las compuertas durante este periodo.
+- **Del 1 de junio al 31 de octubre**: elevada. La laguna está llena y no fluye más agua por encima de la presa.
 
-If there is any significant flow at the [Chualar gauge](https://waterdata.usgs.gov/monitoring-location/11152300/), the dam is probably lowered and boaters should use caution.
+La presa se puede llevar fácilmente por la izquierda del río. Tiene un espigón de seguridad río arriba, y el agua por encima suele estar floja o moverse lentamente mientras el río no se rompa.
+
+Si hay un caudal importante en el [medidor de Chualar](https://waterdata.usgs.gov/monitoring-location/11152300/), es probable que la presa esté bajada y los navegantes deben tener precaución.
 
 <div class="map short bordered">
   <div id="map" data-lat="36.709082" data-lon="-121.750659" data-zoom="10"></div>
-  <p class="note">Location of the diversion facility</p>
+  <p class="note">Ubicación de la instalación de desvío</p>
 </div>
+
