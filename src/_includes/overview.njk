@@ -30,7 +30,7 @@
 {% endif %}
 {% if tags == 'trips' %}
   <div>
-    <dt>{{ 'currentFLow' | i18n }}</dt>
+    <dt>{{ 'currentFlow' | i18n }}</dt>
     <dd>
       {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }}
       {% endif %}
