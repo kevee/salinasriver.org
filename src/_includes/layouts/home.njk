@@ -25,17 +25,21 @@ addTrips: true
             <h2>{{ 'accessPoints' | i18n }}</h2>
             <ul>
               {% for point in collections.accessPoint %}
-                <li>
-                  <a href="{{ "/access-points/{{point.fileSlug}}"| locale_url }}">{{ point.data.title }}</a>
-                </li>
+                {% if point.page.lang == page.lang %}
+                  <li>
+                    <a href="/{{ page.lang }}/access-points/{{point.fileSlug}}">{{ point.data.title }}</a>
+                  </li>
+                {% endif %}
               {% endfor %}
             </ul>
             <h2>{{ 'trips' | i18n }}</h2>
             <ul>
               {% for trip in collections.trips %}
-                <li>
-                  <a href="{{"/trips/{{trip.fileSlug}}" | locale_url }}">{{ trip.data.title }}</a>
-                </li>
+                {% if trip.page.lang == page.lang %}
+                  <li>
+                    <a href="/{{ page.lang }}/trips/{{point.fileSlug}}">{{ trip.data.title }}</a>
+                  </li>
+                {% endif %}
               {% endfor %}
             </ul>
           </div>

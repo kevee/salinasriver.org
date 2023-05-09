@@ -83,26 +83,30 @@ module.exports = (eleventyConfig) => {
     return url.replace('/es/', '/en/')
   })
 
-  eleventyConfig.addFilter('accessPointsJson', (points) => {
+  eleventyConfig.addFilter('accessPointsJson', ({ points, geo, lang }) => {
     return JSON.stringify(
-      points.map((point) => ({
-        title: point.data.title,
-        lat: point.data.lat,
-        lon: point.data.lon,
-        url: `/access-points/${point.fileSlug}`,
-      }))
+      points
+        .filter((point) => point.page.lang === lang)
+        .map((point) => ({
+          title: point.data.title,
+          lat: geo[point.fileSlug].lat,
+          lon: geo[point.fileSlug].lon,
+          url: `/access-points/${point.fileSlug}`,
+        }))
     )
   })
 
-  eleventyConfig.addFilter('tripsJson', (trips) => {
+  eleventyConfig.addFilter('tripsJson', ({ trips, geo, lang }) => {
     return JSON.stringify(
-      trips.map((trip) => ({
-        title: trip.data.title,
-        lat: trip.data.lat,
-        lon: trip.data.lon,
-        length: trip.data.length,
-        url: `/trips/${trip.fileSlug}`,
-      }))
+      trips
+        .filter((trip) => trip.page.lang === lang)
+        .map((trip) => ({
+          title: trip.data.title,
+          lat: geo[trip.fileSlug].lat,
+          lon: geo[trip.fileSlug].lon,
+          length: trip.data.length,
+          url: `/trips/${trip.fileSlug}`,
+        }))
     )
   })
 

@@ -33,13 +33,13 @@
     {{ content | safe }}
     {% if addAccessPoints %}
       <script>
-        window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}
+        window._accessPoints = {{ {points: collections.accessPoint, geo: accessPoints, lang: page.lang} | accessPointsJson | safe}}
       </script>
     {% endif %}
 
     {% if addTrips %}
       <script>
-        window._trips = {{ collections.trips | tripsJson | safe}}
+        window._trips = {{ { trips: collections.trips, geo: trips, lang: page.lang} | tripsJson | safe}}
       </script>
     {% endif %}
     {% if scripts %}
