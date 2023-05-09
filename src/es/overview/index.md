@@ -4,9 +4,7 @@ layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
-
 ---
-
 
 # Vista general del río Salinas
 
@@ -16,15 +14,14 @@ Se ha dicho que el Salinas es un río "al revés". Fluye de sur a norte entre lo
 
 Cosas concretas que hay que tener en cuenta al hacer un recorrido por el Salinas.
 
-## [Private property](/overview/private-property)
+## [Propiedad privada](/overview/private-property)
 
 Cosas concretas que hay que tener en cuenta al hacer un recorrido por el Salinas.
 
-## [Dam release schedule](/overview/dam-release)
+## [Desembalse de la presa](/overview/dam-release)
 
 Gran parte del agua entre el cruce del río Nacimiento y el resto de la sección media depende de la liberación de la presa del embalse de Nacimiento.
 
 ## [Dique de goma](/overview/rubber-dam)
 
 La instalación de desvío del río Salinas es una etapa obligatoria en la parte baja del río de abril a octubre.
-
