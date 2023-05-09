@@ -28,6 +28,10 @@ scripts:
 {% endif %}
 
 <dl role="list">
+  {% set guage = accessPoints[page.fileSlug].guage %}
+  {% set tresspass = accessPoints[page.fileSlug].tresspass %}
+  {% set flowLow = accessPoints[page.fileSlug].flowLow %}
+  {% set flowHigh = accessPoints[page.fileSlug].flowHigh %}
   {% include 'overview.njk' %}
   {% set showTrips = false %}
   {% for trip in collections.trips %}
@@ -82,9 +86,8 @@ scripts:
 <div class="map short">
   <div id="map"></div>
 </div>
-
 <script>
-  window._accessPointPath = {{ directionsPath | json | safe }}
-  window._accessPointLat = {{ lat }}
-  window._accessPointLon = {{ lon }}
+  window._accessPointPath = {{ accessPoints[page.fileSlug].directions | json | safe }}
+  window._accessPointLat = {{ accessPoints[page.fileSlug].lat }}
+  window._accessPointLon = {{ accessPoints[page.fileSlug].lon }}
 </script>

@@ -2,20 +2,13 @@
 title: Laguna de la desembocadura del río
 tags: trips
 layout: layouts/trip.njk
-lat: 36.735825
-lon: -121.791014
-flowLow: -999999
-flowHigh: 300
 length: variable
 time: variable
-guage: chualar
-tresspass: false
-damRelease: false
 gear:
   - Kayaks, canoas o embarcaciones SUP
 setUp: >
   Estacione en el [Refugio de Vida Silvestre del Río Salinas](/access-point/srnwr).
-accessPoints:
+tripAccessPoints:
   - id: srnwr
     putIn: true
     takeOut: true
@@ -30,28 +23,6 @@ parts:
     lat: 36.735825
     lon: -121.791014
     driving: true
-route:
-  type: FeatureCollection
-  features:
-    - type: Feature
-      properties: {}
-      geometry:
-        type: LineString
-        coordinates:
-          - - -121.79087162017824
-            - 36.73568568879371
-          - - -121.7907428741455
-            - 36.73633914345803
-          - - -121.79228782653809
-            - 36.737955560045464
-          - - -121.79533481597899
-            - 36.7397438961833
-          - - -121.7974376678467
-            - 36.7417729194226
-          - - -121.80048465728758
-            - 36.74562447699797
-          - - -121.80237293243408
-            - 36.748134763150844
 ---
 
 La mayor parte del año, salvo los meses más lluviosos entre diciembre y marzo, el río Salinas no desemboca en el océano. En su lugar, forma una gran laguna que forma parte del Refugio de Fauna Salvaje del Río Salinas. La laguna tiene aproximadamente una milla de largo desde el océano hasta el comienzo del límite del refugio. También puede continuar río arriba para hacer un bucle más largo.

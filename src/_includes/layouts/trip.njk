@@ -39,7 +39,7 @@ scripts:
   <div>
     <dt>{{ 'accessPoints' | i18n }}</dt>
     <dd>
-      {%for point in accessPoints %}
+      {%for point in tripAccessPoints %}
         <span class="trip-access-point">
           {% if point.putIn and point.takeOut%}
             {{ 'putInTakeOut' | i18n}}
@@ -61,6 +61,11 @@ scripts:
         {% endfor %}
       </dd>
     </div>
+
+    {% set guage = trips[page.fileSlug].guage %}
+    {% set tresspass = trips[page.fileSlug].tresspass %}
+    {% set flowLow = trips[page.fileSlug].flowLow %}
+    {% set flowHigh = trips[page.fileSlug].flowHigh %}
     {% include 'overview.njk' %}
     {% if gear %}
       <div>
@@ -125,6 +130,6 @@ scripts:
   </section>
 
   <script>
-    window._tripRoute = {{ route | json | safe }}
+    window._tripRoute = {{ trips[page.fileSlug].route | json | safe }}
     window._tripParts = {{ parts | json | safe }}
   </script>

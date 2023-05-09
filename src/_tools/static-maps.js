@@ -29,7 +29,7 @@ const downloadImages = async (parts) => {
   })
 }
 
-glob('./src/trips/**.md', {}, (er, files) => {
+glob('./src/en/trips/**.md', {}, (er, files) => {
   const toDownload = []
 
   files.forEach((file) => {
