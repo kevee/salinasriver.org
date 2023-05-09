@@ -22,7 +22,7 @@
       window._trips.forEach((trip) => {
         const circle = L.circleMarker([trip.lat, trip.lon], {
           radius: 15,
-          fillColor: '#44FAD5',
+          fillColor: '#444dfa',
           fillOpacity: 0.7,
           stroke: false,
         }).addTo(map)
