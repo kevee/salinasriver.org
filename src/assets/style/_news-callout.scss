@@ -1,0 +1,11 @@
+.news-callout {
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  background: $callout-light;
+  p {
+    margin: 0;
+  }
+  a {
+    color: $callout-dark;
+  }
+}

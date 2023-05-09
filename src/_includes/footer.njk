@@ -1,17 +1,19 @@
 <footer>
   <div class="container">
     <p>
-      By <a href="https://kevee.net">Kevin Miller</a>. All content is offered
-      under
-      <a href="https://creativecommons.org/licenses/by-nc/4.0/">
-        Creative Commons BY-NC 4.0</a
-      >.
+      {{ 'footer.by' | i18n | safe}}
     </p>
     <nav aria-label="Footer">
       <ul>
-        <li><a href="/legal">Legal disclaimer</a></li>
-        <li><a href="/legal/accessibility">Accessibility statement</a></li>
-        <li><a href="mailto:hello@salinasriver.org">Contact</a></li>
+        <li>
+          <a href="{{ '/legal' | locale_url}}">{{ 'footer.legal' | i18n }}</a>
+        </li>
+        <li>
+          <a href="{{ '/legal/accessibility'| locale_url }}">{{ 'footer.accessibility' | i18n }}</a>
+        </li>
+        <li>
+          <a href="mailto:hello@salinasriver.org">{{ 'footer.contact' | i18n }}</a>
+        </li>
       </ul>
     </nav>
   </div>

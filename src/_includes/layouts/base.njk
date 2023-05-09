@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ locale }}" dir="{{ dir }}">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta property="og:site_name" content="The Salinas River Recreation Guide"/>
+    <meta property="og:site_name" content="{{ 'siteName' | i18n}}"/>
     <meta property="og:title" content="{{title}}"/>
     {% favicon './src/assets/images/favicon.svg' %}
     <title>{{ title }}</title>
@@ -33,13 +33,13 @@
     {{ content | safe }}
     {% if addAccessPoints %}
       <script>
-        window._accessPoints = {{ collections.accessPoint | accessPointsJson | safe}}
+        window._accessPoints = {{ {points: collections.accessPoint, geo: accessPoints, lang: page.lang} | accessPointsJson | safe}}
       </script>
     {% endif %}
 
     {% if addTrips %}
       <script>
-        window._trips = {{ collections.trips | tripsJson | safe}}
+        window._trips = {{ { trips: collections.trips, geo: trips, lang: page.lang} | tripsJson | safe}}
       </script>
     {% endif %}
     {% if scripts %}
@@ -47,17 +47,5 @@
         <script src="{{script}}"></script>
       {% endfor %}
     {% endif %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y0B7DBYW3"></script>
-    <script>
-      {% raw %}
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5Y0B7DBYW3');
-      {% endraw %}
-    </script>
   </body>
 </html>

@@ -1,58 +1,75 @@
 <div>
-    <dt>Best flow</dt>
-    <dd>
-      {% if flowLow >= 0 %}{{ flowLow }}{% else %}0{% endif %} to {{ flowHigh }}
-      <abbr title="Cubic-feet per second">cfs</abbr> at
-      <a
+  <dt>{{ 'bestFlow' | i18n }}</dt>
+  <dd>
+    {% if flowLow >= 0 %}{{ flowLow }}
+    {% else %}0{% endif %} to {{ flowHigh }}
+    <abbr title="{{ 'cubicFeetSecond' | i18n }}">{{ 'cfs' | i18n }}</abbr>
+    {{ 'at' | i18n }}
+    <a
         href="https://waterdata.usgs.gov/monitoring-location/{{ guages[guage].id }}"
         target="_blank"
         rel="noreferrer"
         >{{ guages[guage].label }}</a
       >
+  </dd>
+</div>
+{% if tags == 'accessPoint' %}
+  <div>
+    <dt>{{ 'waterLevel' | i18n }}</dt>
+    <dd>
+      {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }}
+      {% endif %}
+      <abbr title="{{ 'cubicFeetSecond' | i18n }}">{{ 'cfs' | i18n }}</abbr> &amp;
+        {% if guages[guage].height < 0 %} 0 {% else %}{{ guages[guage].height }}
+      {% endif %}
+      {{ 'feetDeep' | i18n }}
+      <small class="flow-update">{{ 'updated' | i18n }}
+        {% buildDate %}</small>
     </dd>
   </div>
-  {% if tags == 'accessPoint' %}
-    <div>
-    <dt>Water level</dt>
+{% endif %}
+{% if tags == 'trips' %}
+  <div>
+    <dt>{{ 'currentFLow' | i18n }}</dt>
     <dd>
-    {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
-        endif %} <abbr title="Cubic-feet per second">cfs</abbr> &amp;
-        {% if guages[guage].height < 0 %} 0 {% else %}{{ guages[guage].height }} {%
-        endif %} feet deep
-    <small class="flow-update">Updated {% buildDate %}</small></dd>
-    </div>
-  {% endif  %}
-  {% if tags == 'trips' %}
-    <div>
-      <dt>Current flow</dt>
-      <dd>
-        {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }} {%
-        endif %} <abbr title="Cubic-feet per second">cfs</abbr>
-        {% if guages[guage].cfs >= flowLow and guages[guage].cfs <= flowHigh %}
-        <span class="flow-inline good">Good flow</span>{% endif %} {% if
-        guages[guage].cfs < flowLow and guages[guage].cfs >= 0%}<span
+      {% if guages[guage].cfs < 0 %} 0 {% else %}{{ guages[guage].cfs }}
+      {% endif %}
+      <abbr title="{{ 'cubicFeetSecond' | i18n }}">{{ 'cfs' | i18n }}</abbr>
+      {% if guages[guage].cfs >= flowLow and guages[guage].cfs <= flowHigh %}
+        <span class="flow-inline good">{{ 'flow.good' | i18n }}</span>{% endif %}
+      {% if
+        guages[guage].cfs < flowLow and guages[guage].cfs >= 0%}
+        <span
           class="flow-inline below"
-          >Below recommended flow</span
-        >{% endif %} {% if guages[guage].cfs > flowHigh %}<span
-          class="flow-inline above"
-          >Above recommended flow</span
-        >{% endif %}{% if guages[guage].cfs < 0 and flowLow > 0%}<span
-          class="flow-inline none"
-          >No flow</span
+          >{{ 'flow.below' | i18n }}</span
         >{% endif %}
-        <small class="flow-update">Updated {% buildDate %}</small>
-      </dd>
-    </div>
-  {% endif %}
-  {% if damRelease %}
-    <div>
-      <dt>Dam release</dt>
-      <dd>Water flows are dependent on <a href="/overview/dam-release">scheduled dam releases</a>.</dd>
-    </div>
-  {% endif %}
-  {% if tresspass %}
-    <div>
-      <dt>Private property</dt>
-      <dd>Parts of this area is near private land, be <a href="/overview/private-property">aware of your rights and responsibilities</a>.</dd>
-    </div>
-  {% endif %}
+      {% if guages[guage].cfs > flowHigh %}
+        <span
+          class="flow-inline above"
+          >{{ 'flow.above' | i18n }}</span
+        >{% endif %}
+      {% if guages[guage].cfs < 0 and flowLow > 0%}
+        <span
+          class="flow-inline none"
+          >{{ 'flow.none' | i18n }}</span
+        >{% endif %}
+      <small class="flow-update">{{ 'updated' | i18n }}
+        {% buildDate %}</small>
+    </dd>
+  </div>
+{% endif %}
+{% if damRelease %}
+  <div>
+    <dt>{{ 'damRelease' | i18n }}</dt>
+    <dd>{{ 'damReleaseMessage.preamble' | i18n}}
+      <a href="/overview/dam-release">{{ 'damReleaseMessage.link' | i18n}}
+      </a>.</dd>
+  </div>
+{% endif %}
+{% if tresspass %}
+  <div>
+    <dt>{{ 'privateProperty' | i18n }}</dt>
+    <dd>{{ 'privatePropertyMessage.text' | i18n }}
+      <a href="/overview/private-property">{{ 'privatePropertyMessage.link' | i18n }}</a>.</dd>
+  </div>
+{% endif %}

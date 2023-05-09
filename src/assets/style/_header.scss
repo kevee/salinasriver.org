@@ -36,8 +36,17 @@ header {
           margin-bottom: 0;
         }
       }
-      &:last-child {
+      &.language {
+        @media (max-width: 850px) {
+          text-align: left;
+          width: 100%;
+          flex: auto;
+          margin-top: 0.5rem;
+        }
         margin-right: 0;
+        flex: 1;
+        margin-left: auto;
+        text-align: right;
       }
     }
     a {
