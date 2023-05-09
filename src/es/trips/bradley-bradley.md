@@ -10,15 +10,12 @@ length: 3.5 miles
 time: 3-5 hours
 guage: bradley
 tresspass: true
-alert: >-
-  Este punto de viaje se ve afectado por el [proyecto de reparación de la
-  socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso
-  puede estar cortado.
-
-
+alert: >
   Este punto de viaje se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso puede estar cortado.
 damRelease: true
-gear: Tubos, trajes de neopreno a menos que haga mucho calor
+gear:
+  - Tubos
+  - Trajes de neopreno a menos que haga mucho calor
 setUp: Localice un auto en el [puente norte de Bradley](/access-points/bradley).
 accessPoints:
   - id: bradley-south
@@ -37,7 +34,8 @@ parts:
   - title: Salida
     id: take-out
     mile: 3.5
-    description: Salga del río a la derecha por debajo del puente y siga el sendero
+    description:
+      Salga del río a la derecha por debajo del puente y siga el sendero
       a la derecha.
     lat: 35.863988230401546
     lon: -120.80965395355224
@@ -264,13 +262,10 @@ route:
           - - -120.8096981048584
             - 35.86392619758798
       properties: {}
-
 ---
-
 
 Tramo clásico de descenso en tubo, de Bradley a Bradley es la actividad perfecta para un caluroso día de verano. El agua en este tramo está fría, por lo que los trajes de neopreno son útiles.
 
 Debido a los vientos dominantes del norte por la tarde, es mejor meterse en el agua a primera hora.
 
 Tenga en cuenta que se trata de terreno en el Campamento Roberts, y siempre que haya actividad de Capacitación en la zona, su acceso al río puede estar cerrado.
-

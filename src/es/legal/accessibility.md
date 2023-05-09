@@ -1,9 +1,7 @@
 ---
 title: Declaración de accesibilidad
 layout: layouts/default.njk
-
 ---
-
 
 # Declaración de accesibilidad
 
@@ -30,7 +28,6 @@ A pesar de nuestros esfuerzos por garantizar la accesibilidad del sitio web, pue
 
 - Los mapas se sustituyen por tablas de datos para los usuarios de lectores de pantalla
 
-Agradecemos sus comentarios sobre la accesibilidad de este sitio web. Si encuentra barreras de accesibilidad, póngase en contacto con nosotros en accessibility@salinasriver.org.
+Agradecemos sus comentarios sobre la accesibilidad de este sitio web. Si encuentra barreras de accesibilidad, póngase en contacto con nosotros en hello@salinasriver.org.
 
 Intentamos responder a sus comentarios en un plazo de cinco días hábiles y proponer una solución en un plazo de diez días hábiles.
-

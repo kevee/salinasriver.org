@@ -4,11 +4,9 @@ layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
-  - name: Overview
+  - name: Resumen
     link: /overview
-
 ---
-
 
 # Seguridad
 
@@ -23,7 +21,7 @@ Durante los eventos de inundación y aguas altas, el condado a veces abre una br
 
 <h2 id="water">Calidad del agua</h2>
 
-El Salinas puede contener escorrentía agrícola difícil de filtrar completamente 
+El Salinas puede contener escorrentía agrícola difícil de filtrar completamente
 con un filtro de mochila estándar.
 El agua también es muy limosa. Lleve suficiente agua potable para todo su viaje.
 
@@ -34,4 +32,3 @@ Varias secciones del río están rodeadas de tierras de ranchos. Las vacas puede
 <h2 id="strainers">Coladeros</h2>
 
 La forma más común de peligro en el río son los árboles bajos y la maleza que se encuentran a lo largo de las orillas. Asegúrese de saber cómo evitar o salir con seguridad de una situación de coladero.
-

@@ -28,6 +28,6 @@ Despite our best efforts to ensure accessibility of the website, there may be so
 
 - Maps are replaced by tables of data for screen-reader users
 
-We welcome your feedback on the accessibility of this website. If you encounter accessibility barriers, please contact us at accessibility@salinasriver.org.
+We welcome your feedback on the accessibility of this website. If you encounter accessibility barriers, please contact us at hello@salinasriver.org.
 
 We try to respond to feedback within 5 business days, and to propose a solution within 10 business days.

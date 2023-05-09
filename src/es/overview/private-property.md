@@ -4,11 +4,9 @@ layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
-  - name: Overview
+  - name: Resumen
     link: /overview
-
 ---
-
 
 # Propiedad privada
 
@@ -31,4 +29,3 @@ Los terrenos que rodean el río son definitivamente privados. Proteja su acceso 
 - No cruzando nunca una valla para entrar/acceder al río. Hay algunas vallas que cruzan el río. Estas se utilizan para delimitar zonas de pastoreo para el ganado. Pase por debajo o por encima de ellas con seguridad sin dañar la valla.
 - Puede caminar sobre una propiedad privada para salvar un obstáculo con seguridad.
 - No deje rastro.
-

@@ -7,11 +7,9 @@ scripts:
 breadcrumbs:
   - name: Inicio
     link: /
-  - name: Overview
+  - name: Resumen
     link: /overview
-
 ---
-
 
 # La instalación de desvío del río Salinas
 
@@ -31,4 +29,3 @@ Si hay un caudal importante en el [medidor de Chualar](https://waterdata.usgs.go
   <div id="map" data-lat="36.709082" data-lon="-121.750659" data-zoom="10"></div>
   <p class="note">Ubicación de la instalación de desvío</p>
 </div>
-

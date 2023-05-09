@@ -11,8 +11,10 @@ time: 6-8 hours
 guage: bradley
 tresspass: false
 damRelease: true
-gear: Kayaks, canoas o embarcaciones SUP
-setUp: Localice un auto en [San Lucas](/access-points/san-lucas).
+gear:
+  - Kayaks, canoas o embarcaciones SUP
+setUp: >
+  Localice un auto en [San Lucas](/access-points/san-lucas).
 safety: No se conocen peligros en este tramo desde abril de 2023.
 accessPoints:
   - id: san-ardo
@@ -30,7 +32,8 @@ parts:
   - title: Rabión de clase I
     id: riffle
     mile: 0.5
-    description: Un rabión menor es la corriente de agua más grande que verá en el
+    description:
+      Un rabión menor es la corriente de agua más grande que verá en el
       recorrido.
     lat: 36.01866372341844
     lon: -120.91573209448427
@@ -39,7 +42,8 @@ parts:
   - title: Salida
     mile: 13
     id: take-out
-    description: Salga en [San Lucas](/access-points/san-lucas). Salga del río a la
+    description:
+      Salga en [San Lucas](/access-points/san-lucas). Salga del río a la
       derecha por debajo del emblemático puente metálico verde. Salga del río
       por la derecha.
     lat: 36.11696786016621
@@ -193,16 +197,4 @@ route:
           - - -121.02834888492941
             - 36.11660564703382
         type: LineString
-
 ---
-
-
-
-
-
-
-
-
-
-
-

@@ -4,11 +4,9 @@ layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
-  - name: Overview
+  - name: Resumen
     link: /overview
-
 ---
-
 
 # Reparación del puente Bradley
 
@@ -17,4 +15,3 @@ A partir de junio de 2022, han comenzado las obras del [proyecto de reparación 
 Durante las obras, es posible que no tenga acceso al río. Esperamos que el proyecto concluya en otoño de 2022.
 
 El [camino de acceso](/puntos-de-acceso/bradley/) al puente no se verá afectado tras la construcción, según los planes del proyecto.
-

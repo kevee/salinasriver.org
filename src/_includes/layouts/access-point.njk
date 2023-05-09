@@ -45,9 +45,11 @@ scripts:
           {% for trip in collections.trips %}
             {%for point in trip.data.accessPoints %}
               {% if point.id == page.fileSlug %}
-                <li>
-                  <a href="{{ "/trips/{{ trip.fileSlug }}" | locale_url }}">{{ trip.data.title }}</a>
-                </li>
+                {% if trip.page.lang == page.lang %}
+                  <li>
+                    <a href="/{{ page.lang }}/trips/{{ trip.fileSlug }}">{{ trip.data.title }}</a>
+                  </li>
+                {% endif %}
               {% endif %}
             {% endfor %}
           {% endfor %}
@@ -62,7 +64,7 @@ scripts:
     href="https://www.google.com/maps/dir/{{ lat }},{{ lon }}"
     target="_blank"
     rel="noreferrer"
-    >View in Google maps</a
+    >{{ 'viewInGoogle' | i18n }}</a
   >
     </dd>
   </div>

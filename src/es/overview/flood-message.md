@@ -4,7 +4,7 @@ layout: layouts/default.njk
 breadcrumbs:
   - name: Inicio
     link: /
-  - name: Overview
+  - name: Resumen
     link: /overview
 ---
 

@@ -47,13 +47,16 @@ scripts:
             {% if point.putIn %}{{ 'putIn' | i18n }}:{%endif %}
             {% if point.takeOut %}{{ 'takeOut' | i18n }}:{%endif%}
             {% endif %}
-            <a href="{{ "/access-points/{{ point.id }}" | locale_url }}">
-              {% for accessPoint in collections.accessPoint %}
-                {% if accessPoint.fileSlug == point.id %}
-                  {{ accessPoint.data.title }}
+            {% for accessPoint in collections.accessPoint %}
+              {% if accessPoint.fileSlug == point.id %}
+                {% if accessPoint.page.lang == page.lang %}
+                  <a href="/{{ page.lang }}/access-points/{{ point.id }}">
+
+                    {{ accessPoint.data.title }}
+                  </a>
                 {% endif %}
-              {% endfor %}
-            </a>
+              {% endif %}
+            {% endfor %}
           </span>
         {% endfor %}
       </dd>

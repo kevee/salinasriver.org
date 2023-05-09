@@ -11,9 +11,10 @@ time: variable
 guage: chualar
 tresspass: false
 damRelease: false
-gear: Kayaks, canoas o embarcaciones SUP
-setUp: Estacione en el [Refugio de Vida Silvestre del Río
-  Salinas](/access-point/srnwr).
+gear:
+  - Kayaks, canoas o embarcaciones SUP
+setUp: >
+  Estacione en el [Refugio de Vida Silvestre del Río Salinas](/access-point/srnwr).
 accessPoints:
   - id: srnwr
     putIn: true
@@ -51,13 +52,10 @@ route:
             - 36.74562447699797
           - - -121.80237293243408
             - 36.748134763150844
-
 ---
-
 
 La mayor parte del año, salvo los meses más lluviosos entre diciembre y marzo, el río Salinas no desemboca en el océano. En su lugar, forma una gran laguna que forma parte del Refugio de Fauna Salvaje del Río Salinas. La laguna tiene aproximadamente una milla de largo desde el océano hasta el comienzo del límite del refugio. También puede continuar río arriba para hacer un bucle más largo.
 
 Tenga en cuenta que si hay un caudal importante, la [desembocadura del río podría estar abierta](/overview/safety#breach) y no debería intentar descender río abajo.
 
 Durante el otoño y el invierno el refugio está abierto para la caza de patos, lo que hace que flotar en la laguna sea menos divertido.
-

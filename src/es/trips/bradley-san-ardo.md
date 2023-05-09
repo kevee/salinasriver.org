@@ -11,14 +11,10 @@ time: 8-10 hours
 guage: bradley
 tresspass: true
 damRelease: true
-alert: >-
-  Este punto de viaje se ve afectado por el [proyecto de reparación de la
-  socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso
-  puede estar cortado.
-
-
+alert: >
   Este punto del recorrido se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso puede estar cortado.
-gear: Kayaks, canoas o embarcaciones SUP
+gear:
+  - Kayaks, canoas o embarcaciones SUP
 setUp: Localice un auto en [San Ardo](/access-points/san-ardo).
 safety: Hay varias vallas de alambre de espino que cruzan el río. El caudal
   nunca es muy alto, por lo que es fácil divisarlas y dirigirse a la orilla del
@@ -50,7 +46,8 @@ parts:
   - title: Yacimientos petrolíferos de San Ardo
     id: oil-field
     mile: 8
-    description: Los yacimientos petrolíferos de San Ardo son campos petrolíferos en
+    description:
+      Los yacimientos petrolíferos de San Ardo son campos petrolíferos en
       funcionamiento peligrosos, no intente salir del río por aquí salvo en caso
       de emergencia. El puente sobre el río no es un buen punto de acceso y está
       todo en terreno privado sin servidumbre pública.
@@ -61,7 +58,8 @@ parts:
   - title: Segunda valla de alambre de espino
     id: fence-b
     mile: 9.2
-    description: Una valla de alambre de espino cruza el río. Pase los barcos por
+    description:
+      Una valla de alambre de espino cruza el río. Pase los barcos por
       encima de la valla río a la derecha.
     lat: 35.968675
     lon: -120.888704
@@ -70,7 +68,8 @@ parts:
   - title: Salida
     mile: 13
     id: take-out
-    description: Salga del río por la derecha en una gran barra de arena junto a las
+    description:
+      Salga del río por la derecha en una gran barra de arena junto a las
       zapatas del antiguo puente antes del actual puente de Sand Ardo. Siga la
       colada seca hacia la derecha, alejándose del río. Gire a la izquierda al
       llegar a una valla, y siga la valla hasta una abertura en ella.
@@ -289,9 +288,6 @@ route:
             - 36.013300235214125
           - - -120.91250181198122
             - 36.01482760941349
-
 ---
 
-
 Una clásica flotada por el río Salinas a través de algunos de los tramos más bellos del río.
-
