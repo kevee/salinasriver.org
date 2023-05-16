@@ -7,4 +7,4 @@ guage: soledad
 tresspass: false
 ---
 
-Parque San Lorenzo
+Puede acceder fácilmente al río junto al puente peatonal justo antes de la entrada del parque San Lorenzo.
