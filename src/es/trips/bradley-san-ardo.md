@@ -4,6 +4,7 @@ tags: trips
 layout: layouts/trip.njk
 length: 13 miles
 time: 8-10 hours
+windAlert: true
 alert: >
   Este punto del recorrido se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso puede estar cortado.
 gear:

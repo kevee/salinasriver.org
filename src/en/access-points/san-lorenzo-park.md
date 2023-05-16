@@ -5,4 +5,4 @@ layout: layouts/access-point.njk
 directions: Park in front
 ---
 
-San Lorenzo Park
+You can easily access the river next to the pedestrian bridge right before the entrance of San Lorenzo park.

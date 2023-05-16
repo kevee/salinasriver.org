@@ -4,6 +4,7 @@ tags: trips
 layout: layouts/trip.njk
 length: 10 miles
 time: 6-8 hours
+windAlert: true
 gear:
   - Kayaks, canoas o embarcaciones SUP
 setUp: >

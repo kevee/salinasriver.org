@@ -165,6 +165,16 @@ module.exports = {
     en: 'Current flow',
     es: 'Caudal actual',
   },
+  windAlert: {
+    label: {
+      en: 'Afternoon wind',
+      es: 'Viento de la tarde',
+    },
+    warning: {
+      en: 'Consider getting an early start. The prevailing north-south winds pick up in the afternoon, and can make paddling difficult.',
+      es: 'Considere comenzar temprano. Los vientos predominantes de norte a sur se levantan por la tarde y pueden dificultar la navegación.',
+    },
+  },
   flow: {
     good: {
       en: 'Good flow',

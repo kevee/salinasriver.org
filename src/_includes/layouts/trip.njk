@@ -36,6 +36,13 @@ scripts:
     <dt>{{ 'time' | i18n }}</dt>
     <dd>{{ time }}</dd>
   </div>
+  {% if windAlert %}
+    <div>
+      <dt>{{ 'windAlert.label' | i18n }}</dt>
+
+      <dd>{{ 'windAlert.warning' | i18n }}</dd>
+    </div>
+  {% endif %}
   <div>
     <dt>{{ 'accessPoints' | i18n }}</dt>
     <dd>
