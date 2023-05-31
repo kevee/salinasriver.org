@@ -15,7 +15,8 @@ Cuando [las circunstancias son propicias](/overview), es posible flotar en largo
 
 <div class="news-callout">
 
-[Lea las Perspectivas de 2023](/news/2023-outlook)
+- [Lea las Perspectivas de 2023](/news/2023-outlook)
+- [Recibe nuestro boletín](/newsletter)
 
 </div>
 

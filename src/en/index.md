@@ -17,7 +17,8 @@ When [conditions are right](/overview), you can float down long sections of the 
 
 <div class="news-callout">
 
-[Read the 2023 Outlook](/news/2023-outlook)
+- [Read the 2023 Outlook](/news/2023-outlook)
+- [Get our newsletter](/newsletter)
 
 </div>
 
