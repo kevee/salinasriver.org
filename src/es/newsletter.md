@@ -5,7 +5,7 @@ layout: layouts/default.njk
 
 # Recibe nuestro boletín
 
-Suscríbase a nuestro boletín electrónico para recibir actualizaciones **una o dos veces al año** sobre el caudal del río Salinas y cómo puede ayudar a proteger el río y su acceso.
+Suscríbete a nuestro boletín electrónico para recibir actualizaciones **una o dos veces al año** sobre el caudal del río Salinas y cómo puedes ayudar a proteger el río y tu acceso.
 
 <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
