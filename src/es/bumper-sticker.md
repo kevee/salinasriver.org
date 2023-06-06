@@ -1,11 +1,11 @@
 ---
-title: Consigue una pegatina para el parachoques gratis
+title: Consiga una pegatina gratuita para el parachoques
 layout: layouts/default.njk
 ---
 
-# Consigue una pegatina para el parachoques gratis
+# Consiga una pegatina gratuita para el parachoques
 
-Le enviaremos por correo una calcomanía gratuita para el parachoques para correr la voz sobre el río Salinas. Sólo tienes que rellenar el siguiente formulario.
+Le enviaremos gratis una pegatina para su carro por correo ordinario para que difunda el mensaje del río Salinas. Complete el formulario que aparece a continuación.
 
 Puede pedir la calcomanía en inglés o español.
 

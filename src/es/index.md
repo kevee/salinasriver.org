@@ -17,7 +17,7 @@ Cuando [las circunstancias son propicias](/overview), es posible flotar en largo
 
 - [Lea las Perspectivas de 2023](/news/2023-outlook)
 - [Recibe nuestro boletín](/newsletter)
-- [Consigue una pegatina gratis](/bumper-sticker)
+- [Consigue una pegatina gratuita](/bumper-sticker)
 
 </div>
 
