@@ -19,6 +19,7 @@ When [conditions are right](/overview), you can float down long sections of the 
 
 - [Read the 2023 Outlook](/news/2023-outlook)
 - [Get our newsletter](/newsletter)
+- [Get a free bumper sticker](/bumper-sticker)
 
 </div>
 

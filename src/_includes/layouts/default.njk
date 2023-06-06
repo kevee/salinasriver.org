@@ -2,32 +2,7 @@
 layout: layouts/base.njk
 ---
 
-<header>
-  <div class="container">
-    <nav aria-label="Main navigation">
-      <ul>
-        <li>
-          <a href="{{ "/" | locale_url }}">{{ 'theSalinasRiver' | i18n }}</a>
-        </li>
-        <li>
-          <a href="{{"/access-points"| locale_url }}">{{ 'accessPoints' | i18n }}</a>
-        </li>
-        <li>
-          <a href="{{"/trips" | locale_url }}">{{ 'trips' | i18n }}</a>
-        </li>
-        <li>
-          <a href="{{"/overview" | locale_url }}">{{ 'overview' | i18n }}</a>
-        </li>
-        <li class="language" >
-          <a href="{{ page.url | switchUrlLanguage }}">
-            {% if page.lang === 'en' %}En Español{% else %}In English{% endif %}
-          </a>
-        </li>
-      </ul>
-
-    </nav>
-  </div>
-</header>
+{% include 'header.njk' %}
 {% include 'flood-warning.njk' %}
 <div class="container">
   {% if breadcrumbs %}
