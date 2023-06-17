@@ -21,6 +21,16 @@ scripts:
 
 <h1>{{ title }}</h1>
 
+{% if photos %}
+  <div class="photos">
+    {% for photo in photos %}
+      <div class="image">
+        <a href="#photo-{{key}}"><img src="/assets/images/photos/small/{{ photo.image }}" alt="" aria-hidden="true"/></a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
 {% if alert %}
   <div class="alert" role="alert">
     {{ alert | markdown | safe}}

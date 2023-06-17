@@ -61,6 +61,13 @@ parts:
     lat: 36.014901
     lon: -120.912415
     driving: true
+photos:
+  - title: The put-in at Bradley bridge.
+    image: bradley-bridge-footing.jpg
+  - title: Looking up river
+    image: bradley-bridge.jpg
+  - title: South of San Ardo
+    image: bradley-san-ardo.jpg
 ---
 
 A classic Salinas River float through some of the most beautiful stretches of river.

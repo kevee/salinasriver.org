@@ -4,7 +4,7 @@
     .then((river) => {
       const map = L.map('map').setView(
         [36.44525673494023, -121.3909406528181],
-        9.5
+        9.25
       )
 
       L.tileLayer(

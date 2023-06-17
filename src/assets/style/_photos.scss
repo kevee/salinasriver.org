@@ -1,0 +1,13 @@
+.photos {
+  margin: 1rem 0;
+  display: flex;
+  .image {
+    @media (min-width: 850px) {
+      width: 33%;
+      padding: 0 1rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
