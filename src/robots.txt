@@ -1,4 +1,0 @@
-Sitemap: https://salinasriver.org/sitemap.xml
-
-User-agent: *
-Disallow:
