@@ -5,7 +5,7 @@ layout: layouts/trip.njk
 length: 13 miles
 time: 8-10 hours
 windAlert: true
-alert: This trip point is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). Access may be cut off.
+alert: This trip is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). There is no access at Bradley Bridge through the summer of 2023.
 gear:
   - Kayaks, canoes, or SUPs
 setUp: >
