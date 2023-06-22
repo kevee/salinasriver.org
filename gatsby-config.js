@@ -8,32 +8,29 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Raleway:400,700', 'Open Sans:400,700'],
+        display: 'swap',
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/icon.svg',
       },
     },
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './src/images/',
-      },
-      __key: 'images',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
-    },
   ],
 }
