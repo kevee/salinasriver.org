@@ -14,13 +14,6 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['Raleway:400,700', 'Open Sans:400,700'],
-        display: 'swap',
-      },
-    },
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {

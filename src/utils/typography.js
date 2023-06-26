@@ -3,6 +3,9 @@ import Typography from 'typography'
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.666,
+  bodyGrayHue: 'warm',
+  headerGrayHue: 'slate',
+  headerGray: 10,
   headerWeight: 700,
   headerFontFamily: [
     'Raleway',
@@ -19,6 +22,16 @@ const typography = new Typography({
     'Helvetica',
     'Arial',
     'sans-serif',
+  ],
+  googleFonts: [
+    {
+      name: 'Raleway',
+      styles: ['700'],
+    },
+    {
+      name: 'Open Sans',
+      styles: ['400', '400i', '700', '700i'],
+    },
   ],
 })
 
