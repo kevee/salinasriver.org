@@ -1,0 +1,45 @@
+slug: san-lorenzo-park
+lat: 36.2035571783819
+lon: -121.14255604362488
+flowLow: 40
+flowHigh: 500
+tresspass: false
+guage: soledad
+title:
+  en: San Lorenzo Park
+  es: Parque San Lorenzo
+directions:
+  en: Park in front
+  es: Estacione delante
+content:
+  en: You can easily access the river next to the pedestrian bridge right before
+    the entrance of San Lorenzo park.
+  es: Puede acceder fácilmente al río junto al puente peatonal justo antes de la
+    entrada del parque San Lorenzo.
+directionsPath: |-
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -121.14246904850006,
+              36.20379551274967
+            ],
+            [
+              -121.14250659942627,
+              36.203689460445105
+            ],
+            [
+              -121.14248514175414,
+              36.2036353520711
+            ]
+          ]
+        },
+        "properties": {}
+      }
+    ]
+  }

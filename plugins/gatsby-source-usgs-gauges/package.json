@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-source-usgs-gauges",
+  "description": "Fetches data from USGS guages",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.8"
+  },
+  "peerDependencies": {
+    "gatsby": "^5.0.0"
+  }
+}

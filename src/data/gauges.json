@@ -1,0 +1,19 @@
+{
+  "11152300": {
+    "name": "chualar",
+    "label": "Chualar",
+    "flood": 9
+  },
+  "11150500": {
+    "name": "bradley",
+    "label": "Bradley Bridge",
+    "flood": 12
+  },
+  "11151700": {
+    "name": "soledad",
+    "label": "Soledad",
+    "flood": 13
+  },
+  "11147500": { "name": "paso", "label": "Paso Robles", "flood": 18 },
+  "11152500": { "name": "spreckles", "label": "Spreckles", "flood": 15 }
+}

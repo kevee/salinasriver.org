@@ -1,3 +1,5 @@
+const gauges = require('./src/data/gauges.json')
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -8,6 +10,20 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-emotion',
+    'gatsby-transformer-yaml',
+    {
+      resolve: 'gatsby-source-usgs-gauges',
+      options: {
+        gauges,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/data/access-points',
+        name: 'accessPoints',
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
