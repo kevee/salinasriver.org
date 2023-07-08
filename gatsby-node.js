@@ -29,16 +29,71 @@ exports.createPages = async ({ graphql, actions }) => {
           flowLow
           guage
           flowHigh
-          directionsPath {
-            features {
-              geometry {
-                coordinates
-                type
-              }
-              type
-            }
-            type
+          directionsPath
+        }
+      }
+      allTripsYaml {
+        nodes {
+          alert {
+            en
+            es
           }
+          damRelease
+          flowHigh
+          flowLow
+          gear {
+            en
+            es
+          }
+          guage
+          lat
+          lon
+          length {
+            en
+            es
+          }
+          parts {
+            en {
+              caution
+              title
+              mile
+              lon
+              lat
+              id
+              driving
+              description
+            }
+            es {
+              title
+              mile
+              lon
+              lat
+              id
+              driving
+              description
+              caution
+            }
+          }
+          route
+          safety {
+            en
+            es
+          }
+          setUp {
+            en
+            es
+          }
+          slug
+          time {
+            en
+            es
+          }
+          title {
+            en
+            es
+          }
+          tresspass
+          windAlert
         }
       }
     }
@@ -46,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
   for (const node of result.data.allAccessPointsYaml.nodes) {
     for (const language of languages) {
       createPage({
-        path: `/${language}/access-point/${node.slug}`,
+        path: `/${language}/access-points/${node.slug}`,
         component: AccessPointTemplate,
         context: node,
       })

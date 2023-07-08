@@ -1,12 +1,18 @@
 import React from 'react'
 import GlobalStyles from './global-styles'
+import { TranslateProvider } from '../../utils/translate'
+import { LinkProvider } from '../../utils/link'
+import Footer from './footer'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, language }) => {
   return (
-    <>
-      <GlobalStyles />
-      {children}
-    </>
+    <TranslateProvider language={language}>
+      <LinkProvider language={language}>
+        <GlobalStyles />
+        {children}
+        <Footer />
+      </LinkProvider>
+    </TranslateProvider>
   )
 }
 
