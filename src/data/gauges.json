@@ -2,18 +2,31 @@
   "11152300": {
     "name": "chualar",
     "label": "Chualar",
-    "flood": 9
+    "flood": 9,
+    "floodLink": "https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=chlc1"
   },
   "11150500": {
     "name": "bradley",
     "label": "Bradley Bridge",
-    "flood": 12
+    "flood": 12,
+    "floodLink": "https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=brdc1"
   },
   "11151700": {
     "name": "soledad",
     "label": "Soledad",
-    "flood": 13
+    "flood": 13,
+    "floodLink": "https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sddc1"
   },
-  "11147500": { "name": "paso", "label": "Paso Robles", "flood": 18 },
-  "11152500": { "name": "spreckles", "label": "Spreckles", "flood": 15 }
+  "11147500": {
+    "name": "paso",
+    "label": "Paso Robles",
+    "flood": 18,
+    "floodLink": "https://water.weather.gov/ahps2/hydrograph.php?wfo=lox&gage=prbc1"
+  },
+  "11152500": {
+    "name": "spreckles",
+    "label": "Spreckles",
+    "flood": 15,
+    "floodLink": "https://water.weather.gov/ahps2/hydrograph.php?wfo=mtr&gage=sprc1"
+  }
 }

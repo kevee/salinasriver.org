@@ -30,6 +30,8 @@ export const sourceNodes = async (
         id: parseInt(item.sourceInfo.siteCode[0].value, 10),
         name: item.sourceInfo.siteName,
         label: gauges[parseInt(item.sourceInfo.siteCode[0].value, 10)].label,
+        floodLink:
+          gauges[parseInt(item.sourceInfo.siteCode[0].value, 10)].floodLink,
       }
     }
     if (item.variable.variableCode[0].value === '00065') {

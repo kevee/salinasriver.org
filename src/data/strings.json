@@ -5,7 +5,11 @@
   },
   "theSalinasRiver": {
     "en": "The Salinas River",
-    "es": "El río Salinas"
+    "es": "El Río Salinas"
+  },
+  "skipToMain": {
+    "en": "Skip to main content",
+    "es": "Saltar al contenido principal"
   },
   "accessPoints": {
     "en": "Access Points",

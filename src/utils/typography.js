@@ -1,11 +1,11 @@
 import Typography from 'typography'
+import colors from './colors'
 
 const typography = new Typography({
-  baseFontSize: '18px',
+  baseFontSize: '20px',
   baseLineHeight: 1.666,
-  bodyGrayHue: 'warm',
-  headerGrayHue: 'slate',
-  headerGray: 10,
+  bodyColor: colors.body,
+  headerColor: colors.body,
   headerWeight: 700,
   headerFontFamily: [
     'Raleway',

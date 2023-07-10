@@ -1,6 +1,7 @@
 import React from 'react'
-import Layout from '../layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import Layout from '../layout'
+import NavList from '../nav-list'
 
 const AccessPointsPage = ({ children, language }) => {
   // Sort access points from south to north
@@ -22,7 +23,7 @@ const AccessPointsPage = ({ children, language }) => {
     <Layout language={language}>
       <div>{children}</div>
       <div>
-        <ul>
+        <NavList role="navigation">
           {data &&
             data.allAccessPointsYaml.nodes.map((node) => (
               <li key={node.slug}>
@@ -31,7 +32,7 @@ const AccessPointsPage = ({ children, language }) => {
                 </Link>
               </li>
             ))}
-        </ul>
+        </NavList>
       </div>
     </Layout>
   )

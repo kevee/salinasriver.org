@@ -12,9 +12,23 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-transformer-yaml',
     {
+      resolve: 'gatsby-plugin-heap',
+      options: {
+        appId: '2988799717',
+        enableOnDevMode: true,
+      },
+    },
+    {
       resolve: 'gatsby-source-usgs-gauges',
       options: {
         gauges,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/data/dam-release/schedule.yaml',
+        name: 'damReleaseSchedule',
       },
     },
     {
