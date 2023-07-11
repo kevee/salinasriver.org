@@ -1,4 +1,7 @@
 const gauges = require('./src/data/gauges.json')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 /**
  * @type {import('gatsby').GatsbyConfig}

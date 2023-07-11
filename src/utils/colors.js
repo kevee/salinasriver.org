@@ -5,6 +5,7 @@ const colors = {
   grey: '#e0e0e0',
   darkGrey: '#616161',
   body: 'hsla(0,0%,0%,0.8)',
+  red: '#F50022',
 }
 
 export default colors

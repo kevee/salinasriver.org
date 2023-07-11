@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../../../components/layout'
 import Table from '../../../components/table'
+import PointMap from '../../../components/map/point-map'
 
 const EnOverviewDamReleasePage = () => {
   const data = useStaticQuery(graphql`
@@ -80,6 +81,12 @@ const EnOverviewDamReleasePage = () => {
         <strong>{data.allWaterLevel.nodes[0].waterLevel.cfs} cfs</strong>), the
         water can sometimes reach beyond King City.
       </p>
+      <PointMap
+        latitude={35.832921}
+        longitude={-120.756226}
+        zoom={9}
+        caption="Where the Nacimiento joins up with the Salinas."
+      />
     </Layout>
   )
 }
