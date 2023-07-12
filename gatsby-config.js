@@ -14,6 +14,8 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-transformer-yaml',
+    'gatsby-transformer-remark',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-heap',
       options: {
@@ -25,6 +27,13 @@ module.exports = {
       resolve: 'gatsby-source-usgs-gauges',
       options: {
         gauges,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/data/content',
+        name: 'content',
       },
     },
     {
