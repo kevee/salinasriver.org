@@ -6,6 +6,9 @@ const colors = {
   darkGrey: '#616161',
   body: 'hsla(0,0%,0%,0.8)',
   red: '#F50022',
+  dangerLight: '#ebc1bb',
+  dangerDark: '#eb8894',
+  dangerLink: '#893841',
 }
 
 export default colors

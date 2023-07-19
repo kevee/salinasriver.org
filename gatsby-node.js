@@ -7,6 +7,19 @@ exports.createPages = async ({ graphql, actions }) => {
   const AccessPointTemplate = path.resolve('src/templates/access-point.js')
   const result = await graphql(`
     query {
+      allWaterLevel {
+        nodes {
+          name
+          waterLevel {
+            cfs
+            floodLevel
+            floodLink
+            height
+            label
+            name
+          }
+        }
+      }
       allAccessPointsYaml {
         nodes {
           slug
@@ -99,11 +112,14 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   for (const node of result.data.allAccessPointsYaml.nodes) {
+    const guage = result.data.allWaterLevel.nodes.find(
+      (node) => node.name === node.guage
+    )
     for (const language of languages) {
       createPage({
         path: `/${language}/access-points/${node.slug}`,
         component: AccessPointTemplate,
-        context: node,
+        context: { ...node, language, guage },
       })
     }
   }
