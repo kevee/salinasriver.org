@@ -3,7 +3,7 @@ const path = require(`path`)
 const languages = ['en', 'es']
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
   const AccessPointTemplate = path.resolve('src/templates/access-point.js')
   const result = await graphql(`
     query {
@@ -122,5 +122,16 @@ exports.createPages = async ({ graphql, actions }) => {
         context: { ...node, language, guage },
       })
     }
+  }
+}
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createRedirect } = actions
+  if (page.path.includes('/en/')) {
+    createRedirect({
+      fromPath: page.path.replace('/en/', '/'),
+      toPath: page.path,
+      isPermanent: true,
+    })
   }
 }

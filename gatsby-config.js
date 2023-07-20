@@ -16,6 +16,7 @@ module.exports = {
     'gatsby-transformer-yaml',
     'gatsby-transformer-remark',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-meta-redirect',
     {
       resolve: 'gatsby-plugin-heap',
       options: {
