@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import Layout from '../components/layout'
 import PropertiesList from '../components/properties-list'
-import TranslateContext from '../utils/translate'
+import TranslateContext, { translate } from '../utils/translate'
 
-const AccessPointTemplate = ({ pageContext }) => {
+const AccessPoint = ({ pageContext }) => {
   const { language, title, content, directions, flowLow, flowHigh } =
     pageContext
   const t = useContext(TranslateContext)
+
   return (
-    <Layout language={language}>
-      <h1>{title[language]}</h1>
+    <>
       <PropertiesList>
         <div>
           <dt>{t('bestFlow')}</dt>
@@ -25,6 +25,24 @@ const AccessPointTemplate = ({ pageContext }) => {
           <p>{directions[language]}</p>
         </>
       )}
+    </>
+  )
+}
+
+const AccessPointTemplate = ({ pageContext }) => {
+  const { language, title } = pageContext
+  return (
+    <Layout
+      language={language}
+      breadcrumbs={[
+        {
+          link: `/${language}/access-points`,
+          title: translate('accessPoints', language),
+        },
+      ]}
+      title={title[language]}
+    >
+      <AccessPoint pageContext={pageContext} />
     </Layout>
   )
 }

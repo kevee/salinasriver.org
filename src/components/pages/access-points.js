@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Layout from '../layout'
 import NavList from '../nav-list'
+import { translate } from '../../utils/translate'
 
 const AccessPointsPage = ({ children, language }) => {
   // Sort access points from south to north
@@ -20,7 +21,7 @@ const AccessPointsPage = ({ children, language }) => {
   `)
 
   return (
-    <Layout language={language}>
+    <Layout language={language} title={translate('accessPoints', language)}>
       <div>{children}</div>
       <div>
         <NavList role="navigation">

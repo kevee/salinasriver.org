@@ -4,14 +4,16 @@ import { get } from 'lodash'
 
 const TranslateContext = createContext()
 
+const translate = (key, language) => get(strings, `${key}.${language}`, key)
+
 const TranslateProvider = ({ children, language }) => {
-  const t = (key) => get(strings, `${key}.${language}`, key)
+  const t = (key) => translate(key, language)
 
   return (
     <TranslateContext.Provider value={t}>{children}</TranslateContext.Provider>
   )
 }
 
-export { TranslateProvider }
+export { TranslateProvider, translate }
 
 export default TranslateContext
