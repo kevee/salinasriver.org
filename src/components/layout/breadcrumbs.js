@@ -41,6 +41,7 @@ const Breadcrumbs = ({ crumbs, title }) => {
   if (!crumbs && !title) {
     return null
   }
+  const currentPage = typeof window !== 'undefined' ? window.location.href : ''
 
   return (
     <nav aria-label={t('breadcrumbs')}>
@@ -48,14 +49,14 @@ const Breadcrumbs = ({ crumbs, title }) => {
         {Array.isArray(crumbs) && crumbs.length > 0 && (
           <>
             {crumbs.map((crumb) => (
-              <li>
+              <li key={crumb.link}>
                 <Link to={crumb.link}>{crumb.title}</Link>
               </li>
             ))}
           </>
         )}
         <li>
-          <a href="#" aria-current="page">
+          <a href={currentPage} aria-current="page">
             {title}
           </a>
         </li>

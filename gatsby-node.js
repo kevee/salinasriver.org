@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
           name
           waterLevel {
             cfs
+            id
             floodLevel
             floodLink
             height
@@ -113,7 +114,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
   for (const node of result.data.allAccessPointsYaml.nodes) {
     const guage = result.data.allWaterLevel.nodes.find(
-      (node) => node.name === node.guage
+      (guageNode) => guageNode.name === node.guage
     )
     for (const language of languages) {
       createPage({

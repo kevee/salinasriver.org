@@ -20,6 +20,11 @@ const PropertiesList = styled.dl`
     ul {
       margin: 0;
     }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 `
 

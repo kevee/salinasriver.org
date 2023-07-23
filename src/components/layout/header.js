@@ -51,7 +51,7 @@ const HeaderMenu = styled.ul`
     margin-right: 1rem;
     margin-bottom: 0;
     padding: 0;
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       display: ${(props) => (props.isOpen ? 'block' : 'none')}};
       @media (min-width: ${breakpoint}) {
         display: block !important;
