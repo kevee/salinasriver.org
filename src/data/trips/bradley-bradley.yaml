@@ -17,22 +17,20 @@ time:
   es: 3-5 hours
 alert:
   en: This trip point is affected by the [Bradley Bridge Scour Repair
-    project](/overview/bradley-bridge-repair/). Access may be cut off.
+    project](/en/overview/bradley-bridge-repair/). Access may be cut off.
   es: >
     Este punto de viaje se ve afectado por el [proyecto de reparación de la
-    socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso
+    socavación del puente Bradley](/es/overview/bradley-bridge-repair/). El acceso
     puede estar cortado.
 setUp:
   en: |
-    Spot a car at the [northern Bradley bridge](/access-points/bradley).
-  es: Localice un auto en el [puente norte de Bradley](/access-points/bradley).
+    Spot a car at the [northern Bradley bridge](/en/access-points/bradley).
+  es: Localice un auto en el [puente norte de Bradley](/es/access-points/bradley).
 gear:
-  en:
-    - Tubes
-    - Wetsuits unless the weather is very warm
-  es:
-    - Tubos
-    - Trajes de neopreno a menos que haga mucho calor
+  en: >
+    Tubes. Wetsuits unless the weather is very warm
+  es: >
+    Tubos. Trajes de neopreno a menos que haga mucho calor
 safety: {}
 parts:
   en:
@@ -41,7 +39,7 @@ parts:
       mile: 0
       description: >
         Follow the directions for the [Bradley
-        south](/access-points/bradley-south) access point.
+        south](/en/access-points/bradley-south) access point.
       lat: 35.843875707206934
       lon: -120.75292017260654
       driving: true
@@ -59,14 +57,15 @@ parts:
       id: put-in
       mile: 0
       description: Siga las indicaciones para el punto de acceso [Bradley
-        sur](/access-points/bradley-south).
+        sur](/es/access-points/bradley-south).
       lat: 35.843875707206934
       lon: -120.75292017260654
       driving: true
     - title: Salida
       id: take-out
       mile: 3.5
-      description: Salga del río a la derecha por debajo del puente y siga el sendero
+      description:
+        Salga del río a la derecha por debajo del puente y siga el sendero
         a la derecha.
       lat: 35.863988230401546
       lon: -120.80965395355224

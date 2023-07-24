@@ -9,6 +9,11 @@ const colors = {
   dangerLight: '#ebc1bb',
   dangerDark: '#eb8894',
   dangerLink: '#893841',
+  flow: {
+    good: '#cafdcb',
+    danger: '#ebc1bb',
+    default: '#bde2e8',
+  },
 }
 
 export default colors

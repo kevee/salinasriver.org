@@ -37,3 +37,5 @@ const EnOverviewBradleyPage = () => {
 }
 
 export default EnOverviewBradleyPage
+
+export const Head = () => <title>Bradley Bridge repair</title>

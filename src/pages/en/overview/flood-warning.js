@@ -64,3 +64,5 @@ const EnOverviewFloodWarningPage = () => {
 }
 
 export default EnOverviewFloodWarningPage
+
+export const Head = () => <title>Flood warning</title>

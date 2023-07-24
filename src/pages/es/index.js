@@ -1,5 +1,6 @@
 import React from 'react'
 import IndexPage from '../../components/pages/index'
+import { translate } from '../../utils/translate'
 
 const EsIndexPage = () => (
   <IndexPage language="es">
@@ -11,3 +12,5 @@ const EsIndexPage = () => (
 )
 
 export default EsIndexPage
+
+export const Head = () => <title>{translate('siteName', 'es')}</title>

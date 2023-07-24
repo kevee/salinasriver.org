@@ -34,3 +34,5 @@ const EnOverviewSafetyPage = () => {
 }
 
 export default EnOverviewSafetyPage
+
+export const Head = () => <title>Safety</title>

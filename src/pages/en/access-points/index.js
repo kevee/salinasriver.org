@@ -1,5 +1,6 @@
 import React from 'react'
 import AccessPointsPage from '../../../components/pages/access-points'
+import { translate } from '../../../utils/translate'
 
 const EnAccessPointsPage = () => (
   <AccessPointsPage language="en">
@@ -10,3 +11,5 @@ const EnAccessPointsPage = () => (
 )
 
 export default EnAccessPointsPage
+
+export const Head = () => <title>{translate('accessPoints', 'en')}</title>

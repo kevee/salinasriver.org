@@ -37,3 +37,5 @@ const EnOverviewPrivatePropertyPage = () => {
 }
 
 export default EnOverviewPrivatePropertyPage
+
+export const Head = () => <title>Private property</title>

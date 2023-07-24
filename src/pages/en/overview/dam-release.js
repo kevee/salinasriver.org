@@ -92,3 +92,5 @@ const EnOverviewDamReleasePage = () => {
 }
 
 export default EnOverviewDamReleasePage
+
+export const Head = () => <title>Dam release</title>

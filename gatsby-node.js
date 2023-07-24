@@ -3,8 +3,9 @@ const path = require(`path`)
 const languages = ['en', 'es']
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions
+  const { createPage } = actions
   const AccessPointTemplate = path.resolve('src/templates/access-point.js')
+  const TripTemplate = path.resolve('src/templates/trip.js')
   const result = await graphql(`
     query {
       allWaterLevel {
@@ -53,8 +54,13 @@ exports.createPages = async ({ graphql, actions }) => {
             es
           }
           damRelease
+          windAlert
           flowHigh
           flowLow
+          content {
+            en
+            es
+          }
           gear {
             en
             es
@@ -120,6 +126,18 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: `/${language}/access-points/${node.slug}`,
         component: AccessPointTemplate,
+        context: { ...node, language, guage },
+      })
+    }
+  }
+  for (const node of result.data.allTripsYaml.nodes) {
+    const guage = result.data.allWaterLevel.nodes.find(
+      (guageNode) => guageNode.name === node.guage
+    )
+    for (const language of languages) {
+      createPage({
+        path: `/${language}/trips/${node.slug}`,
+        component: TripTemplate,
         context: { ...node, language, guage },
       })
     }

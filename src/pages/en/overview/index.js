@@ -30,3 +30,5 @@ const EnOverviewPage = () => {
 }
 
 export default EnOverviewPage
+
+export const Head = () => <title>Overview</title>

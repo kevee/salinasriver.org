@@ -103,3 +103,9 @@ const AccessPointTemplate = ({ pageContext }) => {
 }
 
 export default AccessPointTemplate
+
+export const Head = ({ pageContext }) => (
+  <>
+    <title>{pageContext.title[pageContext.language]}</title>
+  </>
+)

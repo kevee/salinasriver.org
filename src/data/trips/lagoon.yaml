@@ -18,15 +18,15 @@ time:
 alert: {}
 setUp:
   en: |
-    Park at the [Salinas River Wildlife Refuge](/access-point/srnwr).
+    Park at the [Salinas River Wildlife Refuge](/en/access-points/srnwr).
   es: >
     Estacione en el [Refugio de Vida Silvestre del Río
-    Salinas](/access-point/srnwr).
+    Salinas](/es/access-points/srnwr).
 gear:
-  en:
-    - Kayaks, canoes, or SUPs
-  es:
-    - Kayaks, canoas o embarcaciones SUP
+  en: >
+    Kayaks, canoes, or SUPs
+  es: >
+    Kayaks, canoas o embarcaciones SUP
 safety: {}
 parts:
   en:
@@ -34,7 +34,7 @@ parts:
       id: put-in
       mile: 0
       description: >
-        Park at the [Salinas River Wildlife Refuge](/access-point/srnwr), and
+        Park at the [Salinas River Wildlife Refuge](/en/access-point/srnwr), and
         turn right as you pass through the gate. Where the trail meets the river
         are several use trails that serve as steep launches.
       lat: 36.735825
@@ -45,7 +45,7 @@ parts:
       id: put-in
       mile: 0
       description: Estacione en el [Refugio de Vida Silvestre del Río
-        Salinas](/punto-de-acceso/srnwr), y gire a la derecha al pasar por la
+        Salinas](/es/access-points/srnwr), y gire a la derecha al pasar por la
         verja. Donde el sendero se encuentra con el río hay varios senderos de
         uso que sirven como embarcaderos de gran pendiente.
       lat: 36.735825

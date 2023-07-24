@@ -30,3 +30,5 @@ const EnLegalPage = () => {
 }
 
 export default EnLegalPage
+
+export const Head = () => <title>Legal</title>

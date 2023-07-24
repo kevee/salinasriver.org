@@ -41,3 +41,5 @@ const EnOverviewRubberDamPage = () => {
 }
 
 export default EnOverviewRubberDamPage
+
+export const Head = () => <title>The rubber dam</title>

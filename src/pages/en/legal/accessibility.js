@@ -30,3 +30,5 @@ const EnLegalAccessibilityPage = () => {
 }
 
 export default EnLegalAccessibilityPage
+
+export const Head = () => <title>Accessibility</title>

@@ -19,14 +19,14 @@ time:
 alert: {}
 setUp:
   en: |
-    Spot a car at [San Lucas](/access-points/san-lucas).
+    Spot a car at [San Lucas](/en/access-points/san-lucas).
   es: |
-    Localice un auto en [San Lucas](/access-points/san-lucas).
+    Localice un auto en [San Lucas](/es/access-points/san-lucas).
 gear:
-  en:
-    - Kayaks, canoes, or SUPs
-  es:
-    - Kayaks, canoas o embarcaciones SUP
+  en: >
+    Kayaks, canoes, or SUPs
+  es: >
+    Kayaks, canoas o embarcaciones SUP
 safety:
   en: |
     There are no known hazards on this stretch since April 2023.
@@ -37,7 +37,7 @@ parts:
       id: put-in
       mile: 0
       description: |
-        Park at the [San Ardo access point](/access-points/san-ardo).
+        Park at the [San Ardo access point](/en/access-points/san-ardo).
       lat: 36.016864218055645
       lon: -120.90845326048384
       driving: true
@@ -54,7 +54,7 @@ parts:
       mile: 13
       id: take-out
       description: >
-        Take out at [San Lucas](/access-points/san-lucas). Exit river right
+        Take out at [San Lucas](/en/access-points/san-lucas). Exit river right
         under the iconic green metal bridge. Exit river right.
       lat: 36.11696786016621
       lon: -121.02800601958458
@@ -63,14 +63,15 @@ parts:
     - title: Entrada
       id: put-in
       mile: 0
-      description: Estacione en el [punto de acceso a San Ardo](/access-points/san-ardo).
+      description: Estacione en el [punto de acceso a San Ardo](/es/access-points/san-ardo).
       lat: 36.016864218055645
       lon: -120.90845326048384
       driving: true
     - title: Rabión de clase I
       id: riffle
       mile: 0.5
-      description: Un rabión menor es la corriente de agua más grande que verá en el
+      description:
+        Un rabión menor es la corriente de agua más grande que verá en el
         recorrido.
       lat: 36.01866372341844
       lon: -120.91573209448427
@@ -79,15 +80,16 @@ parts:
     - title: Salida
       mile: 13
       id: take-out
-      description: Salga en [San Lucas](/access-points/san-lucas). Salga del río a la
+      description:
+        Salga en [San Lucas](/es/access-points/san-lucas). Salga del río a la
         derecha por debajo del emblemático puente metálico verde. Salga del río
         por la derecha.
       lat: 36.11696786016621
       lon: -121.02800601958458
       driving: true
 content:
-  en: ""
-  es: ""
+  en: ''
+  es: ''
 route: |-
   {
     "type": "FeatureCollection",
