@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import Map, { Layer, Source } from 'react-map-gl'
 import styled from '@emotion/styled'
+import bbox from 'geojson-bbox'
 import colors from '../../utils/colors'
 import mapLayers from '../../utils/map-layers'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -14,6 +15,9 @@ const MapWrapper = styled.div`
 
 const AccessPath = ({ path }) => {
   const mapRef = useRef(null)
+  if (!path) {
+    return null
+  }
   let geoJson = false
   try {
     geoJson = JSON.parse(path)
@@ -23,24 +27,18 @@ const AccessPath = ({ path }) => {
   if (!geoJson) {
     return null
   }
+  const box = bbox(geoJson.features[0])
 
   return (
     <MapWrapper>
       <Map
         ref={mapRef}
-        onLoad={() => {
-          const layer = mapRef.current.getMap().getLayer('access-path')
-          const source = mapRef.current.getMap().getSource('access-path')
-          const box = source.serialize().data.features[0].geometry.bbox
-          mapRef.current.fitBounds(box, { padding: 20 })
-        }}
         mapboxAccessToken={process.env.GATSBY_MAPBOX_TOKEN}
         style={{ width: '100%', height: 600 }}
         mapStyle={mapLayers.satellite}
         initialViewState={{
-          longitude: -121.3143298,
-          latitude: 36.3473426,
-          zoom: 8,
+          bounds: box,
+          padding: 20,
         }}
       >
         <Source type="geojson" data={geoJson} id="access-path">
