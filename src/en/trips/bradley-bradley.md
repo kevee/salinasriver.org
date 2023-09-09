@@ -4,7 +4,7 @@ tags: trips
 layout: layouts/trip.njk
 length: 3.5 miles
 time: 3-5 hours
-alert: This trip is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). There is no access at Bradley Bridge through the summer of 2023.
+alert: This trip is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). Check the [new route to the river at Bradley](/access-points/bradley).
 gear:
   - Tubes
   - Wetsuits unless the weather is very warm
@@ -28,9 +28,9 @@ parts:
     id: take-out
     mile: 3.5
     description: >
-      Exit the river right under the bridge and follow the foot-path to the right.
-    lat: 35.863988230401546
-    lon: -120.80965395355224
+      Exit the river on the right at a high sandy bench 70 yards upstream from the bridge. **Do not pass into the construction area**.
+    lat: 35.86343917335083
+    lon: -120.80890492442447
     driving: true
 ---
 

@@ -5,7 +5,7 @@ layout: layouts/trip.njk
 length: 3.5 miles
 time: 3-5 hours
 alert: >
-  Este punto de viaje se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso puede estar cortado.
+  Este punto de viaje se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). Consulte la [nueva ruta al río en Bradley](/access-points/bradley).
 damRelease: true
 gear:
   - Tubos
@@ -28,11 +28,9 @@ parts:
   - title: Salida
     id: take-out
     mile: 3.5
-    description:
-      Salga del río a la derecha por debajo del puente y siga el sendero
-      a la derecha.
-    lat: 35.863988230401546
-    lon: -120.80965395355224
+    description: Salga del río por la derecha en un banco alto de arena a 70 metros río arriba del puente. **No pase al área de construcción**.
+    lat: 35.86343917335083
+    lon: -120.80890492442447
     driving: true
 ---
 

@@ -2,13 +2,11 @@
 title: Bradley
 tags: accessPoint
 layout: layouts/access-point.njk
-directions: Estacione en el extremo norte de Bradley Road, en el extremo este
-  del puente Bradley. Hay una papelera y un sendero despejado a lo largo del
-  lado derecho del puente según mira hacia el oeste. Pase a través de una
-  abertura construida en una valla y bajo los pilones del puente.
+directions: Estacione en el extremo norte de Bradley Road en el extremo este del puente Bradley. Hay un bote de basura y un sendero despejado a lo largo del lado derecho del puente hacia el oeste. **Durante la construcción** hay un nuevo camino que claramente cruza debajo del puente y se dirige río arriba 50 yardas y termina en un bonito banco de arena.
 tresspass: false
-alert: This access point is affected by the [Bradley Bridge Scour Repair
-  project](/es/overview/bradley-bridge-repair/). Access may be cut off.
+alert:
+  Este punto de acceso está afectado por el proyecto [Bradley Bridge Scour Repair
+  project](/es/overview/bradley-bridge-repair/). La ruta hacia el río ha cambiado.
 guage: bradley
 ---
 
