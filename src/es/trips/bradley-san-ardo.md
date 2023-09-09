@@ -6,7 +6,7 @@ length: 13 miles
 time: 8-10 hours
 windAlert: true
 alert: >
-  Este punto del recorrido se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). El acceso puede estar cortado.
+  Este punto del recorrido se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). Consulte la [nueva ruta al río en Bradley](/access-points/bradley).
 gear:
   - Kayaks, canoas o embarcaciones SUP
 setUp: Localice un auto en [San Ardo](/access-points/san-ardo).
