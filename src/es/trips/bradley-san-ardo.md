@@ -28,13 +28,20 @@ parts:
     lat: 35.864363579649996
     lon: -120.80894607551416
     driving: true
-  - title: Primera valla de alambre de espino
+  - title: Valla de alambre de espino
     id: fence-a
-    mile: 6.3
-    description: Una valla de alambre de espino cruza el río. Pase los botes por
-      encima de la valla río a la izquierda.
-    lat: 35.932053
-    lon: -120.867892
+    mile: 2
+    description: Una valla de alambre de espino cruza el río.
+    lat: 35.90700
+    lon: -120.83870
+    caution: true
+    driving: false
+  - title: Valla de alambre de espino
+    id: fence-b
+    mile: 4
+    description: Una valla de alambre de espino cruza el río.
+    lat: 35.93222
+    lon: -120.86802
     caution: true
     driving: false
   - title: Yacimientos petrolíferos de San Ardo
@@ -49,14 +56,12 @@ parts:
     lon: -120.881843
     caution: true
     driving: false
-  - title: Segunda valla de alambre de espino
-    id: fence-b
-    mile: 9.2
-    description:
-      Una valla de alambre de espino cruza el río. Pase los barcos por
-      encima de la valla río a la derecha.
-    lat: 35.968675
-    lon: -120.888704
+  - title: Valla de alambre de espino
+    id: fence-c
+    mile: 8.3
+    description: Una valla de alambre de espino cruza el río.
+    lat: 35.96866
+    lon: -120.88850
     caution: true
     driving: false
   - title: Salida

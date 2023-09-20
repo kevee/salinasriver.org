@@ -26,31 +26,40 @@ parts:
     lat: 35.864363579649996
     lon: -120.80894607551416
     driving: true
-  - title: First Barbed-wire fence
+  - title: Barbed-wire fence
     id: fence-a
-    mile: 6.3
+    mile: 2
     description: >
-      A barbed-wire fence crosses the river. Pass boats over the fence river left.
-    lat: 35.932053
-    lon: -120.867892
+      A barbed-wire fence crosses the river.
+    lat: 35.90700
+    lon: -120.83870
+    caution: true
+    driving: false
+  - title: Barbed-wire fence
+    id: fence-b
+    mile: 4
+    description: >
+      A barbed-wire fence crosses the river.
+    lat: 35.93222
+    lon: -120.86802
     caution: true
     driving: false
   - title: San Ardo Oil fields
     id: oil-field
     mile: 8
     description: >
-      The San Ardo oil fields are dangerous operating oil fields, do not try and exit the river here except in emergencies. The bridge over the river is not a good access point and is all on private land with no public easement.
+      The San Ardo oil fields are dangerous, do not try and exit the river here except in emergencies. The bridge over the river is not a good access point and is all on private land with no public easement.
     lat: 35.960910
     lon: -120.881843
     caution: true
     driving: false
-  - title: Second Barbed-wire fence
-    id: fence-b
-    mile: 9.2
+  - title: Barbed-wire fence
+    id: fence-c
+    mile: 8.3
     description: >
-      A barbed-wire fence crosses the river. Pass boats over the fence river right.
-    lat: 35.968675
-    lon: -120.888704
+      A barbed-wire fence crosses the river.
+    lat: 35.96866
+    lon: -120.88850
     caution: true
     driving: false
   - title: Take-out
