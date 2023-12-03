@@ -39,6 +39,11 @@ module.exports = (eleventyConfig) => {
     './node_modules/leaflet/dist': 'assets/js/leaflet',
   })
 
+  eleventyConfig.addGlobalData(
+    'buildProduction',
+    process.env.NODE_ENV && process.env.NODE_ENV === 'production'
+  )
+
   eleventyConfig.amendLibrary('md', (mdLib) =>
     mdLib.use(mdReplaceLink, {
       replaceLink: (link, env) => {
@@ -53,7 +58,7 @@ module.exports = (eleventyConfig) => {
     })
   )
 
-  if (typeof process.env.SALINAS_RIVER_LOCAL === 'undefined') {
+  if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
       if (outputPath && outputPath.endsWith('.html')) {
         let minified = htmlmin.minify(content, {
@@ -108,10 +113,6 @@ module.exports = (eleventyConfig) => {
           url: `/trips/${trip.fileSlug}`,
         }))
     )
-  })
-
-  eleventyConfig.on('afterBuild', () => {
-    console.log(eleventyConfig.collections)
   })
 
   eleventyConfig.addShortcode(
