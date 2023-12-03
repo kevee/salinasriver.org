@@ -40,7 +40,7 @@ module.exports = (eleventyConfig) => {
   })
 
   eleventyConfig.addGlobalData(
-    'buildProduction',
+    'isProduction',
     process.env.NODE_ENV && process.env.NODE_ENV === 'production'
   )
 
