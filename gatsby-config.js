@@ -18,13 +18,6 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-meta-redirect',
     {
-      resolve: 'gatsby-plugin-heap',
-      options: {
-        appId: '2988799717',
-        enableOnDevMode: true,
-      },
-    },
-    {
       resolve: 'gatsby-source-usgs-gauges',
       options: {
         gauges,

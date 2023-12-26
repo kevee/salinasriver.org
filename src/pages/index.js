@@ -1,0 +1,26 @@
+import React, { useEffect } from 'react'
+import { navigate } from 'gatsby'
+import IndexPage from '../components/pages/index'
+import { translate } from '../utils/translate'
+
+const EnIndexPage = () => {
+  useEffect(() => {
+    if (navigator && navigator.language.includes('es')) {
+      navigate('/es')
+      return
+    }
+    navigate('/en')
+  }, [])
+  return (
+    <IndexPage language="en">
+      <strong>This is a guide for enjoying the Salinas River.</strong> It flows
+      for 170 miles south to north in Central California. It is home to beavers
+      and bald eagles. Neighbors noodle on its banks for catfish, and cool off
+      in its silty waters in the summer.
+    </IndexPage>
+  )
+}
+
+export default EnIndexPage
+
+export const Head = () => <title>{translate('siteName', 'en')}</title>
