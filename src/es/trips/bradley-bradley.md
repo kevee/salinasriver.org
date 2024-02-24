@@ -4,8 +4,6 @@ tags: trips
 layout: layouts/trip.njk
 length: 3.5 miles
 time: 3-5 hours
-alert: >
-  Este punto de viaje se ve afectado por el [proyecto de reparación de la socavación del puente Bradley](/overview/bradley-bridge-repair/). Consulte la [nueva ruta al río en Bradley](/access-points/bradley).
 damRelease: true
 gear:
   - Tubos

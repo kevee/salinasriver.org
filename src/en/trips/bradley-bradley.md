@@ -4,7 +4,6 @@ tags: trips
 layout: layouts/trip.njk
 length: 3.5 miles
 time: 3-5 hours
-alert: This trip is affected by the [Bradley Bridge Scour Repair project](/overview/bradley-bridge-repair/). Check the [new route to the river at Bradley](/access-points/bradley).
 gear:
   - Tubes
   - Wetsuits unless the weather is very warm
