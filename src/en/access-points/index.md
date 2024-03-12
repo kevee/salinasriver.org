@@ -19,6 +19,7 @@ river. These are listed south to north along the flow of the river.
 
 <nav class="nav-list">
 
+- [Atascadero: Juan Bautista de Anza Historic Trail Sycamore entrance](atascadero-de-anza-sycamore)
 - [Big Sandy](big-sandy)
 - [Bradley south](bradley-south)
 - [Bradley bridge](bradley)

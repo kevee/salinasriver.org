@@ -8,19 +8,18 @@ scripts:
 breadcrumbs:
   - name: Inicio
     link: /
-
 ---
-
 
 # Puntos de acceso
 
-Lugares para entrar y salir del río Salinas con seguridad. La mayoría 
-de los puntos de acceso se encuentran en puentes o en parques y 
-espacios abiertos que bordean el río. Se enumeran de sur a norte a 
+Lugares para entrar y salir del río Salinas con seguridad. La mayoría
+de los puntos de acceso se encuentran en puentes o en parques y
+espacios abiertos que bordean el río. Se enumeran de sur a norte a
 lo largo del caudal del río.
 
 <nav class="nav-list">
 
+- [Atascadero: Sendero Histórico Juan Bautista de Anza Entrada Sicomoro](atascadero-de-anza-sycamore)
 - [Big Sandy](big-sandy)
 - [Bradley sur](bradley-south)
 - [Bradley](bradley)
@@ -40,4 +39,3 @@ lo largo del caudal del río.
 <div class="map" aria-hidden="true">
   <div id="map"></div>
 </div>
-
