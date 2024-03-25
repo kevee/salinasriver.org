@@ -9,7 +9,7 @@ const guages = {
   },
   11150500: {
     name: 'bradley',
-    label: 'Bradley Bridge',
+    label: 'Bradley',
     flood: 12,
   },
   11151700: {
