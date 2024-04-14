@@ -2,6 +2,7 @@
 title: San Ardo
 tags: accessPoint
 layout: layouts/access-point.njk
+alert: There is a new gate block ing this access point. There is an alternative access point on the western side of the bridge.
 directions: Park at the end of Jolon Road, where there is an open gate built into a tall wildlife fence. Pass throught the fence and turn left, following the trail to the dry wash of Rancho Rico Creek. Turn right and follow the wash and the old bridge footings to the river, around 300 yards. There is a large beach along the river.
 ---
 

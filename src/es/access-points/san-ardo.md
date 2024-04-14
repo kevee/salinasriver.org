@@ -2,6 +2,7 @@
 title: San Ardo
 tags: accessPoint
 layout: layouts/access-point.njk
+alert: Hay una nueva puerta que bloquea este punto de acceso. Hay un punto de acceso alternativo en el lado occidental del puente.
 directions: Estacione al final de Jolon Road, donde hay una puerta abierta
   integrada en una alta valla para animales salvajes. Atraviese la valla y gire
   a la izquierda, siguiendo el sendero hasta la colada seca del arroyo Rancho
