@@ -5,4 +5,5 @@ layout: layouts/access-point.njk
 directions: Park in front
 ---
 
-You can easily access the river next to the pedestrian bridge right before the entrance of San Lorenzo park.
+Cross the pedestrian bridge for easy access to the western bank. You can also access the river from within the campground using the Levee Trail.
+

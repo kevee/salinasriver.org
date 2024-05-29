@@ -7,4 +7,4 @@ guage: soledad
 tresspass: false
 ---
 
-Puede acceder fácilmente al río junto al puente peatonal justo antes de la entrada del parque San Lorenzo.
+Cruce el puente peatonal para acceder fácilmente a la orilla occidental. También puede acceder al río desde el campamento utilizando el sendero Levee.
