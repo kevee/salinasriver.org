@@ -18,6 +18,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          DARK_VISITOR_TOKEN: ${{ secrets.DARK_VISITOR_TOKEN }}
 
       - name: Add cname
         run: npm run deploy:cname
