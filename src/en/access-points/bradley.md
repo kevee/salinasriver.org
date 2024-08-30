@@ -3,6 +3,7 @@ title: Bradley
 tags: accessPoint
 layout: layouts/access-point.njk
 directions: Park on the north end of Bradley Road on the eastern end of the Bradley bridge. There is a trash can and clear trail along the right side of the bridge as you face west.
+webcamNote: The webcam is located just south of the San Ardo oil fields, pointing south.
 ---
 
 A beautiful stretch of the river surrounded by shaded cottonwood trees. Many locals will access the river under the bridge then wade upstream to the old bridge footing for some deep swimming holes.

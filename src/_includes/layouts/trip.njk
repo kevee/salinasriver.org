@@ -73,6 +73,7 @@ scripts:
     {% set tresspass = trips[page.fileSlug].tresspass %}
     {% set flowLow = trips[page.fileSlug].flowLow %}
     {% set flowHigh = trips[page.fileSlug].flowHigh %}
+    {% set webcam = trips[page.fileSlug].webcam %}
     {% include 'overview.njk' %}
     {% if gear %}
       <div>

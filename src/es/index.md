@@ -22,10 +22,7 @@ recorre 170 millas de sur a norte en el centro de California. Alberga castores y
 
 <div class="news-callout">
 
-- [Lea las Perspectivas de 2023](/news/2023-outlook)
 - [Recibe nuestro boletín](/newsletter)
 - [Consigue una pegatina gratuita](/bumper-sticker)
 
 </div>
-
-<small class="hidden-sm">Leer el [sitio original de Salinas River Project](/original).</small>

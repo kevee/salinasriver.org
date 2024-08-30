@@ -221,4 +221,12 @@ module.exports = {
       es: 'consciente de sus derechos y responsabilidades',
     },
   },
+  webcam: {
+    en: 'Webcam',
+    es: 'Cámara web',
+  },
+  viewWebcam: {
+    en: 'View webcam',
+    es: 'Ver cámara web',
+  },
 }

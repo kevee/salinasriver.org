@@ -5,6 +5,7 @@ layout: layouts/trip.njk
 length: 13 miles
 time: 8-10 hours
 windAlert: true
+webcamNote: The webcam is located just south of the San Ardo oil fields, pointing south.
 gear:
   - Kayaks, canoes, or SUPs
 setUp: >

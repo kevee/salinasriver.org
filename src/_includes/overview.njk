@@ -28,6 +28,15 @@
     </dd>
   </div>
 {% endif %}
+{% if webcam %}
+  <div>
+    <dt>{{ 'webcam' | i18n }}</dt>
+    <dd>
+      <a href="{{ webcam }}" target="_blank" rel="noreferrer">{{ 'viewWebcam' | i18n }}</a>
+      {% if webcamNote %}<p>{{ webcamNote }}</p>{% endif %}
+    </dd>
+  </div>
+{% endif %}
 {% if tags == 'trips' %}
   <div>
     <dt>{{ 'currentFlow' | i18n }}</dt>

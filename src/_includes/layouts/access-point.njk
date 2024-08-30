@@ -34,6 +34,7 @@ scripts:
   {% set flowHigh = accessPoints[page.fileSlug].flowHigh %}
   {% set lat = accessPoints[page.fileSlug].lat %}
   {% set lon = accessPoints[page.fileSlug].lon %}
+  {% set webcam = accessPoints[page.fileSlug].webcam %}
   {% include 'overview.njk' %}
   {% set showTrips = false %}
   {% for trip in collections.trips %}

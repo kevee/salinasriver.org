@@ -24,10 +24,7 @@ its silty waters in the summer.
 
 <div class="news-callout">
 
-- [Read the 2023 Outlook](/news/2023-outlook)
 - [Get our newsletter](/newsletter)
 - [Get a free bumper sticker](/bumper-sticker)
 
 </div>
-
-<small class="hidden-sm">View the [original Salinas River Project website](/original).</small>

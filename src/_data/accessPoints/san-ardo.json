@@ -4,6 +4,7 @@
   "flowLow": 80,
   "flowHigh": 600,
   "guage": "bradley",
+  "webcam": "https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA",
   "tresspass": true,
   "directions": {
     "type": "FeatureCollection",

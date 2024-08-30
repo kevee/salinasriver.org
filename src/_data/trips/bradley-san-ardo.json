@@ -6,6 +6,7 @@
   "guage": "bradley",
   "tresspass": true,
   "damRelease": true,
+  "webcam": "https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA",
   "route": {
     "type": "FeatureCollection",
     "features": [
