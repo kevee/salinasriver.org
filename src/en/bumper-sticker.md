@@ -18,4 +18,4 @@ You can order the sticker in either English or Spanish.
   </div>
 </div>
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrIm8fAZADISd9Ih?backgroundColor=green" frameborder="0" onmousewheel="" width="100%" height="1200" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<div class="alert">Sorry, the bumper sticker form is temporarily offline because of lots of spam requests. We'll be back soon!</div>
