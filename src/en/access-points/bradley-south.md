@@ -3,6 +3,7 @@ title: Bradley South
 tags: accessPoint
 layout: layouts/access-point.njk
 directions: Park on either end of Bradley road and follow the path to the west of the road towards the river. There is a clear opening in the fence just below the road.
+alert: The path to the river is on Camp Roberts land, and access can be closed during training.
 images:
   - src: src/images/bradley-south-gate.jpg
     title: The path going through a fence.

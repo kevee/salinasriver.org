@@ -18,4 +18,4 @@ Puede pedir la calcomanía en inglés o español.
   </div>
 </div>
 
-<div class="alert">Lo sentimos, el formulario de calcomanías para parachoques está temporalmente fuera de línea debido a una gran cantidad de solicitudes de spam. ¡Volveremos pronto!</div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJ8pOyiCeQ2Vdxbmv9BXHZVQSksz8p9lu5MnM91BP7uuTaFg/viewform?embedded=true" width="640" height="1078" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

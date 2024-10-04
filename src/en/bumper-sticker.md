@@ -18,4 +18,4 @@ You can order the sticker in either English or Spanish.
   </div>
 </div>
 
-<div class="alert">Sorry, the bumper sticker form is temporarily offline because of lots of spam requests. We'll be back soon!</div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJ8pOyiCeQ2Vdxbmv9BXHZVQSksz8p9lu5MnM91BP7uuTaFg/viewform?embedded=true" width="640" height="1078" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
