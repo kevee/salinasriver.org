@@ -70,6 +70,12 @@ Disallow: /
 User-agent: Diffbot
 Disallow: /
 
+# AI Assistant
+# https://darkvisitors.com/agents/duckassistbot
+
+User-agent: DuckAssistBot
+Disallow: /
+
 # AI Data Scraper
 # https://darkvisitors.com/agents/facebookbot
 
