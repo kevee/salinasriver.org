@@ -5,11 +5,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
+    "build:homepageWebcam": "node ./src/_tools/last-image.js ",
     "build:guages": "node ./src/_tools/guages.js ",
     "build:static-maps": "node ./src/_tools/static-maps.js ",
     "build:eleventy": "npx @11ty/eleventy",
     "build:robots": "node ./src/_tools/robots.js",
-    "build": "npm-run-all build:guages build:eleventy build:robots",
+    "build": "npm-run-all build:homepageWebcam build:guages build:eleventy build:robots",
     "deploy:gh-pages": "gh-pages -d public",
     "deploy:cname": "echo \"salinasriver.org\" > ./public/CNAME",
     "deploy": "npm-run-all build deploy:cname deploy:gh-pages"
@@ -35,6 +36,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-replace-link": "^1.2.0",
     "npm-run-all": "^4.1.5",
+    "sharp": "^0.33.5",
     "yaml": "^2.2.2",
     "yaml-front-matter": "^4.1.1"
   }

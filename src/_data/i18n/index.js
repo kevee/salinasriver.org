@@ -229,4 +229,12 @@ module.exports = {
     en: 'View webcam',
     es: 'Ver cámara web',
   },
+  homeWebcam: {
+    en: 'Latest webcam image',
+    es: 'Última imagen de la cámara web',
+  },
+  homeWebcamTime: {
+    en: 'Last updated',
+    es: 'Última actualización',
+  },
 }

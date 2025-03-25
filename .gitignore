@@ -7,3 +7,5 @@ src/_data/warning.json
 translate.txt
 translate_*.txt
 old
+src/assets/images/latest-camera.jpg
+src/_data/lastImage.json
