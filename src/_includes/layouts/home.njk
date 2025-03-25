@@ -45,5 +45,13 @@ addTrips: true
           </div>
         </div>
       </div>
+      </div>
+      <div>
+        <h3>{{ 'homeWebcam' | i18n }}</h3>
+        <div class="webcam">
+          <p class="time">{{ 'homeWebcamTime' | i18n }}: <a href="https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA">{{ lastImage.lastImageDate }}</a></p>
+            <a href="https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA"><img src="/assets/images/latest-camera.jpg" aria-hidden alt=""/></a>
+          </div>
+      </div>
     </main>
     {% include 'footer.njk' %}
