@@ -1,0 +1,10 @@
+<!-- site-footer -->
+<footer>Hello</footer>
+
+<style webc:scoped>
+  footer {
+    background-color: red;
+    padding: 20px;
+    text-align: center;
+  }
+</style>

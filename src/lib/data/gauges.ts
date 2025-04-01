@@ -1,0 +1,46 @@
+type Gauge = {
+  id: number // USGS gauge ID
+  name: string // Unique identifier for the gauge
+  label: string // Display name
+  flood: number // Flood level in feet
+}
+
+/**
+ * A list of gauges with their IDs, names, labels, and flood levels.
+ */
+const gauges: Gauge[] = [
+  {
+    id: 11152300,
+    name: 'chualar',
+    label: 'Chualar',
+    flood: 9,
+  },
+  {
+    id: 11150500,
+    name: 'bradley',
+    label: 'Bradley',
+    flood: 12,
+  },
+  {
+    id: 11151700,
+    name: 'soledad',
+    label: 'Soledad',
+    flood: 13,
+  },
+  {
+    id: 11147500,
+    name: 'paso',
+    label: 'Paso Robles',
+    flood: 18,
+  },
+  {
+    id: 11152500,
+    name: 'spreckles',
+    label: 'Spreckles',
+    flood: 15,
+  },
+]
+
+export default gauges
+
+export type { Gauge }
