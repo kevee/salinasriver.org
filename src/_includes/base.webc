@@ -3,11 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title @text="t('siteName')"></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <site-typography></site-typography>
+    <site-styles></site-styles>
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>
   </head>
   <body>
     <template @raw="content" webc:nokeep></template>
+
+    <site-footer></site-footer>
     <style @raw="getBundle('css', 'defer')" webc:keep></style>
     <script @raw="getBundle('js', 'defer')" webc:keep></script>
   </body>

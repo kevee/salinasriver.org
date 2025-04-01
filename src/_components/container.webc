@@ -1,0 +1,14 @@
+<div><slot></slot></div>
+
+<style webc:scoped>
+  div {
+    width: auto;
+    margin: 0 1.5rem;
+  }
+  @media (min-width: 850px) {
+    div {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+</style>

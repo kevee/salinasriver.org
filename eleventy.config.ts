@@ -1,11 +1,18 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import pluginWebc from '@11ty/eleventy-plugin-webc'
-import { EleventyI18nPlugin } from '@11ty/eleventy'
+import {
+  EleventyI18nPlugin,
+  InputPathToUrlTransformPlugin,
+} from '@11ty/eleventy'
+import './src/lib/i18n'
+import i18next from 'i18next'
+import updateTypography from './src/lib/update-typography'
 import fetchGauges from './src/lib/data/fetch-gauges'
 import getDarkVisitorRobots from './src/lib/data/dark-visitor-robots'
 
 const config = async (eleventyConfig: any) => {
+  updateTypography()
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin)
+
   eleventyConfig.addPlugin(pluginWebc, {
     components: 'src/_components/**/*.webc',
   })
@@ -22,51 +29,13 @@ const config = async (eleventyConfig: any) => {
     () => (data) =>
       data && data.gauges.some((gauge) => gauge.height >= gauge.flood)
   )
-  const translations = {}
-  const localesDir = path.join(process.cwd(), 'src', '_data', 'locales')
-
-  // Create locales directory if it doesn't exist
-  if (!fs.existsSync(localesDir)) {
-    fs.mkdirSync(localesDir, { recursive: true })
-  }
-
-  // Read all JSON files in the locales directory
-  if (fs.existsSync(localesDir)) {
-    fs.readdirSync(localesDir).forEach((file) => {
-      if (file.endsWith('.json')) {
-        const locale = file.replace('.json', '')
-        const content = fs.readFileSync(path.join(localesDir, file), 'utf8')
-        translations[locale] = JSON.parse(content)
-      }
-    })
-  }
 
   // Add i18n filter that can be used in WebC components
-  eleventyConfig.addFilter('t', function (key, locale) {
-    // If no locale is provided, use page locale or default
-    locale = locale || this.page?.lang || 'en'
+  eleventyConfig.addFilter('t', function (key) {
+    const locale = this.page?.lang || 'en'
 
-    // Navigate nested keys using dot notation (e.g., "header.title")
-    const parts = key.split('.')
-    let value = translations[locale]
-
-    for (const part of parts) {
-      if (!value || !value[part]) {
-        // Fallback to English or return the key itself if not found
-        if (locale !== 'en' && translations['en']) {
-          let enValue = translations['en']
-          for (const p of parts) {
-            if (!enValue || !enValue[p]) return key
-            enValue = enValue[p]
-          }
-          return enValue
-        }
-        return key
-      }
-      value = value[part]
-    }
-
-    return value
+    i18next.changeLanguage(locale)
+    return i18next.t(key)
   })
 
   // Configure i18n plugin
@@ -74,8 +43,13 @@ const config = async (eleventyConfig: any) => {
     defaultLanguage: 'en',
   })
 
+  eleventyConfig.addFilter('u', function (path) {
+    const locale = this.page?.lang || 'en'
+    return `/${locale}${path}`
+  })
+
   // Add language path filter for language switching
-  eleventyConfig.addFilter('languagePath', function (locale) {
+  eleventyConfig.addFilter('switchLanguagePath', function (locale) {
     if (!this.page || !this.page.url) return `/${locale}/`
 
     // Get the current path without the language prefix

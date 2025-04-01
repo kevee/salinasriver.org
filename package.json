@@ -11,7 +11,9 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^5.0.2",
-    "@11ty/eleventy-plugin-webc": "^0.11.2"
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "i18next": "^24.2.3",
+    "typography": "^0.16.24"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",

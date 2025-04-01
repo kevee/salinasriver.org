@@ -1,10 +1,47 @@
-<!-- site-footer -->
-<footer>Hello</footer>
+<footer>
+  <container>
+    <p @raw="t('footer.by')"></p>
+    <nav aria-label="Footer">
+      <ul>
+        <li>
+          <a :href="u('/legal')" @text="t('footer.legal')"></a>
+        </li>
+        <li>
+          <a
+            :href="u('/legal/accessibility')"
+            @text="t('footer.accessibility')"
+          >
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:hello@salinasriver.org"
+            @text="t('footer.contact')"
+          ></a>
+        </li>
+      </ul>
+    </nav>
+  </container>
+</footer>
 
 <style webc:scoped>
   footer {
-    background-color: red;
-    padding: 20px;
-    text-align: center;
+    margin-top: 3rem;
+    border-top: 3px solid black;
+    padding: 3rem 0;
+  }
+  p {
+    margin-top: 0;
+  }
+  ul {
+    padding: 0;
+    margin-top: 2rem;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    margin-right: 2rem;
   }
 </style>
