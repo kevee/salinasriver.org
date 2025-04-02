@@ -1,6 +1,7 @@
 <basic-html @page="page" webc:nokeep>
+  <site-header></site-header>
+  <breadcrumbs></breadcrumbs>
   <main data-pagefind-body>
-    <site-header></site-header>
     <container>
       <template @raw="content" webc:nokeep></template>
     </container>
