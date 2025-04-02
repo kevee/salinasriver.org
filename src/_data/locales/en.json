@@ -1,5 +1,7 @@
 {
   "siteName": "The Salinas River Recreation Guide",
+  "switchLanguage": "En Español",
+  "navigationLabel": "Main navigation",
   "theSalinasRiver": "The Salinas River",
   "accessPoints": "Access Points",
   "accessPoint": "Access point",

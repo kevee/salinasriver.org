@@ -3,6 +3,7 @@ import {
   EleventyI18nPlugin,
   InputPathToUrlTransformPlugin,
 } from '@11ty/eleventy'
+import CleanCSS from 'clean-css'
 import './src/lib/i18n'
 import i18next from 'i18next'
 import updateTypography from './src/lib/update-typography'
@@ -15,6 +16,17 @@ const config = async (eleventyConfig: any) => {
 
   eleventyConfig.addPlugin(pluginWebc, {
     components: 'src/_components/**/*.webc',
+    bundlePluginOptions: {
+      transforms: [
+        function (content: string) {
+          if (!this.type.includes('css')) {
+            return content
+          }
+          const result = new CleanCSS().minify(content)
+          return result.styles
+        },
+      ],
+    },
   })
 
   // Fetch gauge data and store it in a global variable
@@ -29,6 +41,10 @@ const config = async (eleventyConfig: any) => {
     () => (data) =>
       data && data.gauges.some((gauge) => gauge.height >= gauge.flood)
   )
+
+  eleventyConfig.addFilter('cssmin', function (code) {
+    return new CleanCSS({}).minify(code).styles
+  })
 
   // Add i18n filter that can be used in WebC components
   eleventyConfig.addFilter('t', function (key) {

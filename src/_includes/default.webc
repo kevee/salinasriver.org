@@ -1,0 +1,8 @@
+<basic-html @page="page" webc:nokeep>
+  <main data-pagefind-body>
+    <site-header></site-header>
+    <container>
+      <template @raw="content" webc:nokeep></template>
+    </container>
+  </main>
+</basic-html>

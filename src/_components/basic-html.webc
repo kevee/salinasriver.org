@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html :lang="page.lang">
   <head>
     <meta charset="utf-8" />
     <title @text="t('siteName')"></title>
@@ -11,7 +11,7 @@
     <script @raw="getBundle('js')" webc:keep></script>
   </head>
   <body>
-    <template @raw="content" webc:nokeep></template>
+    <slot></slot>
 
     <site-footer></site-footer>
     <style @raw="getBundle('css', 'defer')" webc:keep></style>

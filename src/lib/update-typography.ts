@@ -12,7 +12,7 @@ const updateTypography = async (): Promise<void> => {
     },
     {
       name: 'Poppins',
-      styles: ['700'],
+      styles: ['400'],
     },
   ]
 
