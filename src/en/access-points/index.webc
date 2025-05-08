@@ -1,0 +1,26 @@
+---
+title: Overview
+layout: default
+lang: en
+
+breadcrumbs:
+  - name: Home
+    link: /
+  - name: Access points
+---
+
+<h1>Access points</h1>
+
+<p>
+  Places to enter and exit the Salinas River safely. Most access points are
+  either at bridges or in parks and open spaces that border the river. These are
+  listed south to north along the flow of the river.
+</p>
+<inline-nav>
+  <li webc:for="point of accessPointsSortLatitude">
+    <a
+      :href="u('/access-points/' + point.slug)"
+      @text="point.translate.en.title"
+    ></a>
+  </li>
+</inline-nav>

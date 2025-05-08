@@ -1,0 +1,1 @@
+<abbr :title="t('cubicFeetSecond')" @text="t('cfs')"></abbr>

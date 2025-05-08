@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <slot></slot>
+  </ul>
+</nav>
+
+<style webc:scoped>
+  nav {
+    background: var(--light-blue);
+    padding: 1rem;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+  a {
+    color: black;
+  }
+</style>

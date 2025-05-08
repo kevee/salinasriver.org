@@ -16,7 +16,7 @@ const updateTypography = async (): Promise<void> => {
     },
   ]
 
-  const typography = new Typography({
+  const typography = Typography({
     baseFontSize: '20px',
     baseLineHeight: 1.666,
     headerFontFamily: ['Poppins', 'sans-serif'],
@@ -36,7 +36,11 @@ const updateTypography = async (): Promise<void> => {
 
   await fs.writeFile(
     'src/_components/site-typography.webc',
-    ['<style>', fontImport, typography.toString(), '</style>'].join('')
+    ['<style>', typography.toString(), '</style>'].join('')
+  )
+  await fs.writeFile(
+    'src/_components/site-fonts.webc',
+    ['<style webc:keep>', fontImport, '</style>'].join('')
   )
 }
 

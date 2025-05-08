@@ -1,0 +1,23 @@
+<dl><slot></slot></dl>
+
+<style webc:scoped>
+  dl {
+    margin: 0;
+    padding: 0;
+  }
+  dt {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    width: 20%;
+  }
+  dd {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+  dl div {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid var(--border-grey);
+  }
+</style>

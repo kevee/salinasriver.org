@@ -1,0 +1,20 @@
+---js 
+{
+  layout: "default",
+  lang: "en",
+  title: ({ point }) => point.translate.en.title,
+  pagination: { 
+    data: "accessPoints", 
+    size: 1,
+    alias: "point",
+    resolve: "values" 
+  }, 
+  breadcrumbs: [
+    { name: "Home", link: "/" },
+    { name: "Access points", link: "/access-points/" },
+  ],
+  permalink: ({ point }) =>`/en/access-points/${point.slug}/`
+} 
+---
+
+<access-point :point="point" :lang="en"></access-point>

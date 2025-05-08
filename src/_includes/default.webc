@@ -1,9 +1,11 @@
-<basic-html @page="page" webc:nokeep>
-  <site-header></site-header>
-  <breadcrumbs></breadcrumbs>
-  <main data-pagefind-body>
-    <container>
-      <template @raw="content" webc:nokeep></template>
-    </container>
-  </main>
-</basic-html>
+---
+layout: base
+---
+
+<site-header></site-header>
+<breadcrumbs></breadcrumbs>
+<main data-pagefind-body>
+  <container>
+    <template @raw="content" webc:nokeep></template>
+  </container>
+</main>

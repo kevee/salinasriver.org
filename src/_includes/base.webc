@@ -5,13 +5,14 @@
     <title @text="t('siteName')"></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <site-typography></site-typography>
-    <site-styles></site-styles>
+    <site-fonts webc:nokeep></site-fonts>
+    <site-typography webc:nokeep></site-typography>
+    <site-styles webc:nokeep></site-styles>
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>
   </head>
   <body>
-    <slot></slot>
+    <template @raw="content" webc:nokeep></template>
 
     <site-footer></site-footer>
     <style @raw="getBundle('css', 'defer')" webc:keep></style>

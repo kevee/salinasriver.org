@@ -1,3 +1,5 @@
-<basic-html @page="page" webc:nokeep>
-  <template @raw="content" webc:nokeep></template>
-</basic-html>
+---
+layout: base
+---
+
+<template @raw="content" webc:nokeep></template>
