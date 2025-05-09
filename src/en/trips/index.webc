@@ -1,15 +1,15 @@
 ---
-title: Access points
+title: Trips
 layout: default
 lang: en
 
 breadcrumbs:
   - name: Home
     link: /
-  - name: Access points
+  - name: Trips
 ---
 
-<h1>Access points</h1>
+<h1>Trips</h1>
 
 <p>
   Places to enter and exit the Salinas River safely. Most access points are
@@ -17,10 +17,7 @@ breadcrumbs:
   listed south to north along the flow of the river.
 </p>
 <inline-nav>
-  <li webc:for="point of accessPointsSortLatitude">
-    <a
-      :href="u('/access-points/' + point.slug)"
-      @text="point.translate.en.title"
-    ></a>
+  <li webc:for="trip of tripsSortLatitude">
+    <a :href="u('/trips/' + trip.slug)" @text="trip.slug"></a>
   </li>
 </inline-nav>

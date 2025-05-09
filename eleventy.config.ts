@@ -20,6 +20,7 @@ const config = async (eleventyConfig: any) => {
   const gauges = await fetchGauges()
 
   updateTypography()
+
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin)
 
   eleventyConfig.addPlugin(pluginWebc, {
@@ -59,6 +60,18 @@ const config = async (eleventyConfig: any) => {
       return Object.values(
         data.accessPoints as Record<string, AccessPoint>
       ).sort((a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude)
+    }
+  )
+
+  eleventyConfig.addGlobalData(
+    'eleventyComputed.tripsSortLatitude',
+    () => (data) => {
+      if (!data || !data.trips) {
+        return []
+      }
+      return Object.values(data.trips as Record<string, AccessPoint>).sort(
+        (a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude
+      )
     }
   )
 
