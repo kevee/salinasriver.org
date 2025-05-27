@@ -1,15 +1,19 @@
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 import pluginWebc from '@11ty/eleventy-plugin-webc'
 import {
   EleventyI18nPlugin,
   InputPathToUrlTransformPlugin,
 } from '@11ty/eleventy'
 import CleanCSS from 'clean-css'
-import './src/lib/i18n'
 import i18next from 'i18next'
-import updateTypography from './src/lib/update-typography'
-import fetchGauges from './src/lib/data/fetch-gauges'
-import getDarkVisitorRobots from './src/lib/data/dark-visitor-robots'
-import type { GaugeWithMeasurements } from './src/lib/data/fetch-gauges'
+import { marked } from 'marked'
+import path from 'path'
+import fs from 'fs'
+import './src/_lib/i18n'
+import updateTypography from './src/_lib/update-typography'
+import fetchGauges from './src/_lib/data/fetch-gauges'
+import getDarkVisitorRobots from './src/_lib/data/dark-visitor-robots'
+import type { GaugeWithMeasurements } from './src/_lib/data/fetch-gauges'
 
 interface AccessPoint {
   latitude: number
@@ -20,6 +24,14 @@ const config = async (eleventyConfig: any) => {
   const gauges = await fetchGauges()
 
   updateTypography()
+
+  eleventyConfig.addWatchTarget('./src/_js/*.js')
+
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/leaflet/dist/leaflet-global.js':
+      '/assets/leaflet/leaflet-global.js',
+    'node_modules/leaflet/dist/leaflet.css': '/assets/leaflet/leaflet.css',
+  })
 
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin)
 
@@ -105,6 +117,21 @@ const config = async (eleventyConfig: any) => {
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: 'en',
   })
+
+  eleventyConfig.addFilter('clientJs', (file: string, variables: object) => {
+    const script = fs
+      .readFileSync(path.join('./src/_js/', file), 'utf8')
+      .toString()
+    const variablesScript = !variables
+      ? ''
+      : `const options = ${JSON.stringify(variables)}`
+    return `<script>(() => {${variablesScript}\n${script}})()</script>`
+  })
+
+  // Add a filter to convert markdown content to HTML
+  eleventyConfig.addFilter('markdown', (content: string) =>
+    marked.parse(content)
+  )
 
   // Filter to transform input paths to URLs
   eleventyConfig.addFilter('u', function (path) {

@@ -1,0 +1,56 @@
+<h1 @text="l(point.translate, 'title')"></h1>
+
+<stats-list>
+  <div>
+    <dt @text="t('bestFlow')"></dt>
+    <dd>
+      <span @text="point.flowLow" webc:nokeep webc:if="point.flowLow"></span>
+      <span @text="t('to')" webc:nokeep webc:if="point.flowLow"></span>
+      <span @text="point.flowHigh" webc:nokeep></span>
+      <cfs></cfs>
+      <span @text="t('at')" webc:nokeep></span>
+      <a
+        @text="gauge(point.gauge, 'label')"
+        :href="gauge(point.gauge, 'url')"
+        target="_blank"
+      >
+      </a>
+    </dd>
+  </div>
+  <div>
+    <dt @text="t('waterLevel')"></dt>
+    <dd>
+      <span webc:nokeep @text="gauge(point.gauge, 'cfs')"></span>
+      <cfs></cfs>
+      <span @text="t('and')" webc:nokeep></span>
+      <span webc:nokeep @text="gauge(point.gauge, 'height')"></span>
+      <span @text="t('feetDeep')" webc:nokeep></span>
+    </dd>
+  </div>
+  <div webc:if="point.tresspass">
+    <dt @text="t('privateProperty')"></dt>
+    <dd>
+      <span webc:nokeep @text="t('privatePropertyMessage.text')"></span>
+      <a
+        href="l(/overview/private-property)"
+        @text="t('privatePropertyMessage.link')"
+      ></a>
+    </dd>
+  </div>
+  <div>
+    <dt @text="t('drivingDirections')"></dt>
+    <dd>
+      <driving-directions-link :@latitude="point.lat" :@longitude="point.lon" />
+    </dd>
+  </div>
+</stats-list>
+<protect-rights @type="accessPoint"></protect-rights>
+<div @html="markdown(l(point.translate, 'body'))"></div>
+<h2 @text="t('directions')"></h2>
+<div @html="markdown(l(point.translate, 'directions'))"></div>
+<direction-map
+  :slug="point.slug"
+  :@center-lat="point.lat"
+  :@center-lon="point.lon"
+  :@features="point.directions"
+></direction-map>

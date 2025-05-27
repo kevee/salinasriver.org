@@ -35,11 +35,11 @@ const updateTypography = async (): Promise<void> => {
   const fontImport = `@import url('https://fonts.googleapis.com/css2?${googleFontsFamilies}&display=swap');`
 
   await fs.writeFile(
-    'src/_components/site-typography.webc',
+    'src/_components/layout/site-typography.webc',
     ['<style>', typography.toString(), '</style>'].join('')
   )
   await fs.writeFile(
-    'src/_components/site-fonts.webc',
+    'src/_components/layout/site-fonts.webc',
     ['<style webc:keep>', fontImport, '</style>'].join('')
   )
 }

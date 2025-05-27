@@ -5,9 +5,26 @@
     <title @text="t('siteName')"></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://server.arcgisonline.com"/>
+    <link rel="dns-prefetch" href="https://cartodb-basemaps-a.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://cartodb-basemaps-b.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://cartodb-basemaps-c.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
     <site-fonts webc:nokeep></site-fonts>
     <site-typography webc:nokeep></site-typography>
     <site-styles webc:nokeep></site-styles>
+    <link
+      webc:if="hasMap"
+      webc:keep
+      rel="stylesheet"
+      href="/assets/leaflet/leaflet.css"
+    ></script>
+    <script
+      webc:if="hasMap"
+      webc:keep
+      src="/assets/leaflet/leaflet-global.js"
+    ></script>
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>
   </head>

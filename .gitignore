@@ -3,3 +3,5 @@ public
 node_modules
 .cache
 _scripts
+.DS_Store
+.env

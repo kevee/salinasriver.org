@@ -2,6 +2,7 @@
 {
   layout: "default",
   lang: "en",
+  hasMap: true,
   title: ({ point }) => point.translate.en.title,
   pagination: { 
     data: "accessPoints", 
