@@ -1,12 +1,14 @@
 <style>
   :root {
+    --main-blue: #0050b8;
+    --main-blue-secondary: #43a7ff;
+
     --border-grey: #c3c3c3;
-    --link-color: #055ae3;
 
     --light-blue: #bde2e8;
     --light-blue-border: #adbeff;
 
-    --good-dark: #cafdcb;
+    --good-dark: #168618;
     --good-light: #cafdcb;
 
     --danger-light: #ebc1bb;
@@ -15,13 +17,10 @@
 
     --callout-light: #faf37e;
     --callout-dark: #000000;
-
-    --main-blue: #0050b8;
-    --main-blue-secondary: #43a7ff;
   }
 
   a {
-    color: var(--link-color);
+    color: var(--main-blue);
   }
   h1 {
     margin-top: 1rem;

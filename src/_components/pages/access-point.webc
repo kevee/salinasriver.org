@@ -40,7 +40,11 @@
   <div>
     <dt @text="t('drivingDirections')"></dt>
     <dd>
-      <driving-directions-link :@latitude="point.lat" :@longitude="point.lon" />
+      <driving-directions-link
+        webc:nokeep
+        :@latitude="point.lat"
+        :@longitude="point.lon"
+      />
     </dd>
   </div>
 </stats-list>

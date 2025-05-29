@@ -31,7 +31,7 @@
   <body>
     <template @raw="content" webc:nokeep></template>
 
-    <site-footer></site-footer>
+    <site-footer webc:nokeep></site-footer>
     <style @raw="getBundle('css', 'defer')" webc:keep></style>
     <script @raw="getBundle('js', 'defer')" webc:keep></script>
   </body>

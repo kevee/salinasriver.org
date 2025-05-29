@@ -1,6 +1,6 @@
 <div class="container"><slot></slot></div>
 
-<style webc:scoped>
+<style>
   .container {
     width: auto;
     margin: 0 1.5rem;

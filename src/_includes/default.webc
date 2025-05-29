@@ -2,9 +2,9 @@
 layout: base
 ---
 
-<site-header></site-header>
+<site-header webc:nokeep></site-header>
 <main data-pagefind-body>
-  <container>
+  <container webc:nokeep>
     <template @raw="content" webc:nokeep></template>
   </container>
 </main>
