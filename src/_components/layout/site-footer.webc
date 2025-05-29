@@ -27,8 +27,13 @@
 <style webc:scoped>
   footer {
     margin-top: 3rem;
-    border-top: 3px solid black;
+    border-top: 3px solid var(--main-blue-secondary);
     padding: 3rem 0;
+    background-color: var(--main-blue);
+    color: white;
+  }
+  a {
+    color: white;
   }
   p {
     margin-top: 0;

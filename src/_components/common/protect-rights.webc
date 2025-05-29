@@ -2,7 +2,11 @@
   div {
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: var(--light-blue);
+    background-color: var(--main-blue);
+    color: white;
+  }
+  a {
+    color: white;
   }
 </style>
 

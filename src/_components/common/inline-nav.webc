@@ -6,14 +6,20 @@
 
 <style webc:scoped>
   nav {
-    background: var(--light-blue);
+    border: 2px solid var(--main-blue);
     padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
   ul {
     list-style-type: none;
     margin: 0;
   }
   a {
-    color: black;
+    color: var(--main-blue);
+    font-weight: bold;
+  }
+  a:hover {
+    opacity: 0.8;
   }
 </style>

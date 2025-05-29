@@ -1,6 +1,6 @@
 <header>
   <container>
-    <nav :aria-label="t('navigationLabel')">
+    <nav :aria-label="t('navigationLabel')" class="main-nav">
       <ul>
         <li>
           <a :href="u('/')" @text="t('theSalinasRiver')"></a>
@@ -20,15 +20,40 @@
       </ul>
     </nav>
   </container>
+  <div class="secondary">
+    <container>
+      <div class="secondary-wrapper">
+        <breadcrumbs
+          webc:if="breadcrumbs && breadcrumbs.length > 0"
+          :@breadcrumbs="breadcrumbs"
+          :@title="title"
+        ></breadcrumbs>
+        <search-box></search-box>
+      </div>
+    </container>
+  </div>
 </header>
 
 <style webc:scoped>
   header {
-    background: var(--light-blue);
+    background: var(--main-blue);
     font-family: 'Open Sans', sans-serif;
-    padding: 0.8rem;
+    color: white;
+    font-weight: bold;
   }
-  ul {
+  header .secondary {
+    background: var(--main-blue-secondary);
+    padding: 0.5rem 0;
+  }
+  .secondary-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav.main-nav {
+    padding: 0.8rem 0;
+  }
+  .main-nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -37,19 +62,19 @@
     padding-left: 0;
   }
 
-  a,
+  .main-nav a,
   a:visited {
-    color: black;
+    color: white;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
   }
-  li {
+  .main-nav li {
     margin-right: 2rem;
     margin-bottom: 0;
   }
-  li:first-child {
+  .main-nav li:first-child {
     font-size: 1.2rem;
     font-weight: bold;
     margin-right: 3rem;
@@ -58,12 +83,12 @@
   }
 
   @media (min-width: 992px) {
-    li:first-child {
+    .main-nav li:first-child {
       width: auto;
       margin-bottom: 0;
     }
   }
-  li.language {
+  .main-nav li.language {
     margin-right: 0;
     flex: 1;
     margin-left: auto;
@@ -71,7 +96,7 @@
   }
 
   @media (max-width: 850px) {
-    li.language {
+    .main-nav li.language {
       text-align: left;
       width: 100%;
       flex: auto;

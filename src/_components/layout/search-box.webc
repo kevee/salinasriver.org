@@ -1,0 +1,30 @@
+<div>
+  
+    <input
+      type="search"
+      :placeholder="t('search.placeholder')"
+      :aria-label="t('search.ariaLabel')"
+    />
+  </div>
+</div>
+
+<style webc:scoped>
+
+  input[type="search"] {
+    border: none;
+    outline: none;
+    flex: 1;
+    background: transparent;
+    background: white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: 0 0.5rem;
+  }
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+  }
+</style>

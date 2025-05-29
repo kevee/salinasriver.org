@@ -5,6 +5,10 @@
   "theSalinasRiver": "El río Salinas",
   "accessPoints": "Puntos de acceso",
   "accessPoint": "Punto de acceso",
+  "search": {
+    "label": "Buscar",
+    "placeholder": "Buscar..."
+  },
   "to": "a",
   "and": "y",
   "trip": "Viaje",

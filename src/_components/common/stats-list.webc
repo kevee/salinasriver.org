@@ -8,7 +8,7 @@
   dt {
     font-weight: bold;
     margin-bottom: 0.5rem;
-    width: 20%;
+    width: 33%;
   }
   dd {
     margin-left: 0;

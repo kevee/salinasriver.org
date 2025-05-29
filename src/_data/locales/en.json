@@ -5,6 +5,10 @@
   "theSalinasRiver": "The Salinas River",
   "accessPoints": "Access Points",
   "accessPoint": "Access point",
+  "search": {
+    "label": "Search",
+    "placeholder": "Search..."
+  },
   "to": "to",
   "trip": "Trip",
   "length": "Length",
@@ -45,7 +49,7 @@
   "cfs": "cfs",
   "at": "at",
   "and": "and",
-  "waterLevel": "Water level",
+  "waterLevel": "Current water level",
   "feetDeep": "feet deep",
   "updated": "Updated",
   "currentFlow": "Current flow",

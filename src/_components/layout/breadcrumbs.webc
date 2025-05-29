@@ -1,0 +1,52 @@
+<nav aria-label="breadcrumbs">
+  <ol>
+    <li webc:for="breadcrumb of breadcrumbs">
+      <a :href="u(breadcrumb.link)" @text="breadcrumb.name"></a>
+    </li>
+    <li>
+      <a href="#" aria-current="page" @text="title"></a>
+    </li>
+  </ol>
+</nav>
+
+<style webc:scoped>
+  div {
+    background-color: var(--main-blue-secondary);
+    color: white;
+    padding: 0.2rem 0;
+  }
+  ol {
+    font-size: 0.9rem;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  li {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  li::after {
+    content: ' / ';
+    margin-left: 0.5rem;
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+  li:last-child::after {
+    content: '';
+  }
+  a {
+    color: white;
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a[aria-current] {
+    color: var(--main-blue);
+    text-decoration: none;
+    cursor: default;
+  }
+</style>
