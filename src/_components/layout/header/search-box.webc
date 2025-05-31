@@ -1,0 +1,22 @@
+<div class="search-box">
+  <form method="get" :action="u('/search')" role="search">
+    <input
+      type="search"
+      name="q"
+      :placeholder="t('search.placeholder')"
+      :aria-label="t('search.ariaLabel')"
+    />
+  </form>
+</div>
+
+<style>
+  .search-box {
+    background: rgba(255, 255, 255, 0.8);
+    align-items: end;
+  }
+  .search-box input[type='search'] {
+    border: 2px solid var(--border-grey);
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+</style>

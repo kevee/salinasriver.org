@@ -20,35 +20,27 @@
       </ul>
     </nav>
   </container>
-  <div class="secondary">
-    <container webc:nokeep>
-      <div class="secondary-wrapper">
-        <breadcrumbs
-          webc:if="breadcrumbs && breadcrumbs.length > 0"
-          :@breadcrumbs="breadcrumbs"
-          :@title="title"
-        ></breadcrumbs>
-        <search-box></search-box>
-      </div>
-    </container>
-  </div>
 </header>
+<container webc:nokeep>
+  <div class="secondary-wrapper">
+    <breadcrumbs
+      webc:if="breadcrumbs && breadcrumbs.length > 0"
+      :@breadcrumbs="breadcrumbs"
+      :@title="title"
+      webc:nokeep
+    ></breadcrumbs>
+    <search-box webc:nokeep></search-box>
+  </div>
+</container>
 
 <style>
   header {
-    background: var(--main-blue);
+    background: var(--light-blue);
     font-family: 'Open Sans', sans-serif;
-    color: white;
-    font-weight: bold;
   }
-  header .secondary {
-    background: var(--main-blue-secondary);
-    padding: 0.5rem 0;
-  }
-  header .secondary-wrapper {
+  .secondary-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
   header nav.main-nav {
     padding: 0.8rem 0;
@@ -64,7 +56,7 @@
 
   header .main-nav a,
   header a:visited {
-    color: white;
+    color: black;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
