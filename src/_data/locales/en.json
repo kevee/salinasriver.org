@@ -7,7 +7,11 @@
   "accessPoint": "Access point",
   "search": {
     "label": "Search",
-    "placeholder": "Search..."
+    "placeholder": "Search...",
+    "title": "Search",
+    "noResults": "No results found",
+    "results": "Search results",
+    "searching": "Searching..."
   },
   "to": "to",
   "trip": "Trip",

@@ -8,6 +8,7 @@
     "dev": "npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
     "build:11ty": "npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "build:pagefind": "npx pagefind --site public",
+    "check-links": "npx @untitaker/hyperlink ./public",
     "build": "npm run build:11ty && npm run build:pagefind"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@types/clean-css": "^4.2.11",
     "@types/node": "^22.13.14",
+    "@untitaker/hyperlink": "^0.1.44",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }

@@ -46,7 +46,7 @@ const config = async (eleventyConfig: any) => {
           const compiledSass = sass.compileString(content)
           const result = new CleanCSS().minify(compiledSass.css)
           if (this.buckets.includes('default')) {
-            return [fontImport, typography, result.styles].join('\n')
+            return [fontImport, typography, result.styles].join('')
           }
           return result.styles
         },

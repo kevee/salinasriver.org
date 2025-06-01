@@ -1,11 +1,14 @@
 <div class="search-box">
-  <form method="get" :action="u('/search')" role="search">
+  <form method="get" :action="u('/search/')" role="search">
     <input
       type="search"
       name="q"
       :placeholder="t('search.placeholder')"
-      :aria-label="t('search.ariaLabel')"
+      :aria-label="t('search.label')"
     />
+    <visually-hidden>
+      <button type="submit" @text="t('search.label')"></button>
+    </visually-hidden>
   </form>
 </div>
 

@@ -7,7 +7,11 @@
   "accessPoint": "Punto de acceso",
   "search": {
     "label": "Buscar",
-    "placeholder": "Buscar..."
+    "placeholder": "Buscar...",
+    "title": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "results": "Resultados de búsqueda",
+    "searching": "Buscando..."
   },
   "to": "a",
   "and": "y",
