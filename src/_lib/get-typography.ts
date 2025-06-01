@@ -2,9 +2,10 @@ import fs from 'fs/promises'
 import Typography from 'typography'
 
 /**
- * Renders site typography using Typography.js and writes it to a CSS file.
+ * Renders a well-formatted typography CSS string
+ * and imports the necessary Google Fonts.
  */
-const updateTypography = async (): Promise<void> => {
+const getTypography = (): { fontImport: string; typography: string } => {
   const googleFonts = [
     {
       name: 'Open Sans',
@@ -34,14 +35,7 @@ const updateTypography = async (): Promise<void> => {
 
   const fontImport = `@import url('https://fonts.googleapis.com/css2?${googleFontsFamilies}&display=swap');`
 
-  await fs.writeFile(
-    'src/_components/layout/site-typography.webc',
-    ['<style>', typography.toString(), '</style>'].join('')
-  )
-  await fs.writeFile(
-    'src/_components/layout/site-fonts.webc',
-    ['<style webc:keep>', fontImport, '</style>'].join('')
-  )
+  return { fontImport, typography: typography.toString() }
 }
 
-export default updateTypography
+export default getTypography

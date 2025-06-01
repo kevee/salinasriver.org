@@ -1,25 +1,25 @@
-<nav>
+<nav class="inline-nav">
   <ul>
     <slot></slot>
   </ul>
 </nav>
 
-<style webc:scoped>
-  nav {
+<style>
+  nav.inline-nav {
     border: 2px solid var(--main-blue);
     padding: 1rem;
     max-width: 600px;
     margin: 0 auto;
-  }
-  ul {
-    list-style-type: none;
-    margin: 0;
-  }
-  a {
-    color: var(--main-blue);
-    font-weight: bold;
-  }
-  a:hover {
-    opacity: 0.8;
+    ul {
+      list-style-type: none;
+      margin: 0;
+    }
+    a {
+      color: var(--main-blue);
+      font-weight: bold;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
   }
 </style>

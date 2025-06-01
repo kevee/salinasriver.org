@@ -5,7 +5,8 @@
     centerLon,
   })
 </script>
-<style webc:scoped>
+
+<style>
   #direction-map {
     position: relative;
     width: 100%;
@@ -14,4 +15,3 @@
 </style>
 
 <div id="direction-map"></div>
-<span :@text="center"></span>

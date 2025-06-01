@@ -1,16 +1,16 @@
-<style webc:scoped>
-  div {
+<style>
+  .protect-rights {
     padding: 0.5rem;
     margin: 1rem 0;
     background-color: var(--main-blue);
     color: white;
-  }
-  a {
-    color: white;
+    a {
+      color: white;
+    }
   }
 </style>
 
-<div role="complementary">
+<div role="complementary" class="protect-rights">
   <span webc:nokeep @text="t('protectRights.preamble')"></span>
   <a
     webc:if="type == 'trip'"

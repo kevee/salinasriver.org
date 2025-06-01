@@ -4,13 +4,14 @@ import {
   EleventyI18nPlugin,
   InputPathToUrlTransformPlugin,
 } from '@11ty/eleventy'
+import sass from 'sass'
 import CleanCSS from 'clean-css'
 import i18next from 'i18next'
 import { marked } from 'marked'
 import path from 'path'
 import fs from 'fs'
 import './src/_lib/i18n'
-import updateTypography from './src/_lib/update-typography'
+import getTypography from './src/_lib/get-typography'
 import fetchGauges from './src/_lib/data/fetch-gauges'
 import getDarkVisitorRobots from './src/_lib/data/dark-visitor-robots'
 import type { GaugeWithMeasurements } from './src/_lib/data/fetch-gauges'
@@ -22,8 +23,6 @@ interface AccessPoint {
 
 const config = async (eleventyConfig: any) => {
   const gauges = await fetchGauges()
-
-  updateTypography()
 
   eleventyConfig.addWatchTarget('./src/_js/*.js')
 
@@ -43,7 +42,12 @@ const config = async (eleventyConfig: any) => {
           if (!this.type.includes('css')) {
             return content
           }
-          const result = new CleanCSS().minify(content)
+          const { fontImport, typography } = getTypography()
+          const compiledSass = sass.compileString(content)
+          const result = new CleanCSS().minify(compiledSass.css)
+          if (this.buckets.includes('default')) {
+            return [fontImport, typography, result.styles].join('\n')
+          }
           return result.styles
         },
       ],
