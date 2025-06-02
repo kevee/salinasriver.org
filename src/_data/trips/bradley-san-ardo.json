@@ -6,8 +6,29 @@
   "guage": "bradley",
   "tresspass": true,
   "damRelease": true,
+  "safety": true,
   "webcam": "https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA",
-  "bradley": "bradley-san-ardo",
+  "slug": "bradley-san-ardo",
+  "translate": {
+    "en": {
+      "title": "Bradley to San Ardo",
+      "length": "13 miles",
+      "time": "8-10 hours",
+      "gear": ["Kayaks, canoes, or SUPs"],
+      "setUp": "Spot a car at [San Ardo](/access-points/san-ardo).",
+      "safety": "There are several barbed-wire fences that cross the river. The flow is never very high, so it is easy to spot these and make your way to the river's edge. There are several narrow sections that at higher flows have moderate strainers. Stay close to the main flow in these areas.",
+      "description": "A classic Salinas River float through some of the most beautiful stretches of river."
+    },
+    "es": {
+      "title": "Bradley a San Ardo",
+      "length": "13 miles",
+      "time": "8-10 horas",
+      "gear": ["Kayaks, canoas o embarcaciones SUP"],
+      "setUp": "Localice un auto en [San Ardo](/access-points/san-ardo).",
+      "safety": "Hay varias vallas de alambre de espino que cruzan el río. El caudal nunca es muy alto, por lo que es fácil divisarlas y dirigirse a la orilla del río. Hay varios tramos estrechos que en los caudales más altos tienen coladeras moderadas. Manténgase cerca del caudal principal en estas zonas.",
+      "description": "Una clásica flotada por el río Salinas a través de algunos de los tramos más bellos del río."
+    }
+  },
   "route": {
     "type": "FeatureCollection",
     "features": [
@@ -123,5 +144,101 @@
         }
       }
     ]
-  }
+  },
+  "parts": [
+    {
+      "title": {
+        "en": "Put-in",
+        "es": "Entrada"
+      },
+      "id": "put-in",
+      "mile": 0,
+      "description": {
+        "en": "Park on the road by [Bradley bridge](/access-points/bradley).\n",
+        "es": "Estacione en la carretera junto al [puente Bradley](/access-points/bradley)."
+      },
+      "lat": 35.864363579649996,
+      "lon": -120.80894607551416,
+      "driving": true
+    },
+    {
+      "title": {
+        "en": "Barbed-wire fence",
+        "es": "Valla de alambre de espino"
+      },
+      "id": "fence-a",
+      "mile": 2,
+      "description": {
+        "en": "A barbed-wire fence crosses the river.\n",
+        "es": "Una valla de alambre de espino cruza el río."
+      },
+      "lat": 35.907,
+      "lon": -120.8387,
+      "caution": true,
+      "driving": false
+    },
+    {
+      "title": {
+        "en": "Barbed-wire fence",
+        "es": "Valla de alambre de espino"
+      },
+      "id": "fence-b",
+      "mile": 4,
+      "description": {
+        "en": "A barbed-wire fence crosses the river.\n",
+        "es": "Una valla de alambre de espino cruza el río."
+      },
+      "lat": 35.93222,
+      "lon": -120.86802,
+      "caution": true,
+      "driving": false
+    },
+    {
+      "title": {
+        "en": "San Ardo Oil fields",
+        "es": "Yacimientos petrolíferos de San Ardo"
+      },
+      "id": "oil-field",
+      "mile": 8,
+      "description": {
+        "en": "The San Ardo oil fields are dangerous, do not try and exit the river here except in emergencies. The bridge over the river is not a good access point and is all on private land with no public easement.\n",
+        "es": "Los yacimientos petrolíferos de San Ardo son campos petrolíferos en funcionamiento peligrosos, no intente salir del río por aquí salvo en caso de emergencia. El puente sobre el río no es un buen punto de acceso y está todo en terreno privado sin servidumbre pública."
+      },
+      "lat": 35.96091,
+      "lon": -120.881843,
+      "caution": true,
+      "driving": false
+    },
+    {
+      "title": {
+        "en": "Barbed-wire fence",
+        "es": "Valla de alambre de espino"
+      },
+      "id": "fence-c",
+      "mile": 8.3,
+      "description": {
+        "en": "A barbed-wire fence crosses the river.\n",
+        "es": "Una valla de alambre de espino cruza el río."
+      },
+      "lat": 35.96866,
+      "lon": -120.8885,
+      "caution": true,
+      "driving": false
+    },
+    {
+      "title": {
+        "en": "Take-out",
+        "es": "Salida"
+      },
+      "mile": 13,
+      "id": "take-out",
+      "description": {
+        "en": "Exit the river on the right at a large sand bar next to the footings of the old bridge before the current Sand Ardo bridge. Follow the dry wash to the right, away from the river. Turn left when you hit a fence, and follow the fence to an opening built into it.\n",
+        "es": "Salga del río por la derecha en una gran barra de arena junto a las zapatas del antiguo puente antes del actual puente de Sand Ardo. Siga la colada seca hacia la derecha, alejándose del río. Gire a la izquierda al llegar a una valla, y siga la valla hasta una abertura en ella."
+      },
+      "lat": 36.014901,
+      "lon": -120.912415,
+      "driving": true
+    }
+  ]
 }

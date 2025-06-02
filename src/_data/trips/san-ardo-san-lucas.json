@@ -7,6 +7,26 @@
   "tresspass": false,
   "damRelease": true,
   "slug": "san-ardo-san-lucas",
+  "translate": {
+    "en": {
+      "title": "San Ardo to San Lucas",
+      "length": "10 miles",
+      "time": "6-8 hours",
+      "gear": ["Kayaks, canoes, or SUPs"],
+      "setUp": "Spot a car at [San Lucas](/access-points/san-lucas).",
+      "safety": "There are no known hazards on this stretch since April 2023.",
+      "description": ""
+    },
+    "es": {
+      "title": "San Ardo a San Lucas",
+      "length": "10 millas",
+      "time": "6-8 horas",
+      "gear": ["Kayaks, canoas o SUPs"],
+      "setUp": "Localice un auto en [San Lucas](/access-points/san-lucas).",
+      "safety": " No se conocen peligros en este tramo desde abril de 2023.",
+      "description": ""
+    }
+  },
   "route": {
     "type": "FeatureCollection",
     "features": [
@@ -90,5 +110,53 @@
         }
       }
     ]
-  }
+  },
+  "parts": [
+    {
+      "title": {
+        "en": "Put-in",
+        "es": "Entrada"
+      },
+      "id": "put-in",
+      "mile": 0,
+      "description": {
+        "en": "Park at the [San Ardo access point](/access-points/san-ardo).\n",
+        "es": "Estacione en el [punto de acceso a San Ardo](/access-points/san-ardo)."
+      },
+      "lat": 36.016864218055645,
+      "lon": -120.90845326048384,
+      "driving": true
+    },
+    {
+      "title": {
+        "en": "Class I riffle",
+        "es": "Rabión de clase I"
+      },
+      "id": "riffle",
+      "mile": 0.5,
+      "description": {
+        "en": "A minor riffle is the largest water you will see in the trip.\n",
+        "es": "Un rabión menor es la corriente de agua más grande que verá en el"
+      },
+      "lat": 36.01866372341844,
+      "lon": -120.91573209448427,
+      "caution": true,
+      "driving": false
+    },
+    {
+      "title": {
+        "en": "Take-out",
+        "es": "Salida"
+      },
+      "mile": 13,
+      "id": "take-out",
+      "description": {
+        "en": "Take out at [San Lucas](/access-points/san-lucas). Exit river right under the iconic green metal bridge. Exit river right.\n",
+        "es": "Salga en [San Lucas](/access-points/san-lucas). Salga del río a la derecha por debajo del emblemático puente metálico verde. Salga del río por la derecha."
+      },
+      "lat": 36.11696786016621,
+      "lon": -121.02800601958458,
+      "driving": true
+    }
+  ]
 }

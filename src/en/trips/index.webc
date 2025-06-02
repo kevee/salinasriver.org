@@ -12,12 +12,13 @@ breadcrumbs:
 <h1>Trips</h1>
 
 <p>
-  Places to enter and exit the Salinas River safely. Most access points are
-  either at bridges or in parks and open spaces that border the river. These are
-  listed south to north along the flow of the river.
+  Suggested iteneraries for floating the Salinas. Because there
+  <strong>is no whitewater</strong> on the river, you can use a variety of craft
+  for these trips, but read descriptions carefully for other hazards like
+  strainers, which require at least a little boating skill to navigate.
 </p>
 <inline-nav>
   <li webc:for="trip of tripsSortLatitude">
-    <a :href="u('/trips/' + trip.slug)" @text="trip.slug"></a>
+    <a :href="u('/trips/' + trip.slug)" @text="trip.translate.en.title"></a>
   </li>
 </inline-nav>
