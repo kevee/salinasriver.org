@@ -3,8 +3,8 @@
   "lon": -121.791014,
   "flowLow": -999999,
   "flowHigh": 100,
-  "guage": "chualar",
-  "tresspass": false,
+  "gauge": "chualar",
+  "privatePropertyWarning": false,
   "damRelease": false,
   "slug": "lagoon",
   "translate": {

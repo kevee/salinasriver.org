@@ -3,8 +3,8 @@
   "lon": -120.9559010261776,
   "flowLow": 300,
   "flowHigh": 1300,
-  "guage": "bradley",
-  "tresspass": false,
+  "gauge": "bradley",
+  "privatePropertyWarning": false,
   "damRelease": true,
   "slug": "san-ardo-san-lucas",
   "translate": {

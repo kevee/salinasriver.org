@@ -10,6 +10,7 @@
       <cfs></cfs>
       <span @text="t('at')" webc:nokeep></span>
       <a
+        class="external-link"
         @text="gauge(point.gauge, 'label')"
         :href="gauge(point.gauge, 'url')"
         target="_blank"

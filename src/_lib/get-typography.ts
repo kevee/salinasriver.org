@@ -1,4 +1,3 @@
-import fs from 'fs/promises'
 import Typography from 'typography'
 
 /**
