@@ -29,12 +29,6 @@ User-agent: Applebot-Extended
 Disallow: /
 
 # AI Data Scraper
-# https://darkvisitors.com/agents/awario
-
-User-agent: Awario
-Disallow: /
-
-# AI Data Scraper
 # https://darkvisitors.com/agents/bytespider
 
 User-agent: Bytespider
@@ -104,12 +98,6 @@ Disallow: /
 # https://darkvisitors.com/agents/duckassistbot
 
 User-agent: DuckAssistBot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/echobot-bot
-
-User-agent: Echobot Bot
 Disallow: /
 
 # AI Data Scraper
@@ -190,12 +178,6 @@ Disallow: /
 User-agent: Perplexity-User
 Disallow: /
 
-# AI Assistant
-# https://darkvisitors.com/agents/perplexityuser
-
-User-agent: Perplexity‑User
-Disallow: /
-
 # AI Search Crawler
 # https://darkvisitors.com/agents/perplexitybot
 
@@ -209,12 +191,6 @@ User-agent: PetalBot
 Disallow: /
 
 # AI Data Scraper
-# https://darkvisitors.com/agents/qualifiedbot
-
-User-agent: QualifiedBot
-Disallow: /
-
-# AI Data Scraper
 # https://darkvisitors.com/agents/semrushbot-ocob
 
 User-agent: SemrushBot-OCOB
@@ -224,12 +200,6 @@ Disallow: /
 # https://darkvisitors.com/agents/timpibot
 
 User-agent: Timpibot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/wardbot
-
-User-agent: WARDBot
 Disallow: /
 
 # AI Data Scraper
