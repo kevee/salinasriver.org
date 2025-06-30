@@ -13,7 +13,8 @@
   <div>
     <dt @text="t('bestFlow')"></dt>
     <dd>
-      <span @text="trip.flowLow" webc:nokeep></span>
+      <span @text="trip.flowLow" webc:nokeep webc:if="trip.flowLow >= 0"></span>
+      <span webc:nokeep webc:if="trip.flowLow < 0">0</span>
       <span @text="t('to')" webc:nokeep webc:if="trip.flowLow"></span>
       <span @text="trip.flowHigh" webc:nokeep></span>
       <cfs></cfs>
@@ -68,3 +69,6 @@
   :@route="trip.route"
   :@parts="trip.parts"
 ></trip-map>
+<h2 id="set-up" @text="t('setUp')"></h2>
+<div @html="markdown(l(trip.translate, 'setUp'))"></div>
+<trip-parts :@parts="trip.parts" :@slug="trip.slug"> </trip-parts>

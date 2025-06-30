@@ -13,14 +13,14 @@
       "length": "5.6 miles",
       "time": "4-6 hours",
       "gear": ["Kayaks, canoes, or SUPs"],
-      "setUp": "Spot a car at [Salinas River Wildlife Refuge](/access-point/srnwr) if going south-to-north, or [Blanco bridge](/access-points/blanco) if traveling north-to-south."
+      "setUp": "Spot a car at [Salinas River Wildlife Refuge](/en/access-point/srnwr) if going south-to-north, or [Blanco bridge](/en/access-points/blanco) if traveling north-to-south."
     },
     "es": {
       "title": "Carretera Blanco a la desembocadura del río",
       "length": "5.6 miles",
       "time": "4-6 horas",
       "gear": ["Kayaks, canoas o embarcaciones SUP"],
-      "setUp": "Localice un auto en el [Refugio de Vida Silvestre del Río Salinas](/punto-de-acceso/srnwr) si va de sur a norte, o en el [puente Blanco](/punto-de-acceso/blanco) si va de norte a sur."
+      "setUp": "Localice un auto en el [Refugio de Vida Silvestre del Río Salinas](/es/access-points/srnwr) si va de sur a norte, o en el [puente Blanco](/es/access-points/blanco) si va de norte a sur."
     }
   },
   "parts": [
@@ -30,13 +30,15 @@
       "lat": 36.6786279923835,
       "lon": -121.74336546306512,
       "driving": true,
-      "title": {
-        "en": "Put-in",
-        "es": "Entrada"
-      },
-      "description": {
-        "en": "Park on the road by [Blanco bridge](/access-points/blanco).",
-        "es": "Estacione en la carretera junto al [puente Blanco](/access-points/blanco)."
+      "translate": {
+        "en": {
+          "title": "Put-in",
+          "description": "Park on the road by [Blanco bridge](/en/access-points/blanco)."
+        },
+        "es": {
+          "title": "Entrada",
+          "description": "Estacione en la carretera junto al [puente Blanco](/es/access-points/blanco)."
+        }
       }
     },
     {
@@ -46,16 +48,17 @@
       "lon": -121.750769,
       "driving": false,
       "caution": false,
-      "title": {
-        "en": "Rubber dam",
-        "es": "Dique de goma"
-      },
-      "description": {
-        "en": "The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam. [Learn more about the rubber dam](/overview/rubber-dam).",
-        "es": "El dique suele estar cerrado en verano y abierto en invierno. Si está cerrado, no intente pasar por encima de la presa. Alrededor de la presa hay un porteo fácil a la izquierda del río y boyas despejadas antes de la presa. [Más información sobre la presa de goma](/overview/rubber-dam)."
+      "translate": {
+        "en": {
+          "title": "Rubber dam",
+          "description": "The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam. [Learn more about the rubber dam](/en/overview/rubber-dam)."
+        },
+        "es": {
+          "title": "Dique de goma",
+          "description": "El dique suele estar cerrado en verano y abierto en invierno. Si está cerrado, no intente pasar por encima de la presa. Alrededor de la presa hay un porteo fácil a la izquierda del río y boyas despejadas antes de la presa. [Más información sobre la presa de goma](/es/overview/rubber-dam)."
+        }
       }
     },
-
     {
       "id": "take-out-alternative",
       "mile": 5,
@@ -63,13 +66,15 @@
       "lon": -121.782579,
       "driving": true,
       "caution": false,
-      "title": {
-        "en": "Alternate take-out",
-        "es": "Salida alternativa"
-      },
-      "description": {
-        "en": "Exit the river right as you pass under highway 1, after the abandoned railroad bridge, at the [Monte Road access point](/access-point/monte).",
-        "es": "Salga del río por la derecha al pasar por debajo de la autopista 1, después del puente ferroviario abandonado, en el [punto de acceso de Monte Road](/access-point/monte)."
+      "translate": {
+        "en": {
+          "title": "Alternate take-out",
+          "description": "Exit the river right as you pass under highway 1, after the abandoned railroad bridge, at the [Monte Road access point](/en/access-point/monte)."
+        },
+        "es": {
+          "title": "Salida alternativa",
+          "description": "Salga del río por la derecha al pasar por debajo de la autopista 1, después del puente ferroviario abandonado, en el [punto de acceso de Monte Road](/es/access-point/monte)."
+        }
       }
     },
     {
@@ -79,13 +84,15 @@
       "lon": -121.791014,
       "driving": true,
       "caution": false,
-      "title": {
-        "en": "Take-out",
-        "es": "Salida"
-      },
-      "description": {
-        "en": "Exit the river on the left after passing under the highway 1 overpass and a field on your left. You will be exiting at the [Salinas River Wildlife Refuge](/access-point/srnwr).",
-        "es": "Salga del río por la izquierda tras pasar por debajo del paso elevado de la autopista 1 y un campo a su izquierda. Estará saliendo en el [Refugio de Vida Silvestre del Río Salinas](/access-point/srnwr)."
+      "translate": {
+        "en": {
+          "title": "Take-out",
+          "description": "Exit the river on the left after passing under the highway 1 overpass and a field on your left. You will be exiting at the [Salinas River Wildlife Refuge](/en/access-point/srnwr)."
+        },
+        "es": {
+          "title": "Salida",
+          "description": "Salga del río por la izquierda tras pasar por debajo del paso elevado de la autopista 1 y un campo a su izquierda. Estará saliendo en el [Refugio de Vida Silvestre del Río Salinas](/es/access-point/srnwr)."
+        }
       }
     }
   ],

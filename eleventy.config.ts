@@ -1,4 +1,5 @@
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+import 'dotenv/config'
 import { marked } from 'marked'
 import './src/_lib/i18n/init'
 import addGlobalData from './src/_lib/data'
@@ -6,6 +7,7 @@ import addI18nFilters from './src/_lib/i18n/filters'
 import addWebc from './src/_lib/webc'
 import addClientJs from './src/_lib/client-js'
 import addMinifyHtml from './src/_lib/minify-html'
+import staticMaps from './src/_lib/data/static-maps'
 
 const config = async (eleventyConfig: any) => {
   await addGlobalData(eleventyConfig)
@@ -13,6 +15,7 @@ const config = async (eleventyConfig: any) => {
   addWebc(eleventyConfig)
   addClientJs(eleventyConfig)
   addMinifyHtml(eleventyConfig)
+  await staticMaps(eleventyConfig)
 
   eleventyConfig.addWatchTarget('./src/_js/*.js')
   eleventyConfig.addWatchTarget('./src/_lib/*.ts')
@@ -36,6 +39,10 @@ const config = async (eleventyConfig: any) => {
   // Create a redirect from / to /en/
   eleventyConfig.addPassthroughCopy({
     'src/redirect.html': 'index.html',
+  })
+
+  eleventyConfig.addPassthroughCopy({
+    'src/assets': 'assets',
   })
 
   return {

@@ -13,16 +13,16 @@
       "length": "1.5 miles",
       "time": "1-2 hours",
       "gear": ["Kayaks, canoes, or SUPs"],
-      "setUp": "Park at the [Salinas River Wildlife Refuge](/access-point/srnwr).",
-      "description": "Most of the year except for the wettest months between December and March, the Salinas River doesn't flow to the ocean. Instead, it forms a large lagoon that is part of the Salinas River Wildlife Refuge. The lagoon is about a mile long from the ocean to the beginning of the refuge boundary. You can also continue up river to make a longer loop.\n\nNote that if there is any significant flow, then the [river mouth could be breached](/overview/safety#breach) and you should not attempt going down river.\n\nDuring the fall and winter the refuge is open for duck hunting, making floating on the lagoon less fun."
+      "setUp": "Park at the [Salinas River Wildlife Refuge](/en/access-point/srnwr).",
+      "description": "Most of the year except for the wettest months between December and March, the Salinas River doesn't flow to the ocean. Instead, it forms a large lagoon that is part of the Salinas River Wildlife Refuge. The lagoon is about a mile long from the ocean to the beginning of the refuge boundary. You can also continue up river to make a longer loop.\n\nNote that if there is any significant flow, then the [river mouth could be breached](/en/overview/safety#breach) and you should not attempt going down river.\n\nDuring the fall and winter the refuge is open for duck hunting, making floating on the lagoon less fun."
     },
     "es": {
       "title": "Laguna de la desembocadura del río",
       "length": "1.5 millas",
       "time": "1-2 horas",
       "gear": ["Kayaks, canoas o embarcaciones SUP"],
-      "setUp": "Estacione en el [Refugio de Vida Silvestre del Río Salinas](/access-point/srnwr).",
-      "description": "La mayor parte del año, salvo los meses más lluviosos entre diciembre y marzo, el río Salinas no desemboca en el océano. En su lugar, forma una gran laguna que forma parte del Refugio de Fauna Salvaje del Río Salinas. La laguna tiene aproximadamente una milla de largo desde el océano hasta el comienzo del límite del refugio. También puede continuar río arriba para hacer un bucle más largo.\n\nTenga en cuenta que si hay un caudal importante, la [desembocadura del río podría estar abierta](/overview/safety#breach) y no debería intentar descender río abajo.\n\nDurante el otoño y el invierno el refugio está abierto para la caza de patos, lo que hace que flotar en la laguna sea menos divertido."
+      "setUp": "Estacione en el [Refugio de Vida Silvestre del Río Salinas](/es/access-point/srnwr).",
+      "description": "La mayor parte del año, salvo los meses más lluviosos entre diciembre y marzo, el río Salinas no desemboca en el océano. En su lugar, forma una gran laguna que forma parte del Refugio de Fauna Salvaje del Río Salinas. La laguna tiene aproximadamente una milla de largo desde el océano hasta el comienzo del límite del refugio. También puede continuar río arriba para hacer un bucle más largo.\n\nTenga en cuenta que si hay un caudal importante, la [desembocadura del río podría estar abierta](/es/overview/safety#breach) y no debería intentar descender río abajo.\n\nDurante el otoño y el invierno el refugio está abierto para la caza de patos, lo que hace que flotar en la laguna sea menos divertido."
     }
   },
   "route": {
@@ -49,18 +49,20 @@
   "parts": [
     {
       "id": "put-in",
-      "title": {
-        "en": "Put-in & take-out",
-        "es": "Entrada y salida"
-      },
-      "description": {
-        "en": "Park at the [Salinas River Wildlife Refuge](/access-point/srnwr), and turn right as you pass through the gate. Where the trail meets the river are several use trails that serve as steep launches.",
-        "es": "Estacione en el [Refugio de Vida Silvestre del Río Salinas](/punto-de-acceso/srnwr), y gire a la derecha al pasar por la verja. Donde el sendero se encuentra con el río hay varios senderos de uso que sirven como embarcaderos de gran pendiente."
-      },
       "mile": 0,
       "lat": 36.735825,
       "lon": -121.791014,
-      "driving": true
+      "driving": true,
+      "translate": {
+        "en": {
+          "title": "Put-in & take-out",
+          "description": "Park at the [Salinas River Wildlife Refuge](/access-point/srnwr), and turn right as you pass through the gate. Where the trail meets the river are several use trails that serve as steep launches."
+        },
+        "es": {
+          "title": "Entrada y salida",
+          "description": "Estacione en el [Refugio de Vida Silvestre del Río Salinas](/punto-de-acceso/srnwr), y gire a la derecha al pasar por la verja. Donde el sendero se encuentra con el río hay varios senderos de uso que sirven como embarcaderos de gran pendiente."
+        }
+      }
     }
   ]
 }

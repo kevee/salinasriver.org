@@ -1,6 +1,7 @@
 import posthtml from 'posthtml'
-import minify from 'posthtml-minify-classnames'
 import htmlmin from 'html-minifier'
+// @ts-expect-error
+import minify from 'posthtml-minify-classnames'
 
 const addMinifyHtml = (eleventyConfig) => {
   const isDevelopment =

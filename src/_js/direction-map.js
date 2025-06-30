@@ -9,12 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       attribution:
         'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+      opacity: globalConfig.satelliteMapOpacity || 1,
     }
   ).addTo(map)
-
   const directionLayer = new L.GeoJSON(options.data, {
-    style: { stroke: 6, color: '#F50022' },
+    style: globalConfig.walkingStyle,
   }).addTo(map)
 
   map.fitBounds(directionLayer.getBounds())
+
+  const start = options.data.features[0].geometry.coordinates[0][0]
+  const end = options.data.features[0].geometry.coordinates[0].slice(-1)[0]
+
+  new L.CircleMarker([start[1], start[0]], {
+    radius: 15,
+    fillColor: globalConfig.accessPointEndColor,
+    fillOpacity: 0.7,
+    stroke: false,
+  }).addTo(map)
+
+  new L.CircleMarker([end[1], end[0]], {
+    radius: 15,
+    fillColor: globalConfig.accessPointEndColor,
+    fillOpacity: 0.7,
+    stroke: false,
+  }).addTo(map)
 })

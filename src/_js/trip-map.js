@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ).addTo(map)
 
   const tripLayer = new L.GeoJSON(options.route, {
-    style: { stroke: 6, color: globalConfig.routeColor },
+    style: globalConfig.routeStyle,
   }).addTo(map)
 
   map.fitBounds(tripLayer.getBounds(), {
@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map)
 
     circle.bindPopup(
-      `<a href="#${part.id}">${part.title[options.language]}</a>`,
+      `<a href="#part-${part.id}">${
+        part.translate[options.language].title
+      }</a>`,
       {
         minWidth: 100,
       }
