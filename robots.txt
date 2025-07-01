@@ -154,6 +154,12 @@ Disallow: /
 User-agent: MistralAI-User
 Disallow: /
 
+# AI Data Scraper
+# https://darkvisitors.com/agents/netestate-imprint-crawler
+
+User-agent: netEstate Imprint Crawler
+Disallow: /
+
 # AI Search Crawler
 # https://darkvisitors.com/agents/oai-searchbot
 
@@ -176,6 +182,12 @@ Disallow: /
 # https://darkvisitors.com/agents/perplexity-user
 
 User-agent: Perplexity-User
+Disallow: /
+
+# AI Assistant
+# https://darkvisitors.com/agents/perplexityuser
+
+User-agent: Perplexity‑User
 Disallow: /
 
 # AI Search Crawler
