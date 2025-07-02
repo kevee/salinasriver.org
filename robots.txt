@@ -46,6 +46,18 @@ Disallow: /
 User-agent: ChatGPT-User
 Disallow: /
 
+# AI Search Crawler
+# https://darkvisitors.com/agents/claude-searchbot
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+# AI Assistant
+# https://darkvisitors.com/agents/claude-user
+
+User-agent: Claude-User
+Disallow: /
+
 # Undocumented AI Agent
 # https://darkvisitors.com/agents/claude-web
 
@@ -110,6 +122,12 @@ Disallow: /
 # https://darkvisitors.com/agents/factset-spyderbot
 
 User-agent: Factset_spyderbot
+Disallow: /
+
+# AI Assistant
+# https://darkvisitors.com/agents/gemini-deep-research
+
+User-agent: Gemini-Deep-Research
 Disallow: /
 
 # AI Data Scraper
@@ -182,12 +200,6 @@ Disallow: /
 # https://darkvisitors.com/agents/perplexity-user
 
 User-agent: Perplexity-User
-Disallow: /
-
-# AI Assistant
-# https://darkvisitors.com/agents/perplexityuser
-
-User-agent: Perplexity‑User
 Disallow: /
 
 # AI Search Crawler
