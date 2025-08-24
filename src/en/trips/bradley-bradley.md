@@ -27,9 +27,9 @@ parts:
     id: take-out
     mile: 3.5
     description: >
-      Exit the river on the right at a high sandy bench 70 yards upstream from the bridge. **Do not pass into the construction area**.
-    lat: 35.86343917335083
-    lon: -120.80890492442447
+      Exit on the right side of the river, [under the Bradley bridge](/en/access-points/bradley/).
+    lat: 35.86396571394785
+    lon: -120.80987521757103
     driving: true
 ---
 

@@ -26,9 +26,9 @@ parts:
   - title: Salida
     id: take-out
     mile: 3.5
-    description: Salga del río por la derecha en un banco alto de arena a 70 metros río arriba del puente. **No pase al área de construcción**.
-    lat: 35.86343917335083
-    lon: -120.80890492442447
+    description: Salga por el lado derecho del río, [debajo del puente Bradley]/es/access-points/bradley/).
+    lat: 35.86396571394785
+    lon: -120.80987521757103
     driving: true
 ---
 
