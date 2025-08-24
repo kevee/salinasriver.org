@@ -1,0 +1,21 @@
+<div class="columns">
+  <slot></slot>
+</div>
+
+<style>
+  .columns {
+    display: block;
+    @media (min-width: $mobile-breakpoint) {
+      display: flex;
+
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+  @media (min-width: $mobile-breakpoint) {
+    .columns > div {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+</style>

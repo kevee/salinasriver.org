@@ -4,4 +4,6 @@ const globalConfig = {
   accessPointColor: '#f50022',
   accessPointEndColor: '#0050b8',
   satelliteMapOpacity: 0.6,
+  mapAttribution:
+    'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
 }

@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new L.TileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     {
-      attribution:
-        'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+      attribution: globalConfig.mapAttribution,
       opacity: globalConfig.satelliteMapOpacity || 1,
     }
   ).addTo(map)

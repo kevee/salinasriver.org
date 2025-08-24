@@ -21,4 +21,4 @@
 } 
 ---
 
-<trip :trip="trip" :lang="en"></trip>
+<page-trip :trip="trip" :lang="en"></trip>

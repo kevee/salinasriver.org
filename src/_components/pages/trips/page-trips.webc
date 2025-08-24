@@ -1,0 +1,19 @@
+<div>
+  <h1 @text="t('trips')"></h1>
+  <slot></slot>
+  <columns>
+    <div>
+      <inline-nav>
+        <li webc:for="trip of tripsSortLatitude">
+          <a
+            :href="u('/trips/' + trip.slug)"
+            @text="trip.translate.en.title"
+          ></a>
+        </li>
+      </inline-nav>
+    </div>
+    <div>
+      <p>map</p>
+    </div>
+  </columns>
+</div>

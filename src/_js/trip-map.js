@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new L.TileLayer(
     'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     {
-      attribution:
-        'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+      attribution: globalConfig.mapAttribution,
     }
   ).addTo(map)
 

@@ -13,7 +13,10 @@ const addWebc = (eleventyConfig) => {
             return content
           }
           const { fontImport, typography } = getTypography()
-          const compiledSass = sass.compileString(content)
+          const globalCssVariables = `
+          $mobile-breakpoint: 1000px;
+          `
+          const compiledSass = sass.compileString(globalCssVariables + content)
           const result = new CleanCSS().minify(compiledSass.css)
           if (this.buckets.includes('default')) {
             return [fontImport, typography, result.styles].join('')
