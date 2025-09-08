@@ -1,0 +1,24 @@
+---js 
+{
+  layout: "default",
+  lang: "es",
+  hasMap: true,
+  pagination: { 
+    data: "trips", 
+    size: 1,
+    alias: "trip",
+    resolve: "values" 
+  }, 
+  breadcrumbs: [
+    { name: "Home", link: "/" },
+    { name: "Trips", link: "/trips/" },
+  ],
+  permalink: ({ trip }) =>`/es/trips/${trip.slug}/`,
+  eleventyComputed: {
+    title: ({ trip }) =>  trip.translate.en.title,
+    description: ({ trip }) => trip.translate.en.description,
+  },
+} 
+---
+
+<page-trip :trip="trip" :lang="en"></trip>

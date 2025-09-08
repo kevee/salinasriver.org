@@ -1,0 +1,26 @@
+---
+title: Puntos de acceso
+layout: default
+lang: es
+
+breadcrumbs:
+  - name: Home
+    link: /
+  - name: Access points
+---
+
+<h1>Puntos de acceso</h1>
+
+<p>
+  Lugares para entrar y salir del río Salinas con seguridad. La mayoría de los
+  puntos de acceso se encuentran en puentes o en parques y espacios abiertos que
+  bordean el río. Se enumeran de sur a norte a lo largo del caudal del río.
+</p>
+<inline-nav webc:nokeep>
+  <li webc:for="point of accessPointsSortLatitude">
+    <a
+      :href="u('/access-points/' + point.slug)"
+      @text="point.translate.en.title"
+    ></a>
+  </li>
+</inline-nav>

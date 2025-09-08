@@ -1,7 +1,7 @@
 ---js 
 {
   layout: "default",
-  lang: "en",
+  lang: "es",
   hasMap: true,
   pagination: { 
     data: "accessPoints", 
@@ -13,7 +13,7 @@
     { name: "Home", link: "/" },
     { name: "Access points", link: "/access-points/" },
   ],
-  permalink: ({ point }) =>`/en/access-points/${point.slug}/`,
+  permalink: ({ point }) =>`/es/access-points/${point.slug}/`,
   eleventyComputed: {
     title: ({ point }) =>  point.translate.en.title,
     description: ({ point }) => point.translate.en.description,

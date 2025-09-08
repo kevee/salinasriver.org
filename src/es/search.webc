@@ -3,4 +3,4 @@ layout: default
 lang: en
 ---
 
-<search webc:nokeep> </search>
+<page-search webc:nokeep> </page-search>
