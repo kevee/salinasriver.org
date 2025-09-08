@@ -32,8 +32,3 @@ La mayoría de las actividades relacionadas con el agua en el sur del Salinas de
 <small>Del [calendario de desembalses para 2025 de la Agencia de Recursos Hídricos del Condado de Monterey](https://monterey.legistar.com/gateway.aspx?M=F&ID=fea9a761-9345-495c-8476-050c65fe7e81.pdf). CFS se define como "caudal medio diario del mes".</small>
 
 El agua baja por el río Nacimiento y se une al Salinas justo al sur de la ciudad de Bradley. Cuando el [medidor fluvial en Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) supera los 400 pcs (actualmente es {{guages.bradley.cfs}}), el agua puede llegar a veces más allá de King City.
-
-<div class="map medium bordered">
-  <div id="map" data-lat="35.832921" data-lon="-120.756226" data-zoom="11"></div>
-  <p class="note"> Donde el Nacimiento se une con el Salinas.</p>
-</div>
