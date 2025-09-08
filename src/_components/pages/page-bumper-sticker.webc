@@ -1,0 +1,37 @@
+<div>
+  <h1 @text="t('bumperSticker.title')"></h1>
+  <p @text="t('bumperSticker.description')"></p>
+  <div class="bumper-compare">
+    <div>
+      <img
+        src="/assets/images/bumper-sticker-en.png"
+        alt="I love our salinas river"
+      />
+    </div>
+    <div>
+      <img
+        src="/assets/images/bumper-sticker-es.png"
+        alt="Amo nuestro rio salinas"
+      />
+    </div>
+  </div>
+
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdJ8pOyiCeQ2Vdxbmv9BXHZVQSksz8p9lu5MnM91BP7uuTaFg/viewform?embedded=true"
+    width="640"
+    height="1078"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    >Loading…</iframe
+  >
+</div>
+<style>
+  .bumper-compare {
+    display: flex;
+    column-gap: 1rem;
+    & > div {
+      flex: 1;
+    }
+  }
+</style>
