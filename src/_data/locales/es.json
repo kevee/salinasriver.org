@@ -80,5 +80,11 @@
   "webcam": "Cámara web",
   "viewWebcam": "Ver cámara web",
   "homeWebcam": "Última imagen de la cámara web",
-  "homeWebcamTime": "Última actualización"
+  "homeWebcamTime": "Última actualización",
+  "homepage": {
+    "title": "El Río Salinas",
+    "subtitle": "Guía de recreación",
+    "ledeBold": "Esta guía es para disfrutar del río Salinas.",
+    "lede": "Este recorre 170 millas de sur a norte en el centro de California. Alberga castores y águilas calvas Los vecinos pescan bagres con las manos (noodle) en sus orillas y se refrescan en sus aguas pantanosas en verano."
+  }
 }

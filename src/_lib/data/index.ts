@@ -13,7 +13,7 @@ const addGlobalData = async (eleventyConfig) => {
   // Fetch gauge data and store it in a global variable
   eleventyConfig.addGlobalData('gauges', gauges)
 
-  eleventyConfig.addGlobalData('lagoonGaugeHeight', fetchLagoonGauge)
+  //eleventyConfig.addGlobalData('lagoonGaugeHeight', fetchLagoonGauge)
 
   // Fetch dark visitor robots data and store it in a global variable
   eleventyConfig.addGlobalData('darkVisitorRobots', getDarkVisitorRobots)

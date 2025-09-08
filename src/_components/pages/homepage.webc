@@ -1,13 +1,52 @@
-<div id="map"></div>
+<div>
+  <container>
+    <h1>
+      <span webc:nokeep @text="t('homepage.title')"></span>
+      <div class="subtitle" @text="t('homepage.subtitle')"></div>
+    </h1>
+    <p class="intro">
+      <strong @text="t('homepage.ledeBold')"></strong>
+      <span webc:nokeep @text="t('homepage.lede')"></span>
+    </p>
+    <inline-nav>
+      <li class="language">
+        <a :href="switchLanguagePath()" @text="t('switchLanguage')"></a>
+      </li>
+      <li>
+        <a :href="u('/access-points')" @text="t('accessPoints')"></a>
+      </li>
+      <li>
+        <a :href="u('/trips')" @text="t('trips')"></a>
+      </li>
+      <li>
+        <a :href="u('/overview')" @text="t('overview')"></a>
+      </li>
+      <li class="language">
+        <a :href="switchLanguagePath()" @text="t('switchLanguage')"></a>
+      </li>
+    </inline-nav>
+    <div id="map"></div>
+  </container>
+</div>
+
 <script webc:bucket="defer">
   ;(() => {
     console.log(L)
   })()
 </script>
 
-<style>
+<style webc:scoped>
   #map {
     width: 100%;
     height: 100vh;
+  }
+  .homepage-intro {
+    font-size: 1.5rem;
+  }
+  h1 {
+    color: rgba(0, 0, 0, 0.8);
+    .subtitle {
+      font-size: 1.4rem;
+    }
   }
 </style>
