@@ -167,17 +167,17 @@
     {
       "id": "take-out",
       "mile": 3.5,
-      "lat": 35.86343917335083,
-      "lon": -120.80890492442447,
+      "lat": 35.86396571394785,
+      "lon": -120.80987521757103,
       "driving": true,
       "translate": {
         "en": {
           "title": "Take-out",
-          "description": "Exit the river on the right under the [Bradley bridge](/en/access-points/bradley)."
+          "description": "Exit on the right side of the river, [under the Bradley bridge](/en/access-points/bradley/).."
         },
         "es": {
           "title": "Salida",
-          "description": "Salga del río por la derecha bajo el [puente de Bradley](/es/access-points/bradley)."
+          "description": "Salga por el lado derecho del río, [debajo del puente Bradley]/es/access-points/bradley/)."
         }
       }
     }
