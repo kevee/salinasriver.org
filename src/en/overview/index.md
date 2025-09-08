@@ -1,7 +1,6 @@
 ---
 title: Overview
 layout: default
-
 breadcrumbs:
   - name: Home
     link: /
