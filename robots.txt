@@ -209,6 +209,12 @@ User-agent: ICC-Crawler
 Disallow: /
 
 # AI Data Scraper
+# https://darkvisitors.com/agents/imagespider
+
+User-agent: imageSpider
+Disallow: /
+
+# AI Data Scraper
 # https://darkvisitors.com/agents/kangaroo-bot
 
 User-agent: Kangaroo Bot
@@ -224,6 +230,12 @@ Disallow: /
 # https://darkvisitors.com/agents/linerbot
 
 User-agent: LinerBot
+Disallow: /
+
+# AI Search Crawler
+# https://darkvisitors.com/agents/linkupbot
+
+User-agent: LinkupBot
 Disallow: /
 
 # AI Data Scraper
@@ -293,9 +305,21 @@ User-agent: PetalBot
 Disallow: /
 
 # AI Assistant
+# https://darkvisitors.com/agents/poggio-citations
+
+User-agent: Poggio-Citations
+Disallow: /
+
+# AI Assistant
 # https://darkvisitors.com/agents/qualifiedbot
 
 User-agent: QualifiedBot
+Disallow: /
+
+# AI Data Scraper
+# https://darkvisitors.com/agents/spider
+
+User-agent: Spider
 Disallow: /
 
 # AI Data Scraper
