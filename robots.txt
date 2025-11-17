@@ -7,7 +7,7 @@ Disallow: /
 # AI Assistant
 # https://darkvisitors.com/agents/ai2bot-deepresearcheval
 
-User-agent: Ai2Bot-DeepResearchEval
+User-agent: AI2Bot-DeepResearchEval
 Disallow: /
 
 # AI Data Scraper
@@ -158,6 +158,12 @@ Disallow: /
 # https://darkvisitors.com/agents/gemini-deep-research
 
 User-agent: Gemini-Deep-Research
+Disallow: /
+
+# AI Search Crawler
+# https://darkvisitors.com/agents/google-cloudvertexbot
+
+User-agent: Google-CloudVertexBot
 Disallow: /
 
 # AI Data Scraper
