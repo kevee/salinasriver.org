@@ -76,6 +76,12 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
+# AI Search Crawler
+# https://darkvisitors.com/agents/channel3bot
+
+User-agent: Channel3Bot
+Disallow: /
+
 # AI Data Scraper
 # https://darkvisitors.com/agents/chatglm-spider
 
