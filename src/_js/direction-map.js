@@ -12,8 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ).addTo(map)
   const directionLayer = new L.GeoJSON(options.data, {
-    style: globalConfig.walkingStyle,
+    style: function() {
+      const zoom = map.getZoom()
+      // Scale weight inversely with zoom to maintain consistent appearance
+      const baseWeight = 3
+      const weight = Math.max(2, baseWeight * (18 - zoom) / 10)
+      return {
+        ...globalConfig.walkingStyle,
+        weight: weight
+      }
+    }
   }).addTo(map)
+
+  // Update line weight on zoom
+  map.on('zoomend', function() {
+    const zoom = map.getZoom()
+    const baseWeight = 3
+    const weight = Math.max(2, baseWeight * (18 - zoom) / 10)
+    directionLayer.setStyle({ ...globalConfig.walkingStyle, weight: weight })
+  })
 
   map.fitBounds(directionLayer.getBounds())
 
