@@ -4,7 +4,7 @@
   <columns>
     <div>
       <inline-nav>
-        <li webc:for="trip of tripsSortLatitude">
+        <li webc:for="trip of tripsSortLatitude" :data-trip-slug="trip.slug">
           <a
             :href="u('/trips/' + trip.slug)"
             @text="trip.translate.en.title"
@@ -13,7 +13,19 @@
       </inline-nav>
     </div>
     <div>
-      <p>map</p>
+      <trips-map :@trips="tripsSortLatitude"></trips-map>
     </div>
   </columns>
 </div>
+
+<style>
+  [data-trip-slug] {
+    transition: background-color 0.2s ease;
+  }
+  [data-trip-slug].trip-highlighted {
+    background-color: rgba(0, 80, 184, 0.1);
+  }
+  [data-trip-slug].trip-highlighted a {
+    color: #0050b8;
+  }
+</style>

@@ -2,7 +2,7 @@
 title: Recorridos
 layout: default
 lang: es
-
+hasMap: true
 breadcrumbs:
   - name: Home
     link: /

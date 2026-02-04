@@ -21,5 +21,15 @@
     border: 2px solid var(--border-grey);
     font-size: 0.8rem;
     margin-top: 6px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .search-box input[type='search']:focus {
+    outline: none;
+    border-color: var(--link-color, #0066cc);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
   }
 </style>

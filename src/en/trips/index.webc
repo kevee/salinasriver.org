@@ -2,7 +2,7 @@
 title: Trips
 layout: default
 lang: en
-
+hasMap: true
 breadcrumbs:
   - name: Home
     link: /

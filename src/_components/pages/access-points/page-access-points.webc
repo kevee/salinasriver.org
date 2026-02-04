@@ -1,0 +1,36 @@
+<div>
+  <h1 @text="t('accessPoints')"></h1>
+  <slot></slot>
+  <columns>
+    <div>
+      <inline-nav>
+        <li
+          webc:for="point of accessPointsSortLatitude"
+          :data-access-point-slug="point.slug"
+        >
+          <a
+            :href="u('/access-points/' + point.slug)"
+            @text="l(point.translate, 'title')"
+          ></a>
+        </li>
+      </inline-nav>
+    </div>
+    <div>
+      <access-points-map
+        :@access-points="accessPointsSortLatitude"
+      ></access-points-map>
+    </div>
+  </columns>
+</div>
+
+<style>
+  [data-access-point-slug] {
+    transition: background-color 0.2s ease;
+  }
+  [data-access-point-slug].access-point-highlighted {
+    background-color: rgba(0, 80, 184, 0.1);
+  }
+  [data-access-point-slug].access-point-highlighted a {
+    color: #0050b8;
+  }
+</style>
