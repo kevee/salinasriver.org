@@ -8,8 +8,10 @@ import addWebc from './src/_lib/webc'
 import addClientJs from './src/_lib/client-js'
 import addMinifyHtml from './src/_lib/minify-html'
 import staticMaps from './src/_lib/data/static-maps'
+import processPhotos from './src/_lib/data/process-photos'
 
 const config = async (eleventyConfig: any) => {
+  await processPhotos(eleventyConfig)
   await addGlobalData(eleventyConfig)
   addI18nFilters(eleventyConfig)
   addWebc(eleventyConfig)
