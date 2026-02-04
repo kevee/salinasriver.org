@@ -1,0 +1,76 @@
+<h1>
+  <span @text="t('photos.title')" webc:nokeep></span>
+  —
+  <span @text="l(point.translate, 'title')" webc:nokeep></span>
+</h1>
+
+<p>
+  <a :href="u('/access-points/' + point.slug)">
+    &larr; <span @text="l(point.translate, 'title')" webc:nokeep></span>
+  </a>
+</p>
+
+<ul class="photo-grid">
+  <li webc:for="photo of point.photos">
+    <a :href="`/assets/images/photos/${photo.filename}`" target="_blank">
+      <img
+        :src="`/assets/images/photos/${photo.filename.replace('.jpg', '-thumb.jpg')}`"
+        :alt="`${l(point.translate, 'title')} - ${photo.date}`"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <div class="photo-meta">
+      <span class="photo-date" @text="formatDate(photo.date)"></span>
+      <span class="photo-flow" webc:if="photo.cfs">
+        <span @text="photo.cfs" webc:nokeep></span>
+        <cfs></cfs>
+      </span>
+      <span class="photo-height" webc:if="photo.height">
+        <span @text="t('photos.gaugeHeight')" webc:nokeep></span>:
+        <span @text="photo.height" webc:nokeep></span>
+        <span @text="t('feetDeep')" webc:nokeep></span>
+      </span>
+    </div>
+  </li>
+</ul>
+
+<style>
+  .photo-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      display: block;
+      line-height: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+    }
+
+    .photo-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    .photo-flow {
+      font-weight: 600;
+    }
+  }
+</style>

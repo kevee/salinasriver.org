@@ -30,6 +30,16 @@ const addI18nFilters = (eleventyConfig) => {
     return object[locale][value]
   })
 
+  eleventyConfig.addFilter('formatDate', function (dateStr: string) {
+    const locale = this.page?.lang || 'en'
+    const date = new Date(dateStr + 'T00:00:00')
+    return new Intl.DateTimeFormat(locale, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(date)
+  })
+
   // Add language path filter for language switching
   eleventyConfig.addFilter('switchLanguagePath', function (locale) {
     if (!this.page || !this.page.url) return `/${locale}/`

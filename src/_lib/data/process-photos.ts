@@ -29,6 +29,7 @@ const IMAGES_INPUT_DIR = './src/_images'
 const IMAGES_OUTPUT_DIR = './src/assets/images/photos'
 const ACCESS_POINTS_DIR = './src/_data/accessPoints'
 const JPEG_WIDTH = 1200
+const THUMB_WIDTH = 400
 const SUPPORTED_EXTENSIONS = ['.heic', '.heif', '.jpg', '.jpeg', '.png', '.tiff']
 
 function haversineDistance(
@@ -146,8 +147,11 @@ const processPhotos = async (_eleventyConfig: any) => {
 
   for (const file of files) {
     const inputPath = path.join(IMAGES_INPUT_DIR, file)
-    const jpegFilename = path.parse(file).name + '.jpg'
+    const baseName = path.parse(file).name
+    const jpegFilename = baseName + '.jpg'
+    const thumbFilename = baseName + '-thumb.jpg'
     const outputPath = path.join(IMAGES_OUTPUT_DIR, jpegFilename)
+    const thumbPath = path.join(IMAGES_OUTPUT_DIR, thumbFilename)
 
     if (isAlreadyProcessed(file, accessPoints)) {
       console.log(`[process-photos] Skipping ${file} (already processed)`)
@@ -196,7 +200,11 @@ const processPhotos = async (_eleventyConfig: any) => {
         .resize({ width: JPEG_WIDTH })
         .jpeg({ quality: 80 })
         .toFile(outputPath)
-      console.log(`[process-photos] Converted ${file} -> ${jpegFilename}`)
+      await sharp(sharpInput)
+        .resize({ width: THUMB_WIDTH })
+        .jpeg({ quality: 70 })
+        .toFile(thumbPath)
+      console.log(`[process-photos] Converted ${file} -> ${jpegFilename} + thumbnail`)
     } catch (err: any) {
       console.warn(
         `[process-photos] Failed to convert ${file}:`,
@@ -229,6 +237,27 @@ const processPhotos = async (_eleventyConfig: any) => {
     }
 
     closest.photos!.push(photoEntry)
+  }
+
+  // Generate missing thumbnails for already-processed photos
+  for (const ap of accessPoints) {
+    if (!ap.photos) continue
+    for (const photo of ap.photos) {
+      const thumbName = photo.filename.replace('.jpg', '-thumb.jpg')
+      const thumbOut = path.join(IMAGES_OUTPUT_DIR, thumbName)
+      const fullOut = path.join(IMAGES_OUTPUT_DIR, photo.filename)
+      if (!fs.existsSync(thumbOut) && fs.existsSync(fullOut)) {
+        try {
+          await sharp(fullOut)
+            .resize({ width: THUMB_WIDTH })
+            .jpeg({ quality: 70 })
+            .toFile(thumbOut)
+          console.log(`[process-photos] Generated missing thumbnail: ${thumbName}`)
+        } catch (err: any) {
+          console.warn(`[process-photos] Failed to generate thumbnail for ${photo.filename}:`, err.message)
+        }
+      }
+    }
   }
 
   for (const ap of accessPoints) {

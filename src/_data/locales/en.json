@@ -90,5 +90,11 @@
   "bumperSticker": {
     "title": "Get a free bumper sticker",
     "description": "We'll mail you a free bumper sticker to spread the word about the Salinas River. Just fill out the form below. You can order the sticker in either English or Spanish."
+  },
+  "photos": {
+    "title": "Photos",
+    "viewPhotos": "View photos at different water levels",
+    "date": "Date",
+    "gaugeHeight": "Gauge height"
   }
 }

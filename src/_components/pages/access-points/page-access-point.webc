@@ -38,6 +38,15 @@
       ></a>
     </dd>
   </div>
+  <div webc:if="point.photos && point.photos.length" class="photos-link">
+    <dt @text="t('photos.title')"></dt>
+    <dd>
+      <a
+        :href="u('/access-points/' + point.slug + '/photos')"
+        @text="t('photos.viewPhotos')"
+      ></a>
+    </dd>
+  </div>
   <div>
     <dt @text="t('drivingDirections')"></dt>
     <dd>
@@ -49,6 +58,7 @@
     </dd>
   </div>
 </stats-list>
+
 <protect-rights @type="accessPoint" webc:nokeep></protect-rights>
 <div @html="markdown(l(point.translate, 'body'))"></div>
 <h2 @text="t('directions')"></h2>
