@@ -6,7 +6,6 @@ hasMap: true
 breadcrumbs:
   - name: Home
     link: /
-  - name: Trips
 ---
 
 <page-trips>
