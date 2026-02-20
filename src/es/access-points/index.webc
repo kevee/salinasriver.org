@@ -6,13 +6,13 @@ hasMap: true
 breadcrumbs:
   - name: Home
     link: /
-  - name: Access points
 ---
 
 <page-access-points>
   <p>
     Lugares para entrar y salir del río Salinas con seguridad. La mayoría de los
-    puntos de acceso se encuentran en puentes o en parques y espacios abiertos que
-    bordean el río. Se enumeran de sur a norte a lo largo del caudal del río.
+    puntos de acceso se encuentran en puentes o en parques y espacios abiertos
+    que bordean el río. Se enumeran de sur a norte a lo largo del caudal del
+    río.
   </p>
 </page-access-points>
