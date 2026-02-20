@@ -2,7 +2,7 @@
   <div class="homepage-content">
     <container>
       <h1>
-        <span webc:nokeep @text="t('homepage.title')"></span>
+        <span webc:nokeep @text="t('homepage.title')"></span><span> </span>
         <div class="subtitle" @text="t('homepage.subtitle')"></div>
       </h1>
       <p class="intro">

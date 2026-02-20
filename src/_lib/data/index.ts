@@ -22,7 +22,7 @@ const addGlobalData = async (eleventyConfig) => {
   eleventyConfig.addGlobalData(
     'eleventyComputed.isFlooding',
     () => (data) =>
-      data && data.gauges.some((gauge) => gauge.height >= gauge.flood)
+      data && data.gauges.some((gauge) => gauge.height >= gauge.flood),
   )
 
   eleventyConfig.addGlobalData(
@@ -32,9 +32,9 @@ const addGlobalData = async (eleventyConfig) => {
         return []
       }
       return Object.values(
-        data.accessPoints as Record<string, AccessPoint>
+        data.accessPoints as Record<string, AccessPoint>,
       ).sort((a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude)
-    }
+    },
   )
 
   eleventyConfig.addGlobalData(
@@ -44,14 +44,14 @@ const addGlobalData = async (eleventyConfig) => {
         return []
       }
       return Object.values(data.trips as Record<string, AccessPoint>).sort(
-        (a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude
+        (a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude,
       )
-    }
+    },
   )
 
   eleventyConfig.addFilter('gauge', (gaugeName: string, attribute: string) => {
     const gauge = gauges.find(
-      (g: GaugeWithMeasurements) => g.name === gaugeName
+      (g: GaugeWithMeasurements) => g.name === gaugeName,
     )
     if (!gauge) {
       return null

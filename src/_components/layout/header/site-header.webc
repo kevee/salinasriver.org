@@ -1,37 +1,40 @@
-<header>
+<div>
+  <header>
+    <container webc:nokeep>
+      <nav :aria-label="t('navigationLabel')" class="main-nav">
+        <ul>
+          <li>
+            <a :href="u('/')" @text="t('theSalinasRiver')"></a>
+          </li>
+          <li>
+            <a :href="u('/access-points')" @text="t('accessPoints')"></a>
+          </li>
+          <li>
+            <a :href="u('/trips')" @text="t('trips')"></a>
+          </li>
+          <li>
+            <a :href="u('/overview')" @text="t('overview')"></a>
+          </li>
+          <li class="language">
+            <a :href="switchLanguagePath()" @text="t('switchLanguage')"></a>
+          </li>
+        </ul>
+      </nav>
+    </container>
+  </header>
+  <flood-warning webc:nokeep webc:if="$data.isFlooding"></flood-warning>
   <container webc:nokeep>
-    <nav :aria-label="t('navigationLabel')" class="main-nav">
-      <ul>
-        <li>
-          <a :href="u('/')" @text="t('theSalinasRiver')"></a>
-        </li>
-        <li>
-          <a :href="u('/access-points')" @text="t('accessPoints')"></a>
-        </li>
-        <li>
-          <a :href="u('/trips')" @text="t('trips')"></a>
-        </li>
-        <li>
-          <a :href="u('/overview')" @text="t('overview')"></a>
-        </li>
-        <li class="language">
-          <a :href="switchLanguagePath()" @text="t('switchLanguage')"></a>
-        </li>
-      </ul>
-    </nav>
+    <div class="secondary-wrapper">
+      <breadcrumbs
+        webc:if="breadcrumbs && breadcrumbs.length > 0"
+        :@breadcrumbs="breadcrumbs"
+        :@title="title"
+        webc:nokeep
+      ></breadcrumbs>
+      <search-box webc:nokeep></search-box>
+    </div>
   </container>
-</header>
-<container webc:nokeep>
-  <div class="secondary-wrapper">
-    <breadcrumbs
-      webc:if="breadcrumbs && breadcrumbs.length > 0"
-      :@breadcrumbs="breadcrumbs"
-      :@title="title"
-      webc:nokeep
-    ></breadcrumbs>
-    <search-box webc:nokeep></search-box>
-  </div>
-</container>
+</div>
 
 <style>
   header {

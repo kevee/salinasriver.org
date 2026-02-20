@@ -1,0 +1,30 @@
+<div class="flood-warning">
+  <container webc:nokeep>
+    <p @text="t('floodWarning.preamble')"></p>
+    <p @raw="t('floodWarning.links')"></p>
+    <p class="more-info">
+      <a
+        :href="u('/overview/flood-message')"
+        @text="t('floodWarning.learnMore')"
+      ></a></p
+  ></container>
+</div>
+
+<style>
+  .flood-warning {
+    background-color: var(--danger-light);
+    padding: 0.8rem 0;
+    p {
+      margin-bottom: 0.5rem;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: var(--danger-link);
+    }
+    .more-info {
+      font-size: 0.8rem;
+    }
+  }
+</style>

@@ -47,6 +47,17 @@
       ></a>
     </dd>
   </div>
+
+  <div webc:if="point.webcam">
+    <dt @text="t('webcam')"></dt>
+    <dd>
+      <a
+        href="https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA"
+        @text="t('viewWebcam')"
+      ></a>
+      <div @text="l(point.translate, 'webcamNote')"></div>
+    </dd>
+  </div>
   <div>
     <dt @text="t('drivingDirections')"></dt>
     <dd>
