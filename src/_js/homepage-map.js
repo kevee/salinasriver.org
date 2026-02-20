@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create markers for each access point
   const allMarkersGroup = new L.FeatureGroup()
-  const markerRadius = 10 // Slightly larger for hero
+  const markerRadius = 15 // Slightly larger for hero
 
   for (const point of options.accessPoints) {
     if (!point.lat || !point.lon) continue

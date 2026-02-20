@@ -12,7 +12,7 @@ breadcrumbs:
 
 La mayoría de las actividades relacionadas con el agua en el sur del Salinas dependen de la descarga de la presa del lago Nacimiento. Sin la presa, el río Salinas sólo tendría caudal durante la estación húmeda, entre diciembre y mayo. Aunque puede obtener [información sobre el caudal en tiempo real del USGS](https://waterdata.usgs.gov/nwis/uv?site_no=11150500), si está planeando un viaje en el futuro debe tener en cuenta el calendario de desembalse de la presa.
 
-<div class="alert">Esta tabla es el <strong>calendario provisional</strong> de desembalse para 2025. El calendario final se actualizará a finales de Abril.</div>
+Este fue el **calendario de lanzamientos para 2025**. Esperamos publicar un calendario provisional de lanzamientos alrededor de marzo de 2026.
 
 | Mes        | Liberación combinada (<abbr title="Pies cúbicos por segundo">cfs</abbr>) |
 | ---------- | ------------------------------------------------------------------------ |

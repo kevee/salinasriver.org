@@ -24,7 +24,7 @@
     <div class="photo-meta">
       <span class="photo-date" @text="formatDate(photo.date)"></span>
       <span class="photo-flow" webc:if="photo.cfs">
-        <span @text="photo.cfs" webc:nokeep></span>
+        <span @text="formatNumber(photo.cfs)" webc:nokeep></span>
         <cfs></cfs>
       </span>
       <span class="photo-height" webc:if="photo.height">

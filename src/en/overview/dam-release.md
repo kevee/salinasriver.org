@@ -12,7 +12,7 @@ breadcrumbs:
 
 Most of the water-related activities on the southern Salinas depend on dam release from the Nacimiento reservoir, and to a lesser extent the San Antonio reservoir. While you can get [real-time flow information from the USGS](https://waterdata.usgs.gov/nwis/uv?site_no=11150500), if you are planning a trip in the future you should consider the following dam release sechedule.
 
-<div class="alert">This table is the <strong>provisional</strong> release schedule for 2025. The final schedule will be updated late April.</div>
+This was the **release schedule for 2025**. We expect a provisoinal release schedule to be released around March 2026.
 
 | Month     | Combined release (<abbr title="Cubic-feet per second">cfs</abbr>) |
 | --------- | ----------------------------------------------------------------- |

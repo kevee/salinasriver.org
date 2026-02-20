@@ -4,9 +4,9 @@
   <div>
     <dt @text="t('bestFlow')"></dt>
     <dd>
-      <span @text="point.flowLow" webc:nokeep webc:if="point.flowLow"></span>
+      <span @text="formatNumber(point.flowLow)" webc:nokeep webc:if="point.flowLow"></span>
       <span @text="t('to')" webc:nokeep webc:if="point.flowLow"></span>
-      <span @text="point.flowHigh" webc:nokeep></span>
+      <span @text="formatNumber(point.flowHigh)" webc:nokeep></span>
       <cfs></cfs>
       <span @text="t('at')" webc:nokeep></span>
       <a
@@ -21,7 +21,7 @@
   <div>
     <dt @text="t('waterLevel')"></dt>
     <dd>
-      <span webc:nokeep @text="gauge(point.gauge, 'cfs')"></span>
+      <span webc:nokeep @text="formatNumber(gauge(point.gauge, 'cfs'))"></span>
       <cfs></cfs>
       <span @text="t('and')" webc:nokeep></span>
       <span webc:nokeep @text="gauge(point.gauge, 'height')"></span>

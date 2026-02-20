@@ -40,6 +40,11 @@ const addI18nFilters = (eleventyConfig) => {
     }).format(date)
   })
 
+  eleventyConfig.addFilter('formatNumber', function (value) {
+    if (value == null) return ''
+    return Number(value).toLocaleString()
+  })
+
   // Add language path filter for language switching
   eleventyConfig.addFilter('switchLanguagePath', function (locale) {
     if (!this.page || !this.page.url) return `/${locale}/`
