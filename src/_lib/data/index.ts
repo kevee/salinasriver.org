@@ -4,7 +4,7 @@ import getDarkVisitorRobots from './dark-visitor-robots'
 import type { GaugeWithMeasurements } from './fetch-gauges'
 
 interface AccessPoint {
-  latitude: number
+  lat: number
   [key: string]: any
 }
 
@@ -29,11 +29,12 @@ const addGlobalData = async (eleventyConfig) => {
     'eleventyComputed.accessPointsSortLatitude',
     () => (data) => {
       if (!data || !data.accessPoints) {
+        console.log('POINT FAILED')
         return []
       }
       return Object.values(
         data.accessPoints as Record<string, AccessPoint>,
-      ).sort((a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude)
+      ).sort((a: AccessPoint, b: AccessPoint) => a.lat - b.lat)
     },
   )
 
@@ -44,7 +45,7 @@ const addGlobalData = async (eleventyConfig) => {
         return []
       }
       return Object.values(data.trips as Record<string, AccessPoint>).sort(
-        (a: AccessPoint, b: AccessPoint) => a.latitude - b.latitude,
+        (a: AccessPoint, b: AccessPoint) => a.lat - b.lat,
       )
     },
   )
