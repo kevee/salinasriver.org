@@ -121,11 +121,11 @@
       "translate": {
         "en": {
           "title": "Put-in",
-          "description": "Park at the [San Ardo access point](/access-points/san-ardo).\n"
+          "description": "Park at the [San Ardo access point](/en/access-points/san-ardo).\n"
         },
         "es": {
           "title": "Entrada",
-          "description": "Estacione en el [punto de acceso a San Ardo](/access-points/san-ardo)."
+          "description": "Estacione en el [punto de acceso a San Ardo](/es/access-points/san-ardo)."
         }
       }
     },

@@ -28,7 +28,7 @@ _People v. Mack_ states:
 The land surrounding the river is definitely private. Protect your access to the river by:
 
 - Staying only on the shores of main river channels
-- Only use [defined access points](/access-points) to enter and exit the river
+- Only use [defined access points](/en/access-points) to enter and exit the river
 - Never cross over a fence to enter/access the river. There are some fences which cross the river. These are used to define grazing areas for cattle. Pass below or above these safely without damaging the fence.
 - You may walk on private property to safetly portage an obstacle.
 - Leave no trace

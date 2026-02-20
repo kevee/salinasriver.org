@@ -10,7 +10,7 @@ breadcrumbs:
 
 # Seguridad
 
-Disfrutar del río Salinas en los puntos de acceso público es seguro y divertido, pero ciertas actividades conllevan más riesgos que otras. Asegúrese también de ser consciente de sus [derechos y responsabilidades en relación con la intrusión](/overview/tresspass).
+Disfrutar del río Salinas en los puntos de acceso público es seguro y divertido, pero ciertas actividades conllevan más riesgos que otras. Asegúrese también de ser consciente de sus [derechos y responsabilidades en relación con la intrusión](/es/overview/private-property).
 
 Sea cual sea su actividad, asegúrese de
 <a href="https://www.paddlewise.org/" target="_blank" rel="noreferr">siga los principios de la paleta inteligente</a>.

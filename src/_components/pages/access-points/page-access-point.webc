@@ -33,7 +33,7 @@
     <dd>
       <span webc:nokeep @text="t('privatePropertyMessage.text')"></span>
       <a
-        href="l(/overview/private-property)"
+        :href="u('/overview/private-property')"
         @text="t('privatePropertyMessage.link')"
       ></a>
     </dd>
