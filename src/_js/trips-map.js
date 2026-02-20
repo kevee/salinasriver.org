@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const defaultMarkerStyle = {
     radius: markerRadius,
     fillColor: globalConfig.mainColor,
-    fillOpacity: 0.8,
+    fillOpacity: 1,
     stroke: false,
   }
   const highlightMarkerStyle = {
@@ -43,11 +43,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Add the river layer
+  function riverStyle() {
+    const zoom = map.getZoom()
+    if (zoom < 11) {
+      return {
+        stroke: true,
+        color: globalConfig.riverColor,
+        weight: 4,
+        fillColor: globalConfig.riverColor,
+        fillOpacity: 1,
+      }
+    }
+    return {
+      stroke: false,
+      fillColor: globalConfig.riverColor,
+      fillOpacity: 0.5,
+    }
+  }
+
   const riverLayer = new L.GeoJSON(riverGeoJson, {
-    style: { stroke: false, fillColor: globalConfig.riverColor, fillOpacity: 0.5 },
+    style: riverStyle,
     interactive: false,
   }).addTo(map)
   riverLayer.bringToBack()
+
+  map.on('zoom', () => {
+    riverLayer.setStyle(riverStyle())
+  })
 
   // Create a feature group to hold all trip layers for bounds calculation
   const allTripsGroup = new L.FeatureGroup()

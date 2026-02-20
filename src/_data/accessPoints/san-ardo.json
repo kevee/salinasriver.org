@@ -609,6 +609,33 @@
       "lon": -120.912475,
       "cfs": 606,
       "height": null
+    },
+    {
+      "filename": "DSCN0122.jpg",
+      "originalFilename": "DSCN0122.JPG",
+      "date": "2021-06-11",
+      "lat": 35.96810666666667,
+      "lon": -120.88824166666667,
+      "cfs": 559,
+      "height": null
+    },
+    {
+      "filename": "IMG_4504.jpg",
+      "originalFilename": "IMG_4504.HEIC",
+      "date": "2021-08-26",
+      "lat": 36.01487222222222,
+      "lon": -120.91256666666668,
+      "cfs": 76.5,
+      "height": null
+    },
+    {
+      "filename": "IMG_6023.jpg",
+      "originalFilename": "IMG_6023.HEIC",
+      "date": "2023-04-15",
+      "lat": 36.015972222222224,
+      "lon": -120.91448333333334,
+      "cfs": 606,
+      "height": null
     }
   ]
 }

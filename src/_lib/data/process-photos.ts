@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { execSync } from 'child_process'
 import sharp from 'sharp'
 import exifr from 'exifr'
 import convert from 'heic-convert'
@@ -14,6 +15,7 @@ interface PhotoEntry {
   lon: number
   cfs: number | null
   height: number | null
+  type?: 'photo' | 'video'
 }
 
 interface AccessPoint {
@@ -31,6 +33,7 @@ const ACCESS_POINTS_DIR = './src/_data/accessPoints'
 const JPEG_WIDTH = 1200
 const THUMB_WIDTH = 400
 const SUPPORTED_EXTENSIONS = ['.heic', '.heif', '.jpg', '.jpeg', '.png', '.tiff']
+const SUPPORTED_VIDEO_EXTENSIONS = ['.mov', '.mp4', '.avi']
 
 function haversineDistance(
   lat1: number,
@@ -237,6 +240,125 @@ const processPhotos = async (_eleventyConfig: any) => {
     }
 
     closest.photos!.push(photoEntry)
+  }
+
+  // Process video files
+  const videoFiles = fs
+    .readdirSync(IMAGES_INPUT_DIR)
+    .filter((f) =>
+      SUPPORTED_VIDEO_EXTENSIONS.includes(path.extname(f).toLowerCase())
+    )
+
+  for (const file of videoFiles) {
+    const inputPath = path.join(IMAGES_INPUT_DIR, file)
+    const baseName = path.parse(file).name
+    const webmFilename = baseName + '.webm'
+    const thumbFilename = baseName + '-thumb.jpg'
+    const outputPath = path.join(IMAGES_OUTPUT_DIR, webmFilename)
+    const thumbPath = path.join(IMAGES_OUTPUT_DIR, thumbFilename)
+
+    if (isAlreadyProcessed(file, accessPoints)) {
+      console.log(`[process-photos] Skipping video ${file} (already processed)`)
+      continue
+    }
+
+    // Extract metadata from video using ffprobe
+    let videoLat: number
+    let videoLon: number
+    let dateStr: string
+    try {
+      const probeOutput = execSync(
+        `ffprobe -v quiet -print_format json -show_format "${inputPath}"`,
+        { encoding: 'utf-8' }
+      )
+      const probe = JSON.parse(probeOutput)
+      const tags = probe?.format?.tags || {}
+
+      // Parse ISO 6709 location string like "+35.8639-120.8097+168.686/"
+      const locationStr = tags['com.apple.quicktime.location.ISO6709'] || ''
+      const locationMatch = locationStr.match(/^([+-]\d+\.?\d*)([+-]\d+\.?\d*)/)
+      if (!locationMatch) {
+        console.warn(`[process-photos] No GPS data in video ${file}, skipping.`)
+        continue
+      }
+      videoLat = parseFloat(locationMatch[1])
+      videoLon = parseFloat(locationMatch[2])
+
+      // Parse creation time
+      const creationTime = tags['creation_time']
+      if (!creationTime) {
+        console.warn(`[process-photos] No date in video ${file}, skipping.`)
+        continue
+      }
+      dateStr = new Date(creationTime).toISOString().split('T')[0]
+    } catch (err: any) {
+      console.warn(
+        `[process-photos] Failed to read metadata from video ${file}:`,
+        err.message
+      )
+      continue
+    }
+
+    // Convert video to WebM and extract first frame thumbnail
+    try {
+      // Extract first frame as JPEG
+      const tempThumbPath = path.join(IMAGES_OUTPUT_DIR, baseName + '-frame.jpg')
+      execSync(
+        `ffmpeg -y -i "${inputPath}" -vframes 1 -f image2 "${tempThumbPath}"`,
+        { stdio: 'pipe' }
+      )
+
+      // Resize thumbnail with sharp
+      await sharp(tempThumbPath)
+        .resize({ width: THUMB_WIDTH })
+        .jpeg({ quality: 70 })
+        .toFile(thumbPath)
+
+      // Clean up temp frame
+      fs.unlinkSync(tempThumbPath)
+
+      // Convert video to WebM
+      execSync(
+        `ffmpeg -y -i "${inputPath}" -c:v libvpx-vp9 -crf 30 -b:v 2M -c:a libopus "${outputPath}"`,
+        { stdio: 'pipe' }
+      )
+
+      console.log(
+        `[process-photos] Converted video ${file} -> ${webmFilename} + thumbnail`
+      )
+    } catch (err: any) {
+      console.warn(
+        `[process-photos] Failed to convert video ${file}:`,
+        err.message
+      )
+      continue
+    }
+
+    const closest = findClosestAccessPoint(videoLat, videoLon, accessPoints)
+    console.log(
+      `[process-photos] ${file} -> closest access point: ${closest.slug}`
+    )
+
+    const { cfs, height } = await fetchUSGSDailyValues(
+      closest.gauge,
+      dateStr
+    )
+    console.log(
+      `[process-photos] USGS data for ${closest.gauge} on ${dateStr}: cfs=${cfs}, height=${height}`
+    )
+
+    const videoEntry: PhotoEntry = {
+      filename: webmFilename,
+      originalFilename: file,
+      date: dateStr,
+      lat: videoLat,
+      lon: videoLon,
+      cfs,
+      height,
+      type: 'video',
+    }
+
+    closest.photos!.push(videoEntry)
   }
 
   // Generate missing thumbnails for already-processed photos

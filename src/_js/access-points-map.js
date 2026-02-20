@@ -66,11 +66,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Add the river layer after fitBounds so the map has an initialized view
+  function riverStyle() {
+    const zoom = map.getZoom()
+    if (zoom < 11) {
+      return {
+        stroke: true,
+        color: globalConfig.riverColor,
+        weight: 4,
+        fillColor: globalConfig.riverColor,
+        fillOpacity: 1,
+      }
+    }
+    return {
+      stroke: false,
+      fillColor: globalConfig.riverColor,
+      fillOpacity: 0.5,
+    }
+  }
+
   const riverLayer = new L.GeoJSON(riverGeoJson, {
-    style: { stroke: false, fillColor: globalConfig.riverColor, fillOpacity: 0.5 },
+    style: riverStyle,
     interactive: false,
   }).addTo(map)
   riverLayer.bringToBack()
+
+  map.on('zoom', () => {
+    riverLayer.setStyle(riverStyle())
+  })
 
   function highlightAccessPoint(slug) {
     if (markers[slug]) {

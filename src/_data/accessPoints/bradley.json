@@ -277,6 +277,52 @@
       "lon": -120.80971388888888,
       "cfs": 606,
       "height": null
+    },
+    {
+      "filename": "DSCN0113.jpg",
+      "originalFilename": "DSCN0113.JPG",
+      "date": "2021-06-11",
+      "lat": 35.91925166666667,
+      "lon": -120.85188833333332,
+      "cfs": 559,
+      "height": null
+    },
+    {
+      "filename": "DSCN0115.jpg",
+      "originalFilename": "DSCN0115.JPG",
+      "date": "2021-06-11",
+      "lat": 35.93205333333333,
+      "lon": -120.86789166666667,
+      "cfs": 559,
+      "height": null
+    },
+    {
+      "filename": "IMG_4497.jpg",
+      "originalFilename": "IMG_4497.HEIC",
+      "date": "2021-08-26",
+      "lat": 35.86420555555556,
+      "lon": -120.80989722222222,
+      "cfs": 76.5,
+      "height": null
+    },
+    {
+      "filename": "IMG_4498.jpg",
+      "originalFilename": "IMG_4498.HEIC",
+      "date": "2021-08-26",
+      "lat": 35.864108333333334,
+      "lon": -120.80978333333333,
+      "cfs": 76.5,
+      "height": null
+    },
+    {
+      "filename": "IMG_6950.webm",
+      "originalFilename": "IMG_6950.MOV",
+      "date": "2024-03-09",
+      "lat": 35.8639,
+      "lon": -120.8097,
+      "cfs": 984,
+      "height": null,
+      "type": "video"
     }
   ]
 }

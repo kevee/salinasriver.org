@@ -12,13 +12,14 @@
 
 <ul class="photo-grid">
   <li webc:for="photo of point.photos">
-    <a :href="`/assets/images/photos/${photo.filename}`" target="_blank">
+    <a :href="`/assets/images/photos/${photo.filename}`" target="_blank" :class="photo.type === 'video' ? 'video-link' : ''">
       <img
-        :src="`/assets/images/photos/${photo.filename.replace('.jpg', '-thumb.jpg')}`"
+        :src="`/assets/images/photos/${photo.filename.replace(/\.(jpg|webm)$/, '-thumb.jpg')}`"
         :alt="`${l(point.translate, 'title')} - ${photo.date}`"
         loading="lazy"
         decoding="async"
       />
+      <span class="play-icon" webc:if="photo.type === 'video'"></span>
     </a>
     <div class="photo-meta">
       <span class="photo-date" @text="formatDate(photo.date)"></span>
@@ -57,6 +58,35 @@
         width: 100%;
         height: auto;
         border-radius: 4px;
+      }
+
+      &.video-link {
+        position: relative;
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 12px 0 12px 22px;
+          border-color: transparent transparent transparent white;
+          margin-left: 4px;
+        }
       }
     }
 

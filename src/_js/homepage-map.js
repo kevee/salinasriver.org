@@ -8,11 +8,34 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollWheelZoom: false,
   })
 
+  // Zoom controls in upper-right
+  new L.Control.Zoom({ position: 'topright' }).addTo(map)
+
   // CartoDB light basemap
   new L.TileLayer(
     'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     { attribution: globalConfig.mapAttribution },
   ).addTo(map)
+
+  function riverStyle() {
+    const zoom = map.getZoom()
+    if (zoom < 11) {
+      // At low zooms the polygon is too thin — add a thick stroke so the river stays visible
+
+      return {
+        stroke: true,
+        color: globalConfig.riverColor,
+        weight: 6,
+        fillColor: globalConfig.riverColor,
+        fillOpacity: 1,
+      }
+    }
+    return {
+      stroke: false,
+      fillColor: globalConfig.riverColor,
+      fillOpacity: 0.9,
+    }
+  }
 
   // Create markers for each access point
   const allMarkersGroup = new L.FeatureGroup()
@@ -57,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add river polygon AFTER fitBounds (required for Leaflet to render correctly)
   const riverLayer = new L.GeoJSON(riverGeoJson, {
-    style: {
-      stroke: false,
-      fillColor: globalConfig.riverColor,
-      fillOpacity: 0.9,
-    },
+    style: riverStyle,
     interactive: false,
   }).addTo(map)
   riverLayer.bringToBack()
+
+  map.on('zoom', () => {
+    riverLayer.setStyle(riverStyle())
+  })
 })
