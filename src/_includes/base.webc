@@ -14,6 +14,7 @@
 
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>
+    <script defer src="https://stats.salinasriver.org/script.js" data-website-id="5b745c56-501c-48a9-bcae-e7a710305170" webc:keep></script>
     <site-styles webc:nokeep></site-styles>
     <link
       webc:if="hasMap"

@@ -11,8 +11,11 @@
     position: sticky;
     top: 1rem;
     width: 100%;
-    height: 400px;
+    min-height: 400px;
     overflow: hidden;
+    @media (min-width: $mobile-breakpoint) {
+      min-height: 600px;
+    }
   }
 </style>
 
