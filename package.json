@@ -9,6 +9,7 @@
     "build:11ty": "npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "build:pagefind": "npx pagefind --site public",
     "check-links": "npx @untitaker/hyperlink ./public",
+    "deploy:cname": "echo \"salinasriver.org\" > ./public/CNAME",
     "build": "npm run build:11ty && npm run build:pagefind"
   },
   "dependencies": {
