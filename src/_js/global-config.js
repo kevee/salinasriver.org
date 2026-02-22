@@ -10,4 +10,27 @@ const globalConfig = {
   satelliteMapOpacity: 0.6,
   mapAttribution:
     'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+  markerStyle(radius) {
+    return {
+      radius,
+      fillColor: this.mainColor,
+      fillOpacity: 0.9,
+      stroke: true,
+      color: '#fff',
+      weight: 2,
+    }
+  },
+  highlightMarkerStyle(radius) {
+    return {
+      radius,
+      fillColor: this.highlightColor,
+      fillOpacity: 1,
+      stroke: true,
+      color: '#fff',
+      weight: 2,
+    }
+  },
+  popupHtml(title, url) {
+    return `<a class="map-popup-link" href="${url}">${title}</a>`
+  },
 }

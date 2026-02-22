@@ -39,24 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create markers for each access point
   const allMarkersGroup = new L.FeatureGroup()
-  const markerRadius = 15 // Slightly larger for hero
+  const markerRadius = 15
 
   for (const point of options.accessPoints) {
     if (!point.lat || !point.lon) continue
 
-    const marker = new L.CircleMarker([point.lat, point.lon], {
-      radius: markerRadius,
-      fillColor: globalConfig.mainColor, // #f50022
-      fillOpacity: 0.9,
-      stroke: true,
-      color: '#fff',
-      weight: 2,
-    })
+    const marker = new L.CircleMarker([point.lat, point.lon], globalConfig.markerStyle(markerRadius))
 
-    // Popup with link to access point
     const title = point.translate[options.language]?.title || point.slug
     const url = `/${options.language}/access-points/${point.slug}/`
-    marker.bindPopup(`<a href="${url}"><strong>${title}</strong></a>`)
+    marker.bindPopup(globalConfig.popupHtml(title, url))
 
     marker.on('mouseover', () => {
       marker.setRadius(markerRadius * 1.3)

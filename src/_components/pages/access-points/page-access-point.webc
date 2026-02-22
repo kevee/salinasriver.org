@@ -26,6 +26,13 @@
       <span @text="t('and')" webc:nokeep></span>
       <span webc:nokeep @text="gauge(point.gauge, 'height')"></span>
       <span @text="t('feetDeep')" webc:nokeep></span>
+      <flow-badge
+        webc:nokeep
+        :@gauge-name="point.gauge"
+        :@flow-low="point.flowLow"
+        :@flow-high="point.flowHigh"
+      ></flow-badge>
+      <updated-at webc:nokeep></updated-at>
     </dd>
   </div>
   <div webc:if="point.tresspass">

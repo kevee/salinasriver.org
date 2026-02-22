@@ -50,6 +50,21 @@ const addGlobalData = async (eleventyConfig) => {
     },
   )
 
+  eleventyConfig.addFilter(
+    'flowStatus',
+    (gaugeName: string, flowLow: number, flowHigh: number) => {
+      const gauge = gauges.find(
+        (g: GaugeWithMeasurements) => g.name === gaugeName,
+      )
+      if (!gauge || gauge.cfs == null) return null
+      const cfs = gauge.cfs
+      if (cfs <= 0) return 'none'
+      if (cfs < flowLow) return 'below'
+      if (cfs > flowHigh) return 'above'
+      return 'good'
+    },
+  )
+
   eleventyConfig.addFilter('gauge', (gaugeName: string, attribute: string) => {
     const gauge = gauges.find(
       (g: GaugeWithMeasurements) => g.name === gaugeName,

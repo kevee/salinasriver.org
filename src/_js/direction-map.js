@@ -37,17 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const start = options.data.features[0].geometry.coordinates[0][0]
   const end = options.data.features[0].geometry.coordinates[0].slice(-1)[0]
 
-  new L.CircleMarker([start[1], start[0]], {
-    radius: 15,
-    fillColor: globalConfig.accessPointEndColor,
-    fillOpacity: 0.7,
-    stroke: false,
-  }).addTo(map)
+  new L.CircleMarker([start[1], start[0]], globalConfig.markerStyle(10)).addTo(map)
 
-  new L.CircleMarker([end[1], end[0]], {
-    radius: 15,
-    fillColor: globalConfig.accessPointEndColor,
-    fillOpacity: 0.7,
-    stroke: false,
-  }).addTo(map)
+  new L.CircleMarker([end[1], end[0]], globalConfig.markerStyle(10)).addTo(map)
 })

@@ -35,4 +35,26 @@
     margin-left: 0.5rem;
     font-size: 0.8rem;
   }
+
+  .leaflet-popup-content-wrapper {
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+  .leaflet-popup-content {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .map-popup-link {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--main-blue);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .leaflet-popup-tip {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
 </style>

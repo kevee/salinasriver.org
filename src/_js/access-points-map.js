@@ -18,21 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ).addTo(map)
 
   const markers = {}
-  const markerRadius = 8
-
-  const defaultStyle = {
-    radius: markerRadius,
-    fillColor: globalConfig.mainColor,
-    fillOpacity: 0.8,
-    stroke: false,
-  }
-
-  const highlightStyle = {
-    radius: markerRadius * 1.5,
-    fillColor: globalConfig.highlightColor,
-    fillOpacity: 1,
-    stroke: false,
-  }
+  const markerRadius = 10
+  const defaultStyle = globalConfig.markerStyle(markerRadius)
+  const highlightStyle = globalConfig.highlightMarkerStyle(markerRadius * 1.5)
 
   const allMarkersGroup = new L.FeatureGroup()
 
@@ -42,21 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const slug = point.slug
 
     const marker = new L.CircleMarker([point.lat, point.lon], defaultStyle)
+    const title = point.translate[options.language]?.title || point.slug
+    const url = `/${options.language}/access-points/${slug}/`
+    marker.bindPopup(globalConfig.popupHtml(title, url))
     marker.addTo(map)
     allMarkersGroup.addLayer(marker)
     markers[slug] = marker
 
     marker.on('mouseover', () => highlightAccessPoint(slug))
     marker.on('mouseout', () => unhighlightAccessPoint(slug))
-    marker.on('click', () => {
-      const listItem = document.querySelector(
-        `[data-access-point-slug="${slug}"]`,
-      )
-      if (listItem) {
-        const link = listItem.querySelector('a')
-        if (link) link.click()
-      }
-    })
   }
 
   if (allMarkersGroup.getLayers().length > 0) {

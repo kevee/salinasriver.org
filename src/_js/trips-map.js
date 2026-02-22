@@ -28,19 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     color: globalConfig.highlightColor,
     opacity: 1,
   }
-  const markerRadius = 6
-  const defaultMarkerStyle = {
-    radius: markerRadius,
-    fillColor: globalConfig.mainColor,
-    fillOpacity: 1,
-    stroke: false,
-  }
-  const highlightMarkerStyle = {
-    radius: markerRadius * 1.5,
-    fillColor: globalConfig.highlightColor,
-    fillOpacity: 1,
-    stroke: false,
-  }
+  const markerRadius = 10
+  const defaultMarkerStyle = globalConfig.markerStyle(markerRadius)
+  const highlightMarkerStyle = globalConfig.highlightMarkerStyle(markerRadius * 1.5)
 
   // Add the river layer
   function riverStyle() {
@@ -112,14 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
       tripEndMarkers[slug] = endMarker
     }
 
-    // Add hover/click events to the route layer and markers
-    const tripClick = () => {
-      const listItem = document.querySelector(`[data-trip-slug="${slug}"]`)
-      if (listItem) {
-        const link = listItem.querySelector('a')
-        if (link) link.click()
-      }
-    }
+    // Add popup to markers and route
+    const title = trip.translate[options.language]?.title || trip.slug
+    const url = `/${options.language}/trips/${slug}/`
+    const popupContent = globalConfig.popupHtml(title, url)
+    if (tripStartMarkers[slug]) tripStartMarkers[slug].bindPopup(popupContent)
+    if (tripEndMarkers[slug]) tripEndMarkers[slug].bindPopup(popupContent)
+    tripLayer.bindPopup(popupContent)
+
     for (const layer of [
       tripLayer,
       tripStartMarkers[slug],
@@ -128,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!layer) continue
       layer.on('mouseover', () => highlightTrip(slug))
       layer.on('mouseout', () => unhighlightTrip(slug))
-      layer.on('click', tripClick)
     }
   }
 

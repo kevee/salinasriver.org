@@ -12,7 +12,7 @@
       "title": "San Ardo to San Lucas",
       "length": "10 miles",
       "time": "6-8 hours",
-      "gear": ["Kayaks, canoes, or SUPs"],
+      "gear": "Kayaks, canoes, or SUPs",
       "setUp": "Spot a car at [San Lucas](/en/access-points/san-lucas).",
       "safety": "There are no known hazards on this stretch since April 2023.",
       "description": ""
@@ -21,7 +21,7 @@
       "title": "San Ardo a San Lucas",
       "length": "10 millas",
       "time": "6-8 horas",
-      "gear": ["Kayaks, canoas o SUPs"],
+      "gear": "Kayaks, canoas o SUPs",
       "setUp": "Localice un auto en [San Lucas](/es/access-points/san-lucas).",
       "safety": " No se conocen peligros en este tramo desde abril de 2023.",
       "description": ""

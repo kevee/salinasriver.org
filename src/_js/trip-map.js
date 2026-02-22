@@ -20,20 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   for (const part of options.parts) {
-    const circle = new L.CircleMarker([part.lat, part.lon], {
-      radius: 15,
-      fillColor: globalConfig.accessPointColor,
-      fillOpacity: 0.7,
-      stroke: false,
-    }).addTo(map)
+    const circle = new L.CircleMarker([part.lat, part.lon], globalConfig.markerStyle(10)).addTo(map)
 
-    circle.bindPopup(
-      `<a href="#part-${part.id}">${
-        part.translate[options.language].title
-      }</a>`,
-      {
-        minWidth: 100,
-      }
-    )
+    const title = part.translate[options.language]?.title || part.id
+    circle.bindPopup(globalConfig.popupHtml(title, `#part-${part.id}`))
   }
 })

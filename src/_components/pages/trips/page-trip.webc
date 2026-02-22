@@ -9,11 +9,18 @@
     <dt @text="t('time')"></dt>
     <dd @text="l(trip.translate, 'time')"></dd>
   </div>
-
+  <div webc:if="trip.windAlert">
+    <dt @text="t('windAlert.label')"></dt>
+    <dd @text="t('windAlert.warning')"></dd>
+  </div>
   <div>
     <dt @text="t('bestFlow')"></dt>
     <dd>
-      <span @text="formatNumber(trip.flowLow)" webc:nokeep webc:if="trip.flowLow >= 0"></span>
+      <span
+        @text="formatNumber(trip.flowLow)"
+        webc:nokeep
+        webc:if="trip.flowLow >= 0"
+      ></span>
       <span webc:nokeep webc:if="trip.flowLow < 0">0</span>
       <span @text="t('to')" webc:nokeep webc:if="trip.flowLow"></span>
       <span @text="formatNumber(trip.flowHigh)" webc:nokeep></span>
@@ -36,6 +43,23 @@
       <span @text="t('and')" webc:nokeep></span>
       <span webc:nokeep @text="gauge(trip.gauge, 'height')"></span>
       <span @text="t('feetDeep')" webc:nokeep></span>
+      <flow-badge
+        webc:nokeep
+        :@gauge-name="trip.gauge"
+        :@flow-low="trip.flowLow"
+        :@flow-high="trip.flowHigh"
+      ></flow-badge>
+      <updated-at webc:nokeep></updated-at>
+    </dd>
+  </div>
+  <div webc:if="trip.webcam">
+    <dt @text="t('webcam')"></dt>
+    <dd>
+      <a
+        href="https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA"
+        @text="t('viewWebcam')"
+      ></a>
+      <div @text="l(trip.translate, 'webcamNote')"></div>
     </dd>
   </div>
   <div webc:if="trip.privatePropertyWarning">
@@ -50,15 +74,7 @@
   </div>
   <div>
     <dt @text="t('gear')"></dt>
-    <dd>
-      <ul>
-        <li
-          webc:for="item of l(trip.translate, 'gear')"
-          :key="item"
-          @text="item"
-        ></li>
-      </ul>
-    </dd>
+    <dd @text="l(trip.translate, 'gear')"></dd>
   </div>
 </stats-list>
 <protect-rights @type="trip" webc:nokeep></protect-rights>

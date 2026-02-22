@@ -45,6 +45,19 @@ const addI18nFilters = (eleventyConfig) => {
     return Number(value).toLocaleString()
   })
 
+  eleventyConfig.addFilter('buildTime', function () {
+    const locale = this.page?.lang || 'en'
+    return new Intl.DateTimeFormat(locale, {
+      timeZone: 'America/Los_Angeles',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZoneName: 'short',
+    }).format(new Date())
+  })
+
   // Add language path filter for language switching
   eleventyConfig.addFilter('switchLanguagePath', function (locale) {
     if (!this.page || !this.page.url) return `/${locale}/`
