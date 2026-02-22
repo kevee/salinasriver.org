@@ -1,38 +1,22 @@
+import fs from 'fs'
+import path from 'path'
 import Typography from 'typography'
 
 /**
  * Renders a well-formatted typography CSS string
- * and imports the necessary Google Fonts.
+ * with self-hosted font declarations.
  */
 const getTypography = (): { fontImport: string; typography: string } => {
-  const googleFonts = [
-    {
-      name: 'Open Sans',
-      styles: ['400', '700'],
-    },
-    {
-      name: 'Poppins',
-      styles: ['400'],
-    },
-  ]
-
   const typography = Typography({
     baseFontSize: '20px',
     baseLineHeight: 1.666,
     headerFontFamily: ['Poppins', 'sans-serif'],
     bodyFontFamily: ['Open Sans', 'serif'],
-    googleFonts,
   })
 
-  const googleFontsFamilies = googleFonts
-    .map((font) => {
-      const escapedName = font.name.replace(/\s+/g, '+')
-      const styles = font.styles.join(';')
-      return `family=${escapedName}:wght@${styles}`
-    })
-    .join('&')
-
-  const fontImport = `@import url('https://fonts.googleapis.com/css2?${googleFontsFamilies}&display=swap');`
+  const fontImport = fs
+    .readFileSync(path.join('./src/assets/fonts/fonts.css'), 'utf8')
+    .toString()
 
   return { fontImport, typography: typography.toString() }
 }

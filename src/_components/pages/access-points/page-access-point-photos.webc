@@ -13,8 +13,22 @@
 <ul class="photo-grid">
   <li webc:for="photo of point.photos">
     <a :href="`/assets/images/photos/${photo.filename}`" target="_blank" :class="photo.type === 'video' ? 'video-link' : ''">
+      <picture webc:if="photo.type !== 'video'">
+        <source
+          type="image/webp"
+          :srcset="`/assets/images/photos/${photo.filename.replace('.jpg', '-400w.webp')} 400w, /assets/images/photos/${photo.filename.replace('.jpg', '-800w.webp')} 800w, /assets/images/photos/${photo.filename.replace('.jpg', '-1200w.webp')} 1200w`"
+          sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+        />
+        <img
+          :src="`/assets/images/photos/${photo.filename.replace('.jpg', '-thumb.jpg')}`"
+          :alt="`${l(point.translate, 'title')} - ${photo.date}`"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <img
-        :src="`/assets/images/photos/${photo.filename.replace(/\.(jpg|webm)$/, '-thumb.jpg')}`"
+        webc:if="photo.type === 'video'"
+        :src="`/assets/images/photos/${photo.filename.replace('.webm', '-thumb.jpg')}`"
         :alt="`${l(point.translate, 'title')} - ${photo.date}`"
         loading="lazy"
         decoding="async"

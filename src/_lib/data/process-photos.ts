@@ -31,6 +31,7 @@ const IMAGES_INPUT_DIR = './src/_images'
 const IMAGES_OUTPUT_DIR = './src/assets/images/photos'
 const ACCESS_POINTS_DIR = './src/_data/accessPoints'
 const JPEG_WIDTH = 1200
+const WEBP_WIDTHS = [400, 800, 1200]
 const THUMB_WIDTH = 400
 const SUPPORTED_EXTENSIONS = ['.heic', '.heif', '.jpg', '.jpeg', '.png', '.tiff']
 const SUPPORTED_VIDEO_EXTENSIONS = ['.mov', '.mp4', '.avi']
@@ -207,7 +208,15 @@ const processPhotos = async (_eleventyConfig: any) => {
         .resize({ width: THUMB_WIDTH })
         .jpeg({ quality: 70 })
         .toFile(thumbPath)
-      console.log(`[process-photos] Converted ${file} -> ${jpegFilename} + thumbnail`)
+      // Generate WebP at multiple widths for srcset
+      for (const w of WEBP_WIDTHS) {
+        const webpPath = path.join(IMAGES_OUTPUT_DIR, `${baseName}-${w}w.webp`)
+        await sharp(sharpInput)
+          .resize({ width: w })
+          .webp({ quality: 75 })
+          .toFile(webpPath)
+      }
+      console.log(`[process-photos] Converted ${file} -> ${jpegFilename} + thumbnail + WebP`)
     } catch (err: any) {
       console.warn(
         `[process-photos] Failed to convert ${file}:`,

@@ -4,13 +4,10 @@
     <meta charset="utf-8" />
     <title @text="t('siteName')"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://server.arcgisonline.com"/>
     <link rel="dns-prefetch" href="https://cartodb-basemaps-a.global.ssl.fastly.net"/>
     <link rel="dns-prefetch" href="https://cartodb-basemaps-b.global.ssl.fastly.net"/>
     <link rel="dns-prefetch" href="https://cartodb-basemaps-c.global.ssl.fastly.net"/>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>
@@ -25,6 +22,7 @@
     <script
       webc:if="hasMap"
       webc:keep
+      defer
       src="/assets/leaflet/leaflet-global.js"
     ></script>
   </head>
@@ -34,5 +32,10 @@
     <site-footer webc:nokeep></site-footer>
     <style @raw="getBundle('css', 'defer')" webc:keep></style>
     <script @raw="getBundle('js', 'defer')" webc:keep></script>
+    <script webc:keep>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+      }
+    </script>
   </body>
 </html>

@@ -14,10 +14,8 @@ This website is updated several times a day with data from USGS water guages. If
 
 All of these water levels are a few feet lower than the "Action" stage of the guage. For example, the [yellow water level in the Spreckles gauge](https://water.noaa.gov/gauges/sprc1).
 
-| Guage                                              | Water level |
-| -------------------------------------------------- | ----------- |
-| [Paso Robles](https://water.noaa.gov/gauges/prbc1) | 15 feet     |
-| [Bradley](https://water.noaa.gov/gauges/brdc1)     | 12 feet     |
-| [Soledad](https://water.noaa.gov/gauges/sddc1)     | 13 feet     |
-| [Chualar](https://water.noaa.gov/gauges/chlc1)     | 9 feet      |
-| [Spreckles](https://water.noaa.gov/gauges/sprc1)   | 15 feet     |
+| Gauge | Water level |
+| --- | --- |
+{%- for gauge in gauges %}
+| [{{ gauge.label }}]({{ gauge.floodUrl }}) | {{ gauge.flood }} feet |
+{%- endfor %}
