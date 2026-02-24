@@ -3,9 +3,103 @@
   "lon": -121.761627,
   "flowLow": -999999,
   "flowHigh": 100,
-  "guage": "chualar",
-  "tresspass": false,
+  "gauge": "chualar",
+  "privatePropertyWarning": false,
   "damRelease": false,
+  "slug": "blanco-river-mouth",
+  "translate": {
+    "en": {
+      "title": "Blanco Road to River Mouth",
+      "length": "5.6 miles",
+      "time": "4-6 hours",
+      "gear": "Kayaks, canoes, or SUPs",
+      "setUp": "Spot a car at [Salinas River Wildlife Refuge](/en/access-points/srnwr) if going south-to-north, or [Blanco bridge](/en/access-points/blanco) if traveling north-to-south.",
+      "description": "One of the most consistently-runnable sections of the river in the summer when a large lagoon backs up to Blanco.\n\nNote that if there is any significant flow, then the [river mouth could be breached](/en/overview/safety#breach) and you should not attempt going down river.\n\nThis trip can be run either north-to-south or south-to-north as the river backs up into a lagoon on this stretch. It's best to check out the river first at Blanco. If there is no flow, then going from the north-to-south is a better option because the prevailing winds will be at your back.\n\nThere is a [rubber dam](/en/overview/rubber-dam) five miles from the river mouth that could require a portage if it is up.\n\nWhen there is no flow, large expanses of duckweed can clog the waterway, making paddling extremely slow above the dam."
+    },
+    "es": {
+      "title": "Carretera Blanco a la desembocadura del río",
+      "length": "5.6 miles",
+      "time": "4-6 horas",
+      "gear": "Kayaks, canoas o embarcaciones SUP",
+      "setUp": "Localice un auto en el [Refugio de Vida Silvestre del Río Salinas](/es/access-points/srnwr) si va de sur a norte, o en el [puente Blanco](/es/access-points/blanco) si va de norte a sur.",
+      "description": "Uno de los tramos del río más corribles en verano, cuando una gran laguna retrocede hasta Blanco.\n\nTenga en cuenta que si hay un caudal importante, entonces la [desembocadura del río podría romperse](/es/overview/safety#breach) y no debería intentar descender río abajo.\n\nEste viaje puede realizarse de norte a sur o de sur a norte, ya que el río retrocede hasta una laguna en este tramo. Lo mejor es comprobar el río primero en Blanco. Si no hay caudal, entonces ir de norte a sur es una mejor opción porque los vientos dominantes estarán a su espalda.\n\nHay un [dique de goma](/es/overview/rubber-dam) a cinco millas de la desembocadura del río que podría requerir un porteo si está levantada.\n\nCuando no hay caudal, grandes extensiones de lenteja de agua pueden obstruir el cauce, haciendo que la remada sea extremadamente lenta por encima de la presa."
+    }
+  },
+  "parts": [
+    {
+      "id": "put-in",
+      "mile": 0,
+      "lat": 36.6786279923835,
+      "lon": -121.74336546306512,
+      "driving": true,
+      "translate": {
+        "en": {
+          "title": "Put-in",
+          "description": "Park on the road by [Blanco bridge](/en/access-points/blanco)."
+        },
+        "es": {
+          "title": "Entrada",
+          "description": "Estacione en la carretera junto al [puente Blanco](/es/access-points/blanco)."
+        }
+      }
+    },
+    {
+      "id": "dam",
+      "mile": 3.5,
+      "lat": 36.709093,
+      "lon": -121.750769,
+      "driving": false,
+      "caution": false,
+      "translate": {
+        "en": {
+          "title": "Rubber dam",
+          "description": "The dam is usually closed in the summer and open in the winter. If it is closed, do not attempt to go over the dam. There is an easy portage on river left around the dam, and clear buoys before the dam. [Learn more about the rubber dam](/en/overview/rubber-dam)."
+        },
+        "es": {
+          "title": "Dique de goma",
+          "description": "El dique suele estar cerrado en verano y abierto en invierno. Si está cerrado, no intente pasar por encima de la presa. Alrededor de la presa hay un porteo fácil a la izquierda del río y boyas despejadas antes de la presa. [Más información sobre la presa de goma](/es/overview/rubber-dam)."
+        }
+      }
+    },
+    {
+      "id": "take-out-alternative",
+      "mile": 5,
+      "lat": 36.732174,
+      "lon": -121.782579,
+      "driving": true,
+      "caution": false,
+      "translate": {
+        "en": {
+          "title": "Alternate take-out",
+          "description": "Exit the river right as you pass under highway 1, after the abandoned railroad bridge, at the [Monte Road access point](/en/access-points/monte)."
+        },
+        "es": {
+          "title": "Salida alternativa",
+          "description": "Salga del río por la derecha al pasar por debajo de la autopista 1, después del puente ferroviario abandonado, en el [punto de acceso de Monte Road](/es/access-points/monte)."
+        }
+      }
+    },
+    {
+      "id": "take-out",
+      "mile": 5.6,
+      "lat": 36.735825,
+      "lon": -121.791014,
+      "driving": true,
+      "caution": false,
+      "translate": {
+        "en": {
+          "title": "Take-out",
+          "description": "Exit the river on the left after passing under the highway 1 overpass and a field on your left. You will be exiting at the [Salinas River Wildlife Refuge](/en/access-points/srnwr)."
+        },
+        "es": {
+          "title": "Salida",
+          "description": "Salga del río por la izquierda tras pasar por debajo del paso elevado de la autopista 1 y un campo a su izquierda. Estará saliendo en el [Refugio de Vida Silvestre del Río Salinas](/es/access-points/srnwr)."
+        }
+      }
+    }
+  ],
+  "putIn": "blanco",
+  "takeOut": "srnwr",
   "route": {
     "type": "FeatureCollection",
     "features": [

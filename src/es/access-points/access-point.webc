@@ -1,0 +1,24 @@
+---js 
+{
+  layout: "default",
+  lang: "es",
+  hasMap: true,
+  pagination: { 
+    data: "accessPoints", 
+    size: 1,
+    alias: "point",
+    resolve: "values" 
+  }, 
+  breadcrumbs: [
+    { name: "Home", link: "/" },
+    { name: "Access points", link: "/access-points/" },
+  ],
+  permalink: ({ point }) =>`/es/access-points/${point.slug}/`,
+  eleventyComputed: {
+    title: ({ point }) =>  point.translate.en.title,
+    description: ({ point }) => point.translate.en.description,
+  },
+} 
+---
+
+<page-access-point :point="point" :lang="en"></page-access-point>

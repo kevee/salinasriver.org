@@ -1,0 +1,10 @@
+---
+layout: base
+---
+
+<site-header webc:nokeep></site-header>
+<main data-pagefind-body>
+  <container webc:nokeep>
+    <template @raw="content" webc:nokeep></template>
+  </container>
+</main>

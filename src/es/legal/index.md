@@ -1,9 +1,7 @@
 ---
 title: Aviso legal
-layout: layouts/default.njk
-
+layout: default
 ---
-
 
 # Aviso legal
 
@@ -24,4 +22,3 @@ Al utilizar nuestro sitio web, acepta nuestro descargo de responsabilidad y est�
 ## Actualización
 
 En caso que actualicemos, modifiquemos o hagamos algún cambio en este documento, dichos cambios se publicarán de forma destacada aquí.
-

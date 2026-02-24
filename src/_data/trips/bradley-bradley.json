@@ -3,9 +3,28 @@
   "lon": -120.783075,
   "flowLow": 90,
   "flowHigh": 600,
-  "guage": "bradley",
-  "tresspass": true,
+  "gauge": "bradley",
+  "privatePropertyWarning": true,
   "damRelease": true,
+  "slug": "bradley-bradley",
+  "translate": {
+    "en": {
+      "title": "Bradley to Bradley",
+      "length": "3.5 miles",
+      "time": "3-5 hours",
+      "gear": "Tubes, wetsuits unless the weather is very warm",
+      "setUp": "Spot a car at the [northern Bradley bridge](/en/access-points/bradley).",
+      "description": "A classic tubing run, Bradley to Bradley is the perfect activity for a hot summer day. The water in this section is cold, so wetsuits are helpful.\n\nBecause of prevailing northern afternoon winds, it's best to get in the water on the early side.\n\nNote that this is land on Camp Roberts, and whenever there is active training in the area, your access to the river can be closed."
+    },
+    "es": {
+      "title": "Bradley a Bradley",
+      "length": "3.5 miles",
+      "time": "3-5 horas",
+      "gear": "Tubos, trajes de neopreno a menos que haga mucho calor",
+      "setUp": "Localice un auto en el [puente norte de Bradley](/es/access-points/bradley).",
+      "description": "Tramo clásico de descenso en tubo, de Bradley a Bradley es la actividad perfecta para un caluroso día de verano. El agua en este tramo está fría, por lo que los trajes de neopreno son útiles.\n\nDebido a los vientos dominantes del norte por la tarde, es mejor meterse en el agua a primera hora.\n\nTenga en cuenta que se trata de terreno en el Campamento Roberts, y siempre que haya actividad de Capacitación en la zona, su acceso al río puede estar cerrado."
+    }
+  },
   "route": {
     "type": "FeatureCollection",
     "features": [
@@ -126,5 +145,41 @@
         "properties": {}
       }
     ]
-  }
+  },
+  "parts": [
+    {
+      "id": "put-in",
+      "mile": 0,
+      "lat": 35.843875707206934,
+      "lon": -120.75292017260654,
+      "driving": true,
+      "translate": {
+        "en": {
+          "title": "Put-in",
+          "description": "Follow the directions for the [Bradley south](/en/access-points/bradley-south) access point.\n"
+        },
+        "es": {
+          "title": "Entrada",
+          "description": "Siga las indicaciones para el punto de acceso [Bradley sur](/es/access-points/bradley-south)."
+        }
+      }
+    },
+    {
+      "id": "take-out",
+      "mile": 3.5,
+      "lat": 35.86396571394785,
+      "lon": -120.80987521757103,
+      "driving": true,
+      "translate": {
+        "en": {
+          "title": "Take-out",
+          "description": "Exit on the right side of the river, [under the Bradley bridge](/en/access-points/bradley/).."
+        },
+        "es": {
+          "title": "Salida",
+          "description": "Salga por el lado derecho del río, [debajo del puente Bradley]/es/access-points/bradley/)."
+        }
+      }
+    }
+  ]
 }

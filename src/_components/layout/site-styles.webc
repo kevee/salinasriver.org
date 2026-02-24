@@ -1,0 +1,60 @@
+<style>
+  :root {
+    --border-grey: #c3c3c3;
+    --link-color: #055ae3;
+    --disabled-link-color: #737373;
+
+    --light-blue: #bde2e8;
+    --light-blue-border: #adbeff;
+
+    --good-dark: #cafdcb;
+    --good-light: #cafdcb;
+
+    --danger-light: #ebc1bb;
+    --danger-dark: #eb8894;
+    --danger-link: #893841;
+
+    --callout-light: #faf37e;
+    --callout-dark: #000000;
+
+    --main-blue: #0050b8;
+    --main-blue-secondary: #43a7ff;
+  }
+
+  a {
+    color: var(--link-color);
+  }
+  h1 {
+    margin-top: 1rem;
+    color: var(--main-blue);
+  }
+  .external-link::after {
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20'%3E%3Cpath d='M17 17H3V3h5V1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-2z' fill='%23055ae3'/%3E%3Cpath d='M19 1h-8l3.29 3.29-5.73 5.73 1.42 1.42 5.73-5.73L19 9V1z' fill='%23055ae3'/%3E%3C/svg%3E");
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .leaflet-popup-content-wrapper {
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+  .leaflet-popup-content {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .map-popup-link {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--main-blue);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .leaflet-popup-tip {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+</style>

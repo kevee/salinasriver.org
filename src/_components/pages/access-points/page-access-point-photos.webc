@@ -1,0 +1,120 @@
+<h1>
+  <span @text="t('photos.title')" webc:nokeep></span>
+  —
+  <span @text="l(point.translate, 'title')" webc:nokeep></span>
+</h1>
+
+<p>
+  <a :href="u('/access-points/' + point.slug)">
+    &larr; <span @text="l(point.translate, 'title')" webc:nokeep></span>
+  </a>
+</p>
+
+<ul class="photo-grid">
+  <li webc:for="photo of point.photos">
+    <a :href="`/assets/images/photos/${photo.filename}`" target="_blank" :class="photo.type === 'video' ? 'video-link' : ''">
+      <picture webc:if="photo.type !== 'video'">
+        <source
+          type="image/webp"
+          :srcset="`/assets/images/photos/${photo.filename.replace('.jpg', '-400w.webp')} 400w, /assets/images/photos/${photo.filename.replace('.jpg', '-800w.webp')} 800w, /assets/images/photos/${photo.filename.replace('.jpg', '-1200w.webp')} 1200w`"
+          sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+        />
+        <img
+          :src="`/assets/images/photos/${photo.filename.replace('.jpg', '-thumb.jpg')}`"
+          :alt="`${l(point.translate, 'title')} - ${photo.date}`"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <img
+        webc:if="photo.type === 'video'"
+        :src="`/assets/images/photos/${photo.filename.replace('.webm', '-thumb.jpg')}`"
+        :alt="`${l(point.translate, 'title')} - ${photo.date}`"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="play-icon" webc:if="photo.type === 'video'"></span>
+    </a>
+    <div class="photo-meta">
+      <span class="photo-date" @text="formatDate(photo.date)"></span>
+      <span class="photo-flow" webc:if="photo.cfs">
+        <span @text="formatNumber(photo.cfs)" webc:nokeep></span>
+        <cfs></cfs>
+      </span>
+      <span class="photo-height" webc:if="photo.height">
+        <span @text="t('photos.gaugeHeight')" webc:nokeep></span>:
+        <span @text="photo.height" webc:nokeep></span>
+        <span @text="t('feetDeep')" webc:nokeep></span>
+      </span>
+    </div>
+  </li>
+</ul>
+
+<style>
+  .photo-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      display: block;
+      line-height: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      &.video-link {
+        position: relative;
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 12px 0 12px 22px;
+          border-color: transparent transparent transparent white;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .photo-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    .photo-flow {
+      font-weight: 600;
+    }
+  }
+</style>

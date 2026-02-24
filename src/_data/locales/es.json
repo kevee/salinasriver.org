@@ -1,0 +1,100 @@
+{
+  "siteName": "La guía recreativa del río Salinas",
+  "switchLanguage": "In English",
+  "navigationLabel": "Navegación principal",
+  "theSalinasRiver": "El río Salinas",
+  "accessPoints": "Puntos de acceso",
+  "accessPoint": "Punto de acceso",
+  "search": {
+    "label": "Buscar",
+    "placeholder": "Buscar...",
+    "title": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "results": "Resultados de búsqueda",
+    "searching": "Buscando..."
+  },
+  "to": "a",
+  "and": "y",
+  "trip": "Viaje",
+  "length": "Longitud",
+  "time": "Tiempo",
+  "home": "Inicio",
+  "putInTakeOut": "Entrada y salida",
+  "putIn": "Entrada",
+  "gear": "Equipo",
+  "takeOut": "Salida",
+  "trips": "Viajes",
+  "overview": "Resumen",
+  "drivingDirections": "Cómo llegar en auto",
+  "directions": "Indicaciones",
+  "description": "Descripción",
+  "distance": "Distancia",
+  "miles": "millas",
+  "relatedTrips": "Viajes relacionados",
+  "setUp": "Configuración",
+  "viewInGoogle": "Ver en Google Maps",
+  "protectRights": {
+    "preamble": "Ayude a proteger sus derechos fluviales.",
+    "linkAccessPoint": "Háganos saber si utiliza este punto de acceso.",
+    "linkTrip": "Háganos saber si ha realizado este viaje."
+  },
+  "floodWarning": {
+    "preamble": "El río Salinas está en nivel de inundación o acercándose a él en al menos un medidor. Manténgase alejado de las aguas en aumento y manténgase a salvo.",
+    "learnMore": "Conozca este mensaje automatizado",
+    "links": "Consulte la <a href=\"https://www.co.monterey.ca.us/government/departments-a-h/administrative-office/office-of-emergency-services/incidents\">información de emergencia del condado de Monterey</a> y <a href=\"https://www.prepareslo.org/\">del condado de San Luis Obispo</a>"
+  },
+  "footer": {
+    "by": "Redactado por <a href=\"https://kevee.net\">Kevin Miller</a>. Todo el contenido se ofrece según <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\">Creative Commons BY-NC 4.0</a>.",
+    "legal": "Aviso legal",
+    "accessibility": "Declaración de accesibilidad",
+    "contact": "Contacto"
+  },
+  "bestFlow": "Mejor caudal",
+  "cubicFeetSecond": "Pies cúbicos por segundo",
+  "cfs": "pcs",
+  "at": "en",
+  "waterLevel": "Nivel del agua",
+  "feetDeep": "pies de profundidad",
+  "updated": "Actualizado",
+  "currentFlow": "Caudal actual",
+  "windAlert": {
+    "label": "Viento de la tarde",
+    "warning": "Considere comenzar temprano. Los vientos predominantes de norte a sur se levantan por la tarde y pueden dificultar la navegación."
+  },
+  "flow": {
+    "good": "Buen caudal",
+    "below": "Caudal inferior al recomendado",
+    "above": "Caudal superir al recomendado",
+    "none": "Sin caudal"
+  },
+  "damRelease": "Desembalse de la presa",
+  "damReleaseMessage": {
+    "preamble": "Los caudales de agua dependen de",
+    "link": "desembalses programados de presas"
+  },
+  "privateProperty": "Propiedad privada",
+  "privatePropertyMessage": {
+    "text": "Parte de esta zona está cerca de terrenos privados, sea",
+    "link": "consciente de sus derechos y responsabilidades"
+  },
+  "webcam": "Cámara web",
+  "viewWebcam": "Ver cámara web",
+  "homeWebcam": "Última imagen de la cámara web",
+  "homeWebcamTime": "Última actualización",
+  "homepage": {
+    "title": "El Río Salinas",
+    "subtitle": "Guía de recreación",
+    "ledeBold": "Esta guía es para disfrutar del río Salinas.",
+    "lede": "Este recorre 170 millas de sur a norte en el centro de California. Alberga castores y águilas calvas Los vecinos pescan bagres con las manos (noodle) en sus orillas y se refrescan en sus aguas pantanosas en verano."
+  },
+  "bumperSticker": {
+    "title": "Consiga una pegatina gratuita para el parachoques",
+    "description": "Le enviaremos gratis una pegatina para su carro por correo ordinario para que difunda el mensaje del río Salinas. Complete el formulario que aparece a continuación. Puede pedir la calcomanía en inglés o español."
+  },
+  "photos": {
+    "title": "Fotos",
+    "viewPhotos": "Ver fotos a diferentes niveles de agua",
+    "date": "Fecha",
+    "gaugeHeight": "Altura del medidor"
+  }
+}

@@ -1,0 +1,7 @@
+---
+layout: no-header
+lang: es
+hasMap: true
+---
+
+<page-homepage :@access-points="accessPointsSortLatitude"></page-homepage>

@@ -1,0 +1,128 @@
+<div class="homepage">
+  <div class="homepage-content">
+    <container>
+      <h1>
+        <span webc:nokeep @text="t('homepage.title')"></span><span> </span>
+        <div class="subtitle" @text="t('homepage.subtitle')"></div>
+      </h1>
+      <p class="intro">
+        <strong @text="t('homepage.ledeBold')"></strong>
+        <span webc:nokeep @text="t('homepage.lede')"></span>
+      </p>
+      <inline-nav>
+        <li>
+          <a :href="u('/access-points')" @text="t('accessPoints')"></a>
+        </li>
+        <li>
+          <a :href="u('/trips')" @text="t('trips')"></a>
+        </li>
+        <li>
+          <a :href="u('/overview')" @text="t('overview')"></a>
+        </li>
+        <li class="language">
+          <a :href="switchLanguagePath()" @text="t('switchLanguage')"></a>
+        </li>
+      </inline-nav>
+      <div class="bumper-sticker">
+        <a :href="u('/bumper-sticker')" @text="t('bumperSticker.title')"></a>
+      </div>
+    </container>
+  </div>
+
+  <div class="homepage-map-container">
+    <div id="homepage-map"></div>
+  </div>
+</div>
+
+<script webc:bucket="defer" webc:type="js">
+  clientJs('homepage-map.js', {
+    accessPoints,
+    language: page.lang,
+    includeRiverJson: true,
+  })
+</script>
+
+<style>
+  .homepage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homepage-content {
+    padding: 2rem 0;
+
+    h1 {
+      color: var(--main-blue);
+      margin-top: 0;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #666;
+      font-family: 'Open Sans', serif;
+    }
+
+    .intro {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+      max-width: 600px;
+    }
+  }
+
+  .homepage-map-container {
+    height: 70vh;
+    min-height: 400px;
+  }
+
+  #homepage-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Desktop: overlay style */
+  @media (min-width: 769px) {
+    .homepage {
+      display: block;
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+    }
+
+    .homepage-content {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1.5rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      max-width: 420px;
+    }
+
+    .homepage-map-container {
+      position: absolute;
+      inset: 0;
+      height: auto;
+      z-index: 1;
+    }
+  }
+
+  .bumper-sticker {
+    margin-top: 1.5rem;
+    display: block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-blue);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+</style>

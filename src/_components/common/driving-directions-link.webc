@@ -1,0 +1,7 @@
+<a
+  :href="`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="external-link"
+  @text="t('viewInGoogle')"
+></a>

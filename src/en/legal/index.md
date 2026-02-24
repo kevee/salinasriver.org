@@ -1,6 +1,6 @@
 ---
 title: Legal
-layout: layouts/default.njk
+layout: default
 ---
 
 # Legal Disclaimer

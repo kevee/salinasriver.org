@@ -1,7 +1,6 @@
 ---
 title: Overview
-layout: layouts/default.njk
-
+layout: default
 breadcrumbs:
   - name: Home
     link: /
@@ -11,18 +10,18 @@ breadcrumbs:
 
 The Salinas has been called an "upside down" river. It flows south-to-north between the counties of San Luis Obispo and Monterey. It is in many places completely dry on the surface, but water continues to run deep underground.
 
-## [Safety](/overview/safety)
+## [Safety](/en/overview/safety)
 
 Specific things to keep in mind when taking a trip down the Salinas.
 
-## [Private property](/overview/private-property)
+## [Private property](/en/overview/private-property)
 
 Specific things to keep in mind when taking a trip down the Salinas.
 
-## [Dam release schedule](/overview/dam-release)
+## [Dam release schedule](/en/overview/dam-release)
 
 Much of the water between the Nacimiento river junction and the rest of the middle section depends on dam release from the Nacimiento and San Anonio reservoirs.
 
-## [Rubber dam](/overview/rubber-dam)
+## [Rubber dam](/en/overview/rubber-dam)
 
 The Salinas River Diversion Facility is a necessary portage in the lower river April through October.

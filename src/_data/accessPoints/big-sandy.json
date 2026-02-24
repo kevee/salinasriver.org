@@ -1,10 +1,11 @@
 {
+  "slug": "big-sandy",
   "lat": 35.789831,
   "lon": -120.717302,
   "flowLow": 40,
   "flowHigh": 200,
   "tresspass": false,
-  "guage": "paso",
+  "gauge": "paso",
   "directions": {
     "type": "FeatureCollection",
     "features": [
@@ -39,5 +40,20 @@
         }
       }
     ]
+  },
+  "translate": {
+    "en": {
+      "title": "Big Sandy Wildlife Area",
+      "tags": "accessPoint",
+      "directions": "Park in the large parking lot. There's a trailhead from the lot that leads to the river channel",
+      "body": "Usually never flowing except after big rain."
+    },
+    "es": {
+      "title": "Área silvestre de Big Sandy",
+      "tags": "accessPoint",
+      "directions": "Estacione en el gran estacionamiento. Hay un sendero desde el terreno que conduce al canal del río",
+      "tresspass": false,
+      "body": "Normalmente nunca fluye excepto después de grandes lluvias."
+    }
   }
 }

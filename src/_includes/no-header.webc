@@ -1,0 +1,6 @@
+---
+layout: base
+---
+
+<flood-warning webc:nokeep webc:if="isFlooding"></flood-warning>
+<template @raw="content" webc:nokeep></template>

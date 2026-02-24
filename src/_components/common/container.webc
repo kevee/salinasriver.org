@@ -1,0 +1,12 @@
+<div class="container"><slot></slot></div>
+
+<style>
+  .container {
+    width: auto;
+    margin: 0 1.5rem;
+    @media (min-width: $mobile-breakpoint) {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+  }
+</style>

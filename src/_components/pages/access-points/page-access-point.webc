@@ -1,0 +1,89 @@
+<h1 @text="l(point.translate, 'title')"></h1>
+
+<stats-list webc:nokeep>
+  <div>
+    <dt @text="t('bestFlow')"></dt>
+    <dd>
+      <span @text="formatNumber(point.flowLow)" webc:nokeep webc:if="point.flowLow"></span>
+      <span @text="t('to')" webc:nokeep webc:if="point.flowLow"></span>
+      <span @text="formatNumber(point.flowHigh)" webc:nokeep></span>
+      <cfs></cfs>
+      <span @text="t('at')" webc:nokeep></span>
+      <a
+        class="external-link"
+        @text="gauge(point.gauge, 'label')"
+        :href="gauge(point.gauge, 'url')"
+        target="_blank"
+      >
+      </a>
+    </dd>
+  </div>
+  <div>
+    <dt @text="t('waterLevel')"></dt>
+    <dd>
+      <span webc:nokeep @text="formatNumber(gauge(point.gauge, 'cfs'))"></span>
+      <cfs></cfs>
+      <span @text="t('and')" webc:nokeep></span>
+      <span webc:nokeep @text="gauge(point.gauge, 'height')"></span>
+      <span @text="t('feetDeep')" webc:nokeep></span>
+      <flow-badge
+        webc:nokeep
+        :@gauge-name="point.gauge"
+        :@flow-low="point.flowLow"
+        :@flow-high="point.flowHigh"
+      ></flow-badge>
+      <updated-at webc:nokeep></updated-at>
+    </dd>
+  </div>
+  <div webc:if="point.tresspass">
+    <dt @text="t('privateProperty')"></dt>
+    <dd>
+      <span webc:nokeep @text="t('privatePropertyMessage.text')"></span>
+      <a
+        :href="u('/overview/private-property')"
+        @text="t('privatePropertyMessage.link')"
+      ></a>
+    </dd>
+  </div>
+  <div webc:if="point.photos && point.photos.length" class="photos-link">
+    <dt @text="t('photos.title')"></dt>
+    <dd>
+      <a
+        :href="u('/access-points/' + point.slug + '/photos')"
+        @text="t('photos.viewPhotos')"
+      ></a>
+    </dd>
+  </div>
+
+  <div webc:if="point.webcam">
+    <dt @text="t('webcam')"></dt>
+    <dd>
+      <a
+        href="https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA"
+        @text="t('viewWebcam')"
+      ></a>
+      <div @text="l(point.translate, 'webcamNote')"></div>
+    </dd>
+  </div>
+  <div>
+    <dt @text="t('drivingDirections')"></dt>
+    <dd>
+      <driving-directions-link
+        webc:nokeep
+        :@latitude="point.lat"
+        :@longitude="point.lon"
+      />
+    </dd>
+  </div>
+</stats-list>
+
+<protect-rights @type="accessPoint" webc:nokeep></protect-rights>
+<div @html="markdown(l(point.translate, 'body'))"></div>
+<h2 @text="t('directions')"></h2>
+<div @html="markdown(l(point.translate, 'directions'))"></div>
+<direction-map
+  :slug="point.slug"
+  :@center-lat="point.lat"
+  :@center-lon="point.lon"
+  :@features="point.directions"
+></direction-map>

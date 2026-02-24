@@ -1,0 +1,22 @@
+<script webc:bucket="defer" webc:type="js">
+  clientJs('trips-map.js', {
+    trips,
+    language: page.lang,
+    includeRiverJson: true,
+  })
+</script>
+
+<style>
+  #trips-map {
+    position: sticky;
+    top: 1rem;
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    @media (min-width: $mobile-breakpoint) {
+      min-height: 600px;
+    }
+  }
+</style>
+
+<div id="trips-map"></div>

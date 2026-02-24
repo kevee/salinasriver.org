@@ -1,9 +1,6 @@
 ---
 title: Desembalse de la presa de Nacimiento
-layout: layouts/default.njk
-scripts:
-  - /assets/js/leaflet/leaflet.js
-  - /assets/js/content-map.js
+layout: default
 breadcrumbs:
   - name: Inicio
     link: /
@@ -15,7 +12,7 @@ breadcrumbs:
 
 La mayoría de las actividades relacionadas con el agua en el sur del Salinas dependen de la descarga de la presa del lago Nacimiento. Sin la presa, el río Salinas sólo tendría caudal durante la estación húmeda, entre diciembre y mayo. Aunque puede obtener [información sobre el caudal en tiempo real del USGS](https://waterdata.usgs.gov/nwis/uv?site_no=11150500), si está planeando un viaje en el futuro debe tener en cuenta el calendario de desembalse de la presa.
 
-<div class="alert">Esta tabla es el <strong>calendario provisional</strong> de desembalse para 2025. El calendario final se actualizará a finales de Abril.</div>
+Este fue el **calendario de lanzamientos para 2025**. Esperamos publicar un calendario provisional de lanzamientos alrededor de marzo de 2026.
 
 | Mes        | Liberación combinada (<abbr title="Pies cúbicos por segundo">cfs</abbr>) |
 | ---------- | ------------------------------------------------------------------------ |
@@ -35,8 +32,3 @@ La mayoría de las actividades relacionadas con el agua en el sur del Salinas de
 <small>Del [calendario de desembalses para 2025 de la Agencia de Recursos Hídricos del Condado de Monterey](https://monterey.legistar.com/gateway.aspx?M=F&ID=fea9a761-9345-495c-8476-050c65fe7e81.pdf). CFS se define como "caudal medio diario del mes".</small>
 
 El agua baja por el río Nacimiento y se une al Salinas justo al sur de la ciudad de Bradley. Cuando el [medidor fluvial en Bradley](https://waterdata.usgs.gov/nwis/uv?site_no=11150500) supera los 400 pcs (actualmente es {{guages.bradley.cfs}}), el agua puede llegar a veces más allá de King City.
-
-<div class="map medium bordered">
-  <div id="map" data-lat="35.832921" data-lon="-120.756226" data-zoom="11"></div>
-  <p class="note"> Donde el Nacimiento se une con el Salinas.</p>
-</div>

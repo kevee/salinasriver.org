@@ -1,0 +1,100 @@
+{
+  "siteName": "The Salinas River Recreation Guide",
+  "switchLanguage": "En Español",
+  "navigationLabel": "Main navigation",
+  "theSalinasRiver": "The Salinas River",
+  "accessPoints": "Access Points",
+  "accessPoint": "Access point",
+  "search": {
+    "label": "Search",
+    "placeholder": "Search...",
+    "title": "Search",
+    "noResults": "No results found",
+    "results": "Search results",
+    "searching": "Searching..."
+  },
+  "to": "to",
+  "trip": "Trip",
+  "trips": "Trips",
+  "length": "Length",
+  "time": "Time",
+  "home": "Home",
+  "putInTakeOut": "Put-in and take-out",
+  "putIn": "Put-in",
+  "gear": "Gear",
+  "takeOut": "Take-out",
+  "overview": "Overview",
+  "drivingDirections": "Driving directions",
+  "directions": "Directions",
+  "description": "Description",
+  "distance": "Distance",
+  "miles": "miles",
+  "relatedTrips": "Related trips",
+  "setUp": "Set-up",
+  "viewInGoogle": "View in Google Maps",
+  "protectRights": {
+    "preamble": "Help protect your river rights.",
+    "linkAccessPoint": "Let us know if you use this access point.",
+    "linkTrip": "Let us know if you have gone on this trip."
+  },
+  "floodWarning": {
+    "preamble": "The Salinas River is at or approaching flood stage in at least one guage. Please stay clear of rising waters and stay safe.",
+    "learnMore": "Learn about this automated message",
+    "links": "Check <a href=\"https://www.co.monterey.ca.us/government/departments-a-h/administrative-office/office-of-emergency-services/incidents\">Monterey County</a> and <a href=\"https://www.prepareslo.org/\">SLO County</a> emergency info"
+  },
+  "footer": {
+    "by": "By <a href=\"https://kevee.net\">Kevin Miller</a>. All content is offered under <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\">Creative Commons BY-NC 4.0</a>.",
+    "legal": "Legal disclaimer",
+    "accessibility": "Accessibility statement",
+    "contact": "Contact"
+  },
+  "bestFlow": "Best flow",
+  "cubicFeetSecond": "Cubic-feet per second",
+  "cfs": "cfs",
+  "at": "at",
+  "and": "and",
+  "waterLevel": "Current water level",
+  "feetDeep": "feet deep",
+  "updated": "Updated",
+  "currentFlow": "Current flow",
+  "windAlert": {
+    "label": "Afternoon wind",
+    "warning": "Consider getting an early start. The prevailing north-south winds pick up in the afternoon, and can make paddling difficult."
+  },
+  "flow": {
+    "good": "Good flow",
+    "below": "Below recommended flow",
+    "above": "Above recommended flow",
+    "none": "No flow"
+  },
+  "damRelease": "Dam release",
+  "damReleaseMessage": {
+    "preamble": "Water flows are dependent on",
+    "link": "scheduled dam releases"
+  },
+  "privateProperty": "Private property",
+  "privatePropertyMessage": {
+    "text": "Parts of this area is near private land, be",
+    "link": "aware of your rights and responsibilities"
+  },
+  "webcam": "Webcam",
+  "viewWebcam": "View webcam",
+  "homeWebcam": "Latest webcam image",
+  "homeWebcamTime": "Last updated",
+  "homepage": {
+    "title": "The Salinas River",
+    "subtitle": "A recreation guide",
+    "ledeBold": "This is a guide for enjoying the Salinas River.",
+    "lede": "It flows for 170 miles south to north in Central California. It is home to beavers and bald eagles. Neighbors noodle on its banks for catfish, and cool off in its silty waters in the summer."
+  },
+  "bumperSticker": {
+    "title": "Get a free bumper sticker",
+    "description": "We'll mail you a free bumper sticker to spread the word about the Salinas River. Just fill out the form below. You can order the sticker in either English or Spanish."
+  },
+  "photos": {
+    "title": "Photos",
+    "viewPhotos": "View photos at different water levels",
+    "date": "Date",
+    "gaugeHeight": "Gauge height"
+  }
+}

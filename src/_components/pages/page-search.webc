@@ -1,0 +1,131 @@
+<div class="search-page">
+  <h1 @text="t('search.title')"></h1>
+  <form method="get" :action="u('/search/')" role="search">
+    <input
+      type="search"
+      name="q"
+      :placeholder="t('search.placeholder')"
+      :aria-label="t('search.label')"
+    />
+    <visually-hidden>
+      <button type="submit" @text="t('search.label')"></button>
+    </visually-hidden>
+  </form>
+  <search-results></search-results>
+</div>
+
+<template id="search-result-template">
+  <div class="search-result">
+    <h2 class="search-result-title">
+      <a href=""></a>
+    </h2>
+    <p class="search-result-snippet"></p>
+  </div>
+</template>
+
+<template id="search-no-results-template">
+  <p class="no-results" @text="t('search.noResults')"></p>
+</template>
+
+<script>
+  class SearchResult extends HTMLElement {
+    constructor() {
+      super()
+    }
+
+    connectedCallback() {
+      const template = document.getElementById('search-result-template')
+      const clone = template.content.cloneNode(true)
+
+      const link = clone.querySelector('a')
+      const snippet = clone.querySelector('.search-result-snippet')
+
+      link.href = this.getAttribute('url')
+      link.textContent = this.getAttribute('title') || 'Untitled'
+      snippet.innerHTML = this.getAttribute('excerpt')
+
+      this.appendChild(clone)
+    }
+  }
+
+  class SearchResults extends HTMLElement {
+    constructor() {
+      super()
+      this.results = []
+    }
+
+    connectedCallback() {
+      this.render()
+    }
+
+    setResults(results) {
+      this.results = results
+      this.render()
+    }
+
+    async render() {
+      if (this.results.length === 0) {
+        const noResultsTemplate = document.getElementById(
+          'search-no-results-template'
+        )
+        const noResultsClone = noResultsTemplate.content.cloneNode(true)
+        this.appendChild(noResultsClone)
+        return
+      }
+
+      this.innerHTML = ''
+
+      for (const result of this.results) {
+        const data = await result.data()
+        const searchResult = document.createElement('search-result')
+        searchResult.setAttribute('url', data.url)
+        searchResult.setAttribute('title', data.meta.title || 'Untitled')
+        searchResult.setAttribute('excerpt', data.excerpt)
+        this.appendChild(searchResult)
+      }
+    }
+  }
+
+  customElements.define('search-result', SearchResult)
+  customElements.define('search-results', SearchResults)
+  ;(async () => {
+    const pagefind = await import('/pagefind/pagefind.js')
+    pagefind.init()
+    const urlParams = new URLSearchParams(window.location.search)
+    const query = urlParams.get('q') || ''
+    if (!query) {
+      return
+    }
+    document.querySelector('.search-page input[type="search"]').value = query
+    const search = await pagefind.search(query)
+
+    const searchResultsElement = document.querySelector('search-results')
+    searchResultsElement.setResults(search.results)
+  })()
+</script>
+
+<style>
+  .search-page {
+    input[type='search'] {
+      width: 100%;
+      max-width: 600px;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 2px solid var(--border-grey);
+      border-radius: 4px;
+    }
+    .no-results {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+  .search-result {
+    h2 {
+      margin-bottom: 0.2rem;
+    }
+    mark {
+      background-color: var(--light-blue);
+    }
+  }
+</style>

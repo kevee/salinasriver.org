@@ -1,0 +1,10 @@
+<p class="updated-at"><span @text="t('updated')" webc:nokeep></span> <span @text="buildTime()" webc:nokeep></span></p>
+
+<style>
+  .updated-at {
+    font-size: 0.8rem;
+    color: var(--disabled-link-color);
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+  }
+</style>

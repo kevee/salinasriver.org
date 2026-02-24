@@ -1,6 +1,6 @@
 ---
 title: Declaración de accesibilidad
-layout: layouts/default.njk
+layout: default
 ---
 
 # Declaración de accesibilidad

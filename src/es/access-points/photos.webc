@@ -1,0 +1,28 @@
+---js
+{
+  layout: "default",
+  lang: "es",
+  pagination: {
+    data: "accessPoints",
+    size: 1,
+    alias: "point",
+    resolve: "values",
+    before: function(data) {
+      return data.filter(p => p.photos && p.photos.length > 0).map(p => ({
+        ...p,
+        photos: [...p.photos].sort((a, b) => new Date(b.date) - new Date(a.date))
+      }))
+    }
+  },
+  breadcrumbs: [
+    { name: "Inicio", link: "/" },
+    { name: "Puntos de acceso", link: "/access-points/" },
+  ],
+  permalink: ({ point }) =>`/es/access-points/${point.slug}/photos/`,
+  eleventyComputed: {
+    title: ({ point }) => `Fotos - ${point.translate.es.title}`,
+  },
+}
+---
+
+<page-access-point-photos :point="point"></page-access-point-photos>

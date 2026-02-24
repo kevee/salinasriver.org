@@ -1,10 +1,11 @@
 {
+  "slug": "monte",
   "lat": 36.733042,
   "lon": -121.780559,
   "flowLow": -999999,
   "flowHigh": 100,
   "tresspass": false,
-  "guage": "chualar",
+  "gauge": "chualar",
   "directions": {
     "type": "FeatureCollection",
     "features": [
@@ -30,5 +31,19 @@
         }
       }
     ]
+  },
+  "translate": {
+    "en": {
+      "title": "Monte Road",
+      "tags": "accessPoint",
+      "directions": "Park just passed the mail boxes on the dirt road to the north of the Monte Road bridge over the Salinas River.",
+      "body": "A shorter, alternative access point to the [Salinas National Wildlife Reserve](/en/access-points/srnwr).\n\nNote that if there is any significant flow, then the [river mouth could be breached](/en/overview/safety#breach) and you should not attempt going down river."
+    },
+    "es": {
+      "title": "Monte Road",
+      "tags": "accessPoint",
+      "directions": "Estacione justo al pasar los buzones en el camino de tierra al norte del puente de Monte Road sobre el río Salinas.",
+      "body": "Un punto de acceso alternativo más corto a la [Reserva Nacional de Vida Silvestre de Salinas](/es/access-points/srnwr).\n\nTenga en cuenta que si hay un caudal importante, la [desembocadura del río podría estar abierta](/es/overview/safety#breach) y no debe intentar descender por el río."
+    }
   }
 }

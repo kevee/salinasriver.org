@@ -1,0 +1,25 @@
+<style>
+  .protect-rights {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    background-color: var(--main-blue);
+    color: white;
+    a {
+      color: white;
+    }
+  }
+</style>
+
+<div role="complementary" class="protect-rights">
+  <span webc:nokeep @text="t('protectRights.preamble')"></span>
+  <a
+    webc:if="type == 'trip'"
+    :href="u('/report')"
+    @text="t('protectRights.linkTrip')"
+  ></a>
+  <a
+    webc:if="type == 'accessPoint'"
+    :href="u('/report')"
+    @text="t('protectRights.linkAccessPoint')"
+  ></a>
+</div>

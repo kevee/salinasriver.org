@@ -1,0 +1,90 @@
+<h1 @text="l(trip.translate, 'title')"></h1>
+
+<stats-list webc:nokeep>
+  <div>
+    <dt @text="t('length')"></dt>
+    <dd @text="l(trip.translate, 'length')"></dd>
+  </div>
+  <div>
+    <dt @text="t('time')"></dt>
+    <dd @text="l(trip.translate, 'time')"></dd>
+  </div>
+  <div webc:if="trip.windAlert">
+    <dt @text="t('windAlert.label')"></dt>
+    <dd @text="t('windAlert.warning')"></dd>
+  </div>
+  <div>
+    <dt @text="t('bestFlow')"></dt>
+    <dd>
+      <span
+        @text="formatNumber(trip.flowLow)"
+        webc:nokeep
+        webc:if="trip.flowLow >= 0"
+      ></span>
+      <span webc:nokeep webc:if="trip.flowLow < 0">0</span>
+      <span @text="t('to')" webc:nokeep webc:if="trip.flowLow"></span>
+      <span @text="formatNumber(trip.flowHigh)" webc:nokeep></span>
+      <cfs></cfs>
+      <span @text="t('at')" webc:nokeep></span>
+      <a
+        class="external-link"
+        @text="gauge(trip.gauge, 'label')"
+        :href="gauge(trip.gauge, 'url')"
+        target="_blank"
+      >
+      </a>
+    </dd>
+  </div>
+  <div>
+    <dt @text="t('waterLevel')"></dt>
+    <dd>
+      <span webc:nokeep @text="formatNumber(gauge(trip.gauge, 'cfs'))"></span>
+      <cfs></cfs>
+      <span @text="t('and')" webc:nokeep></span>
+      <span webc:nokeep @text="gauge(trip.gauge, 'height')"></span>
+      <span @text="t('feetDeep')" webc:nokeep></span>
+      <flow-badge
+        webc:nokeep
+        :@gauge-name="trip.gauge"
+        :@flow-low="trip.flowLow"
+        :@flow-high="trip.flowHigh"
+      ></flow-badge>
+      <updated-at webc:nokeep></updated-at>
+    </dd>
+  </div>
+  <div webc:if="trip.webcam">
+    <dt @text="t('webcam')"></dt>
+    <dd>
+      <a
+        href="https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA"
+        @text="t('viewWebcam')"
+      ></a>
+      <div @text="l(trip.translate, 'webcamNote')"></div>
+    </dd>
+  </div>
+  <div webc:if="trip.privatePropertyWarning">
+    <dt @text="t('privateProperty')"></dt>
+    <dd>
+      <span webc:nokeep @text="t('privatePropertyMessage.text')"></span>
+      <a
+        :href="u('/overview/private-property')"
+        @text="t('privatePropertyMessage.link')"
+      ></a>
+    </dd>
+  </div>
+  <div>
+    <dt @text="t('gear')"></dt>
+    <dd @text="l(trip.translate, 'gear')"></dd>
+  </div>
+</stats-list>
+<protect-rights @type="trip" webc:nokeep></protect-rights>
+<div @html="markdown(l(trip.translate, 'description'))"></div>
+<trip-map
+  :@center-lat="trip.lat"
+  :@center-lon="trip.lon"
+  :@route="trip.route"
+  :@parts="trip.parts"
+></trip-map>
+<h2 id="set-up" @text="t('setUp')"></h2>
+<div @html="markdown(l(trip.translate, 'setUp'))"></div>
+<trip-parts :@parts="trip.parts" :@slug="trip.slug"> </trip-parts>

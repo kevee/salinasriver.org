@@ -1,0 +1,30 @@
+<dl class="stats-list"><slot></slot></dl>
+
+<style>
+  .stats-list {
+    margin: 0;
+    padding: 0;
+    & > div {
+      margin-top: 0.5rem;
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid var(--border-grey);
+    }
+    dt {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      width: 33%;
+    }
+    dd {
+      margin-left: 0;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    ul {
+      margin-bottom: 0;
+    }
+    li {
+      margin-bottom: 0.2rem;
+    }
+  }
+</style>

@@ -1,9 +1,10 @@
 {
+  "slug": "san-lucas",
   "lat": 36.11751242229785,
   "lon": -121.02698293782846,
   "flowLow": 80,
   "flowHigh": 900,
-  "guage": "soledad",
+  "gauge": "soledad",
   "tresspass": false,
   "directions": {
     "type": "FeatureCollection",
@@ -13,15 +14,55 @@
         "properties": {},
         "geometry": {
           "coordinates": [
-            [-121.0270250142414, 36.11749517678952],
-            [-121.02710987820944, 36.117417274527426],
-            [-121.02737989992607, 36.11729886294036],
-            [-121.02771935579824, 36.117118129122304],
-            [-121.0279893775149, 36.11699036875875]
+            [
+              -121.0270250142414,
+              36.11749517678952
+            ],
+            [
+              -121.02710987820944,
+              36.117417274527426
+            ],
+            [
+              -121.02737989992607,
+              36.11729886294036
+            ],
+            [
+              -121.02771935579824,
+              36.117118129122304
+            ],
+            [
+              -121.0279893775149,
+              36.11699036875875
+            ]
           ],
           "type": "LineString"
         }
       }
     ]
-  }
+  },
+  "translate": {
+    "en": {
+      "title": "San Lucas",
+      "tags": "accessPoint",
+      "directions": "Park on the east side of the Green metal bridge. There are several large pull outs. Walk to the right (north) of the bridge, and follow a foot path under the bridge and towards the river.",
+      "body": "A sandy spot along the river, shaded by a picturesque bridge and a groves of cottonwood."
+    },
+    "es": {
+      "title": "San Lucas",
+      "tags": "accessPoint",
+      "directions": "Estacione en el lado este del puente metálico Verde. Hay varios estacionamientos grandes. Camine hacia la derecha (norte) del puente y siga un sendero bajo el puente y hacia el río.",
+      "body": "Un lugar arenoso a lo largo del río, sombreado por un pintoresco puente y una arboleda de álamos."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_6038.jpg",
+      "originalFilename": "IMG_6038.HEIC",
+      "date": "2023-04-15",
+      "lat": 36.11703055555556,
+      "lon": -121.02806111111111,
+      "cfs": 639,
+      "height": null
+    }
+  ]
 }

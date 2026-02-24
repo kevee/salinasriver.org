@@ -1,0 +1,19 @@
+<script webc:bucket="defer" webc:type="js">
+  clientJs('access-points-map.js', {
+    accessPoints,
+    language: page.lang,
+    includeRiverJson: true,
+  })
+</script>
+
+<style>
+  #access-points-map {
+    position: sticky;
+    top: 1rem;
+    width: 100%;
+    height: var(--access-points-map-height, 400px);
+    overflow: hidden;
+  }
+</style>
+
+<div id="access-points-map"></div>

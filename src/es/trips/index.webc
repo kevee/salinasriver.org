@@ -1,0 +1,19 @@
+---
+title: Recorridos
+layout: default
+lang: es
+hasMap: true
+breadcrumbs:
+  - name: Home
+    link: /
+---
+
+<page-trips>
+  <p>
+    Itinerarios sugeridos para flotar el Salinas. Dado que **no hay aguas
+    bravas** en el río, puede utilizar una gran variedad de embarcaciones para
+    estos recorridos, pero lea atentamente las descripciones para conocer otros
+    peligros como las coladeras, que requieren al menos cierta destreza de
+    navegación para sortearlas.
+  </p>
+</page-trips>

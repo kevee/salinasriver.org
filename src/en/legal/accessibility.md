@@ -1,6 +1,6 @@
 ---
 title: Accessibility Statement
-layout: layouts/default.njk
+layout: default
 ---
 
 # Accessibility Statement

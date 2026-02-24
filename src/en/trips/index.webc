@@ -1,0 +1,18 @@
+---
+title: Trips
+layout: default
+lang: en
+hasMap: true
+breadcrumbs:
+  - name: Home
+    link: /
+---
+
+<page-trips>
+  <p>
+    Suggested iteneraries for floating the Salinas. Because there
+    <strong>is no whitewater</strong> on the river, you can use a variety of
+    craft for these trips, but read descriptions carefully for other hazards
+    like strainers, which require at least a little boating skill to navigate.
+  </p>
+</page-trips>

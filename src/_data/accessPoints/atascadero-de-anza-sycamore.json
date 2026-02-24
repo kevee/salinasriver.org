@@ -1,10 +1,11 @@
 {
+  "slug": "atascadero-de-anza-sycamore",
   "lat": 35.50626379173167,
   "lon": -120.66155356695322,
   "flowLow": 40,
   "flowHigh": 600,
   "tresspass": false,
-  "guage": "paso",
+  "gauge": "paso",
   "directions": {
     "type": "FeatureCollection",
     "features": [
@@ -14,18 +15,70 @@
         "geometry": {
           "type": "LineString",
           "coordinates": [
-            [-120.66335253155796, 35.50551793811492],
-            [-120.66275180253965, 35.50557165721557],
-            [-120.66252173510385, 35.5056138481294],
-            [-120.66236017540574, 35.505765743243344],
-            [-120.66224640097046, 35.505888000077206],
-            [-120.66209166773832, 35.50594727605139],
-            [-120.66194148548382, 35.50608435157319],
-            [-120.66178220127438, 35.50626588366106],
-            [-120.66161381511026, 35.50634553536595]
+            [
+              -120.66335253155796,
+              35.50551793811492
+            ],
+            [
+              -120.66275180253965,
+              35.50557165721557
+            ],
+            [
+              -120.66252173510385,
+              35.5056138481294
+            ],
+            [
+              -120.66236017540574,
+              35.505765743243344
+            ],
+            [
+              -120.66224640097046,
+              35.505888000077206
+            ],
+            [
+              -120.66209166773832,
+              35.50594727605139
+            ],
+            [
+              -120.66194148548382,
+              35.50608435157319
+            ],
+            [
+              -120.66178220127438,
+              35.50626588366106
+            ],
+            [
+              -120.66161381511026,
+              35.50634553536595
+            ]
           ]
         }
       }
     ]
-  }
+  },
+  "translate": {
+    "en": {
+      "title": "Atascadero, Sycamore",
+      "tags": "accessPoint",
+      "directions": "Park along the street near Sycamore and Buena drive. There is a trailhead at the end of the street that leads to the river channel.",
+      "body": "A popular area for walking and biking along the river."
+    },
+    "es": {
+      "title": "Atascadero, Sicomoro",
+      "tags": "accessPoint",
+      "directions": "Estacione a lo largo de la calle cerca de Sycamore y Buena Drive. Hay un comienzo de sendero al final de la calle que conduce al cauce del río.",
+      "body": "Una zona popular para caminar y andar en bicicleta a lo largo del río."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_6918.jpg",
+      "originalFilename": "IMG_6918.HEIC",
+      "date": "2024-03-09",
+      "lat": 35.50756111111111,
+      "lon": -120.66303888888889,
+      "cfs": 445,
+      "height": null
+    }
+  ]
 }

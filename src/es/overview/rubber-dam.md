@@ -1,13 +1,10 @@
 ---
 title: Dique de goma
-layout: layouts/default.njk
-scripts:
-  - /assets/js/leaflet/leaflet.js
-  - /assets/js/content-map.js
+layout: default
 breadcrumbs:
-  - name: Inicio
+  - name: Home
     link: /
-  - name: Resumen
+  - name: Overview
     link: /overview
 ---
 
@@ -24,8 +21,3 @@ El dique de goma está situado aproximadamente a 5 millas río arriba (al sur) d
 La presa se puede llevar fácilmente por la izquierda del río. Tiene un espigón de seguridad río arriba, y el agua por encima suele estar floja o moverse lentamente mientras el río no se rompa.
 
 Si hay un caudal importante en el [medidor de Chualar](https://waterdata.usgs.gov/monitoring-location/11152300/), es probable que la presa esté bajada y los navegantes deben tener precaución.
-
-<div class="map short bordered">
-  <div id="map" data-lat="36.709082" data-lon="-121.750659" data-zoom="10"></div>
-  <p class="note">Ubicación de la instalación de desvío</p>
-</div>

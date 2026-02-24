@@ -1,9 +1,10 @@
 {
+  "slug": "san-lorenzo-park",
   "lat": 36.2035571783819,
   "lon": -121.14255604362488,
   "flowLow": 40,
   "flowHigh": 500,
-  "guage": "soledad",
+  "gauge": "soledad",
   "tresspass": false,
   "directions": {
     "type": "FeatureCollection",
@@ -25,5 +26,19 @@
         "properties": {}
       }
     ]
+  },
+  "translate": {
+    "en": {
+      "title": "San Lorenzo Park",
+      "tags": "accessPoint",
+      "directions": "Park in front",
+      "body": "Cross the pedestrian bridge for easy access to the western bank. You can also access the river from within the campground using the Levee Trail."
+    },
+    "es": {
+      "title": "Parque San Lorenzo",
+      "tags": "accessPoint",
+      "directions": "Estacione delante",
+      "body": "Cruce el puente peatonal para acceder fácilmente a la orilla occidental. También puede acceder al río desde el campamento utilizando el sendero Levee."
+    }
   }
 }

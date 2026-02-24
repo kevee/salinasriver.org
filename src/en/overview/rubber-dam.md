@@ -1,9 +1,6 @@
 ---
 title: Rubber dam
-layout: layouts/default.njk
-scripts:
-  - /assets/js/leaflet/leaflet.js
-  - /assets/js/content-map.js
+layout: default
 breadcrumbs:
   - name: Home
     link: /
@@ -24,8 +21,3 @@ The rubber dam is located approximately 5 miles up river (south) of the Salinas 
 The dam can be easily portaged on river left. It has a safety bouy up stream, and the water above it is usually either slack or moves slowly as long as the river is not breached.
 
 If there is any significant flow at the [Chualar gauge](https://waterdata.usgs.gov/monitoring-location/11152300/), the dam is probably lowered and boaters should use caution.
-
-<div class="map short bordered">
-  <div id="map" data-lat="36.709082" data-lon="-121.750659" data-zoom="10"></div>
-  <p class="note">Location of the diversion facility</p>
-</div>

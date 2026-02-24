@@ -1,0 +1,30 @@
+<span
+  webc:if="flowStatus(gaugeName, flowLow, flowHigh)"
+  :class="'flow-badge flow-badge--' + flowStatus(gaugeName, flowLow, flowHigh)"
+  @text="t('flow.' + flowStatus(gaugeName, flowLow, flowHigh))"
+></span>
+
+<style>
+  .flow-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .flow-badge--good {
+    background-color: var(--good-light);
+    color: #1a5c1a;
+  }
+  .flow-badge--below,
+  .flow-badge--none {
+    background-color: var(--callout-light);
+    color: var(--callout-dark);
+  }
+  .flow-badge--above {
+    background-color: var(--danger-light);
+    color: var(--danger-link);
+  }
+</style>

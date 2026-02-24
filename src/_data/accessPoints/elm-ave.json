@@ -1,9 +1,10 @@
 {
+  "slug": "elm-ave",
   "lat": 36.33884340524957,
   "lon": -121.20303332805634,
   "flowLow": 200,
   "flowHigh": 600,
-  "guage": "bradley",
+  "gauge": "bradley",
   "tresspass": false,
   "directions": {
     "type": "FeatureCollection",
@@ -32,5 +33,19 @@
         "properties": {}
       }
     ]
+  },
+  "translate": {
+    "en": {
+      "title": "Elm Avenue",
+      "tags": "accessPoint",
+      "directions": "Park on the east side of the bridge, which dips into a side channel of the river.",
+      "body": "A bridge access point near Greenfield."
+    },
+    "es": {
+      "title": "Avenida Elm",
+      "tags": "accessPoint",
+      "directions": "Estacione en el lado este del puente, que se sumerge en un canal lateral del río.",
+      "body": "Un punto de acceso al puente cerca de Greenfield."
+    }
   }
 }
