@@ -10,7 +10,13 @@ interface Detection {
   thumbnailUrl: string
 }
 
-const REPO_URL = 'https://github.com/kevee/salinas-river-finder'
+function getRepoUrl(): string {
+  const token = process.env.GITHUB_TOKEN
+  if (token) {
+    return `https://x-access-token:${token}@github.com/kevee/salinas-river-finder`
+  }
+  return 'https://github.com/kevee/salinas-river-finder'
+}
 const CACHE_DIR = '.cache/salinas-river-finder'
 const DETECTED_IMAGES_DIR = path.join(CACHE_DIR, 'detected-images')
 const CSV_PATH = path.join(CACHE_DIR, 'detections.csv')
@@ -38,7 +44,7 @@ const processDetections = async (eleventyConfig: any) => {
   // Clone or pull the repo
   if (!fs.existsSync(CACHE_DIR)) {
     console.log('[process-detections] Cloning salinas-river-finder...')
-    execSync(`git clone --depth 1 ${REPO_URL} ${CACHE_DIR}`, {
+    execSync(`git clone --depth 1 ${getRepoUrl()} ${CACHE_DIR}`, {
       stdio: 'pipe',
     })
   } else {

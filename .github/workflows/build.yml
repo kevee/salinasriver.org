@@ -20,6 +20,7 @@ jobs:
         run: npm run build
         env:
           DARK_VISITOR_TOKEN: ${{ secrets.DARK_VISITOR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add cname
         run: npm run deploy:cname
