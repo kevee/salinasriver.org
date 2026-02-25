@@ -14,18 +14,16 @@ const addClientJs = (eleventyConfig) => {
       .readFileSync(path.join('./src/_js/', file), 'utf8')
       .toString()
     let riverScript = ''
-    let isAsync = false
     if (variables && (variables as any).includeRiverJson) {
-      riverScript = `const riverGeoJson = await fetch('/assets/river.json').then(r => r.json());`
-      isAsync = true
+      const riverJson = fs.readFileSync('./src/assets/river.json', 'utf-8')
+      riverScript = `const riverGeoJson = ${riverJson};`
       const { includeRiverJson, ...rest } = variables as any
       variables = rest
     }
     const variablesScript = !variables
       ? ''
       : `const options = ${JSON.stringify(variables)}`
-    const wrapper = isAsync ? '(async () => {' : '(() => {'
-    const jsScript = `${wrapper}${globalJsConfig}\n${riverScript}\n${variablesScript}\n${script}})()`
+    const jsScript = `(() => {${globalJsConfig}\n${riverScript}\n${variablesScript}\n${script}})()`
     return `<script>${isDevelopment ? jsScript : minify(jsScript)}</script>`
   })
 }
