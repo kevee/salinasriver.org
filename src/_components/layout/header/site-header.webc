@@ -2,10 +2,26 @@
   <header>
     <container webc:nokeep>
       <nav :aria-label="t('navigationLabel')" class="main-nav">
-        <ul>
-          <li>
-            <a :href="u('/')" @text="t('theSalinasRiver')"></a>
-          </li>
+        <div class="nav-top">
+          <a :href="u('/')" class="site-title" @text="t('theSalinasRiver')"></a>
+          <button id="menu-toggle" aria-expanded="false" aria-label="Menu">
+            <svg
+              class="menu-icon"
+              viewBox="0 0 32 24"
+              width="32"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            >
+              <path d="M1 2 C6 4, 10 0, 16 2 C22 4, 26 0, 31 2" />
+              <path d="M1 12 C6 14, 10 10, 16 12 C22 14, 26 10, 31 12" />
+              <path d="M1 22 C6 24, 10 20, 16 22 C22 24, 26 20, 31 22" />
+            </svg>
+          </button>
+        </div>
+        <ul id="nav-links">
           <li>
             <a :href="u('/access-points')" @text="t('accessPoints')"></a>
           </li>
@@ -19,6 +35,9 @@
             <a :href="switchLanguagePath()" @text="t('switchLanguage')"></a>
           </li>
         </ul>
+        <div class="nav-search">
+          <search-box webc:nokeep></search-box>
+        </div>
       </nav>
     </container>
   </header>
@@ -45,18 +64,35 @@
     display: flex;
     justify-content: space-between;
   }
+  .nav-search {
+    display: none;
+  }
+  .nav-search .search-box {
+    background: transparent;
+  }
+  .nav-search .search-box input[type='search'] {
+    background: var(--light-blue);
+    margin-top: 1rem;
+    border-color: black;
+  }
+  .nav-search .search-box input[type='search']::placeholder {
+    color: black;
+    opacity: 1;
+  }
+  @media (max-width: $mobile-breakpoint) {
+    .secondary-wrapper {
+      flex-direction: column;
+    }
+    .secondary-wrapper .search-box {
+      display: none;
+    }
+    #nav-links.open ~ .nav-search {
+      display: block;
+    }
+  }
   header nav.main-nav {
     padding: 0.8rem 0;
   }
-  header .main-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding-left: 0;
-  }
-
   header .main-nav a,
   header a:visited {
     color: black;
@@ -65,37 +101,105 @@
       text-decoration: underline;
     }
   }
-  header .main-nav li {
+
+  /* Nav top row: site title + hamburger */
+  header .nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .site-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Hamburger button */
+  header #menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: black;
+  }
+  header #menu-toggle svg path {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: 16px 12px;
+  }
+  header #menu-toggle[aria-expanded='true'] svg path:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  header #menu-toggle[aria-expanded='true'] svg path:nth-child(2) {
+    opacity: 0;
+  }
+  header #menu-toggle[aria-expanded='true'] svg path:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  /* Nav links list */
+  header #nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  header #nav-links li {
     margin-right: 2rem;
     margin-bottom: 0;
   }
-  header .main-nav li:first-child {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-right: 3rem;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: $mobile-breakpoint) {
-    header .main-nav li:first-child {
-      width: auto;
-      margin-bottom: 0;
-    }
-  }
-  header .main-nav li.language {
+  header #nav-links li.language {
     margin-right: 0;
     flex: 1;
     margin-left: auto;
     text-align: right;
   }
 
-  @media (max-width: $mobile-breakpoint) {
-    header .main-nav li.language {
-      text-align: left;
-      width: 100%;
-      flex: auto;
+  /* Desktop: horizontal row */
+  @media (min-width: $mobile-breakpoint) {
+    header #nav-links {
       margin-top: 0.5rem;
     }
   }
+
+  /* Mobile: hamburger + collapsible vertical nav */
+  @media (max-width: $mobile-breakpoint) {
+    header #menu-toggle {
+      display: block;
+    }
+    header #nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0.75rem;
+    }
+    header #nav-links.open {
+      display: flex;
+    }
+    header #nav-links li {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+    header #nav-links li.language {
+      flex: auto;
+      text-align: left;
+      margin-left: 0;
+      margin-top: 0.25rem;
+    }
+  }
 </style>
+
+<script webc:bucket="defer">
+  document.addEventListener('DOMContentLoaded', () => {
+    var toggle = document.getElementById('menu-toggle')
+    var navLinks = document.getElementById('nav-links')
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', function () {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true'
+        toggle.setAttribute('aria-expanded', String(!expanded))
+        navLinks.classList.toggle('open')
+      })
+    }
+  })
+</script>
