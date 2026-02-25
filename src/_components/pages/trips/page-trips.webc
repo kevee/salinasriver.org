@@ -22,10 +22,10 @@
   [data-trip-slug] {
     transition: background-color 0.2s ease;
   }
-  [data-trip-slug].trip-highlighted {
+  [data-trip-slug][data-highlighted] {
     background-color: rgba(0, 80, 184, 0.1);
   }
-  [data-trip-slug].trip-highlighted a {
+  [data-trip-slug][data-highlighted] a {
     color: #0050b8;
   }
 </style>

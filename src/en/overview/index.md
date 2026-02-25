@@ -25,3 +25,7 @@ Much of the water between the Nacimiento river junction and the rest of the midd
 ## [Rubber dam](/en/overview/rubber-dam)
 
 The Salinas River Diversion Facility is a necessary portage in the lower river April through October.
+
+## [River Usage](/en/overview/usage)
+
+Confirmed sightings of people using the river, detected by AI from USGS monitoring cameras.

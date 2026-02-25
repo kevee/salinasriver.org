@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Highlight list item
     const listItem = document.querySelector(`[data-trip-slug="${slug}"]`)
     if (listItem) {
-      listItem.classList.add('trip-highlighted')
+      listItem.setAttribute('data-highlighted', '')
     }
   }
 
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Remove list item highlight
     const listItem = document.querySelector(`[data-trip-slug="${slug}"]`)
     if (listItem) {
-      listItem.classList.remove('trip-highlighted')
+      listItem.removeAttribute('data-highlighted')
     }
   }
 

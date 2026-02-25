@@ -96,5 +96,11 @@
     "viewPhotos": "Ver fotos a diferentes niveles de agua",
     "date": "Fecha",
     "gaugeHeight": "Altura del medidor"
+  },
+  "usage": {
+    "title": "Uso del río",
+    "preamble": "Estas imágenes de la cámara de monitoreo del USGS cerca de Bradley muestran avistamientos confirmados de personas usando el río Salinas. Se detectan automáticamente mediante análisis de imágenes con inteligencia artificial y son verificadas por un revisor humano.",
+    "viewFull": "Ver imagen completa",
+    "detectedOn": "Detectado el"
   }
 }

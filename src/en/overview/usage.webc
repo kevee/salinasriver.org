@@ -1,0 +1,11 @@
+---
+title: River Usage
+layout: default
+lang: en
+breadcrumbs:
+  - name: Home
+    link: /
+  - name: Overview
+    link: /overview
+---
+<page-usage :@detections="detections"></page-usage>

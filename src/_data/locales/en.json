@@ -96,5 +96,11 @@
     "viewPhotos": "View photos at different water levels",
     "date": "Date",
     "gaugeHeight": "Gauge height"
+  },
+  "usage": {
+    "title": "River Usage",
+    "preamble": "These images from the USGS monitoring camera near Bradley show confirmed sightings of people using the Salinas River. They are detected automatically using AI image analysis and verified by a human reviewer.",
+    "viewFull": "View full image",
+    "detectedOn": "Detected on"
   }
 }

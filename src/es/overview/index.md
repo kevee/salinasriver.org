@@ -26,3 +26,7 @@ Gran parte del agua entre el cruce del río Nacimiento y el resto de la sección
 ## [Dique de goma](/es/overview/rubber-dam)
 
 La instalación de desvío del río Salinas es una etapa obligatoria en la parte baja del río de abril a octubre.
+
+## [Uso del río](/es/overview/usage)
+
+Avistamientos confirmados de personas usando el río, detectados por IA a partir de cámaras de monitoreo del USGS.

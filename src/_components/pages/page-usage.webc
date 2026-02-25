@@ -1,0 +1,55 @@
+<h1 @text="t('usage.title')"></h1>
+
+<p @text="t('usage.preamble')"></p>
+
+<ul class="detection-grid">
+  <li webc:for="detection of detections">
+    <a :href="detection.imageUrl" target="_blank">
+      <img
+        :src="detection.thumbnailUrl"
+        :alt="`${t('usage.detectedOn')} ${formatDateTime(detection.datestamp)}`"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <div class="detection-meta">
+      <span class="detection-date" @text="formatDateTime(detection.datestamp)"></span>
+    </div>
+  </li>
+</ul>
+
+<style>
+  .detection-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      display: block;
+      line-height: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+    }
+
+    .detection-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #555;
+    }
+  }
+</style>

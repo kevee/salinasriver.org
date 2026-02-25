@@ -1,0 +1,11 @@
+---
+title: Uso del río
+layout: default
+lang: es
+breadcrumbs:
+  - name: Inicio
+    link: /
+  - name: Visión general
+    link: /overview
+---
+<page-usage :@detections="detections"></page-usage>

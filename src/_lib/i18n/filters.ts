@@ -40,6 +40,19 @@ const addI18nFilters = (eleventyConfig) => {
     }).format(date)
   })
 
+  eleventyConfig.addFilter('formatDateTime', function (dateStr: string) {
+    const locale = this.page?.lang || 'en'
+    const date = new Date(dateStr)
+    return new Intl.DateTimeFormat(locale, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZone: 'America/Los_Angeles',
+    }).format(date)
+  })
+
   eleventyConfig.addFilter('formatNumber', function (value) {
     if (value == null) return ''
     return Number(value).toLocaleString()

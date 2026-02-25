@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `[data-access-point-slug="${slug}"]`,
     )
     if (listItem) {
-      listItem.classList.add('access-point-highlighted')
+      listItem.setAttribute('data-highlighted', '')
     }
   }
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `[data-access-point-slug="${slug}"]`,
     )
     if (listItem) {
-      listItem.classList.remove('access-point-highlighted')
+      listItem.removeAttribute('data-highlighted')
     }
   }
 

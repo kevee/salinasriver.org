@@ -5,3 +5,4 @@ node_modules
 _scripts
 .DS_Store
 .env
+src/assets/images/detections

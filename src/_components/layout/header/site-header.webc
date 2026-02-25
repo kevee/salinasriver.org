@@ -86,7 +86,7 @@
     .secondary-wrapper .search-box {
       display: none;
     }
-    #nav-links.open ~ .nav-search {
+    #nav-links[data-open] ~ .nav-search {
       display: block;
     }
   }
@@ -174,7 +174,7 @@
       align-items: flex-start;
       padding-top: 0.75rem;
     }
-    header #nav-links.open {
+    header #nav-links[data-open] {
       display: flex;
     }
     header #nav-links li {
@@ -198,7 +198,11 @@
       toggle.addEventListener('click', function () {
         var expanded = toggle.getAttribute('aria-expanded') === 'true'
         toggle.setAttribute('aria-expanded', String(!expanded))
-        navLinks.classList.toggle('open')
+        if (navLinks.hasAttribute('data-open')) {
+          navLinks.removeAttribute('data-open')
+        } else {
+          navLinks.setAttribute('data-open', '')
+        }
       })
     }
   })
