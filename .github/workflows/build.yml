@@ -13,6 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Clone salinas-river-finder
+        uses: actions/checkout@v3
+        with:
+          repository: kevee/salinas-river-finder
+          token: ${{ secrets.FINDER_REPO_TOKEN }}
+          path: .cache/salinas-river-finder
+          fetch-depth: 1
+
       - name: Install
         run: npm install
 
@@ -20,7 +28,6 @@ jobs:
         run: npm run build
         env:
           DARK_VISITOR_TOKEN: ${{ secrets.DARK_VISITOR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add cname
         run: npm run deploy:cname
