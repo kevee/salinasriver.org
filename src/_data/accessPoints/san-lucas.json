@@ -4,7 +4,7 @@
   "lon": -121.02698293782846,
   "flowLow": 80,
   "flowHigh": 900,
-  "gauge": "soledad",
+  "gauge": "kingCity",
   "tresspass": false,
   "directions": {
     "type": "FeatureCollection",

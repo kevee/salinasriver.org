@@ -4,7 +4,7 @@
   "lon": -121.20303332805634,
   "flowLow": 200,
   "flowHigh": 600,
-  "gauge": "bradley",
+  "gauge": "kingCity",
   "tresspass": false,
   "directions": {
     "type": "FeatureCollection",

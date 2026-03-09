@@ -104,8 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add popup to markers and route
     const title = trip.translate[options.language]?.title || trip.slug
+    const tripLength = trip.translate[options.language]?.length || ''
+    const tripTime = trip.translate[options.language]?.time || ''
+    const details = tripLength && tripTime ? `${tripLength}, ${tripTime}` : ''
     const url = `/${options.language}/trips/${slug}/`
-    const popupContent = globalConfig.popupHtml(title, url)
+    const popupContent = globalConfig.popupHtml(title, url, details)
     if (tripStartMarkers[slug]) tripStartMarkers[slug].bindPopup(popupContent)
     if (tripEndMarkers[slug]) tripEndMarkers[slug].bindPopup(popupContent)
     tripLayer.bindPopup(popupContent)

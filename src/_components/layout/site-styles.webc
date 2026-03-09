@@ -46,6 +46,9 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.4;
+    white-space: nowrap;
+    max-width: none !important;
+    width: auto !important;
   }
   .map-popup-link {
     display: block;
@@ -53,6 +56,12 @@
     color: var(--main-blue);
     text-decoration: none;
     font-weight: 700;
+  }
+  .map-popup-details {
+    display: block;
+    padding: 0 0 0.75rem;
+    font-size: 0.85em;
+    color: #888;
   }
   .leaflet-popup-tip {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
