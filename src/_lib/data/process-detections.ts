@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import crypto from 'crypto'
 import { execSync } from 'child_process'
 import sharp from 'sharp'
 
@@ -15,6 +16,7 @@ const CACHE_DIR = '.cache/salinas-river-finder'
 const DETECTED_IMAGES_DIR = path.join(CACHE_DIR, 'detected-images')
 const CSV_PATH = path.join(CACHE_DIR, 'detections.csv')
 const OUTPUT_DIR = './src/assets/images/detections'
+const CACHE_MANIFEST_PATH = '.cache/detections-manifest.json'
 const THUMB_WIDTH = 300
 
 function parseCSV(content: string): Record<string, string>[] {
@@ -64,6 +66,26 @@ const processDetections = async (eleventyConfig: any) => {
   }
 
   const csvContent = fs.readFileSync(CSV_PATH, 'utf-8')
+  const csvHash = crypto.createHash('md5').update(csvContent).digest('hex')
+
+  // Check cache manifest
+  if (fs.existsSync(CACHE_MANIFEST_PATH)) {
+    try {
+      const manifest = JSON.parse(
+        fs.readFileSync(CACHE_MANIFEST_PATH, 'utf-8')
+      )
+      if (manifest.csvHash === csvHash && Array.isArray(manifest.detections)) {
+        console.log(
+          `[process-detections] Cache hit, skipping processing (${manifest.detections.length} detections)`
+        )
+        eleventyConfig.addGlobalData('detections', manifest.detections)
+        return
+      }
+    } catch {
+      // Invalid manifest, reprocess
+    }
+  }
+
   const rows = parseCSV(csvContent)
   const confirmed = rows.filter((row) => row.confirmed === 'True')
 
@@ -123,6 +145,12 @@ const processDetections = async (eleventyConfig: any) => {
   // Sort by datestamp descending (newest first)
   detections.sort(
     (a, b) => new Date(b.datestamp).getTime() - new Date(a.datestamp).getTime()
+  )
+
+  // Write cache manifest
+  fs.writeFileSync(
+    CACHE_MANIFEST_PATH,
+    JSON.stringify({ csvHash, detections }, null, 2)
   )
 
   console.log(

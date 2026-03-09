@@ -30,7 +30,11 @@ const globalConfig = {
       weight: 2,
     }
   },
-  popupHtml(title, url) {
-    return `<a class="map-popup-link" href="${url}">${title}</a>`
+  popupHtml(title, url, details) {
+    let html = `<a class="map-popup-link" href="${url}">${title}</a>`
+    if (details) {
+      html += `<span class="map-popup-details">${details}</span>`
+    }
+    return html
   },
 }

@@ -7,8 +7,12 @@
         <li webc:for="trip of tripsSortLatitude" :data-trip-slug="trip.slug">
           <a
             :href="u('/trips/' + trip.slug)"
-            @text="trip.translate.en.title"
+            @text="l(trip.translate, 'title')"
           ></a>
+          <span class="trip-details">
+            <span @text="l(trip.translate, 'length')" webc:nokeep></span>,
+            <span @text="l(trip.translate, 'time')" webc:nokeep></span>
+          </span>
         </li>
       </inline-nav>
     </div>
@@ -19,6 +23,11 @@
 </div>
 
 <style>
+  .trip-details {
+    display: block;
+    font-size: 0.85em;
+    color: #888;
+  }
   [data-trip-slug] {
     transition: background-color 0.2s ease;
   }

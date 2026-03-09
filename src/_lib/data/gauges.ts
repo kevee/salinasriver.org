@@ -32,6 +32,13 @@ const gauges: Gauge[] = [
     flood: 13,
   },
   {
+    id: 11151540,
+    name: 'kingCity',
+    label: 'King City',
+    floodUrl: 'https://water.noaa.gov/gauges/kcbc1',
+    flood: 20,
+  },
+  {
     id: 11147500,
     name: 'paso',
     label: 'Paso Robles',
