@@ -33,6 +33,8 @@
   "feet": "pies",
   "distanceToTheRiver": "Distancia al río",
   "county": "Condado",
+  "viewOnlyCounty": "Ver solo",
+  "viewAllCounties": "Ver todos",
   "relatedTrips": "Viajes relacionados",
   "setUp": "Configuración",
   "viewInGoogle": "Ver en Google Maps",

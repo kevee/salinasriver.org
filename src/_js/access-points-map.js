@@ -23,11 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const highlightStyle = globalConfig.highlightMarkerStyle(markerRadius * 1.5)
 
   const allMarkersGroup = new L.FeatureGroup()
+  const markersByCounty = {}
 
   for (const point of options.accessPoints) {
     if (!point.lat || !point.lon) continue
 
     const slug = point.slug
+    const county = point.county
 
     const marker = new L.CircleMarker([point.lat, point.lon], defaultStyle)
     const title = point.translate[options.language]?.title || point.slug
@@ -36,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     marker.addTo(map)
     allMarkersGroup.addLayer(marker)
     markers[slug] = marker
+
+    if (county) {
+      if (!markersByCounty[county]) markersByCounty[county] = new L.FeatureGroup()
+      markersByCounty[county].addLayer(marker)
+    }
 
     marker.on('mouseover', () => highlightAccessPoint(slug))
     marker.on('mouseout', () => unhighlightAccessPoint(slug))
@@ -47,6 +54,61 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     map.zoomIn()
   }
+
+  let activeCounty = null
+
+  function resetCountyFilter() {
+    activeCounty = null
+    for (const point of options.accessPoints) {
+      if (markers[point.slug]) markers[point.slug].addTo(map)
+    }
+    document.querySelectorAll('[data-county]').forEach((el) => {
+      el.style.display = ''
+    })
+    document.querySelectorAll('.view-county-btn').forEach((btn) => {
+      btn.textContent = btn.dataset.labelViewOnly
+      btn.removeAttribute('data-active')
+    })
+    map.fitBounds(allMarkersGroup.getBounds(), { padding: [20, 20] })
+  }
+
+  function filterToCounty(county) {
+    activeCounty = county
+    for (const point of options.accessPoints) {
+      if (!markers[point.slug]) continue
+      if (point.county === county) {
+        markers[point.slug].addTo(map)
+      } else {
+        map.removeLayer(markers[point.slug])
+      }
+    }
+    document.querySelectorAll('[data-county]').forEach((el) => {
+      el.style.display = el.dataset.county === county ? '' : 'none'
+    })
+    document.querySelectorAll('.view-county-btn').forEach((btn) => {
+      if (btn.dataset.viewCounty === county) {
+        btn.textContent = btn.dataset.labelViewAll
+        btn.setAttribute('data-active', '')
+      } else {
+        btn.textContent = btn.dataset.labelViewOnly
+        btn.removeAttribute('data-active')
+      }
+    })
+    if (markersByCounty[county]?.getLayers().length > 0) {
+      map.fitBounds(markersByCounty[county].getBounds(), { padding: [20, 20] })
+    }
+  }
+
+  document.querySelectorAll('[data-view-county]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const county = btn.dataset.viewCounty
+      if (activeCounty === county) {
+        resetCountyFilter()
+      } else {
+        filterToCounty(county)
+      }
+    })
+  })
 
   // Add the river layer after fitBounds so the map has an initialized view
   function riverStyle() {
