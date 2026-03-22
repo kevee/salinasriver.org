@@ -179,6 +179,16 @@
       "lon": -120.66306488645657,
       "cfs": 74.3,
       "height": null
+    },
+    {
+      "filename": "IMG_9772.webm",
+      "originalFilename": "IMG_9772.MOV",
+      "date": "2026-03-15",
+      "lat": 35.50626379173167,
+      "lon": -120.66155356695322,
+      "cfs": 74.3,
+      "height": null,
+      "type": "video"
     }
   ],
   "mileage": 0.12,

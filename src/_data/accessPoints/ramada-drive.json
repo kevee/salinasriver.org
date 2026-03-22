@@ -109,6 +109,16 @@
       "lon": -120.69180399500624,
       "cfs": 74.3,
       "height": null
+    },
+    {
+      "filename": "IMG_9777.webm",
+      "originalFilename": "IMG_9777.MOV",
+      "date": "2026-03-15",
+      "lat": 35.59949525192813,
+      "lon": -120.69235621599645,
+      "cfs": 74.3,
+      "height": null,
+      "type": "video"
     }
   ]
 }
