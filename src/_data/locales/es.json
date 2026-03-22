@@ -102,6 +102,12 @@
     "date": "Fecha",
     "gaugeHeight": "Altura del medidor"
   },
+  "ada": {
+    "label": "Accesible en silla de ruedas",
+    "yes": "Sí",
+    "no": "No",
+    "note": "Significa accesible en silla de ruedas al menos hasta una vista del río."
+  },
   "usage": {
     "title": "Uso del río",
     "preamble": "Estas imágenes de la <a href=\"https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA\">cámara de monitoreo del USGS cerca de Bradley</a> muestran avistamientos confirmados de personas usando el río Salinas.",
