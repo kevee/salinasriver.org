@@ -18,6 +18,10 @@ interface PhotoEntry {
   type?: 'photo' | 'video'
 }
 
+interface UsagePhotoEntry extends PhotoEntry {
+  closestAccessPoint: string
+}
+
 interface AccessPoint {
   slug: string
   lat: number
@@ -27,20 +31,30 @@ interface AccessPoint {
   [key: string]: any
 }
 
-const IMAGES_INPUT_DIR = './src/_images'
+const IMAGES_INPUT_DIR = './src/_data/images/access-points'
+const USAGE_IMAGES_INPUT_DIR = './src/_data/images/usage'
+const USAGE_PHOTOS_DATA_PATH = './src/_data/usagePhotos.json'
 const IMAGES_OUTPUT_DIR = './src/assets/images/photos'
 const ACCESS_POINTS_DIR = './src/_data/accessPoints'
 const JPEG_WIDTH = 1200
 const WEBP_WIDTHS = [400, 800, 1200]
 const THUMB_WIDTH = 400
-const SUPPORTED_EXTENSIONS = ['.heic', '.heif', '.jpg', '.jpeg', '.png', '.tiff']
+const THUMB_HEIGHT = 300 // 4:3 aspect ratio
+const SUPPORTED_EXTENSIONS = [
+  '.heic',
+  '.heif',
+  '.jpg',
+  '.jpeg',
+  '.png',
+  '.tiff',
+]
 const SUPPORTED_VIDEO_EXTENSIONS = ['.mov', '.mp4', '.avi']
 
 function haversineDistance(
   lat1: number,
   lon1: number,
   lat2: number,
-  lon2: number
+  lon2: number,
 ): number {
   const R = 6371
   const dLat = ((lat2 - lat1) * Math.PI) / 180
@@ -56,7 +70,7 @@ function haversineDistance(
 function findClosestAccessPoint(
   lat: number,
   lon: number,
-  accessPoints: AccessPoint[]
+  accessPoints: AccessPoint[],
 ): AccessPoint {
   let closest: AccessPoint = accessPoints[0]
   let minDist = Infinity
@@ -72,7 +86,7 @@ function findClosestAccessPoint(
 
 async function fetchUSGSDailyValues(
   gaugeName: string,
-  dateStr: string
+  dateStr: string,
 ): Promise<{ cfs: number | null; height: number | null }> {
   const gauge = gauges.find((g) => g.name === gaugeName)
   if (!gauge) {
@@ -87,7 +101,7 @@ async function fetchUSGSDailyValues(
     const timeSeries = response.data?.value?.timeSeries
     if (!timeSeries || timeSeries.length === 0) {
       console.warn(
-        `[process-photos] No USGS data for gauge ${gauge.id} on ${dateStr}`
+        `[process-photos] No USGS data for gauge ${gauge.id} on ${dateStr}`,
       )
       return { cfs: null, height: null }
     }
@@ -106,7 +120,7 @@ async function fetchUSGSDailyValues(
   } catch (err: any) {
     console.warn(
       `[process-photos] USGS API error for gauge ${gauge.id} on ${dateStr}:`,
-      err.message
+      err.message,
     )
     return { cfs: null, height: null }
   }
@@ -114,14 +128,14 @@ async function fetchUSGSDailyValues(
 
 function isAlreadyProcessed(
   originalFilename: string,
-  accessPoints: AccessPoint[]
+  accessPoints: AccessPoint[],
 ): boolean {
   return accessPoints.some((ap) =>
-    ap.photos?.some((p) => p.originalFilename === originalFilename)
+    ap.photos?.some((p) => p.originalFilename === originalFilename),
   )
 }
 
-const processPhotos = async (_eleventyConfig: any) => {
+const processPhotos = async () => {
   if (!fs.existsSync(IMAGES_INPUT_DIR)) {
     console.log('[process-photos] No _images directory found, skipping.')
     return
@@ -145,9 +159,7 @@ const processPhotos = async (_eleventyConfig: any) => {
 
   const files = fs
     .readdirSync(IMAGES_INPUT_DIR)
-    .filter((f) =>
-      SUPPORTED_EXTENSIONS.includes(path.extname(f).toLowerCase())
-    )
+    .filter((f) => SUPPORTED_EXTENSIONS.includes(path.extname(f).toLowerCase()))
 
   for (const file of files) {
     const inputPath = path.join(IMAGES_INPUT_DIR, file)
@@ -168,7 +180,7 @@ const processPhotos = async (_eleventyConfig: any) => {
     } catch (err: any) {
       console.warn(
         `[process-photos] Failed to read EXIF from ${file}:`,
-        err.message
+        err.message,
       )
       continue
     }
@@ -194,11 +206,11 @@ const processPhotos = async (_eleventyConfig: any) => {
       let sharpInput: string | Buffer = inputPath
       if (ext === '.heic' || ext === '.heif') {
         const heicBuffer = fs.readFileSync(inputPath)
-        sharpInput = await convert({
+        sharpInput = (await convert({
           buffer: heicBuffer,
           format: 'JPEG',
           quality: 1,
-        }) as Buffer
+        })) as Buffer
       }
       await sharp(sharpInput)
         .resize({ width: JPEG_WIDTH })
@@ -216,26 +228,22 @@ const processPhotos = async (_eleventyConfig: any) => {
           .webp({ quality: 75 })
           .toFile(webpPath)
       }
-      console.log(`[process-photos] Converted ${file} -> ${jpegFilename} + thumbnail + WebP`)
-    } catch (err: any) {
-      console.warn(
-        `[process-photos] Failed to convert ${file}:`,
-        err.message
+      console.log(
+        `[process-photos] Converted ${file} -> ${jpegFilename} + thumbnail + WebP`,
       )
+    } catch (err: any) {
+      console.warn(`[process-photos] Failed to convert ${file}:`, err.message)
       continue
     }
 
     const closest = findClosestAccessPoint(photoLat, photoLon, accessPoints)
     console.log(
-      `[process-photos] ${file} -> closest access point: ${closest.slug}`
+      `[process-photos] ${file} -> closest access point: ${closest.slug}`,
     )
 
-    const { cfs, height } = await fetchUSGSDailyValues(
-      closest.gauge,
-      dateStr
-    )
+    const { cfs, height } = await fetchUSGSDailyValues(closest.gauge, dateStr)
     console.log(
-      `[process-photos] USGS data for ${closest.gauge} on ${dateStr}: cfs=${cfs}, height=${height}`
+      `[process-photos] USGS data for ${closest.gauge} on ${dateStr}: cfs=${cfs}, height=${height}`,
     )
 
     const photoEntry: PhotoEntry = {
@@ -255,7 +263,7 @@ const processPhotos = async (_eleventyConfig: any) => {
   const videoFiles = fs
     .readdirSync(IMAGES_INPUT_DIR)
     .filter((f) =>
-      SUPPORTED_VIDEO_EXTENSIONS.includes(path.extname(f).toLowerCase())
+      SUPPORTED_VIDEO_EXTENSIONS.includes(path.extname(f).toLowerCase()),
     )
 
   for (const file of videoFiles) {
@@ -278,7 +286,7 @@ const processPhotos = async (_eleventyConfig: any) => {
     try {
       const probeOutput = execSync(
         `ffprobe -v quiet -print_format json -show_format "${inputPath}"`,
-        { encoding: 'utf-8' }
+        { encoding: 'utf-8' },
       )
       const probe = JSON.parse(probeOutput)
       const tags = probe?.format?.tags || {}
@@ -303,7 +311,7 @@ const processPhotos = async (_eleventyConfig: any) => {
     } catch (err: any) {
       console.warn(
         `[process-photos] Failed to read metadata from video ${file}:`,
-        err.message
+        err.message,
       )
       continue
     }
@@ -311,10 +319,13 @@ const processPhotos = async (_eleventyConfig: any) => {
     // Convert video to WebM and extract first frame thumbnail
     try {
       // Extract first frame as JPEG
-      const tempThumbPath = path.join(IMAGES_OUTPUT_DIR, baseName + '-frame.jpg')
+      const tempThumbPath = path.join(
+        IMAGES_OUTPUT_DIR,
+        baseName + '-frame.jpg',
+      )
       execSync(
         `ffmpeg -y -i "${inputPath}" -vframes 1 -f image2 "${tempThumbPath}"`,
-        { stdio: 'pipe' }
+        { stdio: 'pipe' },
       )
 
       // Resize thumbnail with sharp
@@ -329,31 +340,28 @@ const processPhotos = async (_eleventyConfig: any) => {
       // Convert video to WebM
       execSync(
         `ffmpeg -y -i "${inputPath}" -c:v libvpx-vp9 -crf 30 -b:v 2M -c:a libopus "${outputPath}"`,
-        { stdio: 'pipe' }
+        { stdio: 'pipe' },
       )
 
       console.log(
-        `[process-photos] Converted video ${file} -> ${webmFilename} + thumbnail`
+        `[process-photos] Converted video ${file} -> ${webmFilename} + thumbnail`,
       )
     } catch (err: any) {
       console.warn(
         `[process-photos] Failed to convert video ${file}:`,
-        err.message
+        err.message,
       )
       continue
     }
 
     const closest = findClosestAccessPoint(videoLat, videoLon, accessPoints)
     console.log(
-      `[process-photos] ${file} -> closest access point: ${closest.slug}`
+      `[process-photos] ${file} -> closest access point: ${closest.slug}`,
     )
 
-    const { cfs, height } = await fetchUSGSDailyValues(
-      closest.gauge,
-      dateStr
-    )
+    const { cfs, height } = await fetchUSGSDailyValues(closest.gauge, dateStr)
     console.log(
-      `[process-photos] USGS data for ${closest.gauge} on ${dateStr}: cfs=${cfs}, height=${height}`
+      `[process-photos] USGS data for ${closest.gauge} on ${dateStr}: cfs=${cfs}, height=${height}`,
     )
 
     const videoEntry: PhotoEntry = {
@@ -383,9 +391,14 @@ const processPhotos = async (_eleventyConfig: any) => {
             .resize({ width: THUMB_WIDTH })
             .jpeg({ quality: 70 })
             .toFile(thumbOut)
-          console.log(`[process-photos] Generated missing thumbnail: ${thumbName}`)
+          console.log(
+            `[process-photos] Generated missing thumbnail: ${thumbName}`,
+          )
         } catch (err: any) {
-          console.warn(`[process-photos] Failed to generate thumbnail for ${photo.filename}:`, err.message)
+          console.warn(
+            `[process-photos] Failed to generate thumbnail for ${photo.filename}:`,
+            err.message,
+          )
         }
       }
     }
@@ -397,9 +410,102 @@ const processPhotos = async (_eleventyConfig: any) => {
       const apPath = path.join(ACCESS_POINTS_DIR, apFilename)
       fs.writeFileSync(apPath, JSON.stringify(ap, null, 2) + '\n', 'utf-8')
       console.log(
-        `[process-photos] Updated ${apFilename} with ${ap.photos.length} photo(s)`
+        `[process-photos] Updated ${apFilename} with ${ap.photos.length} photo(s)`,
       )
     }
+  }
+
+  // Process usage photos
+  if (fs.existsSync(USAGE_IMAGES_INPUT_DIR)) {
+    const usagePhotos: UsagePhotoEntry[] = fs.existsSync(USAGE_PHOTOS_DATA_PATH)
+      ? JSON.parse(fs.readFileSync(USAGE_PHOTOS_DATA_PATH, 'utf-8'))
+      : []
+
+    const usageFiles = fs
+      .readdirSync(USAGE_IMAGES_INPUT_DIR)
+      .filter((f) =>
+        SUPPORTED_EXTENSIONS.includes(path.extname(f).toLowerCase()),
+      )
+
+    for (const file of usageFiles) {
+      if (usagePhotos.some((p) => p.originalFilename === file)) {
+        console.log(`[process-photos] Skipping usage photo ${file} (already processed)`)
+        continue
+      }
+
+      const inputPath = path.join(USAGE_IMAGES_INPUT_DIR, file)
+      const baseName = path.parse(file).name
+      const jpegFilename = baseName + '.jpg'
+      const thumbFilename = baseName + '-thumb.jpg'
+      const outputPath = path.join(IMAGES_OUTPUT_DIR, jpegFilename)
+      const thumbPath = path.join(IMAGES_OUTPUT_DIR, thumbFilename)
+
+      let exifData: any
+      try {
+        exifData = await exifr.parse(inputPath, { gps: true })
+      } catch (err: any) {
+        console.warn(`[process-photos] Failed to read EXIF from ${file}:`, err.message)
+        continue
+      }
+
+      if (!exifData?.latitude || !exifData?.longitude) {
+        console.warn(`[process-photos] No GPS data in usage photo ${file}, skipping.`)
+        continue
+      }
+
+      if (!exifData?.DateTimeOriginal) {
+        console.warn(`[process-photos] No date in usage photo ${file}, skipping.`)
+        continue
+      }
+
+      const photoLat: number = exifData.latitude
+      const photoLon: number = exifData.longitude
+      const photoDate: Date = exifData.DateTimeOriginal
+      const dateStr = photoDate.toISOString().split('T')[0]
+
+      try {
+        const ext = path.extname(file).toLowerCase()
+        let sharpInput: string | Buffer = inputPath
+        if (ext === '.heic' || ext === '.heif') {
+          const heicBuffer = fs.readFileSync(inputPath)
+          sharpInput = (await convert({
+            buffer: heicBuffer,
+            format: 'JPEG',
+            quality: 1,
+          })) as Buffer
+        }
+        await sharp(sharpInput).resize({ width: JPEG_WIDTH }).jpeg({ quality: 80 }).toFile(outputPath)
+        await sharp(sharpInput).resize({ width: THUMB_WIDTH, height: THUMB_HEIGHT, fit: 'cover', position: 'centre' }).jpeg({ quality: 70 }).toFile(thumbPath)
+        for (const w of WEBP_WIDTHS) {
+          const webpPath = path.join(IMAGES_OUTPUT_DIR, `${baseName}-${w}w.webp`)
+          await sharp(sharpInput).resize({ width: w }).webp({ quality: 75 }).toFile(webpPath)
+        }
+        console.log(`[process-photos] Converted usage photo ${file} -> ${jpegFilename} + thumbnail + WebP`)
+      } catch (err: any) {
+        console.warn(`[process-photos] Failed to convert usage photo ${file}:`, err.message)
+        continue
+      }
+
+      const closest = findClosestAccessPoint(photoLat, photoLon, accessPoints)
+      console.log(`[process-photos] ${file} -> closest access point: ${closest.slug}`)
+
+      const { cfs, height } = await fetchUSGSDailyValues(closest.gauge, dateStr)
+
+      usagePhotos.push({
+        filename: jpegFilename,
+        originalFilename: file,
+        date: dateStr,
+        lat: photoLat,
+        lon: photoLon,
+        cfs,
+        height,
+        closestAccessPoint: closest.slug,
+      })
+    }
+
+    usagePhotos.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    fs.writeFileSync(USAGE_PHOTOS_DATA_PATH, JSON.stringify(usagePhotos, null, 2) + '\n', 'utf-8')
+    console.log(`[process-photos] Saved ${usagePhotos.length} usage photo(s) to usagePhotos.json`)
   }
 }
 

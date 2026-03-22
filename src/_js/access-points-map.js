@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     map.fitBounds(allMarkersGroup.getBounds(), {
       padding: [20, 20],
     })
+    map.zoomIn()
   }
 
   // Add the river layer after fitBounds so the map has an initialized view

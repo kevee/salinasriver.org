@@ -1,0 +1,144 @@
+{
+  "slug": "las-pilitas-bridge",
+  "lat": 35.348231969400715,
+  "lon": -120.511758803681,
+  "flowLow": 50,
+  "flowHigh": 500,
+  "tresspass": true,
+  "ada": false,
+  "gauge": "paso",
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "coordinates": [
+            [
+              -120.51214320976695,
+              35.34833041186552
+            ],
+            [
+              -120.51218399415708,
+              35.348291893582086
+            ],
+            [
+              -120.51228058876475,
+              35.34832866103473
+            ],
+            [
+              -120.51245016596535,
+              35.34838643842643
+            ],
+            [
+              -120.51255320021372,
+              35.348421455007255
+            ],
+            [
+              -120.51266052755575,
+              35.34842320583603
+            ],
+            [
+              -120.5127635618041,
+              35.348358425150835
+            ],
+            [
+              -120.5128107858346,
+              35.348302398570496
+            ],
+            [
+              -120.5129052338956,
+              35.348305900232646
+            ],
+            [
+              -120.5130232939717,
+              35.34834792016973
+            ],
+            [
+              -120.51311774203269,
+              35.34843020915021
+            ],
+            [
+              -120.51320145735966,
+              35.348542262094725
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Las Pilitas Bridge",
+      "tags": "accessPoint",
+      "directions": "Park in the large pullout on the east side of the bridge. There are several access trails starting from that pullout.",
+      "body": "A shady spot near a historic bridge. Just north of the bridge is sometimes a nice deep pool."
+    },
+    "es": {
+      "title": "Puente Las Pilitas",
+      "tags": "accessPoint",
+      "directions": "Estacione en el gran espacio habilitado al este del puente. Hay varios senderos de acceso que comienzan desde ese lugar.",
+      "body": "Un lugar sombreado cerca de un puente histórico. Justo al norte del puente a veces hay una bonita poza profunda."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_9735.jpg",
+      "originalFilename": "IMG_9735.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.348612235449735,
+      "lon": -120.51280313703391,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9736.jpg",
+      "originalFilename": "IMG_9736.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.348612235449735,
+      "lon": -120.51280313703391,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9737.jpg",
+      "originalFilename": "IMG_9737.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.348612235449735,
+      "lon": -120.51280313703391,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9738.jpg",
+      "originalFilename": "IMG_9738.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.348612235449735,
+      "lon": -120.51280313703391,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9739.jpg",
+      "originalFilename": "IMG_9739.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.348612235449735,
+      "lon": -120.51280313703391,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9740.jpg",
+      "originalFilename": "IMG_9740.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.348612235449735,
+      "lon": -120.51280313703391,
+      "cfs": 78.8,
+      "height": null
+    }
+  ],
+  "mileage": 0.07,
+  "county": "San Luis Obispo"
+}

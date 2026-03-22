@@ -4,15 +4,18 @@
   <columns>
     <div>
       <inline-nav>
-        <li
-          webc:for="point of accessPointsSortLatitude"
-          :data-access-point-slug="point.slug"
-        >
-          <a
-            :href="u('/access-points/' + point.slug)"
-            @text="l(point.translate, 'title')"
-          ></a>
-        </li>
+        <template webc:nokeep webc:for="group of accessPointsByCounty">
+          <li class="county-header" @text="group.county + ' ' + t('county')"></li>
+          <li
+            webc:for="point of group.points"
+            :data-access-point-slug="point.slug"
+          >
+            <a
+              :href="u('/access-points/' + point.slug)"
+              @text="l(point.translate, 'title')"
+            ></a>
+          </li>
+        </template>
       </inline-nav>
     </div>
     <div>
@@ -24,6 +27,10 @@
 </div>
 
 <style>
+  .county-header {
+    font-weight: bold;
+    pointer-events: none;
+  }
   [data-access-point-slug] {
     transition: background-color 0.2s ease;
   }

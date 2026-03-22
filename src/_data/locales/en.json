@@ -29,6 +29,9 @@
   "description": "Description",
   "distance": "Distance",
   "miles": "miles",
+  "feet": "feet",
+  "distanceToTheRiver": "Distance to the river",
+  "county": "County",
   "relatedTrips": "Related trips",
   "setUp": "Set-up",
   "viewInGoogle": "View in Google Maps",
@@ -99,8 +102,11 @@
   },
   "usage": {
     "title": "River Usage",
-    "preamble": "These images from the USGS monitoring camera near Bradley show confirmed sightings of people using the Salinas River. They are detected automatically using AI image analysis and verified by a human reviewer.",
+    "preamble": "These images from the <a href=\"https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA\">USGS monitoring camera near Bradley</a> show confirmed sightings of people using the Salinas River.",
     "viewFull": "View full image",
-    "detectedOn": "Detected on"
+    "detectedOn": "Detected on",
+    "photosTitle": "Photos from the river",
+    "photosPreamble": "Photos taken along the Salinas River, tagged with the nearest access point and water flow data for that day.",
+    "nearAccessPoint": "Near"
   }
 }

@@ -12,7 +12,7 @@ import processPhotos from './src/_lib/data/process-photos'
 import processDetections from './src/_lib/data/process-detections'
 
 const config = async (eleventyConfig: any) => {
-  await processPhotos(eleventyConfig)
+  await processPhotos()
   await processDetections(eleventyConfig)
   await addGlobalData(eleventyConfig)
   addI18nFilters(eleventyConfig)

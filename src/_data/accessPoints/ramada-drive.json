@@ -1,0 +1,168 @@
+{
+  "slug": "ramada-drive",
+  "lat": 35.59949525192813,
+  "lon": -120.69235621599645,
+  "flowLow": 100,
+  "flowHigh": 900,
+  "tresspass": true,
+  "gauge": "paso",
+  "ada": false,
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "coordinates": [
+            [
+              -120.6925444286438,
+              35.5995098221358
+            ],
+            [
+              -120.69201563942029,
+              35.59942965977211
+            ],
+            [
+              -120.69161232560575,
+              35.599152734625235
+            ],
+            [
+              -120.69128071202492,
+              35.598853945892074
+            ],
+            [
+              -120.69079673544748,
+              35.598795645521406
+            ],
+            [
+              -120.6897570820589,
+              35.59896325897262
+            ],
+            [
+              -120.68784806333645,
+              35.59926204729766
+            ],
+            [
+              -120.68693388535684,
+              35.599538972066284
+            ],
+            [
+              -120.686602271776,
+              35.59955354702761
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Ramada Drive",
+      "tags": "accessPoint",
+      "directions": "From the end of Ramda drive, cross the railroad tracks and follow the dirt road down to the river.",
+      "body": "A popular place for folks to drive offroad vehicles, past the jumps and trails is a sandy bank with nice shade to access the river."
+    },
+    "es": {
+      "title": "Ramada Drive",
+      "tags": "accessPoint",
+      "directions": "Desde el final de Ramada Drive, cruce las vías del tren y siga el camino de tierra hasta el río.",
+      "body": "Un lugar popular para los que conducen vehículos todo terreno; más allá de los saltos y senderos hay una orilla arenosa con buena sombra para acceder al río."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_9774.jpg",
+      "originalFilename": "IMG_9774.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.59935347726662,
+      "lon": -120.69180399500624,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9775.jpg",
+      "originalFilename": "IMG_9775.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.59935347726662,
+      "lon": -120.69180399500624,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9776.jpg",
+      "originalFilename": "IMG_9776.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.59935347726662,
+      "lon": -120.69180399500624,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9778.jpg",
+      "originalFilename": "IMG_9778.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.59935347726662,
+      "lon": -120.69180399500624,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9779.jpg",
+      "originalFilename": "IMG_9779.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9780.jpg",
+      "originalFilename": "IMG_9780.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9781.jpg",
+      "originalFilename": "IMG_9781.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9782.jpg",
+      "originalFilename": "IMG_9782.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9783.jpg",
+      "originalFilename": "IMG_9783.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9784.jpg",
+      "originalFilename": "IMG_9784.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    }
+  ],
+  "mileage": 0.36,
+  "county": "San Luis Obispo"
+}

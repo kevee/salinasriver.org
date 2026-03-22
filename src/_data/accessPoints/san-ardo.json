@@ -7,6 +7,7 @@
   "gauge": "bradley",
   "webcam": "https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA",
   "tresspass": true,
+  "ada": false,
   "directions": {
     "type": "FeatureCollection",
     "features": [
@@ -638,5 +639,7 @@
       "cfs": 606,
       "height": null
     }
-  ]
+  ],
+  "mileage": 0.26,
+  "county": "Monterey"
 }

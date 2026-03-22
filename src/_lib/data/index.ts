@@ -39,6 +39,26 @@ const addGlobalData = async (eleventyConfig) => {
   )
 
   eleventyConfig.addGlobalData(
+    'eleventyComputed.accessPointsByCounty',
+    () => (data) => {
+      if (!data || !data.accessPoints) return []
+      const sorted = Object.values(
+        data.accessPoints as Record<string, AccessPoint>,
+      ).sort((a: AccessPoint, b: AccessPoint) => a.lat - b.lat)
+      const groups: Record<string, AccessPoint[]> = {}
+      for (const point of sorted) {
+        const county = point.county || 'Unknown'
+        if (!groups[county]) groups[county] = []
+        groups[county].push(point)
+      }
+      return Object.entries(groups).map(([county, points]) => ({
+        county,
+        points,
+      }))
+    },
+  )
+
+  eleventyConfig.addGlobalData(
     'eleventyComputed.tripsSortLatitude',
     () => (data) => {
       if (!data || !data.trips) {

@@ -5,6 +5,7 @@
   "flowLow": 40,
   "flowHigh": 600,
   "tresspass": false,
+  "ada": false,
   "gauge": "paso",
   "directions": {
     "type": "FeatureCollection",
@@ -58,13 +59,13 @@
   },
   "translate": {
     "en": {
-      "title": "Atascadero, Sycamore",
+      "title": "Sycamore De Anza Trail",
       "tags": "accessPoint",
       "directions": "Park along the street near Sycamore and Buena drive. There is a trailhead at the end of the street that leads to the river channel.",
       "body": "A popular area for walking and biking along the river."
     },
     "es": {
-      "title": "Atascadero, Sicomoro",
+      "title": "Sendero Sycamore De Anza",
       "tags": "accessPoint",
       "directions": "Estacione a lo largo de la calle cerca de Sycamore y Buena Drive. Hay un comienzo de sendero al final de la calle que conduce al cauce del río.",
       "body": "Una zona popular para caminar y andar en bicicleta a lo largo del río."
@@ -79,6 +80,107 @@
       "lon": -120.66303888888889,
       "cfs": 445,
       "height": null
+    },
+    {
+      "filename": "IMG_9761.jpg",
+      "originalFilename": "IMG_9761.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.498016616422625,
+      "lon": -120.6544086023558,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9762.jpg",
+      "originalFilename": "IMG_9762.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.498016616422625,
+      "lon": -120.6544086023558,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9763.jpg",
+      "originalFilename": "IMG_9763.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.498016616422625,
+      "lon": -120.6544086023558,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9764.jpg",
+      "originalFilename": "IMG_9764.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.498016616422625,
+      "lon": -120.6544086023558,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9765.jpg",
+      "originalFilename": "IMG_9765.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.498016616422625,
+      "lon": -120.6544086023558,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9766.jpg",
+      "originalFilename": "IMG_9766.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.498016616422625,
+      "lon": -120.6544086023558,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9767.jpg",
+      "originalFilename": "IMG_9767.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.505606869549744,
+      "lon": -120.66306488645657,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9768.jpg",
+      "originalFilename": "IMG_9768.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.505606869549744,
+      "lon": -120.66306488645657,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9770.jpg",
+      "originalFilename": "IMG_9770.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.505606869549744,
+      "lon": -120.66306488645657,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9771.jpg",
+      "originalFilename": "IMG_9771.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.505606869549744,
+      "lon": -120.66306488645657,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9773.jpg",
+      "originalFilename": "IMG_9773.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.505606869549744,
+      "lon": -120.66306488645657,
+      "cfs": 74.3,
+      "height": null
     }
-  ]
+  ],
+  "mileage": 0.12,
+  "county": "San Luis Obispo"
 }
