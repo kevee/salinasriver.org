@@ -102,6 +102,12 @@
     "date": "Date",
     "gaugeHeight": "Gauge height"
   },
+  "ada": {
+    "label": "Wheelchair accessible",
+    "yes": "Yes",
+    "no": "No",
+    "note": "Means accessible via wheelchair to at least a nice view of the river."
+  },
   "usage": {
     "title": "River Usage",
     "preamble": "These images from the <a href=\"https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA\">USGS monitoring camera near Bradley</a> show confirmed sightings of people using the Salinas River.",

@@ -35,6 +35,13 @@
       <updated-at webc:nokeep></updated-at>
     </dd>
   </div>
+  <div webc:if="point.ada !== undefined">
+    <dt @text="t('ada.label')"></dt>
+    <dd>
+      <span webc:nokeep @text="point.ada ? t('ada.yes') : t('ada.no')"></span>
+      <small webc:if="point.ada" style="display:block" @text="t('ada.note')"></small>
+    </dd>
+  </div>
   <div webc:if="point.tresspass">
     <dt @text="t('privateProperty')"></dt>
     <dd>
