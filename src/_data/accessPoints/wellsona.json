@@ -1,0 +1,94 @@
+{
+  "slug": "wellsona",
+  "lat": 35.6959237,
+  "lon": -120.6901324,
+  "flowLow": 50,
+  "flowHigh": 500,
+  "tresspass": false,
+  "ada": false,
+  "gauge": "paso",
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -120.690198,
+              35.6959579
+            ],
+            [
+              -120.6877238,
+              35.6958606
+            ],
+            [
+              -120.6857019,
+              35.6957958
+            ],
+            [
+              -120.6844915,
+              35.6957202
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Wellsona",
+      "tags": "accessPoint",
+      "directions": "There is a clear trail right at the dead end of the road.",
+      "body": "A useful access point roughly between Paso Robles and San Miguel."
+    },
+    "es": {
+      "title": "Wellsona",
+      "tags": "accessPoint",
+      "directions": "Hay un sendero claro justo al final del camino sin salida.",
+      "body": "Un punto de acceso conveniente aproximadamente entre Paso Robles y San Miguel."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_9786.jpg",
+      "originalFilename": "IMG_9786.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.69593247515808,
+      "lon": -120.69023007501173,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9787.jpg",
+      "originalFilename": "IMG_9787.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.69593247515808,
+      "lon": -120.69023007501173,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9788.jpg",
+      "originalFilename": "IMG_9788.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.69593247515808,
+      "lon": -120.69023007501173,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9790.jpg",
+      "originalFilename": "IMG_9790.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.69593247515808,
+      "lon": -120.69023007501173,
+      "cfs": 74.3,
+      "height": null
+    }
+  ],
+  "mileage": 0.32,
+  "county": "San Luis Obispo"
+}

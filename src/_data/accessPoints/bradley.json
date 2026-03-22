@@ -5,6 +5,7 @@
   "flowLow": 40,
   "tresspass": false,
   "flowHigh": 600,
+  "ada": false,
   "gauge": "bradley",
   "webcam": "https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA",
   "directions": {
@@ -324,6 +325,35 @@
       "cfs": 984,
       "height": null,
       "type": "video"
+    },
+    {
+      "filename": "IMG_9793.jpg",
+      "originalFilename": "IMG_9793.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.86405440062502,
+      "lon": -120.80936841970765,
+      "cfs": 186,
+      "height": null
+    },
+    {
+      "filename": "IMG_9794.jpg",
+      "originalFilename": "IMG_9794.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.86405440062502,
+      "lon": -120.80936841970765,
+      "cfs": 186,
+      "height": null
+    },
+    {
+      "filename": "IMG_9799.jpg",
+      "originalFilename": "IMG_9799.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.86405440062502,
+      "lon": -120.80936841970765,
+      "cfs": 186,
+      "height": null
     }
-  ]
+  ],
+  "mileage": 0.1,
+  "county": "Monterey"
 }

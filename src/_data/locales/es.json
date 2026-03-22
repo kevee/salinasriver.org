@@ -30,6 +30,11 @@
   "description": "Descripción",
   "distance": "Distancia",
   "miles": "millas",
+  "feet": "pies",
+  "distanceToTheRiver": "Distancia al río",
+  "county": "Condado",
+  "viewOnlyCounty": "Ver solo",
+  "viewAllCounties": "Ver todos",
   "relatedTrips": "Viajes relacionados",
   "setUp": "Configuración",
   "viewInGoogle": "Ver en Google Maps",
@@ -99,8 +104,11 @@
   },
   "usage": {
     "title": "Uso del río",
-    "preamble": "Estas imágenes de la cámara de monitoreo del USGS cerca de Bradley muestran avistamientos confirmados de personas usando el río Salinas. Se detectan automáticamente mediante análisis de imágenes con inteligencia artificial y son verificadas por un revisor humano.",
+    "preamble": "Estas imágenes de la <a href=\"https://apps.usgs.gov/hivis/camera/CA_SALINAS_R_NR_BRADLEY_CA\">cámara de monitoreo del USGS cerca de Bradley</a> muestran avistamientos confirmados de personas usando el río Salinas.",
     "viewFull": "Ver imagen completa",
-    "detectedOn": "Detectado el"
+    "detectedOn": "Detectado el",
+    "photosTitle": "Fotos del río",
+    "photosPreamble": "Fotos tomadas a lo largo del río Salinas, etiquetadas con el punto de acceso más cercano y los datos de caudal de ese día.",
+    "nearAccessPoint": "Cerca de"
   }
 }

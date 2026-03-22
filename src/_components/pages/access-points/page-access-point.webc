@@ -65,6 +65,17 @@
       <div @text="l(point.translate, 'webcamNote')"></div>
     </dd>
   </div>
+  <div webc:if="point.mileage">
+    <dt @text="t('distanceToTheRiver')"></dt>
+    <dd webc:if="point.mileage < 0.25">
+      <span webc:nokeep @text="Math.round(point.mileage * 5280)"></span>
+      <span @text="t('feet')" webc:nokeep></span>
+    </dd>
+    <dd webc:else>
+      <span webc:nokeep @text="point.mileage"></span>
+      <span @text="t('miles')" webc:nokeep></span>
+    </dd>
+  </div>
   <div>
     <dt @text="t('drivingDirections')"></dt>
     <dd>

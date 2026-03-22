@@ -1,24 +1,73 @@
 <h1 @text="t('usage.title')"></h1>
 
-<p @text="t('usage.preamble')"></p>
+<section webc:if="usagePhotos && usagePhotos.length">
+  <h2 @text="t('usage.photosTitle')"></h2>
+  <p @text="t('usage.photosPreamble')"></p>
 
-<ul class="detection-grid">
-  <li webc:for="detection of detections">
-    <a :href="detection.imageUrl" target="_blank">
-      <img
-        :src="detection.thumbnailUrl"
-        :alt="`${t('usage.detectedOn')} ${formatDateTime(detection.datestamp)}`"
-        loading="lazy"
-        decoding="async"
-      />
-    </a>
-    <div class="detection-meta">
-      <span class="detection-date" @text="formatDateTime(detection.datestamp)"></span>
-    </div>
-  </li>
-</ul>
+  <ul class="photo-grid">
+    <li webc:for="photo of usagePhotos">
+      <a :href="`/assets/images/photos/${photo.filename}`" target="_blank">
+        <picture>
+          <source
+            type="image/webp"
+            :srcset="`/assets/images/photos/${photo.filename.replace('.jpg', '-400w.webp')} 400w, /assets/images/photos/${photo.filename.replace('.jpg', '-800w.webp')} 800w, /assets/images/photos/${photo.filename.replace('.jpg', '-1200w.webp')} 1200w`"
+            sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+          />
+          <img
+            :src="`/assets/images/photos/${photo.filename.replace('.jpg', '-thumb.jpg')}`"
+            :alt="`${t('usage.nearAccessPoint')} ${l(accessPoints[photo.closestAccessPoint].translate, 'title')} - ${photo.date}`"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </a>
+      <div class="photo-meta">
+        <span class="photo-date" @text="formatDate(photo.date)"></span>
+        <span class="photo-access-point">
+          <span @text="t('usage.nearAccessPoint')" webc:nokeep></span>
+          <a :href="u(`/access-points/${photo.closestAccessPoint}/`)" @text="l(accessPoints[photo.closestAccessPoint].translate, 'title')"></a>
+        </span>
+        <span class="photo-flow" webc:if="photo.cfs">
+          <span @text="formatNumber(photo.cfs)" webc:nokeep></span>
+          <cfs></cfs>
+        </span>
+        <span class="photo-height" webc:if="photo.height">
+          <span @text="t('photos.gaugeHeight')" webc:nokeep></span>:
+          <span @text="photo.height" webc:nokeep></span>
+          <span @text="t('feetDeep')" webc:nokeep></span>
+        </span>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section webc:if="detections && detections.length">
+  <h2 @text="t('webcam')"></h2>
+  <p @html="t('usage.preamble')"></p>
+
+  <ul class="detection-grid">
+    <li webc:for="detection of detections">
+      <a :href="detection.imageUrl" target="_blank">
+        <img
+          :src="detection.thumbnailUrl"
+          :alt="`${t('usage.detectedOn')} ${formatDateTime(detection.datestamp)}`"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <div class="detection-meta">
+        <span class="detection-date" @text="formatDateTime(detection.datestamp)"></span>
+      </div>
+    </li>
+  </ul>
+</section>
 
 <style>
+  section {
+    margin-bottom: 3rem;
+  }
+
+  .photo-grid,
   .detection-grid {
     list-style: none;
     padding: 0;
@@ -38,11 +87,14 @@
 
       img {
         width: 100%;
-        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        object-position: center;
         border-radius: 4px;
       }
     }
 
+    .photo-meta,
     .detection-meta {
       display: flex;
       flex-direction: column;
@@ -50,6 +102,10 @@
       padding-top: 0.5rem;
       font-size: 0.875rem;
       color: #555;
+    }
+
+    .photo-flow {
+      font-weight: 600;
     }
   }
 </style>

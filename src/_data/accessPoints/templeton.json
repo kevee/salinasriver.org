@@ -1,0 +1,231 @@
+{
+  "slug": "templeton",
+  "lat": 35.536044,
+  "lon": -120.7105954,
+  "flowLow": 50,
+  "flowHigh": 500,
+  "tresspass": false,
+  "ada": true,
+  "gauge": "paso",
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [
+                -120.70954,
+                35.53551,
+                0
+              ],
+              [
+                -120.70959,
+                35.5355,
+                0
+              ],
+              [
+                -120.70965,
+                35.53543,
+                0
+              ],
+              [
+                -120.70967,
+                35.53541,
+                0
+              ],
+              [
+                -120.70968,
+                35.53538,
+                0
+              ],
+              [
+                -120.70969,
+                35.53535,
+                0
+              ],
+              [
+                -120.70972,
+                35.53533,
+                0
+              ],
+              [
+                -120.70976,
+                35.53531,
+                0
+              ],
+              [
+                -120.70982,
+                35.53531,
+                0
+              ],
+              [
+                -120.70987,
+                35.53531,
+                0
+              ],
+              [
+                -120.70993,
+                35.53531,
+                0
+              ],
+              [
+                -120.70996,
+                35.53534,
+                0
+              ],
+              [
+                -120.70997,
+                35.53538,
+                0
+              ],
+              [
+                -120.70999,
+                35.53543,
+                0
+              ],
+              [
+                -120.71,
+                35.53547,
+                0
+              ],
+              [
+                -120.71002,
+                35.5355,
+                0
+              ],
+              [
+                -120.71005,
+                35.53553,
+                0
+              ],
+              [
+                -120.71008,
+                35.53556,
+                0
+              ],
+              [
+                -120.71011,
+                35.53559,
+                0
+              ],
+              [
+                -120.71013,
+                35.53562,
+                0
+              ],
+              [
+                -120.71014,
+                35.53566,
+                0
+              ],
+              [
+                -120.71015,
+                35.53569,
+                0
+              ],
+              [
+                -120.71017,
+                35.53573,
+                0
+              ],
+              [
+                -120.71018,
+                35.53577,
+                0
+              ],
+              [
+                -120.71019,
+                35.5358,
+                0
+              ],
+              [
+                -120.7102,
+                35.53584,
+                0
+              ],
+              [
+                -120.71022,
+                35.53587,
+                0
+              ],
+              [
+                -120.71023,
+                35.53591,
+                0
+              ],
+              [
+                -120.71024,
+                35.53594,
+                0
+              ],
+              [
+                -120.71026,
+                35.53598,
+                0
+              ],
+              [
+                -120.71028,
+                35.53601,
+                0
+              ],
+              [
+                -120.71033,
+                35.53602,
+                0
+              ],
+              [
+                -120.71037,
+                35.53602,
+                0
+              ],
+              [
+                -120.71048,
+                35.53605,
+                0
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Templeton High School",
+      "tags": "accessPoint",
+      "directions": "Park in the large sandy lot at the end of the road. Cross the railroad tracks and you will find several access points along the service road.",
+      "body": "A popular local spot to play in the river."
+    },
+    "es": {
+      "title": "Escuela Secundaria de Templeton",
+      "tags": "accessPoint",
+      "directions": "Estacione en el gran lote de arena al final de la carretera. Cruce las vías del tren y encontrará varios puntos de acceso a lo largo del camino de servicio.",
+      "body": "Un lugar popular entre los lugareños para jugar en el río."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_9754.jpg",
+      "originalFilename": "IMG_9754.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.539435527289854,
+      "lon": -120.70680845975127,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9755.jpg",
+      "originalFilename": "IMG_9755.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.539435527289854,
+      "lon": -120.70680845975127,
+      "cfs": 78.8,
+      "height": null
+    }
+  ],
+  "mileage": 0.09,
+  "county": "San Luis Obispo"
+}

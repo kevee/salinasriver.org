@@ -1,0 +1,94 @@
+{
+  "slug": "halcon-road",
+  "lat": 35.461171917567896,
+  "lon": -120.6260811740064,
+  "flowLow": 100,
+  "flowHigh": 900,
+  "tresspass": false,
+  "ada": true,
+  "gauge": "paso",
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "coordinates": [
+            [
+              -120.62597183644932,
+              35.461199897422986
+            ],
+            [
+              -120.62562657776276,
+              35.46141549619135
+            ],
+            [
+              -120.62510293542141,
+              35.461593599085944
+            ],
+            [
+              -120.62446420685121,
+              35.46171077182818
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Halcon Road",
+      "tags": "accessPoint",
+      "directions": "Park along the side of the road before the river crossing. The road may be closed across the river.",
+      "body": "A road that has been repeatedly washed out by the river. There are wide sandy banks popular with locals."
+    },
+    "es": {
+      "title": "Halcon Road",
+      "tags": "accessPoint",
+      "directions": "Estacione al lado de la carretera antes del cruce del río. La carretera puede estar cerrada al otro lado del río.",
+      "body": "Una carretera que ha sido arrasada repetidamente por el río. Hay amplias orillas de arena populares entre los lugareños."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_9745.jpg",
+      "originalFilename": "IMG_9745.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.461766838012394,
+      "lon": -120.62421298422906,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9746.jpg",
+      "originalFilename": "IMG_9746.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.461766838012394,
+      "lon": -120.62421298422906,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9747.jpg",
+      "originalFilename": "IMG_9747.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.461766838012394,
+      "lon": -120.62421298422906,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9749.jpg",
+      "originalFilename": "IMG_9749.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.461766838012394,
+      "lon": -120.62421298422906,
+      "cfs": 78.8,
+      "height": null
+    }
+  ],
+  "mileage": 0.09,
+  "county": "San Luis Obispo"
+}

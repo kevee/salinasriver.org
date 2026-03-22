@@ -1,0 +1,72 @@
+[
+  {
+    "filename": "IMG_9796.jpg",
+    "originalFilename": "IMG_9796.HEIC",
+    "date": "2026-03-15",
+    "lat": 35.8635436773076,
+    "lon": -120.8089965464313,
+    "cfs": 186,
+    "height": null,
+    "closestAccessPoint": "bradley"
+  },
+  {
+    "filename": "IMG_9798.jpg",
+    "originalFilename": "IMG_9798.HEIC",
+    "date": "2026-03-15",
+    "lat": 35.86300758213985,
+    "lon": -120.80844529208166,
+    "cfs": 186,
+    "height": null,
+    "closestAccessPoint": "bradley"
+  },
+  {
+    "filename": "IMG_9748.jpg",
+    "originalFilename": "IMG_9748.HEIC",
+    "date": "2026-03-14",
+    "lat": 35.45901208697765,
+    "lon": -120.6282728143504,
+    "cfs": 78.8,
+    "height": null,
+    "closestAccessPoint": "halcon-road"
+  },
+  {
+    "filename": "IMG_9757.jpg",
+    "originalFilename": "IMG_9757.HEIC",
+    "date": "2026-03-14",
+    "lat": 35.54144934535308,
+    "lon": -120.70780067625407,
+    "cfs": 78.8,
+    "height": null,
+    "closestAccessPoint": "templeton"
+  },
+  {
+    "filename": "IMG_9758.jpg",
+    "originalFilename": "IMG_9758.HEIC",
+    "date": "2026-03-14",
+    "lat": 35.54170063660194,
+    "lon": -120.70753757772371,
+    "cfs": 78.8,
+    "height": null,
+    "closestAccessPoint": "templeton"
+  },
+  {
+    "filename": "IMG_6018.jpg",
+    "originalFilename": "IMG_6018.HEIC",
+    "date": "2023-04-15",
+    "lat": 36.01498055555555,
+    "lon": -120.912475,
+    "cfs": 606,
+    "height": null,
+    "closestAccessPoint": "san-ardo"
+  },
+  {
+    "filename": "IMG_6037.jpg",
+    "originalFilename": "IMG_6037.HEIC",
+    "date": "2023-04-15",
+    "lat": 36.117275,
+    "lon": -121.02788611111112,
+    "cfs": null,
+    "height": null,
+    "closestAccessPoint": "san-lucas"
+  }
+]

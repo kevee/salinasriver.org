@@ -6,6 +6,7 @@
   "flowHigh": 900,
   "gauge": "kingCity",
   "tresspass": false,
+  "ada": false,
   "directions": {
     "type": "FeatureCollection",
     "features": [
@@ -63,6 +64,26 @@
       "lon": -121.02806111111111,
       "cfs": 639,
       "height": null
+    },
+    {
+      "filename": "IMG_9801.jpg",
+      "originalFilename": "IMG_9801.HEIC",
+      "date": "2026-03-15",
+      "lat": 36.117553980915744,
+      "lon": -121.02708893295146,
+      "cfs": 204,
+      "height": null
+    },
+    {
+      "filename": "IMG_9802.jpg",
+      "originalFilename": "IMG_9802.HEIC",
+      "date": "2026-03-15",
+      "lat": 36.117553980915744,
+      "lon": -121.02708893295146,
+      "cfs": 204,
+      "height": null
     }
-  ]
+  ],
+  "mileage": 0.06,
+  "county": "Monterey"
 }

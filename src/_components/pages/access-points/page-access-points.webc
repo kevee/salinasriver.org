@@ -4,15 +4,28 @@
   <columns>
     <div>
       <inline-nav>
-        <li
-          webc:for="point of accessPointsSortLatitude"
-          :data-access-point-slug="point.slug"
-        >
-          <a
-            :href="u('/access-points/' + point.slug)"
-            @text="l(point.translate, 'title')"
-          ></a>
-        </li>
+        <template webc:nokeep webc:for="group of accessPointsByCounty">
+          <li class="county-header" :data-county="group.county">
+            <span @text="group.county + ' ' + t('county')"></span>
+            <button
+              class="view-county-btn"
+              :data-view-county="group.county"
+              :data-label-view-only="t('viewOnlyCounty')"
+              :data-label-view-all="t('viewAllCounties')"
+              @text="t('viewOnlyCounty')"
+            ></button>
+          </li>
+          <li
+            webc:for="point of group.points"
+            :data-access-point-slug="point.slug"
+            :data-county="point.county"
+          >
+            <a
+              :href="u('/access-points/' + point.slug)"
+              @text="l(point.translate, 'title')"
+            ></a>
+          </li>
+        </template>
       </inline-nav>
     </div>
     <div>
@@ -24,6 +37,29 @@
 </div>
 
 <style>
+  .county-header {
+    font-weight: bold;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .view-county-btn {
+    pointer-events: auto;
+    font-size: 0.75rem;
+    font-weight: normal;
+    padding: 0.1rem 0.4rem;
+    cursor: pointer;
+    border: 1px solid currentColor;
+    background: transparent;
+    border-radius: 3px;
+    line-height: 1.4;
+  }
+  .view-county-btn[data-active] {
+    background-color: rgba(0, 80, 184, 0.15);
+    color: #0050b8;
+    border-color: #0050b8;
+  }
   [data-access-point-slug] {
     transition: background-color 0.2s ease;
   }

@@ -8,4 +8,4 @@ breadcrumbs:
   - name: Visión general
     link: /overview
 ---
-<page-usage :@detections="detections"></page-usage>
+<page-usage :@detections="detections" :@usage-photos="usagePhotos" :@access-points="accessPoints"></page-usage>

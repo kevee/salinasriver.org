@@ -5,6 +5,7 @@
   "flowLow": 40,
   "flowHigh": 600,
   "tresspass": true,
+  "ada": false,
   "gauge": "bradley",
   "directions": {
     "type": "FeatureCollection",
@@ -547,5 +548,7 @@
       "cfs": 76.5,
       "height": null
     }
-  ]
+  ],
+  "mileage": 0.22,
+  "county": "Monterey"
 }

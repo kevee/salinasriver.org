@@ -5,6 +5,7 @@
   "flowLow": 40,
   "flowHigh": 200,
   "tresspass": false,
+  "ada": false,
   "gauge": "paso",
   "directions": {
     "type": "FeatureCollection",
@@ -55,5 +56,7 @@
       "tresspass": false,
       "body": "Normalmente nunca fluye excepto después de grandes lluvias."
     }
-  }
+  },
+  "mileage": 0.22,
+  "county": "Monterey"
 }

@@ -6,6 +6,7 @@
   "flowHigh": 400,
   "gauge": "chualar",
   "tresspass": false,
+  "ada": false,
   "directions": {
     "type": "FeatureCollection",
     "features": [
@@ -15,15 +16,42 @@
         "geometry": {
           "type": "LineString",
           "coordinates": [
-            [-121.7023828625679, 36.64655853410578],
-            [-121.7023305594921, 36.64655100202121],
-            [-121.70228362083435, 36.64651118956213],
-            [-121.70225411653519, 36.64645631289558],
-            [-121.70221790671347, 36.646403588218355],
-            [-121.70210659503935, 36.64633795132485],
-            [-121.70202746987343, 36.64627446640741],
-            [-121.70197516679764, 36.64625402210082],
-            [-121.70192286372183, 36.64626047819821]
+            [
+              -121.7023828625679,
+              36.64655853410578
+            ],
+            [
+              -121.7023305594921,
+              36.64655100202121
+            ],
+            [
+              -121.70228362083435,
+              36.64651118956213
+            ],
+            [
+              -121.70225411653519,
+              36.64645631289558
+            ],
+            [
+              -121.70221790671347,
+              36.646403588218355
+            ],
+            [
+              -121.70210659503935,
+              36.64633795132485
+            ],
+            [
+              -121.70202746987343,
+              36.64627446640741
+            ],
+            [
+              -121.70197516679764,
+              36.64625402210082
+            ],
+            [
+              -121.70192286372183,
+              36.64626047819821
+            ]
           ]
         }
       }
@@ -42,5 +70,18 @@
       "directions": "Estacione en el gran estacionamiento situado al sur del puente, en el lado sur de la carretera (a la derecha, al salir del puente). El mejor sendero está justo al sur del puente en el lado norte de la carretera",
       "body": "Un punto de acceso común para la David Rd a la desembocadura del río. Tiene mucho espacio para estacionar y es un embarcadero fácil para las embarcaciones más grandes."
     }
-  }
+  },
+  "mileage": 0.04,
+  "photos": [
+    {
+      "filename": "IMG_4514.jpg",
+      "originalFilename": "IMG_4514.HEIC",
+      "date": "2021-08-30",
+      "lat": 36.63754879197793,
+      "lon": -121.70283758771203,
+      "cfs": 0,
+      "height": null
+    }
+  ],
+  "county": "Monterey"
 }

@@ -1,0 +1,132 @@
+{
+  "slug": "salinas-river-bridge",
+  "lat": 35.40877446221643,
+  "lon": -120.56694624379193,
+  "flowLow": 50,
+  "flowHigh": 500,
+  "tresspass": false,
+  "ada": false,
+  "gauge": "paso",
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "coordinates": [
+            [
+              -120.5669703611161,
+              35.40876431488124
+            ],
+            [
+              -120.56698436176191,
+              35.40880710640057
+            ],
+            [
+              -120.56701819665605,
+              35.40882422300204
+            ],
+            [
+              -120.5670508648296,
+              35.40884799605317
+            ],
+            [
+              -120.56708703316454,
+              35.40884324144341
+            ],
+            [
+              -120.56710803413344,
+              35.408821370235444
+            ],
+            [
+              -120.56714886935029,
+              35.40880520455559
+            ],
+            [
+              -120.56719787161047,
+              35.40874149272837
+            ],
+            [
+              -120.56720253849241,
+              35.40869204470857
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Salinas River Bridge",
+      "tags": "accessPoint",
+      "directions": "Park in front of the bridge. There are several use trails on both sides of the bridge.",
+      "body": "A quiet canyon area with several nice deep pools in higher flows, and the rare area of exposed rocks in the riverbed."
+    },
+    "es": {
+      "title": "Puente del Río Salinas",
+      "tags": "accessPoint",
+      "directions": "Estacione frente al puente. Hay varios senderos en ambos lados del puente.",
+      "body": "Una tranquila zona de cañón con varias pozas profundas en caudales altos y una zona poco frecuente de rocas expuestas en el lecho del río."
+    }
+  },
+  "photos": [
+    {
+      "filename": "IMG_9723.jpg",
+      "originalFilename": "IMG_9723.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.4085099913119,
+      "lon": -120.56711714715638,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9724.jpg",
+      "originalFilename": "IMG_9724.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.408547418784664,
+      "lon": -120.5669995546198,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9725.jpg",
+      "originalFilename": "IMG_9725.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.408547418784664,
+      "lon": -120.5669995546198,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9726.jpg",
+      "originalFilename": "IMG_9726.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.408547418784664,
+      "lon": -120.5669995546198,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9728.jpg",
+      "originalFilename": "IMG_9728.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.408547418784664,
+      "lon": -120.5669995546198,
+      "cfs": 78.8,
+      "height": null
+    },
+    {
+      "filename": "IMG_9729.jpg",
+      "originalFilename": "IMG_9729.HEIC",
+      "date": "2026-03-14",
+      "lat": 35.408547418784664,
+      "lon": -120.5669995546198,
+      "cfs": 78.8,
+      "height": null
+    }
+  ],
+  "mileage": 0.02,
+  "county": "San Luis Obispo"
+}
