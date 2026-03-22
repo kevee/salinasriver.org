@@ -71,6 +71,8 @@
       "body": "Un lugar popular para los que conducen vehículos todo terreno; más allá de los saltos y senderos hay una orilla arenosa con buena sombra para acceder al río."
     }
   },
+  "mileage": 0.36,
+  "county": "San Luis Obispo",
   "photos": [
     {
       "filename": "IMG_9774.jpg",
@@ -107,62 +109,6 @@
       "lon": -120.69180399500624,
       "cfs": 74.3,
       "height": null
-    },
-    {
-      "filename": "IMG_9779.jpg",
-      "originalFilename": "IMG_9779.HEIC",
-      "date": "2026-03-15",
-      "lat": 35.60668234028922,
-      "lon": -120.68830886044177,
-      "cfs": 74.3,
-      "height": null
-    },
-    {
-      "filename": "IMG_9780.jpg",
-      "originalFilename": "IMG_9780.HEIC",
-      "date": "2026-03-15",
-      "lat": 35.60668234028922,
-      "lon": -120.68830886044177,
-      "cfs": 74.3,
-      "height": null
-    },
-    {
-      "filename": "IMG_9781.jpg",
-      "originalFilename": "IMG_9781.HEIC",
-      "date": "2026-03-15",
-      "lat": 35.60668234028922,
-      "lon": -120.68830886044177,
-      "cfs": 74.3,
-      "height": null
-    },
-    {
-      "filename": "IMG_9782.jpg",
-      "originalFilename": "IMG_9782.HEIC",
-      "date": "2026-03-15",
-      "lat": 35.60668234028922,
-      "lon": -120.68830886044177,
-      "cfs": 74.3,
-      "height": null
-    },
-    {
-      "filename": "IMG_9783.jpg",
-      "originalFilename": "IMG_9783.HEIC",
-      "date": "2026-03-15",
-      "lat": 35.60668234028922,
-      "lon": -120.68830886044177,
-      "cfs": 74.3,
-      "height": null
-    },
-    {
-      "filename": "IMG_9784.jpg",
-      "originalFilename": "IMG_9784.HEIC",
-      "date": "2026-03-15",
-      "lat": 35.60668234028922,
-      "lon": -120.68830886044177,
-      "cfs": 74.3,
-      "height": null
     }
-  ],
-  "mileage": 0.36,
-  "county": "San Luis Obispo"
+  ]
 }

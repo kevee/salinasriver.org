@@ -1,0 +1,148 @@
+{
+  "slug": "salinas-river-trail",
+  "lat": 35.6067875530245,
+  "lon": -120.68849970051093,
+  "flowLow": 40,
+  "flowHigh": 500,
+  "tresspass": false,
+  "ada": true,
+  "gauge": "paso",
+  "directions": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "coordinates": [
+            [
+              -120.68847630991085,
+              35.606791356485004
+            ],
+            [
+              -120.68862600975133,
+              35.606920674024806
+            ],
+            [
+              -120.68873360651166,
+              35.60775742952487
+            ],
+            [
+              -120.6887476408717,
+              35.60814918022835
+            ],
+            [
+              -120.68869150421854,
+              35.6086360143145
+            ],
+            [
+              -120.68844356385776,
+              35.609221731525466
+            ],
+            [
+              -120.68841081701765,
+              35.6094537352088
+            ],
+            [
+              -120.68833596709743,
+              35.60966672160468
+            ],
+            [
+              -120.6883921045376,
+              35.60979223117991
+            ],
+            [
+              -120.68847631069787,
+              35.60986449417885
+            ],
+            [
+              -120.68871957293862,
+              35.60984928092131
+            ],
+            [
+              -120.6889394445793,
+              35.609784624544616
+            ],
+            [
+              -120.68922013178053,
+              35.60966672160468
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  },
+  "translate": {
+    "en": {
+      "title": "Salinas River Trail",
+      "tags": "accessPoint",
+      "directions": "Park along the road and use the well-marked trail to the river.",
+      "body": "The southernmost access point on the [Salinas River Walk](https://www.travelpaso.com/listing/salinas-river-walk/746/)"
+    },
+    "es": {
+      "title": "Sendero del Río Salinas",
+      "tags": "accessPoint",
+      "directions": "Estacione a lo largo de la carretera y use el sendero bien marcado hacia el río.",
+      "body": "El punto de acceso más al sur en el [Paseo del Río Salinas](https://www.travelpaso.com/listing/salinas-river-walk/746/)"
+    }
+  },
+  "mileage": 0.02,
+  "county": "San Luis Obispo",
+  "photos": [
+    {
+      "filename": "IMG_9779.jpg",
+      "originalFilename": "IMG_9779.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9780.jpg",
+      "originalFilename": "IMG_9780.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9781.jpg",
+      "originalFilename": "IMG_9781.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9782.jpg",
+      "originalFilename": "IMG_9782.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9783.jpg",
+      "originalFilename": "IMG_9783.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    },
+    {
+      "filename": "IMG_9784.jpg",
+      "originalFilename": "IMG_9784.HEIC",
+      "date": "2026-03-15",
+      "lat": 35.60668234028922,
+      "lon": -120.68830886044177,
+      "cfs": 74.3,
+      "height": null
+    }
+  ]
+}
