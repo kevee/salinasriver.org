@@ -115,6 +115,9 @@
     "detectedOn": "Detected on",
     "photosTitle": "Photos from the river",
     "photosPreamble": "Photos taken along the Salinas River, tagged with the nearest access point and water flow data for that day.",
-    "nearAccessPoint": "Near"
+    "nearAccessPoint": "Near",
+    "externalWebsites": "External websites",
+    "externalWebsitesNearAccessPoints": "Near",
+    "externalWebsitesRelatedTrips": "Related trips"
   }
 }

@@ -1,0 +1,102 @@
+[
+  {
+    "url": "https://thesqueakypedal.com/2026/03/02/floating-the-salinas-atascadero-paso-robles/",
+    "date": "2026-03-02",
+    "accessPoints": ["atascadero-de-anza-sycamore", "gabarda-de-anza-trail"],
+    "translate": {
+      "en": {
+        "name": "Portage: Floating the Salinas River Between Atascadero and Paso Robles"
+      },
+      "es": {
+        "name": "Portage: Flotando el río Salinas entre Atascadero y Paso Robles"
+      }
+    }
+  },
+  {
+    "url": "https://oag.ca.gov/system/files/opinions/pdfs/80-815.pdf",
+    "date": "1981-06-09",
+    "accessPoints": ["bradley"],
+    "trips": ["bradley-bradley"],
+    "translate": {
+      "en": {
+        "name": "Legal complaint about people tubing the Salinas near Bradley"
+      },
+      "es": {
+        "name": "Denuncia legal sobre personas haciendo tubing en el Salinas cerca de Bradley"
+      }
+    }
+  },
+  {
+    "url": "https://www.montereycountynow.com/people/831/a-group-of-professionals-and-a-disheveled-writer-paddle-down-the-salinas-river-in-south/article_6959f460-056b-11ee-a24c-575a46271b12.html",
+    "date": "2023-06-08",
+    "accessPoints": ["san-ardo", "san-lucas"],
+    "trips": ["san-ardo-san-lucas"],
+    "translate": {
+      "en": {
+        "name": "Monterey County Now: Wildlife photographers Frans Lanting and Christine Eckstrom paddle 10 miles from San Ardo to San Lucas, documenting bald eagles and beavers along the Salinas River"
+      },
+      "es": {
+        "name": "Monterey County Now: Los fotógrafos de vida silvestre Frans Lanting y Christine Eckstrom reman 10 millas desde San Ardo hasta San Lucas, documentando águilas calvas y castores a lo largo del río Salinas"
+      }
+    }
+  },
+  {
+    "url": "https://www.montereycountynow.com/archives/2014/0807/traveling-the-150-mile-span-of-the-salinas-river-yields-lessons-on-the-valley-versus/article_d2e3f1e8-1db6-11e4-8f95-001a4bcf6878.html",
+    "date": "2014-08-07",
+    "translate": {
+      "en": {
+        "name": "Monterey County Now: Traveling the 150-mile span of the Salinas River, documenting recreational use and water rights discussions"
+      },
+      "es": {
+        "name": "Monterey County Now: Recorriendo los 150 millas del río Salinas, documentando el uso recreativo y las discusiones sobre derechos de agua"
+      }
+    }
+  },
+  {
+    "url": "http://brt-insights.blogspot.com/2009/08/salinas-river-california-whitewater.html",
+    "date": "2009-08-01",
+    "accessPoints": ["atascadero-de-anza-sycamore", "bradley", "san-ardo"],
+    "trips": ["bradley-san-ardo"],
+    "translate": {
+      "en": {
+        "name": "BRT Insights: Detailed kayaking and whitewater guide for the Salinas River with sections from Santa Margarita to Atascadero (Class I/II), Camp Roberts to Bradley (Class I), and Bradley to San Ardo (Class I+)"
+      },
+      "es": {
+        "name": "BRT Insights: Guía detallada de kayak y aguas bravas del río Salinas con secciones desde Santa Margarita a Atascadero (Clase I/II), Camp Roberts a Bradley (Clase I) y Bradley a San Ardo (Clase I+)"
+      }
+    }
+  },
+  {
+    "url": "https://calflyfisher.com/destinations/the-salinas-river-watershed/",
+    "translate": {
+      "en": {
+        "name": "California Fly Fisher: Fly fishing destination guide for the Salinas River watershed"
+      },
+      "es": {
+        "name": "California Fly Fisher: Guía de destino de pesca con mosca para la cuenca del río Salinas"
+      }
+    }
+  },
+  {
+    "url": "https://salinasvalleyflyfishing.org/salinas-valley-flyfishers-on-the-water/",
+    "translate": {
+      "en": {
+        "name": "Salinas Valley Fly Fishers: Community fishing reports and trip logs from local fly fishing experts on the Salinas River"
+      },
+      "es": {
+        "name": "Salinas Valley Fly Fishers: Informes de pesca comunitarios y registros de viajes de expertos locales en pesca con mosca en el río Salinas"
+      }
+    }
+  },
+  {
+    "url": "https://guidesly.com/fishing/waterbodies/Salinas-River-California",
+    "translate": {
+      "en": {
+        "name": "Guidesly: Salinas River fishing guide with species information including striped bass and largemouth bass"
+      },
+      "es": {
+        "name": "Guidesly: Guía de pesca del río Salinas con información de especies incluyendo lubina rayada y lubina de boca grande"
+      }
+    }
+  }
+]
