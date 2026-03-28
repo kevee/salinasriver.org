@@ -1,5 +1,23 @@
 <h1 @text="t('usage.title')"></h1>
 
+<section webc:if="externalUsageProofs && externalUsageProofs.length">
+  <h2 @text="t('usage.externalWebsites')"></h2>
+  <ul class="external-links">
+    <li webc:for="proof of [...externalUsageProofs].sort((a, b) => new Date(b.date) - new Date(a.date))">
+      <a :href="proof.url" class="external-proof-link" target="_blank" rel="noopener" @text="l(proof.translate, 'name')"></a>
+      <span class="external-date" webc:if="proof.date" @text="formatDate(proof.date)"></span>
+      <span class="external-access-points" webc:if="proof.accessPoints && proof.accessPoints.length">
+        <span @text="t('usage.externalWebsitesNearAccessPoints')" webc:nokeep></span>
+        <span webc:for="slug of proof.accessPoints" webc:nokeep><a class="external-access-point-link" :href="u(`/access-points/${slug}/`)" @text="l(accessPoints[slug].translate, 'title')"></a></span>
+      </span>
+      <span class="external-trips" webc:if="proof.trips && proof.trips.length">
+        <span @text="t('usage.externalWebsitesRelatedTrips')" webc:nokeep></span>
+        <span webc:for="slug of proof.trips" webc:nokeep><a class="external-trip-link" :href="u(`/trips/${slug}/`)" @text="l(trips[slug].translate, 'title')"></a></span>
+      </span>
+    </li>
+  </ul>
+</section>
+
 <section webc:if="usagePhotos && usagePhotos.length">
   <h2 @text="t('usage.photosTitle')"></h2>
   <p @text="t('usage.photosPreamble')"></p>
@@ -65,6 +83,37 @@
 <style>
   section {
     margin-bottom: 3rem;
+  }
+
+  .external-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .external-date {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    .external-access-points,
+    .external-trips {
+      font-size: 0.875rem;
+      color: #555;
+
+      .external-access-point-link + .external-access-point-link::before,
+      .external-trip-link + .external-trip-link::before {
+        content: ", ";
+      }
+    }
   }
 
   .photo-grid,

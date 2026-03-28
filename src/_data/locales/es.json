@@ -115,6 +115,9 @@
     "detectedOn": "Detectado el",
     "photosTitle": "Fotos del río",
     "photosPreamble": "Fotos tomadas a lo largo del río Salinas, etiquetadas con el punto de acceso más cercano y los datos de caudal de ese día.",
-    "nearAccessPoint": "Cerca de"
+    "nearAccessPoint": "Cerca de",
+    "externalWebsites": "Sitios web externos",
+    "externalWebsitesNearAccessPoints": "Cerca de",
+    "externalWebsitesRelatedTrips": "Viajes relacionados"
   }
 }

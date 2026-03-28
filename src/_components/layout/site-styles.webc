@@ -21,6 +21,10 @@
     --main-blue-secondary: #43a7ff;
   }
 
+  body {
+    background-color: #ffffff;
+  }
+
   a {
     color: var(--link-color);
   }
