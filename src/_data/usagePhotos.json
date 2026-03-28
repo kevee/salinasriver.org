@@ -40,11 +40,11 @@
     "closestAccessPoint": "templeton"
   },
   {
-    "filename": "IMG_9758.jpg",
-    "originalFilename": "IMG_9758.HEIC",
+    "filename": "IMG_9758_fixed.jpg",
+    "originalFilename": "IMG_9758_fixed.HEIC",
     "date": "2026-03-14",
-    "lat": 35.54170063660194,
-    "lon": -120.70753757772371,
+    "lat": 35.5417,
+    "lon": -120.70753888888889,
     "cfs": 78.8,
     "height": null,
     "closestAccessPoint": "templeton"
