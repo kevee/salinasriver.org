@@ -53,6 +53,10 @@ const config = async (eleventyConfig: any) => {
     'src/sw.js': 'sw.js',
   })
 
+  eleventyConfig.addPassthroughCopy({
+    'src/robots.txt': 'robots.txt',
+  })
+
   return {
     dir: {
       input: 'src',

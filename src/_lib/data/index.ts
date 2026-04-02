@@ -1,6 +1,5 @@
 import fetchGauges from './fetch-gauges'
 import fetchLagoonGauge from './fetch-lagoon-gauge'
-import getDarkVisitorRobots from './dark-visitor-robots'
 import type { GaugeWithMeasurements } from './fetch-gauges'
 
 interface AccessPoint {
@@ -14,9 +13,6 @@ const addGlobalData = async (eleventyConfig) => {
   eleventyConfig.addGlobalData('gauges', gauges)
 
   //eleventyConfig.addGlobalData('lagoonGaugeHeight', fetchLagoonGauge)
-
-  // Fetch dark visitor robots data and store it in a global variable
-  eleventyConfig.addGlobalData('darkVisitorRobots', getDarkVisitorRobots)
 
   // If any guage data's height is greater than the flood level, set isFlooding to true
   eleventyConfig.addGlobalData(
