@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "eleventy-dev",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["tsx", "./node_modules/.bin/eleventy", "--config=eleventy.config.ts", "--serve", "--port=8082"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port=8082"],
       "port": 8082,
       "autoPort": false
     }
