@@ -64,7 +64,7 @@
   <p @html="t('usage.preamble')"></p>
 
   <ul class="detection-grid">
-    <li webc:for="detection of detections">
+    <li webc:for="detection of [...detections].sort((a, b) => new Date(b.datestamp) - new Date(a.datestamp))">
       <a :href="detection.imageUrl" target="_blank">
         <img
           :src="detection.thumbnailUrl"
@@ -131,8 +131,6 @@
     }
 
     a {
-      display: block;
-      line-height: 0;
 
       img {
         width: 100%;
@@ -147,9 +145,11 @@
     .detection-meta {
       display: flex;
       flex-direction: column;
-      gap: 0.15rem;
       padding-top: 0.5rem;
       font-size: 0.875rem;
+      span {
+        display: block;
+      }
       color: #555;
     }
 
