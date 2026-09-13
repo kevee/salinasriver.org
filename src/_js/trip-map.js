@@ -4,12 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     15
   )
 
-  new L.TileLayer(
-    'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
-    {
-      attribution: globalConfig.mapAttribution,
-    }
-  ).addTo(map)
+  new L.TileLayer(globalConfig.basemapTileUrl, {
+    attribution: globalConfig.mapAttribution,
+  }).addTo(map)
 
   const tripLayer = new L.GeoJSON(options.route, {
     style: globalConfig.routeStyle,

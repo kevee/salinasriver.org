@@ -5,11 +5,11 @@ import { minify } from '@putout/minify'
 const addClientJs = (eleventyConfig) => {
   const isDevelopment =
     process.env.ELEVENTY_ENV && process.env.ELEVENTY_ENV === 'development'
-  const globalJsConfig = fs
-    .readFileSync(path.join('./src/_js/global-config.js'), 'utf8')
-    .toString()
-
   eleventyConfig.addFilter('clientJs', (file: string, variables: object) => {
+    // Read per call so dev rebuilds pick up edits to the shared config
+    const globalJsConfig = fs
+      .readFileSync(path.join('./src/_js/global-config.js'), 'utf8')
+      .toString()
     const script = fs
       .readFileSync(path.join('./src/_js/', file), 'utf8')
       .toString()

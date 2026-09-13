@@ -10,12 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const map = new L.Map('access-points-map')
 
-  new L.TileLayer(
-    'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
-    {
-      attribution: globalConfig.mapAttribution,
-    },
-  ).addTo(map)
+  new L.TileLayer(globalConfig.basemapTileUrl, {
+    attribution: globalConfig.mapAttribution,
+  }).addTo(map)
 
   const markers = {}
   const markerRadius = 10
