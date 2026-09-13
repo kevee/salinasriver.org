@@ -5,9 +5,7 @@
     <title @text="t('siteName')"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="dns-prefetch" href="https://server.arcgisonline.com"/>
-    <link rel="dns-prefetch" href="https://cartodb-basemaps-a.global.ssl.fastly.net"/>
-    <link rel="dns-prefetch" href="https://cartodb-basemaps-b.global.ssl.fastly.net"/>
-    <link rel="dns-prefetch" href="https://cartodb-basemaps-c.global.ssl.fastly.net"/>
+    <link rel="dns-prefetch" href="https://basemaps.cartocdn.com"/>
 
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>

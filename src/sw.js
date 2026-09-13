@@ -1,4 +1,4 @@
-const CACHE_NAME = 'salinas-river-v2'
+const CACHE_NAME = 'salinas-river-v3'
 const STATIC_ASSETS = [
   '/assets/leaflet/leaflet-global.js',
   '/assets/leaflet/leaflet.css',
@@ -35,7 +35,7 @@ self.addEventListener('fetch', (event) => {
   // Cache-first for static assets, fonts, and map tiles
   if (
     url.pathname.startsWith('/assets/') ||
-    url.hostname.includes('cartodb-basemaps') ||
+    url.hostname.endsWith('basemaps.cartocdn.com') ||
     url.hostname === 'server.arcgisonline.com'
   ) {
     event.respondWith(
